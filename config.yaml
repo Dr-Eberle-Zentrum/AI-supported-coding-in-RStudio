@@ -16,18 +16,18 @@ carpentry_description: 'Universität Tübingen'
 varnish: Dr-Eberle-Zentrum/varnish
 
 # Overall title for pages.
-title: 'AI-supported Coding in RStudio' # FIXME
+title: 'AI-supported Coding with GitHub Copilot in RStudio' # FIXME
 lang: en # prepare for translation integration into sandpaper
 
 # Date the lesson was created (YYYY-MM-DD, this is empty by default)
 created: 2024-11-10 # FIXME
 
 # Comma-separated list of keywords for the lesson
-keywords: 'R, RStudio, AI, Programming' # FIXME
+keywords: 'R, RStudio, AI, Programming, GitHub Copilot' # FIXME
 
 # Life cycle stage of the lesson
 # possible values: pre-alpha, alpha, beta, stable
-life_cycle: 'alpha' # FIXME
+life_cycle: 'pre-alpha' # FIXME
 
 # License of the lesson
 license: 'CC-BY 4.0'
