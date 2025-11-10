@@ -38,11 +38,12 @@ If you don't already have a GitHub account:
 
 1. Go to [github.com](https://github.com)
 2. Click "Sign up" and follow the registration process
-3. **Tip:** Use your university or institutional email address to make it easier to apply for student benefits
 
 ::::::::::::::::::::::::::::::::::::: callout
 
 ### GitHub Student Developer Pack
+
+**Note:** As of November 2025, students can get free access to GitHub Copilot through the GitHub Student Developer Pack.
 
 Students can get **free access to GitHub Copilot** through the GitHub Student Developer Pack. This includes:
 
