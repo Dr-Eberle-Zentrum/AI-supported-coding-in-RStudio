@@ -60,8 +60,8 @@ final say over what gets merged into the lesson.
 
 
 
-[repo]: https://example.com/FIXME
-[repo-issues]: https://example.com/FIXME/issues
+[repo]: https://github.com/Dr-Eberle-Zentrum/AI-supported-coding-in-RStudio
+[repo-issues]: https://github.com/Dr-Eberle-Zentrum/AI-supported-coding-in-RStudio/issues
 [contact]: mailto:team@carpentries.org
 [cp-site]: https://carpentries.org/
 [dc-issues]: https://github.com/issues?q=user%3Adatacarpentry

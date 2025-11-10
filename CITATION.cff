@@ -2,7 +2,7 @@
 # Visit https://bit.ly/cffinit to generate yours today!
 
 cff-version: 1.2.0
-title: AI-supported Coding in RStudio
+title: AI-supported Coding with GitHub Copilot in RStudio
 message: >-
   Please cite this lesson using the information in this file
   when you refer to it in publications, and/or if you
@@ -16,11 +16,11 @@ authors:
     orcid: 'https://orcid.org/0000-0002-7926-5911'
 url: 'https://github.com/Dr-Eberle-Zentrum'
 abstract: >-
-  Compact lesson on AI-supported programming in RStudio.
+  Compact lesson on AI-supported programming with GitHub Copilot in RStudio.
 keywords:
   - R
   - RStudio
   - AI
+  - GitHub Copilot
   - lesson
-  - English
 license: CC-BY-4.0

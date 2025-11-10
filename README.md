@@ -1,6 +1,6 @@
-# AI-supported Coding in RStudio
+# AI-supported Coding with GitHub Copilot in RStudio
 
-A Carpentry-styled learning module about AI-supported programming in RStudio.
+A Carpentry-styled learning module about AI-supported programming with GitHub Copilot in RStudio.
 
 ## Target Audience
 
@@ -12,6 +12,6 @@ using RStudio, loading data, and using R scripts.
 
 ------------------------------------------------------------------------
 
-[Visit our Online Carpentry Lesson "AI-supported Coding in RStudio"](https://dr-eberle-zentrum.github.io/AI-supported-coding-in-RStudio/)
+[Visit our Online Carpentry Lesson "AI-supported Coding with GitHub Copilot in RStudio"](https://dr-eberle-zentrum.github.io/AI-supported-coding-in-RStudio/)
 
 ------------------------------------------------------------------------

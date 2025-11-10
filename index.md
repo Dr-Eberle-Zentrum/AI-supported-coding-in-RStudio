@@ -2,7 +2,7 @@
 site: sandpaper::sandpaper_site
 ---
 
-This is a brief overview of AI-supported programming in RStudio.
+This is a brief overview of AI-supported programming with GitHub Copilot in RStudio.
 
 The material is suitable for R users who already have experience with R and want to learn how to use AI tools to support their programming in RStudio.
 
