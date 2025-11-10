@@ -2,31 +2,31 @@
 site: sandpaper::sandpaper_site
 ---
 
-Dies ist ein Kurzüberblick über AI-unterstütztes Programmieren in RStudio.
+This is a brief overview of AI-supported programming in RStudio.
 
-Das Material eignet sich für R-Nutzer, die bereits Erfahrung mit R haben und lernen möchten, wie sie AI-Tools zur Unterstützung ihrer Programmierung in RStudio nutzen können.
+The material is suitable for R users who already have experience with R and want to learn how to use AI tools to support their programming in RStudio.
 
 
-Im Folgenden werden einige Möglichkeiten eingeführt, wie AI-Tools in RStudio genutzt werden können, um die Programmierung zu erleichtern und zu beschleunigen.
-Hierbei werden grundlegende Kenntnisse von R vorausgesetzt.
+In the following, some possibilities are introduced on how AI tools can be used in RStudio to facilitate and accelerate programming.
+Basic knowledge of R is assumed.
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- Wie nutze ich AI-Tools in RStudio?
-- Welche AI-Funktionen sind in RStudio verfügbar?
-- Wie kann AI meine Programmierung unterstützen?
+- How do I use AI tools in RStudio?
+- What AI features are available in RStudio?
+- How can AI support my programming?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- Überblick über AI-unterstützte Programmiermöglichkeiten in RStudio
-- Praktische Anwendung von AI-Tools für die R-Programmierung
+- Overview of AI-supported programming possibilities in RStudio
+- Practical application of AI tools for R programming
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 
-## Literatur
+## Literature
 
-Als zusätzliche Lektüre empfehlen wir die offizielle RStudio Dokumentation zu AI-unterstützten Features.
+As additional reading, we recommend the official RStudio documentation on AI-supported features.
 

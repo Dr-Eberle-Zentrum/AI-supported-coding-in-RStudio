@@ -1,17 +1,17 @@
-# AI-unterstütztes Programmieren in RStudio
+# AI-supported Coding in RStudio
 
-Ein Carpentry-styled Lernmodul über AI-unterstütztes Programmieren in RStudio.
+A Carpentry-styled learning module about AI-supported programming in RStudio.
 
-## Zielgruppe
+## Target Audience
 
-Dieses Modul richtet sich an Personen, die bereits Erfahrung mit R haben und lernen möchten, wie sie AI-Tools zur Unterstützung ihrer Programmierung in RStudio nutzen können.
-Es wird davon ausgegangen, dass die TeilnehmerInnen bereits mit den Grundlagen von R vertraut sind, wie z.B.
-der Verwendung von RStudio, dem Laden von Daten und der Verwendung von R-Skripten.
+This module is aimed at people who already have experience with R and want to learn how to use AI tools to support their programming in RStudio.
+It is assumed that participants are already familiar with the basics of R, such as
+using RStudio, loading data, and using R scripts.
 
-## Los geht's ...
+## Let's get started ...
 
 ------------------------------------------------------------------------
 
-[Besuchen Sie unsere Online Carpentry Lesson "AI-unterstütztes Programmieren in RStudio"](https://dr-eberle-zentrum.github.io/AI-supported-coding-in-RStudio/)
+[Visit our Online Carpentry Lesson "AI-supported Coding in RStudio"](https://dr-eberle-zentrum.github.io/AI-supported-coding-in-RStudio/)
 
 ------------------------------------------------------------------------
