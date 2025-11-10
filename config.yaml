@@ -66,6 +66,9 @@ contact: 'team@carpentries.org' # FIXME
 
 # Order of episodes in your lesson
 episodes: 
+- getting-started-with-copilot.md
+- where-ai-support.md
+- rstudio-autocompletion.md
 - introduction.md
 
 # Information for Learners
