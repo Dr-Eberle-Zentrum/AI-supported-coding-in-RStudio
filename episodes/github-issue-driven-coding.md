@@ -47,6 +47,7 @@ When you work on code while referencing a GitHub issue, AI assistants like Copil
 - Generate code that aligns with the stated requirements
 - Suggest implementations that match the issue's acceptance criteria
 - Help maintain consistency across related changes
+- Enable parallelizing progress on multiple subtasks when issues are well-defined
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
