@@ -10,7 +10,13 @@
     <loc>https://Dr-Eberle-Zentrum.github.io/AI-supported-coding-in-RStudio/LICENSE.html</loc>
   </url>
   <url>
+    <loc>https://Dr-Eberle-Zentrum.github.io/AI-supported-coding-in-RStudio/ai-pipelines-ellmer.html</loc>
+  </url>
+  <url>
     <loc>https://Dr-Eberle-Zentrum.github.io/AI-supported-coding-in-RStudio/aio.html</loc>
+  </url>
+  <url>
+    <loc>https://Dr-Eberle-Zentrum.github.io/AI-supported-coding-in-RStudio/getting-started-with-copilot.html</loc>
   </url>
   <url>
     <loc>https://Dr-Eberle-Zentrum.github.io/AI-supported-coding-in-RStudio/images.html</loc>
@@ -28,7 +34,13 @@
     <loc>https://Dr-Eberle-Zentrum.github.io/AI-supported-coding-in-RStudio/instructor/LICENSE.html</loc>
   </url>
   <url>
+    <loc>https://Dr-Eberle-Zentrum.github.io/AI-supported-coding-in-RStudio/instructor/ai-pipelines-ellmer.html</loc>
+  </url>
+  <url>
     <loc>https://Dr-Eberle-Zentrum.github.io/AI-supported-coding-in-RStudio/instructor/aio.html</loc>
+  </url>
+  <url>
+    <loc>https://Dr-Eberle-Zentrum.github.io/AI-supported-coding-in-RStudio/instructor/getting-started-with-copilot.html</loc>
   </url>
   <url>
     <loc>https://Dr-Eberle-Zentrum.github.io/AI-supported-coding-in-RStudio/instructor/images.html</loc>
@@ -52,6 +64,15 @@
     <loc>https://Dr-Eberle-Zentrum.github.io/AI-supported-coding-in-RStudio/instructor/reference.html</loc>
   </url>
   <url>
+    <loc>https://Dr-Eberle-Zentrum.github.io/AI-supported-coding-in-RStudio/instructor/revise-code-with-ai.html</loc>
+  </url>
+  <url>
+    <loc>https://Dr-Eberle-Zentrum.github.io/AI-supported-coding-in-RStudio/instructor/rstudio-autocompletion.html</loc>
+  </url>
+  <url>
+    <loc>https://Dr-Eberle-Zentrum.github.io/AI-supported-coding-in-RStudio/instructor/where-ai-support.html</loc>
+  </url>
+  <url>
     <loc>https://Dr-Eberle-Zentrum.github.io/AI-supported-coding-in-RStudio/instructor-notes.html</loc>
   </url>
   <url>
@@ -65,5 +86,14 @@
   </url>
   <url>
     <loc>https://Dr-Eberle-Zentrum.github.io/AI-supported-coding-in-RStudio/reference.html</loc>
+  </url>
+  <url>
+    <loc>https://Dr-Eberle-Zentrum.github.io/AI-supported-coding-in-RStudio/revise-code-with-ai.html</loc>
+  </url>
+  <url>
+    <loc>https://Dr-Eberle-Zentrum.github.io/AI-supported-coding-in-RStudio/rstudio-autocompletion.html</loc>
+  </url>
+  <url>
+    <loc>https://Dr-Eberle-Zentrum.github.io/AI-supported-coding-in-RStudio/where-ai-support.html</loc>
   </url>
 </urlset>

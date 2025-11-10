@@ -65,6 +65,11 @@ contact: 'info@eberle-zentrum.uni-tuebingen.de' # FIXME
 
 # Order of episodes in your lesson
 episodes: 
+- getting-started-with-copilot.md
+- where-ai-support.md
+- rstudio-autocompletion.md
+- ai-pipelines-ellmer.md
+- revise-code-with-ai.md
 - introduction.md
 
 # Information for Learners

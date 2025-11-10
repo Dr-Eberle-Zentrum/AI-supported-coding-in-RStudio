@@ -244,7 +244,67 @@
 <div class="accordion accordion-flush" id="accordionFlush2">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading2">
-        <a href="introduction.html">1. Using Markdown</a>
+        <a href="getting-started-with-copilot.html">1. Getting Started with GitHub Copilot</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush3">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading3">
+        <a href="where-ai-support.html">2. Where Do We Need AI Support?</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush4">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading4">
+        <a href="rstudio-autocompletion.html">3. RStudio Autocompletion with Copilot</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush5">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading5">
+        <a href="ai-pipelines-ellmer.html">4. Using AI within Pipelines via ellmer</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush6">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading6">
+        <a href="revise-code-with-ai.html">5. Revise Your Code with AI</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush7">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading7">
+        <a href="introduction.html">6. Using Markdown</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -308,7 +368,2710 @@
     <main id="main-content" class="main-content"><div class="container lesson-content">
         
         
-<section id="aio-introduction"><p>Content from <a href="introduction.html">Using Markdown</a></p>
+<section id="aio-getting-started-with-copilot"><p>Content from <a href="getting-started-with-copilot.html">Getting Started with GitHub Copilot</a></p>
+<hr>
+<p>Last updated on 2025-11-10 |
+
+        <a href="https://github.com/Dr-Eberle-Zentrum/AI-supported-coding-in-RStudio/edit/main/episodes/getting-started-with-copilot.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+<p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 30 minutes</p>
+<div class="text-end">
+          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
+        </div>
+<div class="overview card">
+<h2 class="card-header">Overview</h2>
+<div class="row g-0">
+<div class="col-md-4">
+<div class="card-body">
+<div class="inner">
+<h3 class="card-title">Questions</h3>
+<ul>
+<li>How do I register for a GitHub account?</li>
+<li>How can I get free GitHub Copilot access as a student?</li>
+<li>How do I set up GitHub Copilot in RStudio?</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-8">
+<div class="card-body">
+<div class="inner bordered">
+<h3 class="card-title">Objectives</h3>
+<ul>
+<li>Create a GitHub account</li>
+<li>Apply for GitHub Student Developer Pack</li>
+<li>Install and configure GitHub Copilot in RStudio</li>
+<li>Verify GitHub Copilot is working as an autocompletion tool</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<section><h2 class="section-heading" id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
+</h2>
+<hr class="half-width">
+<p>GitHub Copilot is an AI-powered code completion tool that can
+significantly enhance your coding experience in RStudio. This chapter
+will guide you through the process of setting up GitHub Copilot, from
+creating a GitHub account to configuring it in RStudio.</p>
+</section><section><h2 class="section-heading" id="registering-with-github">Registering with GitHub<a class="anchor" aria-label="anchor" href="#registering-with-github"></a>
+</h2>
+<hr class="half-width">
+<p>If you don’t already have a GitHub account, follow these steps:</p>
+<ol style="list-style-type: decimal">
+<li>Navigate to <a href="https://github.com" class="external-link">github.com</a>
+</li>
+<li>Click the “Sign up” button in the top right corner</li>
+<li>Enter your email address (preferably your university/institutional
+email)</li>
+<li>Create a strong password</li>
+<li>Choose a username</li>
+<li>Verify your account through the email confirmation</li>
+</ol>
+<div id="why-use-your-university-email" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div id="why-use-your-university-email" class="callout-inner">
+<h3 class="callout-title">Why use your university email?</h3>
+<div class="callout-content">
+<p>Using your university or institutional email address makes it easier
+to verify your student status when applying for the GitHub Student
+Developer Pack.</p>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="requesting-github-student-developer-pack">Requesting GitHub Student Developer Pack<a class="anchor" aria-label="anchor" href="#requesting-github-student-developer-pack"></a>
+</h2>
+<hr class="half-width">
+<p>GitHub offers free access to GitHub Copilot and other premium
+features to students through the GitHub Student Developer Pack.</p>
+<div class="section level3">
+<h3 id="steps-to-apply">Steps to Apply<a class="anchor" aria-label="anchor" href="#steps-to-apply"></a>
+</h3>
+<ol style="list-style-type: decimal">
+<li>Go to <a href="https://education.github.com/pack" class="external-link">education.github.com/pack</a>
+</li>
+<li>Click on “Sign up for Student Developer Pack”</li>
+<li>Sign in with your GitHub account if not already logged in</li>
+<li>Fill out the application form:
+<ul>
+<li>Select your school from the dropdown (or enter it manually)</li>
+<li>Provide your school-issued email address</li>
+<li>Describe how you plan to use GitHub (e.g., “For coursework and
+research projects”)</li>
+</ul>
+</li>
+<li>Upload proof of enrollment:
+<ul>
+<li>Student ID card</li>
+<li>Official enrollment letter</li>
+<li>Transcript or other academic document</li>
+</ul>
+</li>
+<li>Submit your application</li>
+</ol>
+<div id="application-processing-time" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div id="application-processing-time" class="callout-inner">
+<h3 class="callout-title">Application Processing Time</h3>
+<div class="callout-content">
+<p>GitHub typically processes student applications within a few days,
+but it can take up to 2 weeks. You’ll receive an email notification once
+your application is approved.</p>
+</div>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="installing-github-copilot-in-rstudio">Installing GitHub Copilot in RStudio<a class="anchor" aria-label="anchor" href="#installing-github-copilot-in-rstudio"></a>
+</h2>
+<hr class="half-width">
+<p>Once your GitHub Student Developer Pack is approved, you can set up
+GitHub Copilot in RStudio.</p>
+<div class="section level3">
+<h3 id="prerequisites">Prerequisites<a class="anchor" aria-label="anchor" href="#prerequisites"></a>
+</h3>
+<ul>
+<li>RStudio version 2022.02 or later</li>
+<li>GitHub account with Copilot access</li>
+</ul>
+</div>
+<div class="section level3">
+<h3 id="installation-steps">Installation Steps<a class="anchor" aria-label="anchor" href="#installation-steps"></a>
+</h3>
+<ol style="list-style-type: decimal">
+<li>
+<strong>Install the GitHub Copilot extension in RStudio:</strong>
+<ul>
+<li>Open RStudio</li>
+<li>Go to <code>Tools</code> → <code>Global Options</code>
+</li>
+<li>Select <code>Copilot</code> from the left sidebar</li>
+<li>Click “Enable GitHub Copilot”</li>
+<li>If the Copilot option is not available, make sure you’re running
+RStudio 2022.02 or later</li>
+</ul>
+</li>
+<li>
+<strong>Sign in to GitHub:</strong>
+<ul>
+<li>Click “Sign in to GitHub” in the Copilot settings</li>
+<li>A browser window will open asking you to authorize RStudio</li>
+<li>Click “Authorize” to grant RStudio access to your GitHub
+account</li>
+<li>You may be asked to enter a device code - copy the code shown in
+RStudio and paste it into the browser</li>
+</ul>
+</li>
+<li>
+<strong>Verify the connection:</strong>
+<ul>
+<li>Return to RStudio</li>
+<li>You should see a confirmation that GitHub Copilot is enabled</li>
+<li>The status should show “GitHub Copilot: Active”</li>
+</ul>
+</li>
+</ol>
+<div id="challenge-1-test-github-copilot" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<span class="callout-header">Challenge</span>
+<div id="challenge-1-test-github-copilot" class="callout-inner">
+<h3 class="callout-title">Challenge 1: Test GitHub Copilot</h3>
+<div class="callout-content">
+<p>Open a new R script in RStudio and try typing a comment describing a
+function, such as:</p>
+<div class="codewrapper sourceCode" id="cb1">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Function to calculate the mean of a numeric vector</span></span></code></pre>
+</div>
+<p>Does GitHub Copilot suggest a function implementation?</p>
+</div>
+</div>
+</div>
+<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
+  <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
+</button>
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div class="accordion-body">
+<p>GitHub Copilot should suggest a function implementation below your
+comment. The suggestion might look something like:</p>
+<div class="codewrapper sourceCode" id="cb2">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Function to calculate the mean of a numeric vector</span></span>
+<span><span class="va">calculate_mean</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="fu">sum</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">/</span> <span class="fu">length</span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span>
+<span><span class="op">}</span></span></code></pre>
+</div>
+<p>You can accept the suggestion by pressing <code>Tab</code> or
+continue typing to see alternative suggestions.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="configuring-copilot-settings">Configuring Copilot Settings<a class="anchor" aria-label="anchor" href="#configuring-copilot-settings"></a>
+</h2>
+<hr class="half-width">
+<p>You can customize how GitHub Copilot works in RStudio:</p>
+<ol style="list-style-type: decimal">
+<li>Go to <code>Tools</code> → <code>Global Options</code> →
+<code>Copilot</code>
+</li>
+<li>Adjust settings such as:
+<ul>
+<li>
+<strong>Enable/Disable Copilot:</strong> Toggle Copilot on or
+off</li>
+<li>
+<strong>Suggestion mode:</strong> Configure how suggestions
+appear</li>
+<li>
+<strong>Keybindings:</strong> Customize keyboard shortcuts for
+accepting suggestions</li>
+</ul>
+</li>
+</ol>
+<div id="tips-for-using-copilot" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div id="tips-for-using-copilot" class="callout-inner">
+<h3 class="callout-title">Tips for Using Copilot</h3>
+<div class="callout-content">
+<ul>
+<li>Write clear, descriptive comments to get better suggestions</li>
+<li>Review all suggestions before accepting them</li>
+<li>Use Tab to accept a suggestion, or Esc to dismiss it</li>
+<li>Copilot learns from context, so well-structured code gets better
+suggestions</li>
+</ul>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="troubleshooting-common-issues">Troubleshooting Common Issues<a class="anchor" aria-label="anchor" href="#troubleshooting-common-issues"></a>
+</h2>
+<hr class="half-width">
+<div class="section level3">
+<h3 id="copilot-is-not-showing-suggestions">Copilot is not showing suggestions<a class="anchor" aria-label="anchor" href="#copilot-is-not-showing-suggestions"></a>
+</h3>
+<ul>
+<li>Verify that Copilot is enabled in settings</li>
+<li>Check that you’re signed in to GitHub</li>
+<li>Ensure your GitHub Copilot subscription is active</li>
+<li>Try restarting RStudio</li>
+</ul>
+</div>
+<div class="section level3">
+<h3 id="authorization-fails">Authorization fails<a class="anchor" aria-label="anchor" href="#authorization-fails"></a>
+</h3>
+<ul>
+<li>Clear your browser cache and try again</li>
+<li>Make sure you’re using the correct GitHub account</li>
+<li>Check that your GitHub Copilot access is active</li>
+</ul>
+<div id="keypoints1" class="callout keypoints">
+<div class="callout-square">
+<i class="callout-icon" data-feather="key"></i>
+</div>
+<span class="callout-header">Key Points</span>
+<div class="callout-inner">
+<div class="callout-content">
+<ul>
+<li>A GitHub account is required to use GitHub Copilot</li>
+<li>Students can get free GitHub Copilot access through the GitHub
+Student Developer Pack</li>
+<li>GitHub Copilot integrates directly into RStudio as an autocompletion
+tool</li>
+<li>Test Copilot by writing descriptive comments and observing the
+suggestions</li>
+<li>Copilot can be customized through RStudio’s settings</li>
+</ul>
+</div>
+</div>
+</div>
+<!--
+Place links that you need to refer to multiple times across pages here. Delete
+any links that you are not going to use.
+ -->
+</div>
+</section></section><section id="aio-where-ai-support"><p>Content from <a href="where-ai-support.html">Where Do We Need AI Support?</a></p>
+<hr>
+<p>Last updated on 2025-11-10 |
+
+        <a href="https://github.com/Dr-Eberle-Zentrum/AI-supported-coding-in-RStudio/edit/main/episodes/where-ai-support.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+<p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 25 minutes</p>
+<div class="text-end">
+          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
+        </div>
+<div class="overview card">
+<h2 class="card-header">Overview</h2>
+<div class="row g-0">
+<div class="col-md-4">
+<div class="card-body">
+<div class="inner">
+<h3 class="card-title">Questions</h3>
+<ul>
+<li>What types of coding tasks can benefit from AI assistance?</li>
+<li>When should we use AI coding assistants and when shouldn’t we?</li>
+<li>What are the limitations of AI-powered coding tools?</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-8">
+<div class="card-body">
+<div class="inner bordered">
+<h3 class="card-title">Objectives</h3>
+<ul>
+<li>Identify scenarios where AI coding assistants are most helpful</li>
+<li>Understand the limitations and potential pitfalls of AI-generated
+code</li>
+<li>Develop a balanced approach to using AI in coding workflows</li>
+<li>Recognize when human expertise is essential</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<section><h2 class="section-heading" id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
+</h2>
+<hr class="half-width">
+<p>AI-powered coding assistants like GitHub Copilot have revolutionized
+how we write code, but understanding when and how to use them
+effectively is crucial. This chapter explores the scenarios where AI
+support is most beneficial and where caution is needed.</p>
+</section><section><h2 class="section-heading" id="scenarios-where-ai-assistants-excel">Scenarios Where AI Assistants Excel<a class="anchor" aria-label="anchor" href="#scenarios-where-ai-assistants-excel"></a>
+</h2>
+<hr class="half-width">
+<div class="section level3">
+<h3 id="boilerplate-code-generation">1. Boilerplate Code Generation<a class="anchor" aria-label="anchor" href="#boilerplate-code-generation"></a>
+</h3>
+<p>AI assistants are particularly effective at generating repetitive,
+standard code patterns:</p>
+<ul>
+<li>Function templates and class structures</li>
+<li>Data validation checks</li>
+<li>Common data transformations</li>
+<li>Standard file I/O operations</li>
+</ul>
+<div id="challenge-1-identify-boilerplate-code" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<span class="callout-header">Challenge</span>
+<div id="challenge-1-identify-boilerplate-code" class="callout-inner">
+<h3 class="callout-title">Challenge 1: Identify Boilerplate Code</h3>
+<div class="callout-content">
+<p>Think about your recent coding projects. List 2-3 examples of
+repetitive code patterns you frequently write that could benefit from AI
+assistance.</p>
+</div>
+</div>
+</div>
+<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
+  <h4 class="accordion-header" id="headingSolution1">
+  Example Solutions
+  </h4>
+</button>
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div class="accordion-body">
+<p>Examples might include: - Reading CSV files and performing basic data
+cleaning - Creating standard plotting functions with ggplot2 - Writing
+function documentation in roxygen2 format - Setting up standard data
+frame transformations with dplyr</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section level3">
+<h3 id="code-completion-and-syntax">2. Code Completion and Syntax<a class="anchor" aria-label="anchor" href="#code-completion-and-syntax"></a>
+</h3>
+<p>AI can help with: - Completing function arguments - Suggesting
+appropriate function names from loaded packages - Correcting syntax
+errors - Providing context-aware variable names</p>
+</div>
+<div class="section level3">
+<h3 id="documentation-and-comments">3. Documentation and Comments<a class="anchor" aria-label="anchor" href="#documentation-and-comments"></a>
+</h3>
+<p>Writing clear documentation is time-consuming but essential. AI can
+assist with: - Generating function documentation - Creating informative
+code comments - Writing README files - Producing example usage code</p>
+</div>
+<div class="section level3">
+<h3 id="learning-new-libraries-and-functions">4. Learning New Libraries and Functions<a class="anchor" aria-label="anchor" href="#learning-new-libraries-and-functions"></a>
+</h3>
+<p>When working with unfamiliar packages or functions: - AI can suggest
+appropriate functions for specific tasks - Provide example
+implementations - Offer alternative approaches</p>
+</div>
+</section><section><h2 class="section-heading" id="scenarios-requiring-caution">Scenarios Requiring Caution<a class="anchor" aria-label="anchor" href="#scenarios-requiring-caution"></a>
+</h2>
+<hr class="half-width">
+<div class="section level3">
+<h3 id="complex-logic-and-algorithms">1. Complex Logic and Algorithms<a class="anchor" aria-label="anchor" href="#complex-logic-and-algorithms"></a>
+</h3>
+<p>AI assistants may struggle with: - Domain-specific algorithms -
+Complex statistical methods - Unique business logic -
+Performance-critical code</p>
+<div id="critical-review-required" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div id="critical-review-required" class="callout-inner">
+<h3 class="callout-title">Critical Review Required</h3>
+<div class="callout-content">
+<p>Always carefully review AI-generated code for: - Logical correctness
+- Edge case handling - Performance implications - Security
+vulnerabilities</p>
+</div>
+</div>
+</div>
+</div>
+<div class="section level3">
+<h3 id="project-specific-requirements">2. Project-Specific Requirements<a class="anchor" aria-label="anchor" href="#project-specific-requirements"></a>
+</h3>
+<p>AI may not understand: - Specific coding standards in your project -
+Custom architectural patterns - Project-specific constraints - Team
+conventions and best practices</p>
+</div>
+<div class="section level3">
+<h3 id="data-privacy-and-security">3. Data Privacy and Security<a class="anchor" aria-label="anchor" href="#data-privacy-and-security"></a>
+</h3>
+<p>Be cautious when: - Working with sensitive or proprietary data -
+Implementing security-critical features - Handling authentication and
+authorization - Processing personal information</p>
+<div id="data-privacy-considerations" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div id="data-privacy-considerations" class="callout-inner">
+<h3 class="callout-title">Data Privacy Considerations</h3>
+<div class="callout-content">
+<p>Remember that code sent to AI services may be used for training.
+Never include: - API keys or passwords - Proprietary algorithms -
+Sensitive data - Personal information</p>
+</div>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="limitations-of-ai-coding-assistants">Limitations of AI Coding Assistants<a class="anchor" aria-label="anchor" href="#limitations-of-ai-coding-assistants"></a>
+</h2>
+<hr class="half-width">
+<div class="section level3">
+<h3 id="understanding-context">Understanding Context<a class="anchor" aria-label="anchor" href="#understanding-context"></a>
+</h3>
+<ul>
+<li>AI may miss broader project context</li>
+<li>Limited understanding of project history and evolution</li>
+<li>Cannot always infer implicit requirements</li>
+</ul>
+</div>
+<div class="section level3">
+<h3 id="code-quality">Code Quality<a class="anchor" aria-label="anchor" href="#code-quality"></a>
+</h3>
+<ul>
+<li>Generated code may not follow best practices</li>
+<li>Potential for introducing subtle bugs</li>
+<li>May suggest outdated or deprecated approaches</li>
+</ul>
+</div>
+<div class="section level3">
+<h3 id="dependency-on-training-data">Dependency on Training Data<a class="anchor" aria-label="anchor" href="#dependency-on-training-data"></a>
+</h3>
+<ul>
+<li>Biased toward common patterns seen in training data</li>
+<li>May not know about very recent updates or libraries</li>
+<li>Could suggest obsolete methods</li>
+</ul>
+<div id="challenge-2-evaluate-ai-suggestions" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<span class="callout-header">Challenge</span>
+<div id="challenge-2-evaluate-ai-suggestions" class="callout-inner">
+<h3 class="callout-title">Challenge 2: Evaluate AI Suggestions</h3>
+<div class="callout-content">
+<p>Consider this scenario: You ask an AI assistant to generate code for
+a statistical analysis. What questions should you ask yourself before
+accepting the suggestion?</p>
+</div>
+</div>
+</div>
+<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
+  <h4 class="accordion-header" id="headingSolution2">
+  Questions to Consider
+  </h4>
+</button>
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div class="accordion-body">
+<p>Before accepting AI-generated code, ask: 1. Does this code produce
+statistically valid results? 2. Are the assumptions appropriate for my
+data? 3. Does it handle missing data correctly? 4. Are there edge cases
+that aren’t covered? 5. Is this the most efficient approach? 6. Does it
+align with best practices in my field?</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="developing-a-balanced-approach">Developing a Balanced Approach<a class="anchor" aria-label="anchor" href="#developing-a-balanced-approach"></a>
+</h2>
+<hr class="half-width">
+<div class="section level3">
+<h3 id="best-practices-for-using-ai-assistants">Best Practices for Using AI Assistants<a class="anchor" aria-label="anchor" href="#best-practices-for-using-ai-assistants"></a>
+</h3>
+<ol style="list-style-type: decimal">
+<li>
+<strong>Start with a clear goal:</strong> Know what you want to
+achieve before asking for AI help</li>
+<li>
+<strong>Review and understand:</strong> Never accept suggestions
+blindly</li>
+<li>
+<strong>Test thoroughly:</strong> Validate all AI-generated
+code</li>
+<li>
+<strong>Iterate and refine:</strong> Use AI suggestions as a
+starting point, not the final solution</li>
+<li>
+<strong>Maintain ownership:</strong> You are responsible for the
+code in your project</li>
+</ol>
+</div>
+<div class="section level3">
+<h3 id="when-to-rely-on-human-expertise">When to Rely on Human Expertise<a class="anchor" aria-label="anchor" href="#when-to-rely-on-human-expertise"></a>
+</h3>
+<p>Prioritize human judgment for: - Critical decision-making about
+architecture and design - Code review and quality assessment -
+Understanding domain-specific requirements - Ethical considerations in
+code implementation - Debugging complex issues</p>
+<div id="group-discussion" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
+</div>
+<span class="callout-header">Discussion</span>
+<div id="group-discussion" class="callout-inner">
+<h3 class="callout-title">Group Discussion</h3>
+<div class="callout-content">
+<p>In small groups, discuss: - Have you used AI coding assistants
+before? What was your experience? - Can you share an example where AI
+helped you solve a problem? - Can you share an example where AI
+suggestions were incorrect or unhelpful? - How do you decide when to use
+AI assistance versus figuring things out yourself?</p>
+</div>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="the-future-of-ai-in-coding">The Future of AI in Coding<a class="anchor" aria-label="anchor" href="#the-future-of-ai-in-coding"></a>
+</h2>
+<hr class="half-width">
+<p>AI assistants are rapidly evolving. As they improve, we should: -
+Stay informed about new capabilities and limitations - Continuously
+refine our approach to using these tools - Share knowledge about
+effective practices with colleagues - Contribute to discussions about
+responsible AI use in software development</p>
+<div id="keypoints1" class="callout keypoints">
+<div class="callout-square">
+<i class="callout-icon" data-feather="key"></i>
+</div>
+<span class="callout-header">Key Points</span>
+<div class="callout-inner">
+<div class="callout-content">
+<ul>
+<li>AI assistants excel at generating boilerplate code, completing
+syntax, and helping with documentation</li>
+<li>Use caution with complex logic, project-specific requirements, and
+security-critical code</li>
+<li>Always review and test AI-generated code thoroughly</li>
+<li>AI assistants are tools to augment, not replace, human
+expertise</li>
+<li>Develop a balanced approach that leverages AI strengths while
+maintaining code quality and security</li>
+</ul>
+</div>
+</div>
+</div>
+<!--
+Place links that you need to refer to multiple times across pages here. Delete
+any links that you are not going to use.
+ -->
+</section></section><section id="aio-rstudio-autocompletion"><p>Content from <a href="rstudio-autocompletion.html">RStudio Autocompletion with Copilot</a></p>
+<hr>
+<p>Last updated on 2025-11-10 |
+
+        <a href="https://github.com/Dr-Eberle-Zentrum/AI-supported-coding-in-RStudio/edit/main/episodes/rstudio-autocompletion.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+<p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 40 minutes</p>
+<div class="text-end">
+          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
+        </div>
+<div class="overview card">
+<h2 class="card-header">Overview</h2>
+<div class="row g-0">
+<div class="col-md-4">
+<div class="card-body">
+<div class="inner">
+<h3 class="card-title">Questions</h3>
+<ul>
+<li>How does GitHub Copilot work as an autocompletion tool in
+RStudio?</li>
+<li>What are the best practices for getting useful suggestions from
+Copilot?</li>
+<li>How can I accept, reject, or modify Copilot suggestions?</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-8">
+<div class="card-body">
+<div class="inner bordered">
+<h3 class="card-title">Objectives</h3>
+<ul>
+<li>Understand how GitHub Copilot generates code suggestions</li>
+<li>Learn techniques for writing effective prompts</li>
+<li>Practice accepting, rejecting, and modifying suggestions</li>
+<li>Develop efficient workflows using Copilot in RStudio</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<section><h2 class="section-heading" id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
+</h2>
+<hr class="half-width">
+<p>GitHub Copilot functions as an advanced autocompletion tool in
+RStudio, going beyond simple syntax completion to suggest entire lines
+or blocks of code. This chapter covers how to use Copilot effectively as
+an autocompletion assistant.</p>
+</section><section><h2 class="section-heading" id="how-copilot-works">How Copilot Works<a class="anchor" aria-label="anchor" href="#how-copilot-works"></a>
+</h2>
+<hr class="half-width">
+<p>GitHub Copilot uses machine learning models trained on billions of
+lines of public code to: - Analyze the context of your current code -
+Understand comments and function names - Predict what you’re trying to
+accomplish - Generate relevant code suggestions</p>
+<div id="context-is-key" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div id="context-is-key" class="callout-inner">
+<h3 class="callout-title">Context is Key</h3>
+<div class="callout-content">
+<p>Copilot examines: - Your current file’s code - Open files in RStudio
+- Comments you’ve written - Variable and function names - The structure
+of your code</p>
+<p>The more context you provide, the better the suggestions!</p>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="writing-effective-comments-for-better-suggestions">Writing Effective Comments for Better Suggestions<a class="anchor" aria-label="anchor" href="#writing-effective-comments-for-better-suggestions"></a>
+</h2>
+<hr class="half-width">
+<div class="section level3">
+<h3 id="comment-driven-development">Comment-Driven Development<a class="anchor" aria-label="anchor" href="#comment-driven-development"></a>
+</h3>
+<p>One of the most effective ways to use Copilot is to write descriptive
+comments first:</p>
+<p><strong>Good Example:</strong></p>
+<div class="codewrapper sourceCode" id="cb1">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Load data from CSV, remove rows with missing values, and convert date column to Date type</span></span></code></pre>
+</div>
+<p><strong>Less Effective:</strong></p>
+<div class="codewrapper sourceCode" id="cb2">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Load data</span></span></code></pre>
+</div>
+<div id="challenge-1-practice-writing-effective-comments" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<span class="callout-header">Challenge</span>
+<div id="challenge-1-practice-writing-effective-comments" class="callout-inner">
+<h3 class="callout-title">Challenge 1: Practice Writing Effective
+Comments</h3>
+<div class="callout-content">
+<p>Write a detailed comment describing what you want the code to do for
+the following scenario:</p>
+<p>You need to create a function that takes a data frame of student
+grades, calculates the average grade for each student, and returns only
+students with an average above 70.</p>
+</div>
+</div>
+</div>
+<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
+  <h4 class="accordion-header" id="headingSolution1">
+  Example Solution
+  </h4>
+</button>
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div class="accordion-body">
+<div class="codewrapper sourceCode" id="cb3">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Function to calculate average grades per student and filter for high performers</span></span>
+<span><span class="co"># Input: data frame with columns 'student_name' and 'grade'</span></span>
+<span><span class="co"># Output: data frame with columns 'student_name' and 'avg_grade' for students with avg &gt; 70</span></span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="accepting-and-managing-suggestions">Accepting and Managing Suggestions<a class="anchor" aria-label="anchor" href="#accepting-and-managing-suggestions"></a>
+</h2>
+<hr class="half-width">
+<div class="section level3">
+<h3 id="keyboard-shortcuts">Keyboard Shortcuts<a class="anchor" aria-label="anchor" href="#keyboard-shortcuts"></a>
+</h3>
+<ul>
+<li>
+<strong>Tab:</strong> Accept the entire suggestion</li>
+<li>
+<strong>Esc:</strong> Dismiss the current suggestion</li>
+<li>
+<strong>Alt + ]</strong> or <strong>Cmd + ]:</strong> See next
+suggestion (if available)</li>
+<li>
+<strong>Alt + [</strong> or <strong>Cmd + [:</strong> See previous
+suggestion</li>
+</ul>
+</div>
+<div class="section level3">
+<h3 id="partial-acceptance">Partial Acceptance<a class="anchor" aria-label="anchor" href="#partial-acceptance"></a>
+</h3>
+<p>You can accept suggestions word-by-word: - <strong>Ctrl + →</strong>
+or <strong>Cmd + →:</strong> Accept next word - This allows you to use
+parts of a suggestion while continuing to type</p>
+<div id="ghost-text" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div id="ghost-text" class="callout-inner">
+<h3 class="callout-title">Ghost Text</h3>
+<div class="callout-content">
+<p>Copilot suggestions appear as gray “ghost text” in your editor. This
+makes it easy to see suggestions without disrupting your coding
+flow.</p>
+</div>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="techniques-for-getting-better-suggestions">Techniques for Getting Better Suggestions<a class="anchor" aria-label="anchor" href="#techniques-for-getting-better-suggestions"></a>
+</h2>
+<hr class="half-width">
+<div class="section level3">
+<h3 id="provide-clear-function-signatures">1. Provide Clear Function Signatures<a class="anchor" aria-label="anchor" href="#provide-clear-function-signatures"></a>
+</h3>
+<p>Start with a clear function definition:</p>
+<div class="codewrapper sourceCode" id="cb4">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Copilot works better when you define function structure first</span></span>
+<span><span class="va">calculate_summary_stats</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">data</span>, <span class="va">group_var</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="co"># Calculate mean, median, and sd for each group</span></span>
+<span>  </span>
+<span><span class="op">}</span></span></code></pre>
+</div>
+</div>
+<div class="section level3">
+<h3 id="use-meaningful-variable-names">2. Use Meaningful Variable Names<a class="anchor" aria-label="anchor" href="#use-meaningful-variable-names"></a>
+</h3>
+<div class="codewrapper sourceCode" id="cb5">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Better - descriptive names help Copilot understand context</span></span>
+<span><span class="va">student_grades_df</span> <span class="op">&lt;-</span> <span class="fu">read.csv</span><span class="op">(</span><span class="st">"grades.csv"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Less helpful</span></span>
+<span><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu">read.csv</span><span class="op">(</span><span class="st">"grades.csv"</span><span class="op">)</span></span></code></pre>
+</div>
+</div>
+<div class="section level3">
+<h3 id="break-down-complex-tasks">3. Break Down Complex Tasks<a class="anchor" aria-label="anchor" href="#break-down-complex-tasks"></a>
+</h3>
+<p>Instead of asking for everything at once:</p>
+<div class="codewrapper sourceCode" id="cb6">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Step 1: Load and clean data</span></span>
+<span><span class="co"># Load CSV file with student information</span></span>
+<span></span>
+<span><span class="co"># Step 2: Calculate metrics</span></span>
+<span><span class="co"># Calculate average grade per student</span></span>
+<span></span>
+<span><span class="co"># Step 3: Filter results</span></span>
+<span><span class="co"># Keep only students with average above threshold</span></span></code></pre>
+</div>
+<div id="challenge-2-experiment-with-context" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<span class="callout-header">Challenge</span>
+<div id="challenge-2-experiment-with-context" class="callout-inner">
+<h3 class="callout-title">Challenge 2: Experiment with Context</h3>
+<div class="callout-content">
+<p>Try generating code for the same task with different levels of
+context:</p>
+<ol style="list-style-type: decimal">
+<li><p>Just type: <code>read.csv(</code></p></li>
+<li><p>Add a comment first:
+<code># Load student data from grades.csv</code> then
+<code>read.csv(</code></p></li>
+<li>
+<p>Add more context:</p>
+<div class="codewrapper sourceCode" id="cb7">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Data has columns: student_id, name, grade, date</span></span>
+<span><span class="co"># Load student data from grades.csv</span></span></code></pre>
+</div>
+<p>then <code>read.csv(</code></p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
+  <h4 class="accordion-header" id="headingSolution2">
+  Observation
+  </h4>
+</button>
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div class="accordion-body">
+<p>You should notice that: - With minimal context, Copilot might just
+complete the parentheses - With a comment, it might suggest the filename
+- With detailed context, it might suggest the filename AND additional
+parameters like <code>stringsAsFactors = FALSE</code> or
+<code>header = TRUE</code></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="working-with-different-types-of-suggestions">Working with Different Types of Suggestions<a class="anchor" aria-label="anchor" href="#working-with-different-types-of-suggestions"></a>
+</h2>
+<hr class="half-width">
+<div class="section level3">
+<h3 id="single-line-completions">Single-Line Completions<a class="anchor" aria-label="anchor" href="#single-line-completions"></a>
+</h3>
+<p>Best for: - Completing function calls - Finishing variable
+assignments - Adding package imports</p>
+<p>Example:</p>
+<div class="codewrapper sourceCode" id="cb8">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="fu">library</span>(<span class="co"># Copilot suggests: tidyverse)</span></span></code></pre>
+</div>
+</div>
+<div class="section level3">
+<h3 id="multi-line-suggestions">Multi-Line Suggestions<a class="anchor" aria-label="anchor" href="#multi-line-suggestions"></a>
+</h3>
+<p>Best for: - Function implementations - Code blocks (if/else, loops) -
+Multiple related operations</p>
+<p>Example:</p>
+<div class="codewrapper sourceCode" id="cb9">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Function to plot distribution with ggplot2</span></span>
+<span><span class="va">plot_distribution</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">data</span>, <span class="va">column</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="co"># Copilot may suggest entire function body</span></span>
+<span><span class="op">}</span></span></code></pre>
+</div>
+</div>
+<div class="section level3">
+<h3 id="alternative-suggestions">Alternative Suggestions<a class="anchor" aria-label="anchor" href="#alternative-suggestions"></a>
+</h3>
+<p>Copilot often has multiple suggestions. Cycle through them to find
+the best option: - Different approaches to the same problem - Various
+package implementations (base R vs. tidyverse) - Different levels of
+complexity</p>
+</div>
+</section><section><h2 class="section-heading" id="best-practices-for-efficient-workflow">Best Practices for Efficient Workflow<a class="anchor" aria-label="anchor" href="#best-practices-for-efficient-workflow"></a>
+</h2>
+<hr class="half-width">
+<div class="section level3">
+<h3 id="review-before-accepting">1. Review Before Accepting<a class="anchor" aria-label="anchor" href="#review-before-accepting"></a>
+</h3>
+<p>Always read the suggestion before pressing Tab: - Check for logical
+errors - Verify it matches your intent - Look for security issues</p>
+</div>
+<div class="section level3">
+<h3 id="iterate-and-refine">2. Iterate and Refine<a class="anchor" aria-label="anchor" href="#iterate-and-refine"></a>
+</h3>
+<ul>
+<li>Accept a suggestion as a starting point</li>
+<li>Modify it to fit your specific needs</li>
+<li>Add error handling and edge cases</li>
+</ul>
+</div>
+<div class="section level3">
+<h3 id="combine-with-traditional-coding">3. Combine with Traditional Coding<a class="anchor" aria-label="anchor" href="#combine-with-traditional-coding"></a>
+</h3>
+<ul>
+<li>Use Copilot for repetitive tasks</li>
+<li>Code critical logic yourself</li>
+<li>Let Copilot help with boilerplate</li>
+</ul>
+<div id="maintain-your-coding-skills" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div id="maintain-your-coding-skills" class="callout-inner">
+<h3 class="callout-title">Maintain Your Coding Skills</h3>
+<div class="callout-content">
+<p>While Copilot is helpful, continue to: - Understand the code you’re
+using - Practice writing code without assistance - Learn from the
+suggestions Copilot provides</p>
+</div>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="common-patterns-and-use-cases">Common Patterns and Use Cases<a class="anchor" aria-label="anchor" href="#common-patterns-and-use-cases"></a>
+</h2>
+<hr class="half-width">
+<div class="section level3">
+<h3 id="data-manipulation-with-dplyr">Data Manipulation with dplyr<a class="anchor" aria-label="anchor" href="#data-manipulation-with-dplyr"></a>
+</h3>
+<div class="codewrapper sourceCode" id="cb10">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="co"># Copilot excels at suggesting dplyr pipelines</span></span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a><span class="co"># Filter data for specific conditions and group by category</span></span>
+<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
+<span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a>  <span class="co"># Copilot suggests the rest</span></span></code></pre>
+</div>
+</div>
+<div class="section level3">
+<h3 id="creating-plots-with-ggplot2">Creating Plots with ggplot2<a class="anchor" aria-label="anchor" href="#creating-plots-with-ggplot2"></a>
+</h3>
+<div class="codewrapper sourceCode" id="cb11">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="co"># Create a scatter plot with regression line</span></span>
+<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> height, <span class="at">y =</span> weight)) <span class="sc">+</span></span>
+<span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a>  <span class="co"># Copilot suggests layers</span></span></code></pre>
+</div>
+</div>
+<div class="section level3">
+<h3 id="writing-functions">Writing Functions<a class="anchor" aria-label="anchor" href="#writing-functions"></a>
+</h3>
+<div class="codewrapper sourceCode" id="cb12">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Function to validate email addresses</span></span>
+<span><span class="va">validate_email</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">email</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="co"># Copilot suggests regex patterns and validation logic</span></span>
+<span><span class="op">}</span></span></code></pre>
+</div>
+<div id="challenge-3-build-a-function-with-copilot" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<span class="callout-header">Challenge</span>
+<div id="challenge-3-build-a-function-with-copilot" class="callout-inner">
+<h3 class="callout-title">Challenge 3: Build a Function with
+Copilot</h3>
+<div class="callout-content">
+<p>Use Copilot to help you create a function that: 1. Takes a numeric
+vector as input 2. Removes outliers (values &gt; 3 standard deviations
+from mean) 3. Returns the cleaned vector</p>
+<p>Start with a descriptive comment and function signature.</p>
+</div>
+</div>
+</div>
+<div id="accordionSolution3" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
+  <h4 class="accordion-header" id="headingSolution3">
+  Example Approach
+  </h4>
+</button>
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div class="accordion-body">
+<div class="codewrapper sourceCode" id="cb13">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Function to remove outliers from a numeric vector</span></span>
+<span><span class="co"># Outliers are defined as values more than 3 SD from the mean</span></span>
+<span><span class="co"># Input: numeric vector</span></span>
+<span><span class="co"># Output: numeric vector with outliers removed</span></span>
+<span><span class="va">remove_outliers</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span>, <span class="va">sd_threshold</span> <span class="op">=</span> <span class="fl">3</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="co"># Let Copilot suggest the implementation</span></span>
+<span>  <span class="co"># It might suggest something like:</span></span>
+<span>  <span class="va">mean_x</span> <span class="op">&lt;-</span> <span class="fu">mean</span><span class="op">(</span><span class="va">x</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span>  <span class="va">sd_x</span> <span class="op">&lt;-</span> <span class="fu">sd</span><span class="op">(</span><span class="va">x</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span>  <span class="va">x</span><span class="op">[</span><span class="fu">abs</span><span class="op">(</span><span class="va">x</span> <span class="op">-</span> <span class="va">mean_x</span><span class="op">)</span> <span class="op">&lt;=</span> <span class="va">sd_threshold</span> <span class="op">*</span> <span class="va">sd_x</span><span class="op">]</span></span>
+<span><span class="op">}</span></span></code></pre>
+</div>
+<p>Remember to test the function with sample data!</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="troubleshooting-suggestions">Troubleshooting Suggestions<a class="anchor" aria-label="anchor" href="#troubleshooting-suggestions"></a>
+</h2>
+<hr class="half-width">
+<div class="section level3">
+<h3 id="copilot-suggests-incorrect-code">Copilot Suggests Incorrect Code<a class="anchor" aria-label="anchor" href="#copilot-suggests-incorrect-code"></a>
+</h3>
+<ul>
+<li>Provide more specific comments</li>
+<li>Add type hints or example data structures</li>
+<li>Break down the task into smaller steps</li>
+</ul>
+</div>
+<div class="section level3">
+<h3 id="no-suggestions-appear">No Suggestions Appear<a class="anchor" aria-label="anchor" href="#no-suggestions-appear"></a>
+</h3>
+<ul>
+<li>Check that Copilot is enabled</li>
+<li>Verify your internet connection</li>
+<li>Provide more context with comments</li>
+<li>Wait a moment - suggestions can take a second to generate</li>
+</ul>
+</div>
+<div class="section level3">
+<h3 id="suggestions-dont-match-your-intent">Suggestions Don’t Match Your Intent<a class="anchor" aria-label="anchor" href="#suggestions-dont-match-your-intent"></a>
+</h3>
+<ul>
+<li>Rewrite your comment more specifically</li>
+<li>Add examples of input/output</li>
+<li>Specify the packages you want to use</li>
+</ul>
+</div>
+</section><section><h2 class="section-heading" id="advanced-tips">Advanced Tips<a class="anchor" aria-label="anchor" href="#advanced-tips"></a>
+</h2>
+<hr class="half-width">
+<div class="section level3">
+<h3 id="specifying-packages">Specifying Packages<a class="anchor" aria-label="anchor" href="#specifying-packages"></a>
+</h3>
+<div class="codewrapper sourceCode" id="cb14">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Using dplyr and tidyr to reshape data</span></span></code></pre>
+</div>
+</div>
+<div class="section level3">
+<h3 id="requesting-specific-approaches">Requesting Specific Approaches<a class="anchor" aria-label="anchor" href="#requesting-specific-approaches"></a>
+</h3>
+<div class="codewrapper sourceCode" id="cb15">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Using base R (not tidyverse) to calculate mean by group</span></span></code></pre>
+</div>
+</div>
+<div class="section level3">
+<h3 id="setting-constraints">Setting Constraints<a class="anchor" aria-label="anchor" href="#setting-constraints"></a>
+</h3>
+<div class="codewrapper sourceCode" id="cb16">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Function must handle NA values and return informative error messages</span></span></code></pre>
+</div>
+<div id="keypoints1" class="callout keypoints">
+<div class="callout-square">
+<i class="callout-icon" data-feather="key"></i>
+</div>
+<span class="callout-header">Key Points</span>
+<div class="callout-inner">
+<div class="callout-content">
+<ul>
+<li>Copilot generates suggestions based on context from your code and
+comments</li>
+<li>Write clear, descriptive comments to get better suggestions</li>
+<li>Use Tab to accept, Esc to dismiss, and Alt/Cmd + [ or ] to cycle
+through suggestions</li>
+<li>Break complex tasks into smaller steps for more accurate
+suggestions</li>
+<li>Always review and test AI-generated code before using it</li>
+<li>Combine Copilot assistance with your own coding expertise for best
+results</li>
+</ul>
+</div>
+</div>
+</div>
+<!--
+Place links that you need to refer to multiple times across pages here. Delete
+any links that you are not going to use.
+ -->
+</div>
+</section></section><section id="aio-ai-pipelines-ellmer"><p>Content from <a href="ai-pipelines-ellmer.html">Using AI within Pipelines via ellmer</a></p>
+<hr>
+<p>Last updated on 2025-11-10 |
+
+        <a href="https://github.com/Dr-Eberle-Zentrum/AI-supported-coding-in-RStudio/edit/main/episodes/ai-pipelines-ellmer.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+<p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 50 minutes</p>
+<div class="text-end">
+          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
+        </div>
+<div class="overview card">
+<h2 class="card-header">Overview</h2>
+<div class="row g-0">
+<div class="col-md-4">
+<div class="card-body">
+<div class="inner">
+<h3 class="card-title">Questions</h3>
+<ul>
+<li>What is ellmer and how does it integrate with AI models?</li>
+<li>How can I set up ellmer with GitHub Copilot in RStudio?</li>
+<li>How can I use AI prompts to process data within my analysis
+pipelines?</li>
+<li>What are the best practices for integrating AI into data processing
+workflows?</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-8">
+<div class="card-body">
+<div class="inner bordered">
+<h3 class="card-title">Objectives</h3>
+<ul>
+<li>Understand the ellmer package and its capabilities</li>
+<li>Install and configure ellmer for use with AI models</li>
+<li>Integrate AI prompts into data processing pipelines</li>
+<li>Apply AI-powered transformations to datasets</li>
+<li>Develop reproducible AI-enhanced workflows</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<section><h2 class="section-heading" id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
+</h2>
+<hr class="half-width">
+<p>The <code>ellmer</code> package provides a powerful interface for
+integrating large language models (LLMs) into R workflows. This enables
+you to leverage AI capabilities directly within your data processing
+pipelines, combining traditional statistical computing with modern AI
+assistance.</p>
+</section><section><h2 class="section-heading" id="what-is-ellmer">What is ellmer?<a class="anchor" aria-label="anchor" href="#what-is-ellmer"></a>
+</h2>
+<hr class="half-width">
+<p><code>ellmer</code> is an R package that provides a unified interface
+to various LLM providers, including: - GitHub Copilot (via GitHub
+Models) - OpenAI models - Anthropic Claude - Google Gemini - Local
+models via Ollama</p>
+<p>It allows you to: - Send prompts to AI models from R code - Process
+text data with AI assistance - Generate structured outputs - Stream
+responses for interactive applications</p>
+<div id="why-use-ellmer" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div id="why-use-ellmer" class="callout-inner">
+<h3 class="callout-title">Why Use ellmer?</h3>
+<div class="callout-content">
+<ul>
+<li>
+<strong>Unified API</strong>: Work with different AI providers using
+consistent syntax</li>
+<li>
+<strong>Pipeline Integration</strong>: Seamlessly incorporate AI
+into tidyverse workflows</li>
+<li>
+<strong>Reproducible</strong>: Track prompts and model versions for
+reproducible research</li>
+<li>
+<strong>Flexible</strong>: Switch between models without rewriting
+code</li>
+</ul>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="installing-ellmer">Installing ellmer<a class="anchor" aria-label="anchor" href="#installing-ellmer"></a>
+</h2>
+<hr class="half-width">
+<p>First, install the ellmer package from CRAN or GitHub:</p>
+<div class="codewrapper sourceCode" id="cb1">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Install from CRAN</span></span>
+<span><span class="fu">install.packages</span><span class="op">(</span><span class="st">"ellmer"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Or install development version from GitHub</span></span>
+<span><span class="co"># install.packages("remotes")</span></span>
+<span><span class="fu">remotes</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"tidyverse/ellmer"</span><span class="op">)</span></span></code></pre>
+</div>
+<p>Load the package:</p>
+<div class="codewrapper sourceCode" id="cb2">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw">library</span><span class="op">(</span><span class="va">ellmer</span><span class="op">)</span></span>
+<span><span class="kw">library</span><span class="op">(</span><span class="va">tidyverse</span><span class="op">)</span>  <span class="co"># For data manipulation</span></span></code></pre>
+</div>
+</section><section><h2 class="section-heading" id="setting-up-ellmer-with-github-copilot">Setting Up ellmer with GitHub Copilot<a class="anchor" aria-label="anchor" href="#setting-up-ellmer-with-github-copilot"></a>
+</h2>
+<hr class="half-width">
+<p>To use ellmer with GitHub Copilot (via GitHub Models), you need to
+set up authentication.</p>
+<div class="section level3">
+<h3 id="step-1-get-a-github-token">Step 1: Get a GitHub Token<a class="anchor" aria-label="anchor" href="#step-1-get-a-github-token"></a>
+</h3>
+<ol style="list-style-type: decimal">
+<li>Go to <a href="https://github.com/settings/tokens" class="external-link">github.com/settings/tokens</a>
+</li>
+<li>Click “Generate new token” → “Generate new token (classic)”</li>
+<li>Give it a descriptive name (e.g., “ellmer-access”)</li>
+<li>Select the required scopes (typically <code>repo</code> and
+<code>user</code>)</li>
+<li>Click “Generate token” and copy it immediately</li>
+</ol>
+</div>
+<div class="section level3">
+<h3 id="step-2-configure-your-token">Step 2: Configure Your Token<a class="anchor" aria-label="anchor" href="#step-2-configure-your-token"></a>
+</h3>
+<p>Store your token securely in your R environment:</p>
+<div class="codewrapper sourceCode" id="cb3">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Option 1: Set for the current session</span></span>
+<span><span class="fu">Sys.setenv</span><span class="op">(</span>GITHUB_TOKEN <span class="op">=</span> <span class="st">"your-token-here"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Option 2: Store permanently in .Renviron</span></span>
+<span><span class="fu">usethis</span><span class="fu">::</span><span class="fu">edit_r_environ</span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co"># Add this line: GITHUB_TOKEN=your-token-here</span></span>
+<span><span class="co"># Save and restart R</span></span></code></pre>
+</div>
+<div id="security-best-practice" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div id="security-best-practice" class="callout-inner">
+<h3 class="callout-title">Security Best Practice</h3>
+<div class="callout-content">
+<p>Never commit tokens or API keys to your code! Always use environment
+variables and add <code>.Renviron</code> to your <code>.gitignore</code>
+file.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="section level3">
+<h3 id="step-3-initialize-a-chat-object">Step 3: Initialize a Chat Object<a class="anchor" aria-label="anchor" href="#step-3-initialize-a-chat-object"></a>
+</h3>
+<div class="codewrapper sourceCode" id="cb4">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Create a chat session with GitHub Copilot</span></span>
+<span><span class="va">chat</span> <span class="op">&lt;-</span> <span class="fu">chat_github</span><span class="op">(</span><span class="st">"gpt-4o"</span><span class="op">)</span>  <span class="co"># or other available models</span></span>
+<span></span>
+<span><span class="co"># Test the connection</span></span>
+<span><span class="va">chat</span><span class="op">$</span><span class="fu">chat</span><span class="op">(</span><span class="st">"Hello! Can you help me analyze data in R?"</span><span class="op">)</span></span></code></pre>
+</div>
+<div id="challenge-1-setup-and-test-ellmer" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<span class="callout-header">Challenge</span>
+<div id="challenge-1-setup-and-test-ellmer" class="callout-inner">
+<h3 class="callout-title">Challenge 1: Setup and Test ellmer</h3>
+<div class="callout-content">
+<ol style="list-style-type: decimal">
+<li>Install the ellmer package</li>
+<li>Set up your GitHub token</li>
+<li>Create a chat object and send a test message</li>
+<li>Verify you receive a response</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
+  <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
+</button>
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div class="accordion-body">
+<div class="codewrapper sourceCode" id="cb5">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw">library</span><span class="op">(</span><span class="va">ellmer</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Set token (use your actual token)</span></span>
+<span><span class="fu">Sys.setenv</span><span class="op">(</span>GITHUB_TOKEN <span class="op">=</span> <span class="st">"ghp_your_token_here"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Create chat object</span></span>
+<span><span class="va">chat</span> <span class="op">&lt;-</span> <span class="fu">chat_github</span><span class="op">(</span><span class="st">"gpt-4o"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Test message</span></span>
+<span><span class="va">response</span> <span class="op">&lt;-</span> <span class="va">chat</span><span class="op">$</span><span class="fu">chat</span><span class="op">(</span><span class="st">"What are three uses of R in data science?"</span><span class="op">)</span></span>
+<span><span class="fu">print</span><span class="op">(</span><span class="va">response</span><span class="op">)</span></span></code></pre>
+</div>
+<p>You should receive a detailed response about R’s applications in data
+science.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="using-ai-for-data-processing">Using AI for Data Processing<a class="anchor" aria-label="anchor" href="#using-ai-for-data-processing"></a>
+</h2>
+<hr class="half-width">
+<div class="section level3">
+<h3 id="basic-text-processing">Basic Text Processing<a class="anchor" aria-label="anchor" href="#basic-text-processing"></a>
+</h3>
+<p>Process individual text strings with AI:</p>
+<div class="codewrapper sourceCode" id="cb6">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Classify sentiment</span></span>
+<span><span class="va">texts</span> <span class="op">&lt;-</span> <span class="fu">c</span><span class="op">(</span></span>
+<span>  <span class="st">"I love this product!"</span>,</span>
+<span>  <span class="st">"This is terrible."</span>,</span>
+<span>  <span class="st">"It's okay, not great."</span></span>
+<span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Use AI to classify sentiment</span></span>
+<span><span class="va">chat</span> <span class="op">&lt;-</span> <span class="fu">chat_github</span><span class="op">(</span><span class="st">"gpt-4o"</span><span class="op">)</span></span>
+<span><span class="va">results</span> <span class="op">&lt;-</span> <span class="fu">sapply</span><span class="op">(</span><span class="va">texts</span>, <span class="kw">function</span><span class="op">(</span><span class="va">text</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="va">chat</span><span class="op">$</span><span class="fu">chat</span><span class="op">(</span><span class="fu">paste</span><span class="op">(</span><span class="st">"Classify the sentiment (positive/negative/neutral):"</span>, <span class="va">text</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="op">}</span><span class="op">)</span></span></code></pre>
+</div>
+</div>
+<div class="section level3">
+<h3 id="processing-data-in-pipelines">Processing Data in Pipelines<a class="anchor" aria-label="anchor" href="#processing-data-in-pipelines"></a>
+</h3>
+<p>Integrate AI into tidyverse pipelines:</p>
+<div class="codewrapper sourceCode" id="cb7">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Example: Customer feedback analysis</span></span>
+<span><span class="va">feedback_data</span> <span class="op">&lt;-</span> <span class="fu">tibble</span><span class="op">(</span></span>
+<span>  id <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">5</span>,</span>
+<span>  comment <span class="op">=</span> <span class="fu">c</span><span class="op">(</span></span>
+<span>    <span class="st">"Great service, very helpful!"</span>,</span>
+<span>    <span class="st">"Long wait times, not happy."</span>,</span>
+<span>    <span class="st">"Average experience."</span>,</span>
+<span>    <span class="st">"Excellent quality and fast delivery!"</span>,</span>
+<span>    <span class="st">"Product arrived damaged."</span></span>
+<span>  <span class="op">)</span></span>
+<span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Add AI-powered sentiment analysis</span></span>
+<span><span class="va">feedback_processed</span> <span class="op">&lt;-</span> <span class="va">feedback_data</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">rowwise</span><span class="op">(</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">mutate</span><span class="op">(</span></span>
+<span>    sentiment <span class="op">=</span> <span class="va">chat</span><span class="op">$</span><span class="fu">chat</span><span class="op">(</span></span>
+<span>      <span class="fu">paste</span><span class="op">(</span><span class="st">"Classify as positive/negative/neutral:"</span>, <span class="va">comment</span><span class="op">)</span></span>
+<span>    <span class="op">)</span>,</span>
+<span>    key_themes <span class="op">=</span> <span class="va">chat</span><span class="op">$</span><span class="fu">chat</span><span class="op">(</span></span>
+<span>      <span class="fu">paste</span><span class="op">(</span><span class="st">"Extract main themes (max 3 words):"</span>, <span class="va">comment</span><span class="op">)</span></span>
+<span>    <span class="op">)</span></span>
+<span>  <span class="op">)</span></span></code></pre>
+</div>
+<div id="rate-limits-and-costs" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div id="rate-limits-and-costs" class="callout-inner">
+<h3 class="callout-title">Rate Limits and Costs</h3>
+<div class="callout-content">
+<p>Be aware of: - API rate limits for your chosen provider - Potential
+costs for API calls - Processing time for large datasets - Consider
+batching requests when possible</p>
+</div>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="advanced-structured-output-generation">Advanced: Structured Output Generation<a class="anchor" aria-label="anchor" href="#advanced-structured-output-generation"></a>
+</h2>
+<hr class="half-width">
+<p>Request structured data from AI models:</p>
+<div class="codewrapper sourceCode" id="cb8">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Extract structured information</span></span>
+<span><span class="va">extract_info</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">text</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="va">prompt</span> <span class="op">&lt;-</span> <span class="fu">paste0</span><span class="op">(</span></span>
+<span>    <span class="st">"Extract the following from this text and return as JSON:\n"</span>,</span>
+<span>    <span class="st">"- sentiment (positive/negative/neutral)\n"</span>,</span>
+<span>    <span class="st">"- urgency (high/medium/low)\n"</span>,</span>
+<span>    <span class="st">"- category (product/service/delivery/other)\n\n"</span>,</span>
+<span>    <span class="st">"Text: "</span>, <span class="va">text</span></span>
+<span>  <span class="op">)</span></span>
+<span>  </span>
+<span>  <span class="va">chat</span><span class="op">$</span><span class="fu">chat</span><span class="op">(</span><span class="va">prompt</span><span class="op">)</span></span>
+<span><span class="op">}</span></span>
+<span></span>
+<span><span class="co"># Apply to dataset</span></span>
+<span><span class="va">feedback_structured</span> <span class="op">&lt;-</span> <span class="va">feedback_data</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">rowwise</span><span class="op">(</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">mutate</span><span class="op">(</span>analysis <span class="op">=</span> <span class="fu">extract_info</span><span class="op">(</span><span class="va">comment</span><span class="op">)</span><span class="op">)</span></span></code></pre>
+</div>
+<div id="challenge-2-build-a-data-processing-pipeline" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<span class="callout-header">Challenge</span>
+<div id="challenge-2-build-a-data-processing-pipeline" class="callout-inner">
+<h3 class="callout-title">Challenge 2: Build a Data Processing
+Pipeline</h3>
+<div class="callout-content">
+<p>Create a pipeline that: 1. Takes a dataset with product reviews 2.
+Uses AI to classify the main topic of each review 3. Extracts a
+numerical satisfaction score (1-5) from the text 4. Summarizes
+findings</p>
+</div>
+</div>
+</div>
+<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
+  <h4 class="accordion-header" id="headingSolution2"> Example Solution </h4>
+</button>
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div class="accordion-body">
+<div class="codewrapper sourceCode" id="cb9">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw">library</span><span class="op">(</span><span class="va">ellmer</span><span class="op">)</span></span>
+<span><span class="kw">library</span><span class="op">(</span><span class="va">tidyverse</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Sample data</span></span>
+<span><span class="va">reviews</span> <span class="op">&lt;-</span> <span class="fu">tibble</span><span class="op">(</span></span>
+<span>  review_id <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">3</span>,</span>
+<span>  text <span class="op">=</span> <span class="fu">c</span><span class="op">(</span></span>
+<span>    <span class="st">"The software is intuitive but lacks some features. Rating: 4/5"</span>,</span>
+<span>    <span class="st">"Terrible experience, crashed multiple times. Very disappointed."</span>,</span>
+<span>    <span class="st">"Perfect for my needs! Easy to use and fast. Highly recommend."</span></span>
+<span>  <span class="op">)</span></span>
+<span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Initialize chat</span></span>
+<span><span class="va">chat</span> <span class="op">&lt;-</span> <span class="fu">chat_github</span><span class="op">(</span><span class="st">"gpt-4o"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Process with AI</span></span>
+<span><span class="va">results</span> <span class="op">&lt;-</span> <span class="va">reviews</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">rowwise</span><span class="op">(</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">mutate</span><span class="op">(</span></span>
+<span>    topic <span class="op">=</span> <span class="va">chat</span><span class="op">$</span><span class="fu">chat</span><span class="op">(</span><span class="fu">paste</span><span class="op">(</span><span class="st">"Main topic (1-2 words):"</span>, <span class="va">text</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>    score <span class="op">=</span> <span class="va">chat</span><span class="op">$</span><span class="fu">chat</span><span class="op">(</span><span class="fu">paste</span><span class="op">(</span><span class="st">"Satisfaction score 1-5:"</span>, <span class="va">text</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>    summary <span class="op">=</span> <span class="va">chat</span><span class="op">$</span><span class="fu">chat</span><span class="op">(</span><span class="fu">paste</span><span class="op">(</span><span class="st">"Summarize in 10 words:"</span>, <span class="va">text</span><span class="op">)</span><span class="op">)</span></span>
+<span>  <span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">ungroup</span><span class="op">(</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">print</span><span class="op">(</span><span class="va">results</span><span class="op">)</span></span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="best-practices-for-ai-in-pipelines">Best Practices for AI in Pipelines<a class="anchor" aria-label="anchor" href="#best-practices-for-ai-in-pipelines"></a>
+</h2>
+<hr class="half-width">
+<div class="section level3">
+<h3 id="design-clear-prompts">1. Design Clear Prompts<a class="anchor" aria-label="anchor" href="#design-clear-prompts"></a>
+</h3>
+<div class="codewrapper sourceCode" id="cb10">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Good: Specific and constrained</span></span>
+<span><span class="va">prompt</span> <span class="op">&lt;-</span> <span class="st">"Classify sentiment as: positive, negative, or neutral. </span></span>
+<span><span class="st">          Return only one word."</span></span>
+<span></span>
+<span><span class="co"># Less effective: Vague</span></span>
+<span><span class="va">prompt</span> <span class="op">&lt;-</span> <span class="st">"What do you think about this?"</span></span></code></pre>
+</div>
+</div>
+<div class="section level3">
+<h3 id="handle-errors-gracefully">2. Handle Errors Gracefully<a class="anchor" aria-label="anchor" href="#handle-errors-gracefully"></a>
+</h3>
+<div class="codewrapper sourceCode" id="cb11">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">safe_chat</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">chat</span>, <span class="va">prompt</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="kw">tryCatch</span><span class="op">(</span></span>
+<span>    <span class="va">chat</span><span class="op">$</span><span class="fu">chat</span><span class="op">(</span><span class="va">prompt</span><span class="op">)</span>,</span>
+<span>    error <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">e</span><span class="op">)</span> <span class="op">{</span></span>
+<span>      <span class="kw">warning</span><span class="op">(</span><span class="st">"API call failed: "</span>, <span class="va">e</span><span class="op">$</span><span class="va">message</span><span class="op">)</span></span>
+<span>      <span class="kw">return</span><span class="op">(</span><span class="cn">NA</span><span class="op">)</span></span>
+<span>    <span class="op">}</span></span>
+<span>  <span class="op">)</span></span>
+<span><span class="op">}</span></span>
+<span></span>
+<span><span class="co"># Use in pipeline</span></span>
+<span><span class="va">data</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">mutate</span><span class="op">(</span>ai_result <span class="op">=</span> <span class="fu">safe_chat</span><span class="op">(</span><span class="va">chat</span>, <span class="va">prompt</span><span class="op">)</span><span class="op">)</span></span></code></pre>
+</div>
+</div>
+<div class="section level3">
+<h3 id="cache-results">3. Cache Results<a class="anchor" aria-label="anchor" href="#cache-results"></a>
+</h3>
+<div class="codewrapper sourceCode" id="cb12">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Save processed results to avoid reprocessing</span></span>
+<span><span class="va">processed_data</span> <span class="op">&lt;-</span> <span class="va">data</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">mutate</span><span class="op">(</span>ai_field <span class="op">=</span> <span class="fu">process_with_ai</span><span class="op">(</span><span class="va">text</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Save to disk</span></span>
+<span><span class="fu">write_rds</span><span class="op">(</span><span class="va">processed_data</span>, <span class="st">"cache/processed_data.rds"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Load cached version later</span></span>
+<span><span class="va">processed_data</span> <span class="op">&lt;-</span> <span class="fu">read_rds</span><span class="op">(</span><span class="st">"cache/processed_data.rds"</span><span class="op">)</span></span></code></pre>
+</div>
+</div>
+<div class="section level3">
+<h3 id="use-batch-processing-for-large-datasets">4. Use Batch Processing for Large Datasets<a class="anchor" aria-label="anchor" href="#use-batch-processing-for-large-datasets"></a>
+</h3>
+<div class="codewrapper sourceCode" id="cb13">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Process in chunks to manage rate limits</span></span>
+<span><span class="va">process_in_batches</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">data</span>, <span class="va">batch_size</span> <span class="op">=</span> <span class="fl">10</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="va">data</span> <span class="op">%&gt;%</span></span>
+<span>    <span class="fu">mutate</span><span class="op">(</span>batch <span class="op">=</span> <span class="fu">ceiling</span><span class="op">(</span><span class="fu">row_number</span><span class="op">(</span><span class="op">)</span> <span class="op">/</span> <span class="va">batch_size</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>    <span class="fu">group_by</span><span class="op">(</span><span class="va">batch</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>    <span class="fu">mutate</span><span class="op">(</span>ai_result <span class="op">=</span> <span class="fu">process_with_ai</span><span class="op">(</span><span class="va">text</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>    <span class="fu">ungroup</span><span class="op">(</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>    <span class="fu">select</span><span class="op">(</span><span class="op">-</span><span class="va">batch</span><span class="op">)</span></span>
+<span><span class="op">}</span></span></code></pre>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="reproducibility-considerations">Reproducibility Considerations<a class="anchor" aria-label="anchor" href="#reproducibility-considerations"></a>
+</h2>
+<hr class="half-width">
+<p>Document your AI pipeline for reproducibility:</p>
+<div class="codewrapper sourceCode" id="cb14">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Record model and version</span></span>
+<span><span class="va">metadata</span> <span class="op">&lt;-</span> <span class="fu">list</span><span class="op">(</span></span>
+<span>  model <span class="op">=</span> <span class="st">"gpt-4o"</span>,</span>
+<span>  provider <span class="op">=</span> <span class="st">"github"</span>,</span>
+<span>  date <span class="op">=</span> <span class="fu">Sys.Date</span><span class="op">(</span><span class="op">)</span>,</span>
+<span>  ellmer_version <span class="op">=</span> <span class="fu">packageVersion</span><span class="op">(</span><span class="st">"ellmer"</span><span class="op">)</span>,</span>
+<span>  prompt_template <span class="op">=</span> <span class="st">"Classify sentiment: {text}"</span></span>
+<span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Save with results</span></span>
+<span><span class="fu">list</span><span class="op">(</span></span>
+<span>  data <span class="op">=</span> <span class="va">processed_data</span>,</span>
+<span>  metadata <span class="op">=</span> <span class="va">metadata</span></span>
+<span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">write_rds</span><span class="op">(</span><span class="st">"results_with_metadata.rds"</span><span class="op">)</span></span></code></pre>
+</div>
+<div id="group-discussion" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
+</div>
+<span class="callout-header">Discussion</span>
+<div id="group-discussion" class="callout-inner">
+<h3 class="callout-title">Group Discussion</h3>
+<div class="callout-content">
+<p>Consider the following questions: - What types of data processing
+tasks in your work could benefit from AI integration? - How would you
+balance reproducibility with using AI models that may change over time?
+- What ethical considerations arise when using AI to process data? - How
+do you validate the quality of AI-generated classifications or
+summaries?</p>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="real-world-use-cases">Real-World Use Cases<a class="anchor" aria-label="anchor" href="#real-world-use-cases"></a>
+</h2>
+<hr class="half-width">
+<div class="section level3">
+<h3 id="text-classification">Text Classification<a class="anchor" aria-label="anchor" href="#text-classification"></a>
+</h3>
+<div class="codewrapper sourceCode" id="cb15">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Categorize research abstracts</span></span>
+<span><span class="va">abstracts</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">mutate</span><span class="op">(</span>field <span class="op">=</span> <span class="va">chat</span><span class="op">$</span><span class="fu">chat</span><span class="op">(</span></span>
+<span>    <span class="fu">paste</span><span class="op">(</span><span class="st">"Research field (one word):"</span>, <span class="va">abstract</span><span class="op">)</span></span>
+<span>  <span class="op">)</span><span class="op">)</span></span></code></pre>
+</div>
+</div>
+<div class="section level3">
+<h3 id="data-cleaning">Data Cleaning<a class="anchor" aria-label="anchor" href="#data-cleaning"></a>
+</h3>
+<div class="codewrapper sourceCode" id="cb16">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Standardize inconsistent entries</span></span>
+<span><span class="va">messy_data</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">mutate</span><span class="op">(</span>cleaned <span class="op">=</span> <span class="va">chat</span><span class="op">$</span><span class="fu">chat</span><span class="op">(</span></span>
+<span>    <span class="fu">paste</span><span class="op">(</span><span class="st">"Standardize company name:"</span>, <span class="va">company_name_raw</span><span class="op">)</span></span>
+<span>  <span class="op">)</span><span class="op">)</span></span></code></pre>
+</div>
+</div>
+<div class="section level3">
+<h3 id="content-generation">Content Generation<a class="anchor" aria-label="anchor" href="#content-generation"></a>
+</h3>
+<div class="codewrapper sourceCode" id="cb17">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Generate descriptions</span></span>
+<span><span class="va">products</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">mutate</span><span class="op">(</span>description <span class="op">=</span> <span class="va">chat</span><span class="op">$</span><span class="fu">chat</span><span class="op">(</span></span>
+<span>    <span class="fu">paste</span><span class="op">(</span><span class="st">"Write 20-word product description for:"</span>, <span class="va">product_name</span><span class="op">)</span></span>
+<span>  <span class="op">)</span><span class="op">)</span></span></code></pre>
+</div>
+</div>
+<div class="section level3">
+<h3 id="translation-and-localization">Translation and Localization<a class="anchor" aria-label="anchor" href="#translation-and-localization"></a>
+</h3>
+<div class="codewrapper sourceCode" id="cb18">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Translate content</span></span>
+<span><span class="va">content</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">mutate</span><span class="op">(</span>translated <span class="op">=</span> <span class="va">chat</span><span class="op">$</span><span class="fu">chat</span><span class="op">(</span></span>
+<span>    <span class="fu">paste</span><span class="op">(</span><span class="st">"Translate to Spanish:"</span>, <span class="va">english_text</span><span class="op">)</span></span>
+<span>  <span class="op">)</span><span class="op">)</span></span></code></pre>
+</div>
+<div id="challenge-3-implement-a-complete-workflow" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<span class="callout-header">Challenge</span>
+<div id="challenge-3-implement-a-complete-workflow" class="callout-inner">
+<h3 class="callout-title">Challenge 3: Implement a Complete
+Workflow</h3>
+<div class="callout-content">
+<p>Choose a scenario and implement a complete AI-enhanced pipeline:</p>
+<p><strong>Option A</strong>: Analyze a dataset of tweets/social media
+posts <strong>Option B</strong>: Process customer support tickets
+<strong>Option C</strong>: Categorize research papers by topic</p>
+<p>Include error handling, caching, and metadata tracking.</p>
+</div>
+</div>
+</div>
+<div id="accordionSolution3" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
+  <h4 class="accordion-header" id="headingSolution3"> Example for Option B: Support Tickets </h4>
+</button>
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div class="accordion-body">
+<div class="codewrapper sourceCode" id="cb19">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw">library</span><span class="op">(</span><span class="va">ellmer</span><span class="op">)</span></span>
+<span><span class="kw">library</span><span class="op">(</span><span class="va">tidyverse</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Initialize</span></span>
+<span><span class="va">chat</span> <span class="op">&lt;-</span> <span class="fu">chat_github</span><span class="op">(</span><span class="st">"gpt-4o"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Process tickets</span></span>
+<span><span class="va">process_ticket</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">ticket_text</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="fu">list</span><span class="op">(</span></span>
+<span>    category <span class="op">=</span> <span class="fu">safe_chat</span><span class="op">(</span><span class="va">chat</span>, </span>
+<span>      <span class="fu">paste</span><span class="op">(</span><span class="st">"Category (billing/technical/account):"</span>, <span class="va">ticket_text</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>    priority <span class="op">=</span> <span class="fu">safe_chat</span><span class="op">(</span><span class="va">chat</span>,</span>
+<span>      <span class="fu">paste</span><span class="op">(</span><span class="st">"Priority (high/medium/low):"</span>, <span class="va">ticket_text</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>    suggested_response <span class="op">=</span> <span class="fu">safe_chat</span><span class="op">(</span><span class="va">chat</span>,</span>
+<span>      <span class="fu">paste</span><span class="op">(</span><span class="st">"Suggest 2-sentence response:"</span>, <span class="va">ticket_text</span><span class="op">)</span><span class="op">)</span></span>
+<span>  <span class="op">)</span></span>
+<span><span class="op">}</span></span>
+<span></span>
+<span><span class="co"># Apply to dataset</span></span>
+<span><span class="va">tickets_processed</span> <span class="op">&lt;-</span> <span class="va">tickets</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">rowwise</span><span class="op">(</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">mutate</span><span class="op">(</span>analysis <span class="op">=</span> <span class="fu">list</span><span class="op">(</span><span class="fu">process_ticket</span><span class="op">(</span><span class="va">description</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">unnest_wider</span><span class="op">(</span><span class="va">analysis</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Save with metadata</span></span>
+<span><span class="va">output</span> <span class="op">&lt;-</span> <span class="fu">list</span><span class="op">(</span></span>
+<span>  data <span class="op">=</span> <span class="va">tickets_processed</span>,</span>
+<span>  metadata <span class="op">=</span> <span class="fu">list</span><span class="op">(</span></span>
+<span>    processed <span class="op">=</span> <span class="fu">Sys.time</span><span class="op">(</span><span class="op">)</span>,</span>
+<span>    model <span class="op">=</span> <span class="st">"gpt-4o"</span>,</span>
+<span>    n_tickets <span class="op">=</span> <span class="fu">nrow</span><span class="op">(</span><span class="va">tickets</span><span class="op">)</span></span>
+<span>  <span class="op">)</span></span>
+<span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">write_rds</span><span class="op">(</span><span class="va">output</span>, <span class="st">"processed_tickets.rds"</span><span class="op">)</span></span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="troubleshooting-common-issues">Troubleshooting Common Issues<a class="anchor" aria-label="anchor" href="#troubleshooting-common-issues"></a>
+</h2>
+<hr class="half-width">
+<div class="section level3">
+<h3 id="authentication-errors">Authentication Errors<a class="anchor" aria-label="anchor" href="#authentication-errors"></a>
+</h3>
+<ul>
+<li>Verify your token is set correctly:
+<code>Sys.getenv("GITHUB_TOKEN")</code>
+</li>
+<li>Ensure token has required permissions</li>
+<li>Check token hasn’t expired</li>
+</ul>
+</div>
+<div class="section level3">
+<h3 id="rate-limiting">Rate Limiting<a class="anchor" aria-label="anchor" href="#rate-limiting"></a>
+</h3>
+<ul>
+<li>Implement delays between requests: <code>Sys.sleep(1)</code>
+</li>
+<li>Use batch processing</li>
+<li>Consider caching results</li>
+<li>Monitor API usage</li>
+</ul>
+</div>
+<div class="section level3">
+<h3 id="inconsistent-results">Inconsistent Results<a class="anchor" aria-label="anchor" href="#inconsistent-results"></a>
+</h3>
+<ul>
+<li>Make prompts more specific</li>
+<li>Add constraints to expected outputs</li>
+<li>Use temperature parameter (if supported)</li>
+<li>Validate and clean AI outputs</li>
+</ul>
+</div>
+</section><section><h2 class="section-heading" id="future-developments">Future Developments<a class="anchor" aria-label="anchor" href="#future-developments"></a>
+</h2>
+<hr class="half-width">
+<p>Stay updated with ellmer developments: - New model integrations -
+Enhanced streaming capabilities - Better error handling - Performance
+improvements</p>
+<p>Check the <a href="https://ellmer.tidyverse.org" class="external-link">ellmer
+documentation</a> regularly for updates.</p>
+<div id="keypoints1" class="callout keypoints">
+<div class="callout-square">
+<i class="callout-icon" data-feather="key"></i>
+</div>
+<span class="callout-header">Key Points</span>
+<div class="callout-inner">
+<div class="callout-content">
+<ul>
+<li>ellmer provides a unified interface for integrating LLMs into R
+workflows</li>
+<li>Set up authentication using environment variables for security</li>
+<li>Integrate AI prompts seamlessly into tidyverse pipelines</li>
+<li>Design clear, constrained prompts for consistent results</li>
+<li>Implement error handling and caching for robust pipelines</li>
+<li>Document models and prompts for reproducibility</li>
+<li>Consider rate limits, costs, and ethical implications when using AI
+in data processing</li>
+</ul>
+</div>
+</div>
+</div>
+<!--
+Place links that you need to refer to multiple times across pages here. Delete
+any links that you are not going to use.
+ -->
+</section></section><section id="aio-revise-code-with-ai"><p>Content from <a href="revise-code-with-ai.html">Revise Your Code with AI</a></p>
+<hr>
+<p>Last updated on 2025-11-10 |
+
+        <a href="https://github.com/Dr-Eberle-Zentrum/AI-supported-coding-in-RStudio/edit/main/episodes/revise-code-with-ai.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+<p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 40 minutes</p>
+<div class="text-end">
+          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
+        </div>
+<div class="overview card">
+<h2 class="card-header">Overview</h2>
+<div class="row g-0">
+<div class="col-md-4">
+<div class="card-body">
+<div class="inner">
+<h3 class="card-title">Questions</h3>
+<ul>
+<li>How can I use AI to check and improve my code?</li>
+<li>What are effective strategies for code review with AI
+assistants?</li>
+<li>How do I use chat interfaces for iterative code refinement?</li>
+<li>When should I trust AI suggestions for code revisions?</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-8">
+<div class="card-body">
+<div class="inner bordered">
+<h3 class="card-title">Objectives</h3>
+<ul>
+<li>Use AI chat interfaces to review and analyze code</li>
+<li>Identify code issues with AI assistance</li>
+<li>Iteratively refine code based on AI feedback</li>
+<li>Validate AI suggestions critically</li>
+<li>Develop a workflow for AI-assisted code revision</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<section><h2 class="section-heading" id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
+</h2>
+<hr class="half-width">
+<p>AI-powered tools can serve as an additional pair of eyes when
+reviewing and improving your code. This chapter explores how to
+effectively use AI chat interfaces to check, revise, and validate your R
+code, ensuring better quality and maintainability.</p>
+</section><section><h2 class="section-heading" id="why-use-ai-for-code-review">Why Use AI for Code Review?<a class="anchor" aria-label="anchor" href="#why-use-ai-for-code-review"></a>
+</h2>
+<hr class="half-width">
+<p>AI assistants can help identify: - <strong>Logic errors</strong>:
+Potential bugs or incorrect implementations - <strong>Performance
+issues</strong>: Inefficient code patterns - <strong>Style
+problems</strong>: Code that doesn’t follow best practices -
+<strong>Documentation gaps</strong>: Missing or unclear comments -
+<strong>Security vulnerabilities</strong>: Potential security risks</p>
+<div id="ai-as-a-complement-not-replacement" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div id="ai-as-a-complement-not-replacement" class="callout-inner">
+<h3 class="callout-title">AI as a Complement, Not Replacement</h3>
+<div class="callout-content">
+<p>AI code review should complement, not replace: - Your own
+understanding of the code - Human peer reviews - Automated testing and
+linting tools - Domain expertise</p>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="setting-up-for-ai-code-review">Setting Up for AI Code Review<a class="anchor" aria-label="anchor" href="#setting-up-for-ai-code-review"></a>
+</h2>
+<hr class="half-width">
+<div class="section level3">
+<h3 id="using-github-copilot-chat">Using GitHub Copilot Chat<a class="anchor" aria-label="anchor" href="#using-github-copilot-chat"></a>
+</h3>
+<p>If you have GitHub Copilot enabled in RStudio:</p>
+<ol style="list-style-type: decimal">
+<li>Open the Copilot Chat panel:
+<ul>
+<li>Go to <code>Tools</code> → <code>Copilot</code> →
+<code>Open Chat</code>
+</li>
+<li>Or use keyboard shortcut (varies by platform)</li>
+</ul>
+</li>
+<li>The chat interface appears as a sidebar in RStudio</li>
+</ol>
+</div>
+<div class="section level3">
+<h3 id="alternative-using-ellmer-for-code-review">Alternative: Using ellmer for Code Review<a class="anchor" aria-label="anchor" href="#alternative-using-ellmer-for-code-review"></a>
+</h3>
+<div class="codewrapper sourceCode" id="cb1">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw">library</span><span class="op">(</span><span class="va">ellmer</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Initialize a chat session</span></span>
+<span><span class="va">code_review_chat</span> <span class="op">&lt;-</span> <span class="fu">chat_github</span><span class="op">(</span><span class="st">"gpt-4o"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Function to review code</span></span>
+<span><span class="va">review_code</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">code_string</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="va">prompt</span> <span class="op">&lt;-</span> <span class="fu">paste0</span><span class="op">(</span></span>
+<span>    <span class="st">"Review this R code for:\n"</span>,</span>
+<span>    <span class="st">"1. Potential bugs\n"</span>,</span>
+<span>    <span class="st">"2. Performance issues\n"</span>,</span>
+<span>    <span class="st">"3. Best practices\n"</span>,</span>
+<span>    <span class="st">"4. Readability\n\n"</span>,</span>
+<span>    <span class="st">"Code:\n"</span>, <span class="va">code_string</span></span>
+<span>  <span class="op">)</span></span>
+<span>  </span>
+<span>  <span class="va">code_review_chat</span><span class="op">$</span><span class="fu">chat</span><span class="op">(</span><span class="va">prompt</span><span class="op">)</span></span>
+<span><span class="op">}</span></span></code></pre>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="basic-code-review-workflow">Basic Code Review Workflow<a class="anchor" aria-label="anchor" href="#basic-code-review-workflow"></a>
+</h2>
+<hr class="half-width">
+<div class="section level3">
+<h3 id="step-1-request-an-initial-review">Step 1: Request an Initial Review<a class="anchor" aria-label="anchor" href="#step-1-request-an-initial-review"></a>
+</h3>
+<p>Select your code and ask AI to review it:</p>
+<div class="codewrapper sourceCode" id="cb2">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Example code to review</span></span>
+<span><span class="va">calculate_mean</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">numbers</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="fu">sum</span><span class="op">(</span><span class="va">numbers</span><span class="op">)</span> <span class="op">/</span> <span class="fu">length</span><span class="op">(</span><span class="va">numbers</span><span class="op">)</span></span>
+<span><span class="op">}</span></span></code></pre>
+</div>
+<p><strong>Prompt for AI:</strong> &gt; Review this function for
+potential issues and suggest improvements.</p>
+<div id="challenge-1-basic-code-review" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<span class="callout-header">Challenge</span>
+<div id="challenge-1-basic-code-review" class="callout-inner">
+<h3 class="callout-title">Challenge 1: Basic Code Review</h3>
+<div class="callout-content">
+<p>Ask AI to review the following function. What issues does it
+identify?</p>
+<div class="codewrapper sourceCode" id="cb3">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">process_data</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">data</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="va">result</span> <span class="op">&lt;-</span> <span class="va">data</span><span class="op">[</span><span class="va">data</span><span class="op">$</span><span class="va">value</span> <span class="op">&gt;</span> <span class="fl">0</span><span class="op">]</span></span>
+<span>  <span class="va">mean_val</span> <span class="op">&lt;-</span> <span class="fu">sum</span><span class="op">(</span><span class="va">result</span><span class="op">$</span><span class="va">value</span><span class="op">)</span> <span class="op">/</span> <span class="fu">nrow</span><span class="op">(</span><span class="va">result</span><span class="op">)</span></span>
+<span>  <span class="kw">return</span><span class="op">(</span><span class="va">mean_val</span><span class="op">)</span></span>
+<span><span class="op">}</span></span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
+  <h4 class="accordion-header" id="headingSolution1">
+  Issues AI Might Identify
+  </h4>
+</button>
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div class="accordion-body">
+<ol style="list-style-type: decimal">
+<li>
+<strong>No NA handling</strong>: Function will fail if there are NA
+values</li>
+<li>
+<strong>Division by zero</strong>: If no rows match the condition,
+<code>nrow(result)</code> is 0</li>
+<li>
+<strong>Column existence</strong>: Assumes <code>value</code> column
+exists without checking</li>
+<li>
+<strong>No input validation</strong>: Doesn’t verify
+<code>data</code> is a data frame</li>
+</ol>
+<p><strong>Improved version:</strong></p>
+<div class="codewrapper sourceCode" id="cb4">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">process_data</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">data</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="co"># Input validation</span></span>
+<span>  <span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="fu">is.data.frame</span><span class="op">(</span><span class="va">data</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
+<span>    <span class="kw">stop</span><span class="op">(</span><span class="st">"Input must be a data frame"</span><span class="op">)</span></span>
+<span>  <span class="op">}</span></span>
+<span>  <span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="st">"value"</span> <span class="op">%in%</span> <span class="fu">names</span><span class="op">(</span><span class="va">data</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
+<span>    <span class="kw">stop</span><span class="op">(</span><span class="st">"Data frame must contain 'value' column"</span><span class="op">)</span></span>
+<span>  <span class="op">}</span></span>
+<span>  </span>
+<span>  <span class="co"># Filter and calculate</span></span>
+<span>  <span class="va">result</span> <span class="op">&lt;-</span> <span class="va">data</span><span class="op">[</span><span class="va">data</span><span class="op">$</span><span class="va">value</span> <span class="op">&gt;</span> <span class="fl">0</span> <span class="op">&amp;</span> <span class="op">!</span><span class="fu">is.na</span><span class="op">(</span><span class="va">data</span><span class="op">$</span><span class="va">value</span><span class="op">)</span>, <span class="op">]</span></span>
+<span>  </span>
+<span>  <span class="kw">if</span> <span class="op">(</span><span class="fu">nrow</span><span class="op">(</span><span class="va">result</span><span class="op">)</span> <span class="op">==</span> <span class="fl">0</span><span class="op">)</span> <span class="op">{</span></span>
+<span>    <span class="kw">warning</span><span class="op">(</span><span class="st">"No positive values found"</span><span class="op">)</span></span>
+<span>    <span class="kw">return</span><span class="op">(</span><span class="cn">NA</span><span class="op">)</span></span>
+<span>  <span class="op">}</span></span>
+<span>  </span>
+<span>  <span class="fu">mean</span><span class="op">(</span><span class="va">result</span><span class="op">$</span><span class="va">value</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span><span class="op">}</span></span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section level3">
+<h3 id="step-2-ask-specific-questions">Step 2: Ask Specific Questions<a class="anchor" aria-label="anchor" href="#step-2-ask-specific-questions"></a>
+</h3>
+<p>Be specific about what you want to check:</p>
+<p><strong>Good prompts:</strong> - “Does this function handle edge
+cases correctly?” - “Are there any performance bottlenecks in this
+loop?” - “Is this code following tidyverse style guidelines?” - “Could
+this code be more readable?”</p>
+<p><strong>Less effective prompts:</strong> - “Is this good?” - “Check
+this code”</p>
+</div>
+<div class="section level3">
+<h3 id="step-3-request-improvements">Step 3: Request Improvements<a class="anchor" aria-label="anchor" href="#step-3-request-improvements"></a>
+</h3>
+<div class="codewrapper sourceCode" id="cb5">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Original code</span></span>
+<span><span class="kw">for</span><span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fu">length</span><span class="op">(</span><span class="va">data</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="va">result</span><span class="op">[</span><span class="va">i</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="va">data</span><span class="op">[</span><span class="va">i</span><span class="op">]</span> <span class="op">*</span> <span class="fl">2</span></span>
+<span><span class="op">}</span></span></code></pre>
+</div>
+<p><strong>Prompt:</strong> &gt; How can I make this code more efficient
+and R-idiomatic?</p>
+<p><strong>AI might suggest:</strong></p>
+<div class="codewrapper sourceCode" id="cb6">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Vectorized approach (much faster)</span></span>
+<span><span class="va">result</span> <span class="op">&lt;-</span> <span class="va">data</span> <span class="op">*</span> <span class="fl">2</span></span></code></pre>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="iterative-refinement-process">Iterative Refinement Process<a class="anchor" aria-label="anchor" href="#iterative-refinement-process"></a>
+</h2>
+<hr class="half-width">
+<div class="section level3">
+<h3 id="round-1-initial-review">Round 1: Initial Review<a class="anchor" aria-label="anchor" href="#round-1-initial-review"></a>
+</h3>
+<div class="codewrapper sourceCode" id="cb7">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Your initial code</span></span>
+<span><span class="va">analyze_sales</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">sales_data</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="va">total</span> <span class="op">&lt;-</span> <span class="fl">0</span></span>
+<span>  <span class="kw">for</span><span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fu">nrow</span><span class="op">(</span><span class="va">sales_data</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
+<span>    <span class="va">total</span> <span class="op">&lt;-</span> <span class="va">total</span> <span class="op">+</span> <span class="va">sales_data</span><span class="op">[</span><span class="va">i</span>, <span class="st">"amount"</span><span class="op">]</span></span>
+<span>  <span class="op">}</span></span>
+<span>  <span class="kw">return</span><span class="op">(</span><span class="va">total</span> <span class="op">/</span> <span class="fu">nrow</span><span class="op">(</span><span class="va">sales_data</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="op">}</span></span></code></pre>
+</div>
+<p><strong>AI Feedback:</strong> “This uses a slow loop. Consider
+vectorization.”</p>
+</div>
+<div class="section level3">
+<h3 id="round-2-apply-suggestions">Round 2: Apply Suggestions<a class="anchor" aria-label="anchor" href="#round-2-apply-suggestions"></a>
+</h3>
+<div class="codewrapper sourceCode" id="cb8">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">analyze_sales</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">sales_data</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="fu">mean</span><span class="op">(</span><span class="va">sales_data</span><span class="op">$</span><span class="va">amount</span><span class="op">)</span></span>
+<span><span class="op">}</span></span></code></pre>
+</div>
+<p><strong>AI Feedback:</strong> “Good! Consider adding NA handling and
+input validation.”</p>
+</div>
+<div class="section level3">
+<h3 id="round-3-further-refinement">Round 3: Further Refinement<a class="anchor" aria-label="anchor" href="#round-3-further-refinement"></a>
+</h3>
+<div class="codewrapper sourceCode" id="cb9">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">analyze_sales</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">sales_data</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="fu">is.data.frame</span><span class="op">(</span><span class="va">sales_data</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
+<span>    <span class="kw">stop</span><span class="op">(</span><span class="st">"Input must be a data frame"</span><span class="op">)</span></span>
+<span>  <span class="op">}</span></span>
+<span>  <span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="st">"amount"</span> <span class="op">%in%</span> <span class="fu">names</span><span class="op">(</span><span class="va">sales_data</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
+<span>    <span class="kw">stop</span><span class="op">(</span><span class="st">"Data must contain 'amount' column"</span><span class="op">)</span></span>
+<span>  <span class="op">}</span></span>
+<span>  </span>
+<span>  <span class="fu">mean</span><span class="op">(</span><span class="va">sales_data</span><span class="op">$</span><span class="va">amount</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span><span class="op">}</span></span></code></pre>
+</div>
+<div id="iterative-improvement" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div id="iterative-improvement" class="callout-inner">
+<h3 class="callout-title">Iterative Improvement</h3>
+<div class="callout-content">
+<p>Don’t expect perfect code in one iteration. Use AI as a collaborative
+partner: 1. Get initial feedback 2. Make changes 3. Ask for review again
+4. Repeat until satisfied</p>
+</div>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="common-code-issues-ai-can-help-identify">Common Code Issues AI Can Help Identify<a class="anchor" aria-label="anchor" href="#common-code-issues-ai-can-help-identify"></a>
+</h2>
+<hr class="half-width">
+<div class="section level3">
+<h3 id="logic-errors">1. Logic Errors<a class="anchor" aria-label="anchor" href="#logic-errors"></a>
+</h3>
+<div class="codewrapper sourceCode" id="cb10">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Problematic code</span></span>
+<span><span class="kw">if</span> <span class="op">(</span><span class="va">x</span> <span class="op">&gt;</span> <span class="fl">0</span> <span class="op">&amp;</span> <span class="va">y</span> <span class="op">&gt;</span> <span class="fl">0</span><span class="op">)</span> <span class="op">{</span>  <span class="co"># What if x or y is NA?</span></span>
+<span>  <span class="fu">process</span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span><span class="op">)</span></span>
+<span><span class="op">}</span></span></code></pre>
+</div>
+<p><strong>AI can suggest:</strong></p>
+<div class="codewrapper sourceCode" id="cb11">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="fu">is.na</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">&amp;&amp;</span> <span class="op">!</span><span class="fu">is.na</span><span class="op">(</span><span class="va">y</span><span class="op">)</span> <span class="op">&amp;&amp;</span> <span class="va">x</span> <span class="op">&gt;</span> <span class="fl">0</span> <span class="op">&amp;&amp;</span> <span class="va">y</span> <span class="op">&gt;</span> <span class="fl">0</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="fu">process</span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span><span class="op">)</span></span>
+<span><span class="op">}</span></span></code></pre>
+</div>
+</div>
+<div class="section level3">
+<h3 id="performance-problems">2. Performance Problems<a class="anchor" aria-label="anchor" href="#performance-problems"></a>
+</h3>
+<div class="codewrapper sourceCode" id="cb12">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Slow: Growing vector in loop</span></span>
+<span><span class="va">result</span> <span class="op">&lt;-</span> <span class="fu">c</span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="kw">for</span><span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fl">10000</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="va">result</span> <span class="op">&lt;-</span> <span class="fu">c</span><span class="op">(</span><span class="va">result</span>, <span class="fu">calculate</span><span class="op">(</span><span class="va">i</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="op">}</span></span></code></pre>
+</div>
+<p><strong>AI can suggest:</strong></p>
+<div class="codewrapper sourceCode" id="cb13">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Fast: Pre-allocate vector</span></span>
+<span><span class="va">result</span> <span class="op">&lt;-</span> <span class="fu">vector</span><span class="op">(</span><span class="st">"numeric"</span>, <span class="fl">10000</span><span class="op">)</span></span>
+<span><span class="kw">for</span><span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fl">10000</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="va">result</span><span class="op">[</span><span class="va">i</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="fu">calculate</span><span class="op">(</span><span class="va">i</span><span class="op">)</span></span>
+<span><span class="op">}</span></span>
+<span></span>
+<span><span class="co"># Even better: Vectorize if possible</span></span>
+<span><span class="va">result</span> <span class="op">&lt;-</span> <span class="fu">sapply</span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">10000</span>, <span class="va">calculate</span><span class="op">)</span></span></code></pre>
+</div>
+</div>
+<div class="section level3">
+<h3 id="code-readability">3. Code Readability<a class="anchor" aria-label="anchor" href="#code-readability"></a>
+</h3>
+<div class="codewrapper sourceCode" id="cb14">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Hard to read</span></span>
+<span><span class="va">f</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span>, <span class="va">z</span><span class="op">)</span> <span class="op">{</span> <span class="va">x</span> <span class="op">+</span> <span class="va">y</span> <span class="op">*</span> <span class="va">z</span> <span class="op">/</span> <span class="op">(</span><span class="va">x</span> <span class="op">-</span> <span class="va">y</span><span class="op">)</span> <span class="op">}</span></span></code></pre>
+</div>
+<p><strong>AI can suggest:</strong></p>
+<div class="codewrapper sourceCode" id="cb15">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># More readable</span></span>
+<span><span class="va">calculate_metric</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">base_value</span>, <span class="va">multiplier</span>, <span class="va">divisor</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="va">adjustment</span> <span class="op">&lt;-</span> <span class="va">multiplier</span> <span class="op">*</span> <span class="va">divisor</span></span>
+<span>  <span class="va">denominator</span> <span class="op">&lt;-</span> <span class="va">base_value</span> <span class="op">-</span> <span class="va">multiplier</span></span>
+<span>  </span>
+<span>  <span class="va">base_value</span> <span class="op">+</span> <span class="op">(</span><span class="va">adjustment</span> <span class="op">/</span> <span class="va">denominator</span><span class="op">)</span></span>
+<span><span class="op">}</span></span></code></pre>
+</div>
+<div id="challenge-2-iterative-code-improvement" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<span class="callout-header">Challenge</span>
+<div id="challenge-2-iterative-code-improvement" class="callout-inner">
+<h3 class="callout-title">Challenge 2: Iterative Code Improvement</h3>
+<div class="callout-content">
+<p>Start with this code and iteratively improve it with AI
+assistance:</p>
+<div class="codewrapper sourceCode" id="cb16">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">my_function</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="va">y</span> <span class="op">&lt;-</span> <span class="fu">c</span><span class="op">(</span><span class="op">)</span></span>
+<span>  <span class="kw">for</span><span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fu">length</span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
+<span>    <span class="kw">if</span><span class="op">(</span><span class="va">x</span><span class="op">[</span><span class="va">i</span><span class="op">]</span> <span class="op">&gt;</span> <span class="fl">0</span><span class="op">)</span> <span class="op">{</span></span>
+<span>      <span class="va">y</span> <span class="op">&lt;-</span> <span class="fu">c</span><span class="op">(</span><span class="va">y</span>, <span class="va">x</span><span class="op">[</span><span class="va">i</span><span class="op">]</span> <span class="op">*</span> <span class="fl">2</span><span class="op">)</span></span>
+<span>    <span class="op">}</span></span>
+<span>  <span class="op">}</span></span>
+<span>  <span class="kw">return</span><span class="op">(</span><span class="va">y</span><span class="op">)</span></span>
+<span><span class="op">}</span></span></code></pre>
+</div>
+<p>Ask AI to help you: 1. Improve performance 2. Add error handling 3.
+Improve readability 4. Add documentation</p>
+</div>
+</div>
+</div>
+<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
+  <h4 class="accordion-header" id="headingSolution2">
+  Improved Version After Iterations
+  </h4>
+</button>
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div class="accordion-body">
+<div class="codewrapper sourceCode" id="cb17">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co">#' Double positive values in a numeric vector</span></span>
+<span><span class="co">#'</span></span>
+<span><span class="co">#' Takes a numeric vector and returns a new vector containing</span></span>
+<span><span class="co">#' only the positive values, each doubled.</span></span>
+<span><span class="co">#'</span></span>
+<span><span class="co">#' @param x A numeric vector</span></span>
+<span><span class="co">#' @return A numeric vector of doubled positive values</span></span>
+<span><span class="co">#' @examples</span></span>
+<span><span class="co">#' double_positives(c(-1, 2, -3, 4))  # Returns c(4, 8)</span></span>
+<span><span class="va">double_positives</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="co"># Input validation</span></span>
+<span>  <span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="fu">is.numeric</span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
+<span>    <span class="kw">stop</span><span class="op">(</span><span class="st">"Input must be a numeric vector"</span><span class="op">)</span></span>
+<span>  <span class="op">}</span></span>
+<span>  </span>
+<span>  <span class="co"># Vectorized filtering and transformation</span></span>
+<span>  <span class="va">positive_values</span> <span class="op">&lt;-</span> <span class="va">x</span><span class="op">[</span><span class="va">x</span> <span class="op">&gt;</span> <span class="fl">0</span> <span class="op">&amp;</span> <span class="op">!</span><span class="fu">is.na</span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">]</span></span>
+<span>  <span class="va">positive_values</span> <span class="op">*</span> <span class="fl">2</span></span>
+<span><span class="op">}</span></span></code></pre>
+</div>
+<p>Key improvements: - Descriptive function name - Roxygen documentation
+- Input validation - Vectorized operations (much faster) - NA
+handling</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="using-chat-for-code-explanation">Using Chat for Code Explanation<a class="anchor" aria-label="anchor" href="#using-chat-for-code-explanation"></a>
+</h2>
+<hr class="half-width">
+<p>AI can help you understand unfamiliar code:</p>
+<div class="codewrapper sourceCode" id="cb18">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Complex code you found</span></span>
+<span><span class="va">result</span> <span class="op">&lt;-</span> <span class="va">df</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">group_by</span><span class="op">(</span><span class="va">category</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">summarise</span><span class="op">(</span></span>
+<span>    mean_val <span class="op">=</span> <span class="fu">mean</span><span class="op">(</span><span class="va">value</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
+<span>    .groups <span class="op">=</span> <span class="st">"drop"</span></span>
+<span>  <span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">filter</span><span class="op">(</span><span class="va">mean_val</span> <span class="op">&gt;</span> <span class="fu">quantile</span><span class="op">(</span><span class="va">mean_val</span>, <span class="fl">0.75</span><span class="op">)</span><span class="op">)</span></span></code></pre>
+</div>
+<p><strong>Prompt:</strong> &gt; Explain what this code does step by
+step.</p>
+<p><strong>AI response would explain:</strong> 1. Groups data by
+category 2. Calculates mean value per category 3. Drops grouping
+structure 4. Filters for top 25% of means</p>
+</section><section><h2 class="section-heading" id="double-checking-ai-suggestions">Double-Checking AI Suggestions<a class="anchor" aria-label="anchor" href="#double-checking-ai-suggestions"></a>
+</h2>
+<hr class="half-width">
+<div class="section level3">
+<h3 id="always-validate-ai-recommendations">Always Validate AI Recommendations<a class="anchor" aria-label="anchor" href="#always-validate-ai-recommendations"></a>
+</h3>
+<div class="codewrapper sourceCode" id="cb19">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># AI suggests: "Use this for better performance"</span></span>
+<span><span class="va">result</span> <span class="op">&lt;-</span> <span class="fu">parallel</span><span class="fu">::</span><span class="fu">mclapply</span><span class="op">(</span><span class="va">data</span>, <span class="va">complex_function</span><span class="op">)</span></span></code></pre>
+</div>
+<p><strong>Questions to ask yourself:</strong> 1. Does this actually
+work with my data? 2. Is parallel processing appropriate here? 3. Will
+this work on all platforms (Windows issues with mclapply)? 4. Is the
+complexity worth the performance gain?</p>
+<div id="test-ai-suggestions" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div id="test-ai-suggestions" class="callout-inner">
+<h3 class="callout-title">Test AI Suggestions</h3>
+<div class="callout-content">
+<p>Never blindly accept AI code suggestions: - Run the code with test
+data - Verify results match expectations - Check edge cases - Benchmark
+performance claims - Ensure compatibility with your environment</p>
+</div>
+</div>
+</div>
+</div>
+<div class="section level3">
+<h3 id="creating-test-cases">Creating Test Cases<a class="anchor" aria-label="anchor" href="#creating-test-cases"></a>
+</h3>
+<p>Use AI to help generate tests:</p>
+<p><strong>Prompt:</strong> &gt; Generate test cases for this function,
+including edge cases.</p>
+<div class="codewrapper sourceCode" id="cb20">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Your function</span></span>
+<span><span class="va">safe_divide</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">a</span>, <span class="va">b</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="kw">if</span> <span class="op">(</span><span class="va">b</span> <span class="op">==</span> <span class="fl">0</span><span class="op">)</span> <span class="kw">return</span><span class="op">(</span><span class="cn">NA</span><span class="op">)</span></span>
+<span>  <span class="va">a</span> <span class="op">/</span> <span class="va">b</span></span>
+<span><span class="op">}</span></span></code></pre>
+</div>
+<p><strong>AI-generated tests:</strong></p>
+<div class="codewrapper sourceCode" id="cb21">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Test cases</span></span>
+<span><span class="fu">test_that</span><span class="op">(</span><span class="st">"safe_divide works correctly"</span>, <span class="op">{</span></span>
+<span>  <span class="fu">expect_equal</span><span class="op">(</span><span class="fu">safe_divide</span><span class="op">(</span><span class="fl">10</span>, <span class="fl">2</span><span class="op">)</span>, <span class="fl">5</span><span class="op">)</span></span>
+<span>  <span class="fu">expect_equal</span><span class="op">(</span><span class="fu">safe_divide</span><span class="op">(</span><span class="fl">0</span>, <span class="fl">5</span><span class="op">)</span>, <span class="fl">0</span><span class="op">)</span></span>
+<span>  <span class="fu">expect_true</span><span class="op">(</span><span class="fu">is.na</span><span class="op">(</span><span class="fu">safe_divide</span><span class="op">(</span><span class="fl">5</span>, <span class="fl">0</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
+<span>  <span class="fu">expect_true</span><span class="op">(</span><span class="fu">is.na</span><span class="op">(</span><span class="fu">safe_divide</span><span class="op">(</span><span class="cn">Inf</span>, <span class="fl">0</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
+<span>  <span class="fu">expect_equal</span><span class="op">(</span><span class="fu">safe_divide</span><span class="op">(</span><span class="op">-</span><span class="fl">10</span>, <span class="fl">2</span><span class="op">)</span>, <span class="op">-</span><span class="fl">5</span><span class="op">)</span></span>
+<span><span class="op">}</span><span class="op">)</span></span></code></pre>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="advanced-code-review-techniques">Advanced Code Review Techniques<a class="anchor" aria-label="anchor" href="#advanced-code-review-techniques"></a>
+</h2>
+<hr class="half-width">
+<div class="section level3">
+<h3 id="security-review">1. Security Review<a class="anchor" aria-label="anchor" href="#security-review"></a>
+</h3>
+<p><strong>Prompt:</strong> &gt; Review this code for security
+vulnerabilities.</p>
+<div class="codewrapper sourceCode" id="cb22">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Potentially unsafe</span></span>
+<span><span class="va">query</span> <span class="op">&lt;-</span> <span class="fu">paste0</span><span class="op">(</span><span class="st">"SELECT * FROM users WHERE id = "</span>, <span class="va">user_input</span><span class="op">)</span></span></code></pre>
+</div>
+<p><strong>AI might warn:</strong> SQL injection risk!</p>
+</div>
+<div class="section level3">
+<h3 id="style-consistency">2. Style Consistency<a class="anchor" aria-label="anchor" href="#style-consistency"></a>
+</h3>
+<p><strong>Prompt:</strong> &gt; Does this code follow tidyverse style
+guidelines?</p>
+<div class="codewrapper sourceCode" id="cb23">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Inconsistent style</span></span>
+<span><span class="va">myFunction</span><span class="op">&lt;-</span><span class="kw">function</span><span class="op">(</span><span class="va">x</span>,<span class="va">y</span><span class="op">)</span><span class="op">{</span><span class="kw">return</span><span class="op">(</span><span class="va">x</span><span class="op">+</span><span class="va">y</span><span class="op">)</span><span class="op">}</span></span></code></pre>
+</div>
+<p><strong>AI suggests:</strong></p>
+<div class="codewrapper sourceCode" id="cb24">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Consistent style</span></span>
+<span><span class="va">my_function</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="va">x</span> <span class="op">+</span> <span class="va">y</span></span>
+<span><span class="op">}</span></span></code></pre>
+</div>
+</div>
+<div class="section level3">
+<h3 id="documentation-review">3. Documentation Review<a class="anchor" aria-label="anchor" href="#documentation-review"></a>
+</h3>
+<p><strong>Prompt:</strong> &gt; Is this function well-documented?
+Suggest improvements.</p>
+<div class="codewrapper sourceCode" id="cb25">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">calc</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="va">x</span> <span class="op">*</span> <span class="va">y</span> <span class="op">+</span> <span class="fu">mean</span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span>
+<span><span class="op">}</span></span></code></pre>
+</div>
+<p><strong>AI suggests adding:</strong></p>
+<div class="codewrapper sourceCode" id="cb26">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co">#' Calculate weighted metric</span></span>
+<span><span class="co">#'</span></span>
+<span><span class="co">#' Multiplies two vectors element-wise and adds the mean of the first vector</span></span>
+<span><span class="co">#'</span></span>
+<span><span class="co">#' @param x Numeric vector for values</span></span>
+<span><span class="co">#' @param y Numeric vector for weights</span></span>
+<span><span class="co">#' @return Numeric vector of weighted values plus mean adjustment</span></span>
+<span><span class="va">calc</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="va">x</span> <span class="op">*</span> <span class="va">y</span> <span class="op">+</span> <span class="fu">mean</span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span>
+<span><span class="op">}</span></span></code></pre>
+</div>
+<div id="challenge-3-comprehensive-code-review" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<span class="callout-header">Challenge</span>
+<div id="challenge-3-comprehensive-code-review" class="callout-inner">
+<h3 class="callout-title">Challenge 3: Comprehensive Code Review</h3>
+<div class="callout-content">
+<p>Perform a complete AI-assisted review of this analysis function:</p>
+<div class="codewrapper sourceCode" id="cb27">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">analyze</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">d</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="va">d2</span> <span class="op">&lt;-</span> <span class="va">d</span><span class="op">[</span><span class="va">d</span><span class="op">$</span><span class="va">val</span> <span class="op">&gt;</span> <span class="fl">0</span><span class="op">]</span></span>
+<span>  <span class="va">m</span> <span class="op">&lt;-</span> <span class="fu">sum</span><span class="op">(</span><span class="va">d2</span><span class="op">$</span><span class="va">val</span><span class="op">)</span> <span class="op">/</span> <span class="fu">length</span><span class="op">(</span><span class="va">d2</span><span class="op">$</span><span class="va">val</span><span class="op">)</span></span>
+<span>  <span class="va">s</span> <span class="op">&lt;-</span> <span class="fu">sqrt</span><span class="op">(</span><span class="fu">sum</span><span class="op">(</span><span class="op">(</span><span class="va">d2</span><span class="op">$</span><span class="va">val</span> <span class="op">-</span> <span class="va">m</span><span class="op">)</span><span class="op">^</span><span class="fl">2</span><span class="op">)</span> <span class="op">/</span> <span class="fu">length</span><span class="op">(</span><span class="va">d2</span><span class="op">$</span><span class="va">val</span><span class="op">)</span><span class="op">)</span></span>
+<span>  <span class="fu">list</span><span class="op">(</span><span class="va">m</span>, <span class="va">s</span><span class="op">)</span></span>
+<span><span class="op">}</span></span></code></pre>
+</div>
+<p>Review for: 1. Correctness 2. Efficiency 3. Readability 4.
+Documentation 5. Error handling</p>
+</div>
+</div>
+</div>
+<div id="accordionSolution3" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
+  <h4 class="accordion-header" id="headingSolution3">
+  Comprehensive Improved Version
+  </h4>
+</button>
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div class="accordion-body">
+<div class="codewrapper sourceCode" id="cb28">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co">#' Calculate mean and standard deviation for positive values</span></span>
+<span><span class="co">#'</span></span>
+<span><span class="co">#' Filters a data frame to positive values in the specified column</span></span>
+<span><span class="co">#' and calculates descriptive statistics</span></span>
+<span><span class="co">#'</span></span>
+<span><span class="co">#' @param data A data frame containing the data to analyze</span></span>
+<span><span class="co">#' @param value_col Name of the column containing values (default: "val")</span></span>
+<span><span class="co">#' @return A named list with 'mean' and 'sd' of positive values</span></span>
+<span><span class="co">#' @examples</span></span>
+<span><span class="co">#' analyze_positive_values(data.frame(val = c(-1, 2, 3, 4)))</span></span>
+<span><span class="va">analyze_positive_values</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">data</span>, <span class="va">value_col</span> <span class="op">=</span> <span class="st">"val"</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="co"># Input validation</span></span>
+<span>  <span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="fu">is.data.frame</span><span class="op">(</span><span class="va">data</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
+<span>    <span class="kw">stop</span><span class="op">(</span><span class="st">"Input must be a data frame"</span><span class="op">)</span></span>
+<span>  <span class="op">}</span></span>
+<span>  <span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="va">value_col</span> <span class="op">%in%</span> <span class="fu">names</span><span class="op">(</span><span class="va">data</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
+<span>    <span class="kw">stop</span><span class="op">(</span><span class="fu">paste</span><span class="op">(</span><span class="st">"Column"</span>, <span class="va">value_col</span>, <span class="st">"not found in data"</span><span class="op">)</span><span class="op">)</span></span>
+<span>  <span class="op">}</span></span>
+<span>  <span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="fu">is.numeric</span><span class="op">(</span><span class="va">data</span><span class="op">[[</span><span class="va">value_col</span><span class="op">]</span><span class="op">]</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
+<span>    <span class="kw">stop</span><span class="op">(</span><span class="fu">paste</span><span class="op">(</span><span class="st">"Column"</span>, <span class="va">value_col</span>, <span class="st">"must be numeric"</span><span class="op">)</span><span class="op">)</span></span>
+<span>  <span class="op">}</span></span>
+<span>  </span>
+<span>  <span class="co"># Filter positive values and remove NAs</span></span>
+<span>  <span class="va">positive_values</span> <span class="op">&lt;-</span> <span class="va">data</span><span class="op">[[</span><span class="va">value_col</span><span class="op">]</span><span class="op">]</span><span class="op">[</span></span>
+<span>    <span class="va">data</span><span class="op">[[</span><span class="va">value_col</span><span class="op">]</span><span class="op">]</span> <span class="op">&gt;</span> <span class="fl">0</span> <span class="op">&amp;</span> <span class="op">!</span><span class="fu">is.na</span><span class="op">(</span><span class="va">data</span><span class="op">[[</span><span class="va">value_col</span><span class="op">]</span><span class="op">]</span><span class="op">)</span></span>
+<span>  <span class="op">]</span></span>
+<span>  </span>
+<span>  <span class="co"># Check if any values remain</span></span>
+<span>  <span class="kw">if</span> <span class="op">(</span><span class="fu">length</span><span class="op">(</span><span class="va">positive_values</span><span class="op">)</span> <span class="op">==</span> <span class="fl">0</span><span class="op">)</span> <span class="op">{</span></span>
+<span>    <span class="kw">warning</span><span class="op">(</span><span class="st">"No positive values found"</span><span class="op">)</span></span>
+<span>    <span class="kw">return</span><span class="op">(</span><span class="fu">list</span><span class="op">(</span>mean <span class="op">=</span> <span class="cn">NA</span>, sd <span class="op">=</span> <span class="cn">NA</span><span class="op">)</span><span class="op">)</span></span>
+<span>  <span class="op">}</span></span>
+<span>  </span>
+<span>  <span class="co"># Calculate statistics using built-in functions</span></span>
+<span>  <span class="co"># (more accurate than manual calculation)</span></span>
+<span>  <span class="fu">list</span><span class="op">(</span></span>
+<span>    mean <span class="op">=</span> <span class="fu">mean</span><span class="op">(</span><span class="va">positive_values</span><span class="op">)</span>,</span>
+<span>    sd <span class="op">=</span> <span class="fu">sd</span><span class="op">(</span><span class="va">positive_values</span><span class="op">)</span></span>
+<span>  <span class="op">)</span></span>
+<span><span class="op">}</span></span></code></pre>
+</div>
+<p>Improvements: - Clear, descriptive name - Full documentation - Input
+validation - Column name parameter - NA handling - Edge case handling -
+Uses built-in statistical functions - Named list output</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="best-practices-for-ai-assisted-code-review">Best Practices for AI-Assisted Code Review<a class="anchor" aria-label="anchor" href="#best-practices-for-ai-assisted-code-review"></a>
+</h2>
+<hr class="half-width">
+<div class="section level3">
+<h3 id="start-with-specific-questions">1. Start with Specific Questions<a class="anchor" aria-label="anchor" href="#start-with-specific-questions"></a>
+</h3>
+<p>Instead of: “Review this code” Try: “Does this function handle
+missing data correctly?”</p>
+</div>
+<div class="section level3">
+<h3 id="review-in-small-chunks">2. Review in Small Chunks<a class="anchor" aria-label="anchor" href="#review-in-small-chunks"></a>
+</h3>
+<ul>
+<li>Don’t send entire scripts for review</li>
+<li>Focus on one function or logical block at a time</li>
+<li>Easier to understand and act on feedback</li>
+</ul>
+</div>
+<div class="section level3">
+<h3 id="ask-why-questions">3. Ask “Why” Questions<a class="anchor" aria-label="anchor" href="#ask-why-questions"></a>
+</h3>
+<ul>
+<li>“Why is this approach better?”</li>
+<li>“Why might this fail?”</li>
+<li>“Why is this more efficient?”</li>
+</ul>
+<p>Understanding helps you learn, not just copy.</p>
+</div>
+<div class="section level3">
+<h3 id="combine-multiple-perspectives">4. Combine Multiple Perspectives<a class="anchor" aria-label="anchor" href="#combine-multiple-perspectives"></a>
+</h3>
+<ul>
+<li>AI review</li>
+<li>Peer review</li>
+<li>Automated linting (<code>lintr</code> package)</li>
+<li>Testing (<code>testthat</code> package)</li>
+</ul>
+</div>
+<div class="section level3">
+<h3 id="document-changes">5. Document Changes<a class="anchor" aria-label="anchor" href="#document-changes"></a>
+</h3>
+<p>Keep track of improvements:</p>
+<div class="codewrapper sourceCode" id="cb29">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Version 1 (original): Simple but no error handling</span></span>
+<span><span class="co"># Version 2 (after AI review): Added input validation</span></span>
+<span><span class="co"># Version 3 (after testing): Improved edge case handling</span></span></code></pre>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="tools-for-ai-assisted-code-review">Tools for AI-Assisted Code Review<a class="anchor" aria-label="anchor" href="#tools-for-ai-assisted-code-review"></a>
+</h2>
+<hr class="half-width">
+<div class="section level3">
+<h3 id="in-rstudio">In RStudio<a class="anchor" aria-label="anchor" href="#in-rstudio"></a>
+</h3>
+<ul>
+<li>
+<strong>GitHub Copilot Chat</strong>: Integrated chat interface</li>
+<li>
+<strong>Code selection review</strong>: Select code and ask for
+review</li>
+</ul>
+</div>
+<div class="section level3">
+<h3 id="external-tools">External Tools<a class="anchor" aria-label="anchor" href="#external-tools"></a>
+</h3>
+<ul>
+<li>
+<strong>ChatGPT</strong>: Copy code for detailed analysis</li>
+<li>
+<strong>Claude</strong>: Good for explaining complex logic</li>
+<li>
+<strong>GitHub Copilot CLI</strong>: Command-line interface for code
+review</li>
+</ul>
+</div>
+<div class="section level3">
+<h3 id="r-packages">R Packages<a class="anchor" aria-label="anchor" href="#r-packages"></a>
+</h3>
+<div class="codewrapper sourceCode" id="cb30">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Use ellmer for programmatic code review</span></span>
+<span><span class="kw">library</span><span class="op">(</span><span class="va">ellmer</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">review_chat</span> <span class="op">&lt;-</span> <span class="fu">chat_github</span><span class="op">(</span><span class="st">"gpt-4o"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Automated review function</span></span>
+<span><span class="va">auto_review</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">code_file</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="va">code</span> <span class="op">&lt;-</span> <span class="fu">readLines</span><span class="op">(</span><span class="va">code_file</span><span class="op">)</span></span>
+<span>  <span class="va">review_chat</span><span class="op">$</span><span class="fu">chat</span><span class="op">(</span><span class="fu">paste</span><span class="op">(</span></span>
+<span>    <span class="st">"Review this R code for best practices:"</span>,</span>
+<span>    <span class="fu">paste</span><span class="op">(</span><span class="va">code</span>, collapse <span class="op">=</span> <span class="st">"\n"</span><span class="op">)</span></span>
+<span>  <span class="op">)</span><span class="op">)</span></span>
+<span><span class="op">}</span></span></code></pre>
+</div>
+<div id="group-discussion" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
+</div>
+<span class="callout-header">Discussion</span>
+<div id="group-discussion" class="callout-inner">
+<h3 class="callout-title">Group Discussion</h3>
+<div class="callout-content">
+<p>Discuss with your peers: - What types of code issues have you
+discovered using AI review? - Have you encountered situations where AI
+gave incorrect advice? - How do you balance AI suggestions with your own
+judgment? - What are the limitations of AI code review compared to human
+review?</p>
+</div>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="limitations-and-cautions">Limitations and Cautions<a class="anchor" aria-label="anchor" href="#limitations-and-cautions"></a>
+</h2>
+<hr class="half-width">
+<div class="section level3">
+<h3 id="ai-cannot-replace">AI Cannot Replace<a class="anchor" aria-label="anchor" href="#ai-cannot-replace"></a>
+</h3>
+<ul>
+<li>
+<strong>Domain expertise</strong>: Understanding of your specific
+field</li>
+<li>
+<strong>Context awareness</strong>: Knowledge of project history and
+constraints</li>
+<li>
+<strong>Testing</strong>: Actual execution and validation</li>
+<li>
+<strong>Team standards</strong>: Specific conventions in your
+organization</li>
+</ul>
+</div>
+<div class="section level3">
+<h3 id="common-ai-mistakes">Common AI Mistakes<a class="anchor" aria-label="anchor" href="#common-ai-mistakes"></a>
+</h3>
+<ul>
+<li>Suggesting overly complex solutions</li>
+<li>Not understanding project-specific constraints</li>
+<li>Proposing outdated or deprecated approaches</li>
+<li>Missing subtle domain-specific issues</li>
+</ul>
+</div>
+<div class="section level3">
+<h3 id="when-to-seek-human-review">When to Seek Human Review<a class="anchor" aria-label="anchor" href="#when-to-seek-human-review"></a>
+</h3>
+<ul>
+<li>Security-critical code</li>
+<li>Complex algorithms</li>
+<li>Code with business logic</li>
+<li>Performance-critical sections</li>
+<li>Code you don’t fully understand</li>
+</ul>
+<div id="keypoints1" class="callout keypoints">
+<div class="callout-square">
+<i class="callout-icon" data-feather="key"></i>
+</div>
+<span class="callout-header">Key Points</span>
+<div class="callout-inner">
+<div class="callout-content">
+<ul>
+<li>AI chat interfaces provide valuable code review assistance</li>
+<li>Use iterative refinement: review, improve, and re-review</li>
+<li>Ask specific questions about correctness, performance, and
+style</li>
+<li>Always validate and test AI suggestions before accepting them</li>
+<li>Combine AI review with human peer review and automated tools</li>
+<li>Be aware of AI limitations and seek human expertise for critical
+code</li>
+<li>Document the review process and improvements made</li>
+</ul>
+</div>
+</div>
+</div>
+<!--
+Place links that you need to refer to multiple times across pages here. Delete
+any links that you are not going to use.
+ -->
+</div>
+</section></section><section id="aio-introduction"><p>Content from <a href="introduction.html">Using Markdown</a></p>
 <hr>
 <p>Last updated on 2025-11-10 |
 
@@ -372,7 +3135,7 @@ reinforce the objectives.</li>
 <button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor1" aria-expanded="false" aria-controls="collapseInstructor1">
   <h3 class="accordion-header" id="headingInstructor1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div> Instructor Note </h3>
 </button>
-<div id="collapseInstructor1" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor1" aria-labelledby="headingInstructor1">
+<div id="collapseInstructor1" class="accordion-collapse collapse" aria-labelledby="headingInstructor1" data-bs-parent="#accordionInstructor1">
 <div class="accordion-body">
 <p>Inline instructor notes can help inform instructors of timing
 challenges associated with the lessons. They appear in the “Instructor
@@ -404,7 +3167,7 @@ View”</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Output </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -433,7 +3196,7 @@ challenge blocks?</h3>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>You can add a line with at least three colons and a
 <code>solution</code> tag.</p>
