@@ -23,7 +23,9 @@ exercises: 10
 
 ## Introduction
 
-AI-powered coding assistants like GitHub Copilot have revolutionized how we write code, but understanding when and how to use them effectively is crucial. This chapter explores the scenarios where AI support is most beneficial and where caution is needed.
+AI-powered coding assistants like GitHub Copilot have revolutionized how we write code, 
+but understanding when and how to use them effectively is crucial. 
+This chapter explores the scenarios where AI support is most beneficial and where caution is needed.
 
 ## Scenarios Where AI Assistants Excel
 
@@ -40,13 +42,15 @@ AI assistants are particularly effective at generating repetitive, standard code
 
 ## Challenge 1: Identify Boilerplate Code
 
-Think about your recent coding projects. List 2-3 examples of repetitive code patterns you frequently write that could benefit from AI assistance.
+Think about your recent coding projects. 
+List 2-3 examples of repetitive code patterns you frequently write that could benefit from AI assistance.
 
 :::::::::::::::::::::::: solution 
 
 ## Example Solutions
 
 Examples might include:
+
 - Reading CSV files and performing basic data cleaning
 - Creating standard plotting functions with ggplot2
 - Writing function documentation in roxygen2 format
@@ -58,6 +62,7 @@ Examples might include:
 ### 2. Code Completion and Syntax
 
 AI can help with:
+
 - Completing function arguments
 - Suggesting appropriate function names from loaded packages
 - Correcting syntax errors
@@ -66,6 +71,7 @@ AI can help with:
 ### 3. Documentation and Comments
 
 Writing clear documentation is time-consuming but essential. AI can assist with:
+
 - Generating function documentation
 - Creating informative code comments
 - Writing README files
@@ -74,6 +80,7 @@ Writing clear documentation is time-consuming but essential. AI can assist with:
 ### 4. Learning New Libraries and Functions
 
 When working with unfamiliar packages or functions:
+
 - AI can suggest appropriate functions for specific tasks
 - Provide example implementations
 - Offer alternative approaches
@@ -83,6 +90,7 @@ When working with unfamiliar packages or functions:
 ### 1. Complex Logic and Algorithms
 
 AI assistants may struggle with:
+
 - Domain-specific algorithms
 - Complex statistical methods
 - Unique business logic
@@ -93,6 +101,7 @@ AI assistants may struggle with:
 ### Critical Review Required
 
 Always carefully review AI-generated code for:
+
 - Logical correctness
 - Edge case handling
 - Performance implications
@@ -103,6 +112,7 @@ Always carefully review AI-generated code for:
 ### 2. Project-Specific Requirements
 
 AI may not understand:
+
 - Specific coding standards in your project
 - Custom architectural patterns
 - Project-specific constraints
@@ -111,6 +121,7 @@ AI may not understand:
 ### 3. Data Privacy and Security
 
 Be cautious when:
+
 - Working with sensitive or proprietary data
 - Implementing security-critical features
 - Handling authentication and authorization
@@ -121,6 +132,7 @@ Be cautious when:
 ### Data Privacy Considerations
 
 Remember that code sent to AI services may be used for training. Never include:
+
 - API keys or passwords
 - Proprietary algorithms
 - Sensitive data
@@ -152,13 +164,15 @@ Remember that code sent to AI services may be used for training. Never include:
 
 ## Challenge 2: Evaluate AI Suggestions
 
-Consider this scenario: You ask an AI assistant to generate code for a statistical analysis. What questions should you ask yourself before accepting the suggestion?
+Consider this scenario: You ask an AI assistant to generate code for a statistical analysis. 
+What questions should you ask yourself before accepting the suggestion?
 
 :::::::::::::::::::::::: solution 
 
 ## Questions to Consider
 
 Before accepting AI-generated code, ask:
+
 1. Does this code produce statistically valid results?
 2. Are the assumptions appropriate for my data?
 3. Does it handle missing data correctly?
@@ -182,6 +196,7 @@ Before accepting AI-generated code, ask:
 ### When to Rely on Human Expertise
 
 Prioritize human judgment for:
+
 - Critical decision-making about architecture and design
 - Code review and quality assessment
 - Understanding domain-specific requirements
@@ -193,6 +208,7 @@ Prioritize human judgment for:
 ### Group Discussion
 
 In small groups, discuss:
+
 - Have you used AI coding assistants before? What was your experience?
 - Can you share an example where AI helped you solve a problem?
 - Can you share an example where AI suggestions were incorrect or unhelpful?
@@ -203,6 +219,7 @@ In small groups, discuss:
 ## The Future of AI in Coding
 
 AI assistants are rapidly evolving. As they improve, we should:
+
 - Stay informed about new capabilities and limitations
 - Continuously refine our approach to using these tools
 - Share knowledge about effective practices with colleagues
