@@ -378,7 +378,7 @@
         
 <section id="aio-getting-started-with-copilot"><p>Content from <a href="getting-started-with-copilot.html">Getting Started with GitHub Copilot</a></p>
 <hr>
-<p>Last updated on 2025-11-10 |
+<p>Last updated on 2025-11-11 |
 
         <a href="https://github.com/Dr-Eberle-Zentrum/AI-supported-coding-in-RStudio/edit/main/episodes/getting-started-with-copilot.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -434,26 +434,12 @@ email)</li>
 <li>Create a strong password</li>
 <li>Choose a username</li>
 <li>Verify your account through the email confirmation</li>
-</ol>
-<div id="why-use-your-university-email" class="callout">
-<div class="callout-square">
-<i class="callout-icon" data-feather="bell"></i>
-</div>
-<span class="callout-header">Callout</span>
-<div id="why-use-your-university-email" class="callout-inner">
-<h3 class="callout-title">Why use your university email?</h3>
-<div class="callout-content">
-<p>Using your university or institutional email address makes it easier
-to verify your student status when applying for the GitHub Student
-Developer Pack.</p>
-</div>
-</div>
-</div>
-</section><section><h2 class="section-heading" id="requesting-github-student-developer-pack">Requesting GitHub Student Developer Pack<a class="anchor" aria-label="anchor" href="#requesting-github-student-developer-pack"></a>
+</ol></section><section><h2 class="section-heading" id="requesting-github-student-developer-pack">Requesting GitHub Student Developer Pack<a class="anchor" aria-label="anchor" href="#requesting-github-student-developer-pack"></a>
 </h2>
 <hr class="half-width">
-<p>GitHub offers free access to GitHub Copilot and other premium
-features to students through the GitHub Student Developer Pack.</p>
+<p>As of November 2025, GitHub offers free access to GitHub Copilot and
+other premium features to students through the GitHub Student Developer
+Pack.</p>
 <div class="section level3">
 <h3 id="steps-to-apply">Steps to Apply<a class="anchor" aria-label="anchor" href="#steps-to-apply"></a>
 </h3>
@@ -587,6 +573,24 @@ continue typing to see alternative suggestions.</p>
 </div>
 </div>
 </div>
+<div id="tips-for-using-copilot" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div id="tips-for-using-copilot" class="callout-inner">
+<h3 class="callout-title">Tips for Using Copilot</h3>
+<div class="callout-content">
+<ul>
+<li>Write clear, descriptive comments to get better suggestions</li>
+<li>Review all suggestions before accepting them</li>
+<li>Use Tab to accept a suggestion, or Esc to dismiss it</li>
+<li>Copilot learns from context, so well-structured code gets better
+suggestions</li>
+</ul>
+</div>
+</div>
+</div>
 </div>
 </section><section><h2 class="section-heading" id="configuring-copilot-settings">Configuring Copilot Settings<a class="anchor" aria-label="anchor" href="#configuring-copilot-settings"></a>
 </h2>
@@ -610,21 +614,19 @@ accepting suggestions</li>
 </ul>
 </li>
 </ol>
-<div id="tips-for-using-copilot" class="callout">
+<div id="recommendation" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <span class="callout-header">Callout</span>
-<div id="tips-for-using-copilot" class="callout-inner">
-<h3 class="callout-title">Tips for Using Copilot</h3>
+<div id="recommendation" class="callout-inner">
+<h3 class="callout-title">Recommendation</h3>
 <div class="callout-content">
-<ul>
-<li>Write clear, descriptive comments to get better suggestions</li>
-<li>Review all suggestions before accepting them</li>
-<li>Use Tab to accept a suggestion, or Esc to dismiss it</li>
-<li>Copilot learns from context, so well-structured code gets better
-suggestions</li>
-</ul>
+<p>For this course, we recommend to</p>
+<p><strong>disable</strong> <em>“Index project files with GitHub
+Copilot”</em> - to speed up performance - to reduce traffic - to keep
+private code private - to reduce unwanted suggestions from your existing
+codebase.</p>
 </div>
 </div>
 </div>
@@ -637,6 +639,7 @@ suggestions</li>
 <ul>
 <li>Verify that Copilot is enabled in settings</li>
 <li>Check that you’re signed in to GitHub</li>
+<li>Check your internet connection</li>
 <li>Ensure your GitHub Copilot subscription is active</li>
 <li>Try restarting RStudio</li>
 </ul>
@@ -1933,7 +1936,7 @@ students with an average above 70.</p>
   Example Solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2074,7 +2077,7 @@ context:</p>
   Observation
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>You should notice that: - With minimal context, Copilot might just
 complete the parentheses - With a comment, it might suggest the filename
@@ -2227,7 +2230,7 @@ from mean) 3. Returns the cleaned vector</p>
   Example Approach
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb13">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2533,7 +2536,7 @@ file.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2677,7 +2680,7 @@ findings</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Example Solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2912,7 +2915,7 @@ posts <strong>Option B</strong>: Process customer support tickets
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Example for Option B: Support Tickets </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb19">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
