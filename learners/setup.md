@@ -10,7 +10,7 @@ This lesson introduces AI-supported coding tools in RStudio, specifically focusi
 
 You will need a recent version of R installed on your computer. We recommend:
 
-- **R version 4.0.0 or later**
+- **R version 4.2.0 or later**
 
 Download R from [CRAN](https://cran.r-project.org/).
 
@@ -18,7 +18,7 @@ Download R from [CRAN](https://cran.r-project.org/).
 
 You will need a recent version of RStudio with GitHub Copilot support:
 
-- **RStudio version 2022.02 or later** (required for GitHub Copilot integration)
+- **RStudio version 2024.02 or later** (required for GitHub Copilot integration)
 
 Download RStudio from [Posit](https://posit.co/download/rstudio-desktop/).
 

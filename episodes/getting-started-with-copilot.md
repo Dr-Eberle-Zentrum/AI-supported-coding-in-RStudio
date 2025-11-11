@@ -36,17 +36,10 @@ If you don't already have a GitHub account, follow these steps:
 5. Choose a username
 6. Verify your account through the email confirmation
 
-::::::::::::::::::::::::::::::::::::: callout
-
-### Why use your university email?
-
-Using your university or institutional email address makes it easier to verify your student status when applying for the GitHub Student Developer Pack.
-
-::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Requesting GitHub Student Developer Pack
 
-GitHub offers free access to GitHub Copilot and other premium features to students through the GitHub Student Developer Pack.
+As of November 2025, GitHub offers free access to GitHub Copilot and other premium features to students through the GitHub Student Developer Pack.
 
 ### Steps to Apply
 
@@ -130,15 +123,6 @@ You can accept the suggestion by pressing `Tab` or continue typing to see altern
 :::::::::::::::::::::::::::::::::
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Configuring Copilot Settings
-
-You can customize how GitHub Copilot works in RStudio:
-
-1. Go to `Tools` → `Global Options` → `Copilot`
-2. Adjust settings such as:
-   - **Enable/Disable Copilot:** Toggle Copilot on or off
-   - **Suggestion mode:** Configure how suggestions appear
-   - **Keybindings:** Customize keyboard shortcuts for accepting suggestions
 
 ::::::::::::::::::::::::::::::::::::: callout
 
@@ -151,12 +135,39 @@ You can customize how GitHub Copilot works in RStudio:
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
+
+## Configuring Copilot Settings
+
+You can customize how GitHub Copilot works in RStudio:
+
+1. Go to `Tools` → `Global Options` → `Copilot`
+2. Adjust settings such as:
+   - **Enable/Disable Copilot:** Toggle Copilot on or off
+   - **Suggestion mode:** Configure how suggestions appear
+   - **Keybindings:** Customize keyboard shortcuts for accepting suggestions
+  
+  
+::::::::::::::::::::::::::::::::::::: callout
+
+## Recommendation
+
+For this course, we recommend to 
+
+**disable** *"Index project files with GitHub Copilot"* 
+  - to speed up performance
+  - to reduce traffic
+  - to keep private code private
+  - to reduce unwanted suggestions from your existing codebase.
+   
+::::::::::::::::::::::::::::::::::::::::::::::
+
 ## Troubleshooting Common Issues
 
 ### Copilot is not showing suggestions
 
 - Verify that Copilot is enabled in settings
 - Check that you're signed in to GitHub
+- Check your internet connection
 - Ensure your GitHub Copilot subscription is active
 - Try restarting RStudio
 

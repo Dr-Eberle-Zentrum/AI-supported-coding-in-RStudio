@@ -8,6 +8,11 @@ This module is aimed at people who already have experience with R and want to le
 It is assumed that participants are already familiar with the basics of R, such as
 using RStudio, loading data, and using R scripts.
 
+## Acknowledgement
+
+The drafting of this learning module was strongly assisted by the
+use of GitHub Copilot.
+
 ## Let's get started ...
 
 ------------------------------------------------------------------------
