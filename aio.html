@@ -554,7 +554,7 @@ function, such as:</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>GitHub Copilot should suggest a function implementation below your
 comment. The suggestion might look something like:</p>
@@ -979,14 +979,104 @@ code in your project</li>
 <li>Ethical considerations in code implementation</li>
 <li>Debugging complex issues</li>
 </ul>
-<div id="group-discussion" class="callout discussion">
+<div id="ways-how-ai-assistance-can-help-you" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>
 <span class="callout-header">Discussion</span>
-<div id="group-discussion" class="callout-inner">
-<h3 class="callout-title">Group Discussion</h3>
+<div id="ways-how-ai-assistance-can-help-you" class="callout-inner">
+<h3 class="callout-title">Ways How AI Assistance Can Help You</h3>
 <div class="callout-content">
+<p>Typically, one distinguishes between three <strong>ways of AI
+usage</strong>:</p>
+<ul>
+<li>
+<strong>assistively</strong>: AI helps you by suggesting code
+snippets, completing lines, or generating boilerplate code.</li>
+<li>
+<strong>directively</strong>: AI takes a more active role,
+generating larger code blocks or even entire functions based on your
+prompts.</li>
+<li>
+<strong>autonomously</strong>: AI independently creates code with
+minimal human input, often used in automated code generation
+scenarios.</li>
+</ul>
+<p>Within this course, we will investigate all three ways of AI
+usage.</p>
+<p>Beside the way how AI is used, one can also distinguish what is being
+supported by AI:</p>
+<ul>
+<li>
+<strong>coding support</strong>
+<ul>
+<li>AI assists with writing and revising your code</li>
+<li>i.e. AI is used as a tool within your coding workflow</li>
+<li>this can be done as a code assistant or as a code generator</li>
+<li>subtasks are e.g. 
+<ul>
+<li>
+<strong>syntax support</strong>: AI helps with code syntax, such as
+completing function calls, correcting errors, or suggesting variable
+names.</li>
+<li>
+<strong>logic support</strong>: AI assists with the logical
+structure of the code, such as suggesting algorithms, data structures,
+or control flow.</li>
+<li>
+<strong>documentation support</strong>: AI helps with writing
+comments, documentation, or explanations for the code.</li>
+<li>
+<strong>debugging support</strong>: AI assists in identifying and
+fixing bugs, suggesting test cases, or improving code quality.</li>
+<li>
+<strong>optimization support</strong>: AI helps improve code
+performance, suggesting optimizations, refactoring, or resource
+management techniques.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<strong>data processing support</strong>: AI assists in cleaning,
+transforming, and preparing data for analysis.
+<ul>
+<li>i.e. AI is used as a tool within data processing pipelines.</li>
+<li>e.g. we will use the <code>ellmer</code> R package later in this
+course for AI-supported data cleaning.</li>
+</ul>
+</li>
+<li>
+<strong>project management support</strong>
+<ul>
+<li>AI aids in organizing tasks, tracking progress, and managing
+timelines.</li>
+<li>i.e. AI is used as a tool within project management software</li>
+<li>e.g. GitHub Copilot Codespaces, GitHub Issues AI, etc.</li>
+</ul>
+</li>
+<li>
+<strong>collaboration support</strong>
+<ul>
+<li>AI facilitates teamwork by suggesting code reviews, merging changes,
+or managing version control.</li>
+<li>e.g. GitHub Copilot Chat, GitHub Pull Requests AI, etc.</li>
+</ul>
+</li>
+<li>
+<strong>learning support</strong>
+<ul>
+<li>AI provides educational assistance, such as explaining concepts,
+suggesting resources, or guiding through coding challenges.<br>
+</li>
+<li>typically using a chatbot interface</li>
+<li>e.g. ChatGPT, GitHub Copilot Chat, etc.</li>
+</ul>
+</li>
+</ul>
+<div class="section level3">
+<h3 id="group-discussion">Group Discussion<a class="anchor" aria-label="anchor" href="#group-discussion"></a>
+</h3>
 <p>In small groups, discuss:</p>
 <ul>
 <li>Have you used AI coding assistants before? What was your
@@ -997,6 +1087,7 @@ unhelpful?</li>
 <li>How do you decide when to use AI assistance versus figuring things
 out yourself?</li>
 </ul>
+</div>
 </div>
 </div>
 </div>
@@ -1217,7 +1308,7 @@ cases:</p>
   Potential Issues
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>AI might generate code that: 1. <strong>Doesn’t handle NA values
 correctly:</strong>
@@ -1411,7 +1502,7 @@ a GPL license library in a proprietary project. What do you do?</p></li>
   Discussion Points
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p><strong>Scenario 1 - Academic Integrity:</strong> - If not explicitly
 allowed, assume it’s not permitted - Academic assignments are for
@@ -1560,7 +1651,7 @@ differ?</p>
   Observations
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <p><strong>Poor prompt typically produces:</strong> - Generic, vague
 code - No error handling - No documentation - Assumes undocumented
@@ -1988,7 +2079,7 @@ students with an average above 70.</p>
   Example Solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2129,7 +2220,7 @@ context:</p>
   Observation
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>You should notice that: - With minimal context, Copilot might just
 complete the parentheses - With a comment, it might suggest the filename
@@ -2282,7 +2373,7 @@ from mean) 3. Returns the cleaned vector</p>
   Example Approach
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb13">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2588,7 +2679,7 @@ file.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2732,7 +2823,7 @@ findings</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Example Solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2967,7 +3058,7 @@ posts <strong>Option B</strong>: Process customer support tickets
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Example for Option B: Support Tickets </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb19">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -3247,7 +3338,7 @@ identify?</p>
   Issues AI Might Identify
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li>
@@ -3508,7 +3599,7 @@ Improve readability 4. Add documentation</p>
   Improved Version After Iterations
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -3728,7 +3819,7 @@ Documentation 5. Error handling</p>
   Comprehensive Improved Version
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb28">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -4201,7 +4292,7 @@ appropriate code.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Example Solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">MARKDOWN<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -4509,7 +4600,7 @@ needed</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p><strong>GitHub Issue</strong>:</p>
 <div class="codewrapper sourceCode" id="cb16">
@@ -4701,7 +4792,7 @@ Dependencies between issues</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p><strong>Parent Issue #80</strong>:</p>
 <div class="codewrapper sourceCode" id="cb23">
