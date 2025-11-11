@@ -205,6 +205,48 @@ Prioritize human judgment for:
 
 ::::::::::::::::::::::::::::::::::::: discussion
 
+
+
+## Ways How AI Assistance Can Help You
+
+Typically, one distinguishes between three **ways of AI usage**:
+
+- **assistively**: AI helps you by suggesting code snippets, completing lines, or generating boilerplate code.
+- **directively**: AI takes a more active role, generating larger code blocks or even entire functions based on your prompts.
+- **autonomously**: AI independently creates code with minimal human input, often used in automated code generation scenarios.
+
+Within this course, we will investigate all three ways of AI usage.
+
+Beside the way how AI is used, one can also distinguish what is being supported by AI:
+
+- **coding support**
+  - AI assists with writing and revising your code
+  - i.e. AI is used as a tool within your coding workflow
+  - this can be done as a code assistant or as a code generator
+  - subtasks are e.g. 
+    - **syntax support**: AI helps with code syntax, such as completing function calls, correcting errors, or suggesting variable names.
+    - **logic support**: AI assists with the logical structure of the code, such as suggesting algorithms, data structures, or control flow.
+    - **documentation support**: AI helps with writing comments, documentation, or explanations for the code.
+    - **debugging support**: AI assists in identifying and fixing bugs, suggesting test cases, or improving code quality.
+    - **optimization support**: AI helps improve code performance, suggesting optimizations, refactoring, or resource management techniques.
+- **data processing support**: AI assists in cleaning, transforming, and preparing data for analysis.
+  - i.e. AI is used as a tool within data processing pipelines.
+  - e.g. we will use the `ellmer` R package later in this course for AI-supported data cleaning.
+- **project management support**
+  - AI aids in organizing tasks, tracking progress, and managing timelines.
+  - i.e. AI is used as a tool within project management software
+  - e.g. GitHub Copilot Codespaces, GitHub Issues AI, etc.
+- **collaboration support**
+  - AI facilitates teamwork by suggesting code reviews, merging changes, or managing version control.
+  - e.g. GitHub Copilot Chat, GitHub Pull Requests AI, etc.
+- **learning support**
+  - AI provides educational assistance, such as explaining concepts, suggesting resources, or guiding through coding challenges.  
+  - typically using a chatbot interface
+  - e.g. ChatGPT, GitHub Copilot Chat, etc.
+
+
+
+
 ### Group Discussion
 
 In small groups, discuss:
