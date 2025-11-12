@@ -203,7 +203,6 @@ Prioritize human judgment for:
 - Ethical considerations in code implementation
 - Debugging complex issues
 
-::::::::::::::::::::::::::::::::::::: discussion
 
 
 
@@ -211,15 +210,23 @@ Prioritize human judgment for:
 
 Typically, one distinguishes between three **ways of AI usage**:
 
-- **assistively**: AI helps you by suggesting code snippets, completing lines, or generating boilerplate code.
-- **directively**: AI takes a more active role, generating larger code blocks or even entire functions based on your prompts.
-- **autonomously**: AI independently creates code with minimal human input, often used in automated code generation scenarios.
+- **Assistively**: 
+  AI helps you by suggesting code snippets, completing lines, or generating boilerplate code.
+  This is typically done automatically without the need to explicitly ask for it.
+- **Directively**: 
+  AI takes a more active role, generating larger code blocks or even entire functions based on your prompts.
+  Here, you explicitly ask the AI to perform a specific task.
+- **Autonomously**: 
+  AI independently creates code with minimal human input, often used in automated code generation scenarios.
+  To this end, you provide high-level requirements or a description of a larger task, and the AI generates the code accordingly.
 
 Within this course, we will investigate all three ways of AI usage.
 
-Beside the way how AI is used, one can also distinguish what is being supported by AI:
+## What is Supported by AI?
 
-- **coding support**
+Beside the way *how* AI is used, one can also distinguish *what process is supported* by AI:
+
+- **Coding Support**
   - AI assists with writing and revising your code
   - i.e. AI is used as a tool within your coding workflow
   - this can be done as a code assistant or as a code generator
@@ -229,23 +236,24 @@ Beside the way how AI is used, one can also distinguish what is being supported 
     - **documentation support**: AI helps with writing comments, documentation, or explanations for the code.
     - **debugging support**: AI assists in identifying and fixing bugs, suggesting test cases, or improving code quality.
     - **optimization support**: AI helps improve code performance, suggesting optimizations, refactoring, or resource management techniques.
-- **data processing support**: AI assists in cleaning, transforming, and preparing data for analysis.
+- **Data Processing Support**: AI assists in cleaning, transforming, and preparing data for analysis.
   - i.e. AI is used as a tool within data processing pipelines.
   - e.g. we will use the `ellmer` R package later in this course for AI-supported data cleaning.
-- **project management support**
+- **Project Management Support**
   - AI aids in organizing tasks, tracking progress, and managing timelines.
   - i.e. AI is used as a tool within project management software
   - e.g. GitHub Copilot Codespaces, GitHub Issues AI, etc.
-- **collaboration support**
+- **Collaboration Support**
   - AI facilitates teamwork by suggesting code reviews, merging changes, or managing version control.
   - e.g. GitHub Copilot Chat, GitHub Pull Requests AI, etc.
-- **learning support**
+- **Learning Support**
   - AI provides educational assistance, such as explaining concepts, suggesting resources, or guiding through coding challenges.  
   - typically using a chatbot interface
   - e.g. ChatGPT, GitHub Copilot Chat, etc.
+- ... something missing?! Let us know!
 
 
-
+::::::::::::::::::::::::::::::::::::: discussion
 
 ### Group Discussion
 
@@ -264,8 +272,8 @@ AI assistants are rapidly evolving. As they improve, we should:
 
 - Stay informed about new capabilities and limitations
 - Continuously refine our approach to using these tools
-- Share knowledge about effective practices with colleagues
-- Contribute to discussions about responsible AI use in software development
+- Share knowledge about effective practices
+- Contribute to discussions about responsible AI use
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
@@ -274,5 +282,6 @@ AI assistants are rapidly evolving. As they improve, we should:
 - Always review and test AI-generated code thoroughly
 - AI assistants are tools to augment, not replace, human expertise
 - Develop a balanced approach that leverages AI strengths while maintaining code quality and security
+- Stay open to learning and adapting as AI technologies evolve
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
