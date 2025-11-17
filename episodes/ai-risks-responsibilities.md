@@ -418,28 +418,18 @@ Try both prompts with your AI assistant. How do the results differ?
 # - Is this secure?
 ```
 
-### 2. Use Comprehensive Testing
+### 2. Prompt Engineering
 
-```r
-# Create tests BEFORE accepting AI code
-test_that("function handles all cases", {
-  # Normal cases
-  expect_equal(my_function(normal_input), expected_output)
-  
-  # Edge cases
-  expect_equal(my_function(c()), expected_empty)
-  expect_equal(my_function(NULL), expected_null)
-  expect_true(is.na(my_function(c(NA))))
-  
-  # Error cases
-  expect_error(my_function("wrong type"))
-  expect_error(my_function(-1))
-  
-  # Boundary cases
-  expect_equal(my_function(c(0)), expected_zero)
-  expect_equal(my_function(c(Inf)), expected_inf)
-})
-```
+**Improve AI suggestions by extended initial prompts:**
+
+- Describe the **general requirements** (what packages to use, coding style, version constraints, etc.)
+- Give details about the *data structures* involved
+- Describe the coding task *in detail*
+- Define critical *edge cases* (or request handling of edge cases)
+- Request *documentation* and comments for clarity and subsequent maintenance
+
+In some AI systems, general requirements can be provided as system prompts or 
+initial context to guide all subsequent suggestions.
 
 ### 3. Code Review Process
 
@@ -465,39 +455,6 @@ Don't accept the first suggestion:
 # Final: Human review and testing
 ```
 
-### 5. Use Linting and Static Analysis
-
-```r
-# Use automated tools alongside AI
-library(lintr)
-lint("my_script.R")
-
-# Check code style
-library(styler)
-style_file("my_script.R")
-
-# Static analysis
-# Run R CMD check on packages
-```
-
-### 6. Benchmark and Profile
-
-```r
-# Verify performance claims
-library(microbenchmark)
-
-microbenchmark(
-  ai_version = ai_suggested_function(data),
-  manual_version = my_implementation(data),
-  times = 100
-)
-
-# Profile to find bottlenecks
-library(profvis)
-profvis({
-  result <- ai_suggested_function(large_data)
-})
-```
 
 ## Best Practices for Responsible AI Usage
 
