@@ -27,13 +27,20 @@ exercises: 15
 
 ## Introduction
 
-While AI coding assistants like GitHub Copilot can significantly enhance productivity, they come with important risks, drawbacks, and responsibilities. Understanding these challenges is crucial for using AI tools effectively and ethically. This lesson explores what can go wrong, your responsibilities as a user, and how to navigate the complex landscape of AI-assisted development.
+While AI coding assistants like GitHub Copilot can significantly enhance productivity, 
+they come with important risks, drawbacks, and responsibilities. 
+Understanding these challenges is crucial for using AI tools effectively and ethically. 
+This lesson explores what can go wrong, your responsibilities as a user, 
+and how to navigate the complex landscape of AI-assisted development.
 
 ::::::::::::::::::::::::::::::::::::: callout
 
 ### The Double-Edged Sword
 
-AI coding assistants are powerful tools that can accelerate development, but they require careful use. Just as you wouldn't use a power tool without understanding safety precautions, you shouldn't use AI coding assistants without understanding their limitations and risks.
+AI coding assistants are powerful tools that can accelerate development, 
+but they require careful use. 
+Just as you wouldn't use a power tool without understanding safety precautions, 
+you shouldn't use AI coding assistants without understanding their limitations and risks.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -43,20 +50,21 @@ AI coding assistants are powerful tools that can accelerate development, but the
 
 AI models can generate code that appears correct but contains subtle bugs:
 
-**Example: Off-by-One Errors**
+**Example:**
 ```r
 # AI might suggest
-filter_data <- function(data, threshold) {
-  data[1:length(data) - 1]  # Bug: loses last element
+remove_last <- function(data) {
+  data[1:length(data) - 1]  # Bug: access of data[0] will cause an error
 }
 
 # Correct version
-filter_data <- function(data, threshold) {
-  data[data > threshold]
+remove_last <- function(data) {
+  data[1:(length(data) - 1)]  # Proper parentheses to ensure correct indexing
 }
 ```
 
 **Why this happens:**
+
 - AI learns from patterns in training data, including buggy code
 - AI doesn't execute or test the code it generates
 - Subtle logic errors are harder for pattern-matching to detect
@@ -80,7 +88,8 @@ execute_query <- function(user_input) {
 ```
 
 **Security risks include:**
-- SQL injection vulnerabilities
+
+- SQL injection vulnerabilities (misuse/manipulation of the database request)
 - Cross-site scripting (XSS) in web applications
 - Hardcoded credentials or API keys
 - Unsafe file operations
@@ -122,10 +131,11 @@ AI models are trained on public code repositories, which may include:
 
 ## Challenge 1: Identify the Bug
 
-Ask an AI assistant to generate a function that removes duplicates from a vector while preserving order. Test the result with edge cases:
+Ask an AI assistant to generate a function that removes duplicates from a 
+vector while preserving order. Test the result with edge cases:
 
 ```r
-test_data <- c(1, 2, 2, 3, 1, 4, NA, 5, NA)
+test_data <- c(1, 2, 2, 5, 1, 4, NA, 3, NA)
 ```
 
 What might go wrong?
@@ -135,35 +145,45 @@ What might go wrong?
 ## Potential Issues
 
 AI might generate code that:
-1. **Doesn't handle NA values correctly:**
-   ```r
-   # Might remove all NAs or fail
-   unique(test_data)  # This actually works, but AI might suggest worse
-   ```
+
+1. **Doesn't handle NA values as intended (e.g. listing or not listing them):**
+
+```r
+# Might remove all NAs or fail
+unique(test_data)  # This actually works, but AI might suggest worse
+```
 
 2. **Uses inefficient approaches:**
-   ```r
-   # Slow for large vectors
-   result <- c()
-   for(x in test_data) {
-     if(!(x %in% result)) result <- c(result, x)
-   }
-   ```
 
-3. **Doesn't preserve order as required:**
-   ```r
-   # sort() changes order
-   sort(unique(test_data))
-   ```
-
-**Better solution:**
 ```r
-remove_duplicates <- function(x) {
-  x[!duplicated(x)]  # Preserves order, handles NA
+# Slow for large vectors
+result <- c()
+for(x in test_data) {
+ if(!(x %in% result)) result <- c(result, x)
 }
 ```
 
-**Lesson:** Always test AI-generated code with edge cases!
+3. **Doesn't preserve order as required:**
+
+```r
+# sort() changes order
+sort(unique(test_data))
+```
+
+**Better solution:**
+
+```r
+remove_duplicates <- function(x, na.rm = TRUE) {
+  if(na.rm) {
+    x[!duplicated(x) & !is.na(x)]  # Preserves order, removes NA
+  } else {
+    unique(x)  # Preserves order, keeps NA
+  }
+}
+remove_duplicates(test_data)
+```
+
+**Lesson:** Always **test** AI-generated code with **edge cases**!
 
 :::::::::::::::::::::::::::::::::
 ::::::::::::::::::::::::::::::::::::::::::::::::
@@ -172,9 +192,11 @@ remove_duplicates <- function(x) {
 
 ### 1. Code Ownership and Accountability
 
-**You are ultimately responsible for all code in your project**, regardless of whether it was written by you or suggested by AI.
+**You are ultimately responsible for all code in your project**, 
+regardless of whether it was written by you or suggested by AI.
 
 **This means:**
+
 - You must understand every line of code you commit
 - You are accountable for bugs, security issues, and performance problems
 - You cannot blame the AI if something goes wrong
@@ -209,6 +231,7 @@ test_that("ai_suggested_function works correctly", {
 ### 3. Security Awareness
 
 You must:
+
 - Review all AI-generated code for security vulnerabilities
 - Never include sensitive data in prompts to AI tools
 - Understand that code sent to cloud-based AI may be logged
@@ -219,6 +242,7 @@ You must:
 ### Data Privacy Alert
 
 When using cloud-based AI assistants:
+
 - Your code snippets may be sent to external servers
 - Avoid including passwords, API keys, or sensitive data
 - Check your organization's policies on AI tool usage
@@ -229,6 +253,7 @@ When using cloud-based AI assistants:
 ### 4. Continuous Learning
 
 **Don't let AI replace your learning:**
+
 - Use AI as a learning tool, not a crutch
 - Understand why suggested solutions work
 - Research functions and techniques you don't recognize
@@ -237,6 +262,7 @@ When using cloud-based AI assistants:
 ### 5. Attribution and Transparency
 
 Be transparent about AI usage:
+
 - Document when AI significantly contributed to code
 - Follow your organization's policies on AI disclosure
 - Consider adding comments noting AI-assisted sections
@@ -247,6 +273,7 @@ Be transparent about AI usage:
 ### 1. Critical Systems
 
 **Avoid AI for:**
+
 - Medical device software
 - Financial transaction systems
 - Safety-critical aerospace or automotive code
@@ -258,6 +285,7 @@ Be transparent about AI usage:
 ### 2. Specialized or Novel Algorithms
 
 **Be cautious with:**
+
 - Cutting-edge research implementations
 - Domain-specific algorithms not well-represented online
 - Novel statistical methods
@@ -268,6 +296,7 @@ Be transparent about AI usage:
 ### 3. Highly Regulated Domains
 
 **Extra caution in:**
+
 - Healthcare (HIPAA compliance)
 - Finance (SOX, PCI-DSS compliance)
 - Government (security clearances required)
@@ -278,6 +307,7 @@ Be transparent about AI usage:
 ### 4. Learning Fundamentals
 
 **Don't use AI when:**
+
 - Learning a new programming language
 - Studying fundamental algorithms and data structures
 - Completing academic assignments (unless explicitly allowed)
@@ -302,18 +332,21 @@ Discuss these scenarios with a partner:
 ## Discussion Points
 
 **Scenario 1 - Academic Integrity:**
+
 - If not explicitly allowed, assume it's not permitted
 - Academic assignments are for learning, not just completion
 - Using AI without understanding violates learning objectives
 - **Best practice:** Ask your professor about AI policy
 
 **Scenario 2 - Code Understanding:**
+
 - Using code you don't understand is dangerous
 - It may have bugs or security issues you can't detect
 - You won't be able to maintain or debug it later
 - **Best practice:** Take time to understand, refactor if needed, or find another solution
 
 **Scenario 3 - License Compliance:**
+
 - Using GPL code in proprietary software violates the license
 - This could lead to legal issues for your organization
 - **Best practice:** Remove the code and find an alternative with a compatible license (MIT, Apache, BSD)
@@ -326,12 +359,14 @@ Discuss these scenarios with a partner:
 ### 1. Skill Atrophy
 
 **Long-term risks:**
+
 - Reduced ability to write code from scratch
 - Weakened problem-solving skills
 - Decreased understanding of fundamentals
 - Dependency on AI availability
 
 **Example:**
+
 A developer who always uses AI for basic tasks may struggle when:
 - Working offline
 - Debugging complex issues
@@ -341,6 +376,7 @@ A developer who always uses AI for basic tasks may struggle when:
 ### 2. Reduced Code Understanding
 
 **Consequences:**
+
 - Difficulty maintaining code you didn't write or understand
 - Inability to debug when issues arise
 - Challenges explaining code to colleagues
@@ -349,6 +385,7 @@ A developer who always uses AI for basic tasks may struggle when:
 ### 3. Homogenization of Code
 
 **Problems:**
+
 - Everyone's code starts looking similar (AI patterns)
 - Loss of creative problem-solving approaches
 - Reduced innovation in software design
@@ -357,6 +394,7 @@ A developer who always uses AI for basic tasks may struggle when:
 ### 4. False Confidence
 
 **Dangers:**
+
 - Overestimating code quality because it "looks professional"
 - Underestimating testing needs
 - Reduced code review rigor
@@ -367,6 +405,7 @@ A developer who always uses AI for basic tasks may struggle when:
 ### Maintaining Skills While Using AI
 
 **Balance is key:**
+
 - Set aside time for coding without AI assistance
 - Practice fundamental skills regularly
 - Do code katas or programming challenges manually
@@ -380,12 +419,14 @@ A developer who always uses AI for basic tasks may struggle when:
 ### 1. Pattern Matching, Not Understanding
 
 **LLMs don't "understand" code:**
+
 - They predict likely token sequences based on training data
 - They don't execute code mentally to verify correctness
 - They don't reason about edge cases
 - They replicate patterns even when inappropriate
 
 **Example:**
+
 ```r
 # AI might suggest this pattern because it's common
 calculate_average <- function(x) {
@@ -401,6 +442,7 @@ calculate_average <- function(x) {
 ### 2. Training Data Limitations
 
 **Issues with training data:**
+
 - Contains buggy code from public repositories
 - May be outdated (not current best practices)
 - Overrepresents certain languages and frameworks
@@ -409,6 +451,7 @@ calculate_average <- function(x) {
 ### 3. Context Window Limitations
 
 **LLMs have limited context:**
+
 - Can't see entire project structure
 - Miss important constraints from other files
 - Don't know your specific requirements
@@ -417,6 +460,7 @@ calculate_average <- function(x) {
 ### 4. No Execution or Testing
 
 **Critical limitation:**
+
 - AI generates code but doesn't run it
 - No feedback loop from actual execution
 - Can't verify correctness through testing
@@ -429,9 +473,11 @@ calculate_average <- function(x) {
 Try improving AI-generated code quality by refining your prompts. Compare results:
 
 **Poor prompt:**
+
 > Write a function to process data
 
 **Better prompt:**
+
 > Write an R function that filters a data frame to include only rows where the 'value' column is positive and non-NA. Include input validation, error handling, and roxygen2 documentation.
 
 Try both prompts with your AI assistant. How do the results differ?
@@ -441,6 +487,7 @@ Try both prompts with your AI assistant. How do the results differ?
 ## Observations
 
 **Poor prompt typically produces:**
+
 - Generic, vague code
 - No error handling
 - No documentation
@@ -448,6 +495,7 @@ Try both prompts with your AI assistant. How do the results differ?
 - Doesn't handle edge cases
 
 **Better prompt typically produces:**
+
 - More specific, targeted code
 - Input validation
 - Documentation
@@ -455,6 +503,7 @@ Try both prompts with your AI assistant. How do the results differ?
 - Better edge case coverage
 
 **Key lessons:**
+
 1. Specific prompts → better results
 2. State requirements explicitly
 3. Request error handling and documentation
@@ -471,6 +520,7 @@ Try both prompts with your AI assistant. How do the results differ?
 ### 1. Adopt a Verification Mindset
 
 **Question everything:**
+
 ```r
 # When AI suggests code, ask yourself:
 # - Do I understand what this does?
@@ -507,6 +557,7 @@ test_that("function handles all cases", {
 ### 3. Code Review Process
 
 **Always review AI-generated code for:**
+
 - Correctness of logic
 - Error handling
 - Input validation
@@ -518,6 +569,7 @@ test_that("function handles all cases", {
 ### 4. Iterative Refinement
 
 Don't accept the first suggestion:
+
 ```r
 # Round 1: AI suggests basic solution
 # Round 2: Request error handling
@@ -600,6 +652,7 @@ calculate_weighted_avg <- function(values, weights) {
 ### 4. Continuous Skill Development
 
 **Maintain your skills:**
+
 - Practice coding without AI regularly
 - Study algorithms and data structures
 - Read high-quality code from experts
@@ -609,6 +662,7 @@ calculate_weighted_avg <- function(values, weights) {
 ### 5. Stay Informed
 
 AI capabilities and limitations change rapidly:
+
 - Follow updates to tools you use
 - Learn about new AI capabilities
 - Understand evolving best practices
@@ -637,12 +691,14 @@ Discuss with your peers:
 ### Copyright and Licensing
 
 **Key concerns:**
+
 - AI-generated code may resemble copyrighted code
 - Unclear legal status of AI-generated content
 - License compatibility issues
 - Potential copyright infringement
 
 **Best practices:**
+
 - Understand your organization's AI usage policies
 - Check licenses of suggested dependencies
 - Document AI usage for legal compliance
@@ -651,12 +707,14 @@ Discuss with your peers:
 ### Privacy and Data Protection
 
 **Considerations:**
+
 - Code sent to AI services may be stored
 - Proprietary algorithms might be leaked
 - Sensitive data in code could be exposed
 - Compliance with GDPR, HIPAA, etc.
 
 **Mitigation:**
+
 - Use local AI models for sensitive code
 - Anonymize data in examples sent to AI
 - Review AI service terms of service
@@ -665,6 +723,7 @@ Discuss with your peers:
 ### Professional Ethics
 
 **Ethical obligations:**
+
 - Honesty about AI use (academic, professional)
 - Not claiming AI-generated work as entirely your own
 - Ensuring code quality and safety
@@ -672,7 +731,8 @@ Discuss with your peers:
 
 ## Conclusion
 
-AI coding assistants are powerful tools that can enhance productivity, but they come with significant responsibilities. Success requires:
+AI coding assistants are powerful tools that can enhance productivity, but they come with significant responsibilities. 
+Success requires:
 
 1. **Awareness** of what can go wrong
 2. **Responsibility** for all code you commit
