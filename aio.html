@@ -758,7 +758,7 @@ assistance.</p>
   Example Solutions
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>Examples might include:</p>
 <ul>
@@ -928,7 +928,7 @@ accepting the suggestion?</p>
   Questions to Consider
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>Before accepting AI-generated code, ask:</p>
 <ol style="list-style-type: decimal">
@@ -1661,31 +1661,23 @@ the output!</p>
 </div>
 </div>
 <div class="section level3">
-<h3 id="use-comprehensive-testing">2. Use Comprehensive Testing<a class="anchor" aria-label="anchor" href="#use-comprehensive-testing"></a>
+<h3 id="prompt-engineering">2. Prompt Engineering<a class="anchor" aria-label="anchor" href="#prompt-engineering"></a>
 </h3>
-<div class="codewrapper sourceCode" id="cb7">
-<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># Create tests BEFORE accepting AI code</span></span>
-<span><span class="fu">test_that</span><span class="op">(</span><span class="st">"function handles all cases"</span>, <span class="op">{</span></span>
-<span>  <span class="co"># Normal cases</span></span>
-<span>  <span class="fu">expect_equal</span><span class="op">(</span><span class="fu">my_function</span><span class="op">(</span><span class="va">normal_input</span><span class="op">)</span>, <span class="va">expected_output</span><span class="op">)</span></span>
-<span>  </span>
-<span>  <span class="co"># Edge cases</span></span>
-<span>  <span class="fu">expect_equal</span><span class="op">(</span><span class="fu">my_function</span><span class="op">(</span><span class="fu">c</span><span class="op">(</span><span class="op">)</span><span class="op">)</span>, <span class="va">expected_empty</span><span class="op">)</span></span>
-<span>  <span class="fu">expect_equal</span><span class="op">(</span><span class="fu">my_function</span><span class="op">(</span><span class="cn">NULL</span><span class="op">)</span>, <span class="va">expected_null</span><span class="op">)</span></span>
-<span>  <span class="fu">expect_true</span><span class="op">(</span><span class="fu">is.na</span><span class="op">(</span><span class="fu">my_function</span><span class="op">(</span><span class="fu">c</span><span class="op">(</span><span class="cn">NA</span><span class="op">)</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
-<span>  </span>
-<span>  <span class="co"># Error cases</span></span>
-<span>  <span class="fu">expect_error</span><span class="op">(</span><span class="fu">my_function</span><span class="op">(</span><span class="st">"wrong type"</span><span class="op">)</span><span class="op">)</span></span>
-<span>  <span class="fu">expect_error</span><span class="op">(</span><span class="fu">my_function</span><span class="op">(</span><span class="op">-</span><span class="fl">1</span><span class="op">)</span><span class="op">)</span></span>
-<span>  </span>
-<span>  <span class="co"># Boundary cases</span></span>
-<span>  <span class="fu">expect_equal</span><span class="op">(</span><span class="fu">my_function</span><span class="op">(</span><span class="fu">c</span><span class="op">(</span><span class="fl">0</span><span class="op">)</span><span class="op">)</span>, <span class="va">expected_zero</span><span class="op">)</span></span>
-<span>  <span class="fu">expect_equal</span><span class="op">(</span><span class="fu">my_function</span><span class="op">(</span><span class="fu">c</span><span class="op">(</span><span class="cn">Inf</span><span class="op">)</span><span class="op">)</span>, <span class="va">expected_inf</span><span class="op">)</span></span>
-<span><span class="op">}</span><span class="op">)</span></span></code></pre>
-</div>
+<p><strong>Improve AI suggestions by extended initial
+prompts:</strong></p>
+<ul>
+<li>Describe the <strong>general requirements</strong> (what packages to
+use, coding style, version constraints, etc.)</li>
+<li>Give details about the <em>data structures</em> involved</li>
+<li>Describe the coding task <em>in detail</em>
+</li>
+<li>Define critical <em>edge cases</em> (or request handling of edge
+cases)</li>
+<li>Request <em>documentation</em> and comments for clarity and
+subsequent maintenance</li>
+</ul>
+<p>In some AI systems, general requirements can be provided as system
+prompts or initial context to guide all subsequent suggestions.</p>
 </div>
 <div class="section level3">
 <h3 id="code-review-process">3. Code Review Process<a class="anchor" aria-label="anchor" href="#code-review-process"></a>
@@ -1705,7 +1697,7 @@ the output!</p>
 <h3 id="iterative-refinement">4. Iterative Refinement<a class="anchor" aria-label="anchor" href="#iterative-refinement"></a>
 </h3>
 <p>Don’t accept the first suggestion:</p>
-<div class="codewrapper sourceCode" id="cb8">
+<div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1714,48 +1706,6 @@ the output!</p>
 <span><span class="co"># Round 3: Request performance optimization</span></span>
 <span><span class="co"># Round 4: Request documentation</span></span>
 <span><span class="co"># Final: Human review and testing</span></span></code></pre>
-</div>
-</div>
-<div class="section level3">
-<h3 id="use-linting-and-static-analysis">5. Use Linting and Static Analysis<a class="anchor" aria-label="anchor" href="#use-linting-and-static-analysis"></a>
-</h3>
-<div class="codewrapper sourceCode" id="cb9">
-<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># Use automated tools alongside AI</span></span>
-<span><span class="kw">library</span><span class="op">(</span><span class="va">lintr</span><span class="op">)</span></span>
-<span><span class="fu">lint</span><span class="op">(</span><span class="st">"my_script.R"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Check code style</span></span>
-<span><span class="kw">library</span><span class="op">(</span><span class="va">styler</span><span class="op">)</span></span>
-<span><span class="fu">style_file</span><span class="op">(</span><span class="st">"my_script.R"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Static analysis</span></span>
-<span><span class="co"># Run R CMD check on packages</span></span></code></pre>
-</div>
-</div>
-<div class="section level3">
-<h3 id="benchmark-and-profile">6. Benchmark and Profile<a class="anchor" aria-label="anchor" href="#benchmark-and-profile"></a>
-</h3>
-<div class="codewrapper sourceCode" id="cb10">
-<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># Verify performance claims</span></span>
-<span><span class="kw">library</span><span class="op">(</span><span class="va">microbenchmark</span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu">microbenchmark</span><span class="op">(</span></span>
-<span>  ai_version <span class="op">=</span> <span class="fu">ai_suggested_function</span><span class="op">(</span><span class="va">data</span><span class="op">)</span>,</span>
-<span>  manual_version <span class="op">=</span> <span class="fu">my_implementation</span><span class="op">(</span><span class="va">data</span><span class="op">)</span>,</span>
-<span>  times <span class="op">=</span> <span class="fl">100</span></span>
-<span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Profile to find bottlenecks</span></span>
-<span><span class="kw">library</span><span class="op">(</span><span class="va">profvis</span><span class="op">)</span></span>
-<span><span class="fu">profvis</span><span class="op">(</span><span class="op">{</span></span>
-<span>  <span class="va">result</span> <span class="op">&lt;-</span> <span class="fu">ai_suggested_function</span><span class="op">(</span><span class="va">large_data</span><span class="op">)</span></span>
-<span><span class="op">}</span><span class="op">)</span></span></code></pre>
 </div>
 </div>
 </section><section><h2 class="section-heading" id="best-practices-for-responsible-ai-usage">Best Practices for Responsible AI Usage<a class="anchor" aria-label="anchor" href="#best-practices-for-responsible-ai-usage"></a>
@@ -1780,7 +1730,7 @@ work</p>
 <div class="section level3">
 <h3 id="document-ai-usage">3. Document AI Usage<a class="anchor" aria-label="anchor" href="#document-ai-usage"></a>
 </h3>
-<div class="codewrapper sourceCode" id="cb11">
+<div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -2681,7 +2631,7 @@ file.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2825,7 +2775,7 @@ findings</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Example Solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -3060,7 +3010,7 @@ posts <strong>Option B</strong>: Process customer support tickets
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Example for Option B: Support Tickets </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb19">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -3340,7 +3290,7 @@ identify?</p>
   Issues AI Might Identify
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li>
@@ -3601,7 +3551,7 @@ Improve readability 4. Add documentation</p>
   Improved Version After Iterations
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -3821,7 +3771,7 @@ Documentation 5. Error handling</p>
   Comprehensive Improved Version
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb28">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
