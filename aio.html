@@ -758,7 +758,7 @@ assistance.</p>
   Example Solutions
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>Examples might include:</p>
 <ul>
@@ -928,7 +928,7 @@ accepting the suggestion?</p>
   Questions to Consider
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>Before accepting AI-generated code, ask:</p>
 <ol style="list-style-type: decimal">
@@ -1137,7 +1137,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-ai-risks-responsibilities"><p>Content from <a href="ai-risks-responsibilities.html">Risks, Drawbacks and Responsibilities with AI Usage</a></p>
 <hr>
-<p>Last updated on 2025-11-10 |
+<p>Last updated on 2025-11-17 |
 
         <a href="https://github.com/Dr-Eberle-Zentrum/AI-supported-coding-in-RStudio/edit/main/episodes/ai-risks-responsibilities.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -1210,25 +1210,27 @@ risks.</p>
 </h3>
 <p>AI models can generate code that appears correct but contains subtle
 bugs:</p>
-<p><strong>Example: Off-by-One Errors</strong></p>
+<p><strong>Example:</strong></p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># AI might suggest</span></span>
-<span><span class="va">filter_data</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">data</span>, <span class="va">threshold</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="va">data</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fu">length</span><span class="op">(</span><span class="va">data</span><span class="op">)</span> <span class="op">-</span> <span class="fl">1</span><span class="op">]</span>  <span class="co"># Bug: loses last element</span></span>
+<span><span class="va">remove_last</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">data</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="va">data</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fu">length</span><span class="op">(</span><span class="va">data</span><span class="op">)</span> <span class="op">-</span> <span class="fl">1</span><span class="op">]</span>  <span class="co"># Bug: access of data[0] will cause an error</span></span>
 <span><span class="op">}</span></span>
 <span></span>
 <span><span class="co"># Correct version</span></span>
-<span><span class="va">filter_data</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">data</span>, <span class="va">threshold</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="va">data</span><span class="op">[</span><span class="va">data</span> <span class="op">&gt;</span> <span class="va">threshold</span><span class="op">]</span></span>
+<span><span class="va">remove_last</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">data</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="va">data</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="op">(</span><span class="fu">length</span><span class="op">(</span><span class="va">data</span><span class="op">)</span> <span class="op">-</span> <span class="fl">1</span><span class="op">)</span><span class="op">]</span>  <span class="co"># Proper parentheses to ensure correct indexing</span></span>
 <span><span class="op">}</span></span></code></pre>
 </div>
-<p><strong>Why this happens:</strong> - AI learns from patterns in
-training data, including buggy code - AI doesn’t execute or test the
-code it generates - Subtle logic errors are harder for pattern-matching
-to detect</p>
+<p><strong>Why this happens:</strong></p>
+<ul>
+<li>AI learns from patterns in training data, including buggy code</li>
+<li>AI doesn’t execute or test the code it generates</li>
+<li>Subtle logic errors are harder for pattern-matching to detect</li>
+</ul>
 </div>
 <div class="section level3">
 <h3 id="security-vulnerabilities">2. Security Vulnerabilities<a class="anchor" aria-label="anchor" href="#security-vulnerabilities"></a>
@@ -1250,10 +1252,15 @@ to detect</p>
 <span>  <span class="fu">dbGetQuery</span><span class="op">(</span><span class="va">conn</span>, <span class="va">query</span>, params <span class="op">=</span> <span class="fu">list</span><span class="op">(</span><span class="va">user_input</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="op">}</span></span></code></pre>
 </div>
-<p><strong>Security risks include:</strong> - SQL injection
-vulnerabilities - Cross-site scripting (XSS) in web applications -
-Hardcoded credentials or API keys - Unsafe file operations - Improper
-input validation</p>
+<p><strong>Security risks include:</strong></p>
+<ul>
+<li>SQL injection vulnerabilities (misuse/manipulation of the database
+request)</li>
+<li>Cross-site scripting (XSS) in web applications</li>
+<li>Hardcoded credentials or API keys</li>
+<li>Unsafe file operations</li>
+<li>Improper input validation</li>
+</ul>
 </div>
 <div class="section level3">
 <h3 id="inefficient-or-non-performant-code">3. Inefficient or Non-Performant Code<a class="anchor" aria-label="anchor" href="#inefficient-or-non-performant-code"></a>
@@ -1302,7 +1309,7 @@ cases:</p>
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">test_data</span> <span class="op">&lt;-</span> <span class="fu">c</span><span class="op">(</span><span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">2</span>, <span class="fl">3</span>, <span class="fl">1</span>, <span class="fl">4</span>, <span class="cn">NA</span>, <span class="fl">5</span>, <span class="cn">NA</span><span class="op">)</span></span></code></pre>
+<code class="sourceCode R"><span><span class="va">test_data</span> <span class="op">&lt;-</span> <span class="fu">c</span><span class="op">(</span><span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">2</span>, <span class="fl">5</span>, <span class="fl">1</span>, <span class="fl">4</span>, <span class="cn">NA</span>, <span class="fl">3</span>, <span class="cn">NA</span><span class="op">)</span></span></code></pre>
 </div>
 <p>What might go wrong?</p>
 </div>
@@ -1315,47 +1322,59 @@ cases:</p>
   Potential Issues
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
-<p>AI might generate code that: 1. <strong>Doesn’t handle NA values
-correctly:</strong>
-<code>r    # Might remove all NAs or fail    unique(test_data)  # This actually works, but AI might suggest worse</code></p>
-<ol start="2" style="list-style-type: decimal">
-<li>
-<p><strong>Uses inefficient approaches:</strong></p>
+<p>AI might generate code that:</p>
+<ol style="list-style-type: decimal">
+<li><strong>Doesn’t handle NA values as intended (e.g. listing or not
+listing them):</strong></li>
+</ol>
 <div class="codewrapper sourceCode" id="cb5">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Might remove all NAs or fail</span></span>
+<span><span class="fu">unique</span><span class="op">(</span><span class="va">test_data</span><span class="op">)</span>  <span class="co"># This actually works, but AI might suggest worse</span></span></code></pre>
+</div>
+<ol start="2" style="list-style-type: decimal">
+<li><strong>Uses inefficient approaches:</strong></li>
+</ol>
+<div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Slow for large vectors</span></span>
 <span><span class="va">result</span> <span class="op">&lt;-</span> <span class="fu">c</span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="kw">for</span><span class="op">(</span><span class="va">x</span> <span class="kw">in</span> <span class="va">test_data</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="kw">if</span><span class="op">(</span><span class="op">!</span><span class="op">(</span><span class="va">x</span> <span class="op">%in%</span> <span class="va">result</span><span class="op">)</span><span class="op">)</span> <span class="va">result</span> <span class="op">&lt;-</span> <span class="fu">c</span><span class="op">(</span><span class="va">result</span>, <span class="va">x</span><span class="op">)</span></span>
+<span> <span class="kw">if</span><span class="op">(</span><span class="op">!</span><span class="op">(</span><span class="va">x</span> <span class="op">%in%</span> <span class="va">result</span><span class="op">)</span><span class="op">)</span> <span class="va">result</span> <span class="op">&lt;-</span> <span class="fu">c</span><span class="op">(</span><span class="va">result</span>, <span class="va">x</span><span class="op">)</span></span>
 <span><span class="op">}</span></span></code></pre>
 </div>
-</li>
-<li>
-<p><strong>Doesn’t preserve order as required:</strong></p>
-<div class="codewrapper sourceCode" id="cb6">
+<ol start="3" style="list-style-type: decimal">
+<li><strong>Doesn’t preserve order as required:</strong></li>
+</ol>
+<div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># sort() changes order</span></span>
 <span><span class="fu">sort</span><span class="op">(</span><span class="fu">unique</span><span class="op">(</span><span class="va">test_data</span><span class="op">)</span><span class="op">)</span></span></code></pre>
 </div>
-</li>
-</ol>
 <p><strong>Better solution:</strong></p>
-<div class="codewrapper sourceCode" id="cb7">
+<div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">remove_duplicates</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="va">x</span><span class="op">[</span><span class="op">!</span><span class="fu">duplicated</span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">]</span>  <span class="co"># Preserves order, handles NA</span></span>
-<span><span class="op">}</span></span></code></pre>
+<code class="sourceCode R"><span><span class="va">remove_duplicates</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span>, <span class="va">na.rm</span> <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="kw">if</span><span class="op">(</span><span class="va">na.rm</span><span class="op">)</span> <span class="op">{</span></span>
+<span>    <span class="va">x</span><span class="op">[</span><span class="op">!</span><span class="fu">duplicated</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">&amp;</span> <span class="op">!</span><span class="fu">is.na</span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">]</span>  <span class="co"># Preserves order, removes NA</span></span>
+<span>  <span class="op">}</span> <span class="kw">else</span> <span class="op">{</span></span>
+<span>    <span class="fu">unique</span><span class="op">(</span><span class="va">x</span><span class="op">)</span>  <span class="co"># Preserves order, keeps NA</span></span>
+<span>  <span class="op">}</span></span>
+<span><span class="op">}</span></span>
+<span><span class="fu">remove_duplicates</span><span class="op">(</span><span class="va">test_data</span><span class="op">)</span></span></code></pre>
 </div>
-<p><strong>Lesson:</strong> Always test AI-generated code with edge
-cases!</p>
+<p><strong>Lesson:</strong> Always <strong>test</strong> AI-generated
+code with <strong>edge cases</strong>!</p>
 </div>
 </div>
 </div>
@@ -1370,16 +1389,20 @@ cases!</p>
 <p><strong>You are ultimately responsible for all code in your
 project</strong>, regardless of whether it was written by you or
 suggested by AI.</p>
-<p><strong>This means:</strong> - You must understand every line of code
-you commit - You are accountable for bugs, security issues, and
-performance problems - You cannot blame the AI if something goes wrong -
-You must be able to explain and defend your code choices</p>
+<p><strong>This means:</strong></p>
+<ul>
+<li>You must understand every line of code you commit</li>
+<li>You are accountable for bugs, security issues, and performance
+problems</li>
+<li>You cannot blame the AI if something goes wrong</li>
+<li>You must be able to explain and defend your code choices</li>
+</ul>
 </div>
 <div class="section level3">
 <h3 id="verification-and-testing">2. Verification and Testing<a class="anchor" aria-label="anchor" href="#verification-and-testing"></a>
 </h3>
 <p><strong>Never blindly accept AI suggestions.</strong> Always:</p>
-<div class="codewrapper sourceCode" id="cb8">
+<div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1407,10 +1430,13 @@ You must be able to explain and defend your code choices</p>
 <div class="section level3">
 <h3 id="security-awareness">3. Security Awareness<a class="anchor" aria-label="anchor" href="#security-awareness"></a>
 </h3>
-<p>You must: - Review all AI-generated code for security vulnerabilities
-- Never include sensitive data in prompts to AI tools - Understand that
-code sent to cloud-based AI may be logged - Follow security best
-practices even when AI suggests otherwise</p>
+<p>You must:</p>
+<ul>
+<li>Review all AI-generated code for security vulnerabilities</li>
+<li>Never include sensitive data in prompts to AI tools</li>
+<li>Understand that code sent to cloud-based AI may be logged</li>
+<li>Follow security best practices even when AI suggests otherwise</li>
+</ul>
 <div id="data-privacy-alert" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
@@ -1419,10 +1445,13 @@ practices even when AI suggests otherwise</p>
 <div id="data-privacy-alert" class="callout-inner">
 <h3 class="callout-title">Data Privacy Alert</h3>
 <div class="callout-content">
-<p>When using cloud-based AI assistants: - Your code snippets may be
-sent to external servers - Avoid including passwords, API keys, or
-sensitive data - Check your organization’s policies on AI tool usage -
-Consider using local AI models for sensitive projects</p>
+<p>When using cloud-based AI assistants:</p>
+<ul>
+<li>Your code snippets may be sent to external servers</li>
+<li>Avoid including passwords, API keys, or sensitive data</li>
+<li>Check your organization’s policies on AI tool usage</li>
+<li>Consider using local AI models for sensitive projects</li>
+</ul>
 </div>
 </div>
 </div>
@@ -1430,18 +1459,24 @@ Consider using local AI models for sensitive projects</p>
 <div class="section level3">
 <h3 id="continuous-learning">4. Continuous Learning<a class="anchor" aria-label="anchor" href="#continuous-learning"></a>
 </h3>
-<p><strong>Don’t let AI replace your learning:</strong> - Use AI as a
-learning tool, not a crutch - Understand why suggested solutions work -
-Research functions and techniques you don’t recognize - Build your own
-expertise alongside AI assistance</p>
+<p><strong>Don’t let AI replace your learning:</strong></p>
+<ul>
+<li>Use AI as a learning tool, not a crutch</li>
+<li>Understand why suggested solutions work</li>
+<li>Research functions and techniques you don’t recognize</li>
+<li>Build your own expertise alongside AI assistance</li>
+</ul>
 </div>
 <div class="section level3">
 <h3 id="attribution-and-transparency">5. Attribution and Transparency<a class="anchor" aria-label="anchor" href="#attribution-and-transparency"></a>
 </h3>
-<p>Be transparent about AI usage: - Document when AI significantly
-contributed to code - Follow your organization’s policies on AI
-disclosure - Consider adding comments noting AI-assisted sections - Be
-honest in academic and professional contexts</p>
+<p>Be transparent about AI usage:</p>
+<ul>
+<li>Document when AI significantly contributed to code</li>
+<li>Follow your organization’s policies on AI disclosure</li>
+<li>Consider adding comments noting AI-assisted sections</li>
+<li>Be honest in academic and professional contexts</li>
+</ul>
 </div>
 </section><section><h2 class="section-heading" id="when-ai-usage-is-a-no-go">When AI Usage Is a No-Go<a class="anchor" aria-label="anchor" href="#when-ai-usage-is-a-no-go"></a>
 </h2>
@@ -1449,37 +1484,53 @@ honest in academic and professional contexts</p>
 <div class="section level3">
 <h3 id="critical-systems">1. Critical Systems<a class="anchor" aria-label="anchor" href="#critical-systems"></a>
 </h3>
-<p><strong>Avoid AI for:</strong> - Medical device software - Financial
-transaction systems - Safety-critical aerospace or automotive code -
-Security authentication systems - Life-dependent systems</p>
+<p><strong>Avoid AI for:</strong></p>
+<ul>
+<li>Medical device software</li>
+<li>Financial transaction systems</li>
+<li>Safety-critical aerospace or automotive code</li>
+<li>Security authentication systems</li>
+<li>Life-dependent systems</li>
+</ul>
 <p><strong>Why:</strong> The stakes are too high for AI-generated code
 without extensive human review and testing.</p>
 </div>
 <div class="section level3">
 <h3 id="specialized-or-novel-algorithms">2. Specialized or Novel Algorithms<a class="anchor" aria-label="anchor" href="#specialized-or-novel-algorithms"></a>
 </h3>
-<p><strong>Be cautious with:</strong> - Cutting-edge research
-implementations - Domain-specific algorithms not well-represented online
-- Novel statistical methods - Proprietary business logic</p>
+<p><strong>Be cautious with:</strong></p>
+<ul>
+<li>Cutting-edge research implementations</li>
+<li>Domain-specific algorithms not well-represented online</li>
+<li>Novel statistical methods</li>
+<li>Proprietary business logic</li>
+</ul>
 <p><strong>Why:</strong> AI training data may not include correct
 implementations of specialized techniques.</p>
 </div>
 <div class="section level3">
 <h3 id="highly-regulated-domains">3. Highly Regulated Domains<a class="anchor" aria-label="anchor" href="#highly-regulated-domains"></a>
 </h3>
-<p><strong>Extra caution in:</strong> - Healthcare (HIPAA compliance) -
-Finance (SOX, PCI-DSS compliance) - Government (security clearances
-required) - Privacy-sensitive applications (GDPR)</p>
+<p><strong>Extra caution in:</strong></p>
+<ul>
+<li>Healthcare (HIPAA compliance)</li>
+<li>Finance (SOX, PCI-DSS compliance)</li>
+<li>Government (security clearances required)</li>
+<li>Privacy-sensitive applications (GDPR)</li>
+</ul>
 <p><strong>Why:</strong> Compliance requirements demand human oversight
 and documentation that AI cannot provide.</p>
 </div>
 <div class="section level3">
 <h3 id="learning-fundamentals">4. Learning Fundamentals<a class="anchor" aria-label="anchor" href="#learning-fundamentals"></a>
 </h3>
-<p><strong>Don’t use AI when:</strong> - Learning a new programming
-language - Studying fundamental algorithms and data structures -
-Completing academic assignments (unless explicitly allowed) - Building
-foundational skills</p>
+<p><strong>Don’t use AI when:</strong></p>
+<ul>
+<li>Learning a new programming language</li>
+<li>Studying fundamental algorithms and data structures</li>
+<li>Completing academic assignments (unless explicitly allowed)</li>
+<li>Building foundational skills</li>
+</ul>
 <p><strong>Why:</strong> You need to develop core competencies
 yourself.</p>
 <div id="challenge-2-ethical-scenarios" class="callout challenge">
@@ -1509,23 +1560,34 @@ a GPL license library in a proprietary project. What do you do?</p></li>
   Discussion Points
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
-<p><strong>Scenario 1 - Academic Integrity:</strong> - If not explicitly
-allowed, assume it’s not permitted - Academic assignments are for
-learning, not just completion - Using AI without understanding violates
-learning objectives - <strong>Best practice:</strong> Ask your professor
-about AI policy</p>
-<p><strong>Scenario 2 - Code Understanding:</strong> - Using code you
-don’t understand is dangerous - It may have bugs or security issues you
-can’t detect - You won’t be able to maintain or debug it later -
+<p><strong>Scenario 1 - Academic Integrity:</strong></p>
+<ul>
+<li>If not explicitly allowed, assume it’s not permitted</li>
+<li>Academic assignments are for learning, not just completion</li>
+<li>Using AI without understanding violates learning objectives</li>
+<li>
+<strong>Best practice:</strong> Ask your professor about AI
+policy</li>
+</ul>
+<p><strong>Scenario 2 - Code Understanding:</strong></p>
+<ul>
+<li>Using code you don’t understand is dangerous</li>
+<li>It may have bugs or security issues you can’t detect</li>
+<li>You won’t be able to maintain or debug it later</li>
+<li>
 <strong>Best practice:</strong> Take time to understand, refactor if
-needed, or find another solution</p>
-<p><strong>Scenario 3 - License Compliance:</strong> - Using GPL code in
-proprietary software violates the license - This could lead to legal
-issues for your organization - <strong>Best practice:</strong> Remove
-the code and find an alternative with a compatible license (MIT, Apache,
-BSD)</p>
+needed, or find another solution</li>
+</ul>
+<p><strong>Scenario 3 - License Compliance:</strong></p>
+<ul>
+<li>Using GPL code in proprietary software violates the license</li>
+<li>This could lead to legal issues for your organization</li>
+<li>
+<strong>Best practice:</strong> Remove the code and find an
+alternative with a compatible license (MIT, Apache, BSD)</li>
+</ul>
 </div>
 </div>
 </div>
@@ -1537,35 +1599,50 @@ BSD)</p>
 <div class="section level3">
 <h3 id="skill-atrophy">1. Skill Atrophy<a class="anchor" aria-label="anchor" href="#skill-atrophy"></a>
 </h3>
-<p><strong>Long-term risks:</strong> - Reduced ability to write code
-from scratch - Weakened problem-solving skills - Decreased understanding
-of fundamentals - Dependency on AI availability</p>
-<p><strong>Example:</strong> A developer who always uses AI for basic
-tasks may struggle when: - Working offline - Debugging complex issues -
-Interviewing for new positions - Mentoring junior developers</p>
+<p><strong>Long-term risks:</strong></p>
+<ul>
+<li>Reduced ability to write code from scratch</li>
+<li>Weakened problem-solving skills</li>
+<li>Decreased understanding of fundamentals</li>
+<li>Dependency on AI availability</li>
+</ul>
+<p><strong>Example:</strong></p>
+<p>A developer who always uses AI for basic tasks may struggle when: -
+Working offline - Debugging complex issues - Interviewing for new
+positions - Mentoring junior developers</p>
 </div>
 <div class="section level3">
 <h3 id="reduced-code-understanding">2. Reduced Code Understanding<a class="anchor" aria-label="anchor" href="#reduced-code-understanding"></a>
 </h3>
-<p><strong>Consequences:</strong> - Difficulty maintaining code you
-didn’t write or understand - Inability to debug when issues arise -
-Challenges explaining code to colleagues - Problems adapting code to
-changing requirements</p>
+<p><strong>Consequences:</strong></p>
+<ul>
+<li>Difficulty maintaining code you didn’t write or understand</li>
+<li>Inability to debug when issues arise</li>
+<li>Challenges explaining code to colleagues</li>
+<li>Problems adapting code to changing requirements</li>
+</ul>
 </div>
 <div class="section level3">
 <h3 id="homogenization-of-code">3. Homogenization of Code<a class="anchor" aria-label="anchor" href="#homogenization-of-code"></a>
 </h3>
-<p><strong>Problems:</strong> - Everyone’s code starts looking similar
-(AI patterns) - Loss of creative problem-solving approaches - Reduced
-innovation in software design - “Cargo cult” programming (copying
-without understanding)</p>
+<p><strong>Problems:</strong></p>
+<ul>
+<li>Everyone’s code starts looking similar (AI patterns)</li>
+<li>Loss of creative problem-solving approaches</li>
+<li>Reduced innovation in software design</li>
+<li>“Cargo cult” programming (copying without understanding)</li>
+</ul>
 </div>
 <div class="section level3">
 <h3 id="false-confidence">4. False Confidence<a class="anchor" aria-label="anchor" href="#false-confidence"></a>
 </h3>
-<p><strong>Dangers:</strong> - Overestimating code quality because it
-“looks professional” - Underestimating testing needs - Reduced code
-review rigor - Faster development at the cost of quality</p>
+<p><strong>Dangers:</strong></p>
+<ul>
+<li>Overestimating code quality because it “looks professional”</li>
+<li>Underestimating testing needs</li>
+<li>Reduced code review rigor</li>
+<li>Faster development at the cost of quality</li>
+</ul>
 <div id="maintaining-skills-while-using-ai" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
@@ -1574,10 +1651,14 @@ review rigor - Faster development at the cost of quality</p>
 <div id="maintaining-skills-while-using-ai" class="callout-inner">
 <h3 class="callout-title">Maintaining Skills While Using AI</h3>
 <div class="callout-content">
-<p><strong>Balance is key:</strong> - Set aside time for coding without
-AI assistance - Practice fundamental skills regularly - Do code katas or
-programming challenges manually - Review and understand all AI-generated
-code - Explain solutions to others to test your understanding</p>
+<p><strong>Balance is key:</strong></p>
+<ul>
+<li>Set aside time for coding without AI assistance</li>
+<li>Practice fundamental skills regularly</li>
+<li>Do code katas or programming challenges manually</li>
+<li>Review and understand all AI-generated code</li>
+<li>Explain solutions to others to test your understanding</li>
+</ul>
 </div>
 </div>
 </div>
@@ -1588,12 +1669,15 @@ code - Explain solutions to others to test your understanding</p>
 <div class="section level3">
 <h3 id="pattern-matching-not-understanding">1. Pattern Matching, Not Understanding<a class="anchor" aria-label="anchor" href="#pattern-matching-not-understanding"></a>
 </h3>
-<p><strong>LLMs don’t “understand” code:</strong> - They predict likely
-token sequences based on training data - They don’t execute code
-mentally to verify correctness - They don’t reason about edge cases -
-They replicate patterns even when inappropriate</p>
+<p><strong>LLMs don’t “understand” code:</strong></p>
+<ul>
+<li>They predict likely token sequences based on training data</li>
+<li>They don’t execute code mentally to verify correctness</li>
+<li>They don’t reason about edge cases</li>
+<li>They replicate patterns even when inappropriate</li>
+</ul>
 <p><strong>Example:</strong></p>
-<div class="codewrapper sourceCode" id="cb9">
+<div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1611,24 +1695,35 @@ They replicate patterns even when inappropriate</p>
 <div class="section level3">
 <h3 id="training-data-limitations">2. Training Data Limitations<a class="anchor" aria-label="anchor" href="#training-data-limitations"></a>
 </h3>
-<p><strong>Issues with training data:</strong> - Contains buggy code
-from public repositories - May be outdated (not current best practices)
-- Overrepresents certain languages and frameworks - May include
-deprecated or insecure patterns</p>
+<p><strong>Issues with training data:</strong></p>
+<ul>
+<li>Contains buggy code from public repositories</li>
+<li>May be outdated (not current best practices)</li>
+<li>Overrepresents certain languages and frameworks</li>
+<li>May include deprecated or insecure patterns</li>
+</ul>
 </div>
 <div class="section level3">
 <h3 id="context-window-limitations">3. Context Window Limitations<a class="anchor" aria-label="anchor" href="#context-window-limitations"></a>
 </h3>
-<p><strong>LLMs have limited context:</strong> - Can’t see entire
-project structure - Miss important constraints from other files - Don’t
-know your specific requirements - Lack domain-specific knowledge</p>
+<p><strong>LLMs have limited context:</strong></p>
+<ul>
+<li>Can’t see entire project structure</li>
+<li>Miss important constraints from other files</li>
+<li>Don’t know your specific requirements</li>
+<li>Lack domain-specific knowledge</li>
+</ul>
 </div>
 <div class="section level3">
 <h3 id="no-execution-or-testing">4. No Execution or Testing<a class="anchor" aria-label="anchor" href="#no-execution-or-testing"></a>
 </h3>
-<p><strong>Critical limitation:</strong> - AI generates code but doesn’t
-run it - No feedback loop from actual execution - Can’t verify
-correctness through testing - Doesn’t catch runtime errors</p>
+<p><strong>Critical limitation:</strong></p>
+<ul>
+<li>AI generates code but doesn’t run it</li>
+<li>No feedback loop from actual execution</li>
+<li>Can’t verify correctness through testing</li>
+<li>Doesn’t catch runtime errors</li>
+</ul>
 <div id="challenge-3-prompt-engineering-for-better-code" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
@@ -1640,12 +1735,16 @@ Code</h3>
 <div class="callout-content">
 <p>Try improving AI-generated code quality by refining your prompts.
 Compare results:</p>
-<p><strong>Poor prompt:</strong> &gt; Write a function to process
-data</p>
-<p><strong>Better prompt:</strong> &gt; Write an R function that filters
-a data frame to include only rows where the ‘value’ column is positive
-and non-NA. Include input validation, error handling, and roxygen2
-documentation.</p>
+<p><strong>Poor prompt:</strong></p>
+<blockquote>
+<p>Write a function to process data</p>
+</blockquote>
+<p><strong>Better prompt:</strong></p>
+<blockquote>
+<p>Write an R function that filters a data frame to include only rows
+where the ‘value’ column is positive and non-NA. Include input
+validation, error handling, and roxygen2 documentation.</p>
+</blockquote>
 <p>Try both prompts with your AI assistant. How do the results
 differ?</p>
 </div>
@@ -1658,18 +1757,32 @@ differ?</p>
   Observations
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
-<p><strong>Poor prompt typically produces:</strong> - Generic, vague
-code - No error handling - No documentation - Assumes undocumented
-column names - Doesn’t handle edge cases</p>
-<p><strong>Better prompt typically produces:</strong> - More specific,
-targeted code - Input validation - Documentation - Explicit handling of
-requirements - Better edge case coverage</p>
-<p><strong>Key lessons:</strong> 1. Specific prompts → better results 2.
-State requirements explicitly 3. Request error handling and
-documentation 4. Mention edge cases you care about 5. Specify coding
-standards or style</p>
+<p><strong>Poor prompt typically produces:</strong></p>
+<ul>
+<li>Generic, vague code</li>
+<li>No error handling</li>
+<li>No documentation</li>
+<li>Assumes undocumented column names</li>
+<li>Doesn’t handle edge cases</li>
+</ul>
+<p><strong>Better prompt typically produces:</strong></p>
+<ul>
+<li>More specific, targeted code</li>
+<li>Input validation</li>
+<li>Documentation</li>
+<li>Explicit handling of requirements</li>
+<li>Better edge case coverage</li>
+</ul>
+<p><strong>Key lessons:</strong></p>
+<ol style="list-style-type: decimal">
+<li>Specific prompts → better results</li>
+<li>State requirements explicitly</li>
+<li>Request error handling and documentation</li>
+<li>Mention edge cases you care about</li>
+<li>Specify coding standards or style</li>
+</ol>
 <p><strong>But remember:</strong> Even with great prompts, always verify
 the output!</p>
 </div>
@@ -1684,7 +1797,7 @@ the output!</p>
 <h3 id="adopt-a-verification-mindset">1. Adopt a Verification Mindset<a class="anchor" aria-label="anchor" href="#adopt-a-verification-mindset"></a>
 </h3>
 <p><strong>Question everything:</strong></p>
-<div class="codewrapper sourceCode" id="cb10">
+<div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1700,7 +1813,7 @@ the output!</p>
 <div class="section level3">
 <h3 id="use-comprehensive-testing">2. Use Comprehensive Testing<a class="anchor" aria-label="anchor" href="#use-comprehensive-testing"></a>
 </h3>
-<div class="codewrapper sourceCode" id="cb11">
+<div class="codewrapper sourceCode" id="cb12">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1727,16 +1840,22 @@ the output!</p>
 <div class="section level3">
 <h3 id="code-review-process">3. Code Review Process<a class="anchor" aria-label="anchor" href="#code-review-process"></a>
 </h3>
-<p><strong>Always review AI-generated code for:</strong> - Correctness
-of logic - Error handling - Input validation - Performance implications
-- Security vulnerabilities - Code style and readability - Documentation
-quality</p>
+<p><strong>Always review AI-generated code for:</strong></p>
+<ul>
+<li>Correctness of logic</li>
+<li>Error handling</li>
+<li>Input validation</li>
+<li>Performance implications</li>
+<li>Security vulnerabilities</li>
+<li>Code style and readability</li>
+<li>Documentation quality</li>
+</ul>
 </div>
 <div class="section level3">
 <h3 id="iterative-refinement">4. Iterative Refinement<a class="anchor" aria-label="anchor" href="#iterative-refinement"></a>
 </h3>
 <p>Don’t accept the first suggestion:</p>
-<div class="codewrapper sourceCode" id="cb12">
+<div class="codewrapper sourceCode" id="cb13">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1750,7 +1869,7 @@ quality</p>
 <div class="section level3">
 <h3 id="use-linting-and-static-analysis">5. Use Linting and Static Analysis<a class="anchor" aria-label="anchor" href="#use-linting-and-static-analysis"></a>
 </h3>
-<div class="codewrapper sourceCode" id="cb13">
+<div class="codewrapper sourceCode" id="cb14">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1769,7 +1888,7 @@ quality</p>
 <div class="section level3">
 <h3 id="benchmark-and-profile">6. Benchmark and Profile<a class="anchor" aria-label="anchor" href="#benchmark-and-profile"></a>
 </h3>
-<div class="codewrapper sourceCode" id="cb14">
+<div class="codewrapper sourceCode" id="cb15">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1811,7 +1930,7 @@ work</p>
 <div class="section level3">
 <h3 id="document-ai-usage">3. Document AI Usage<a class="anchor" aria-label="anchor" href="#document-ai-usage"></a>
 </h3>
-<div class="codewrapper sourceCode" id="cb15">
+<div class="codewrapper sourceCode" id="cb16">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1832,17 +1951,25 @@ work</p>
 <div class="section level3">
 <h3 id="continuous-skill-development">4. Continuous Skill Development<a class="anchor" aria-label="anchor" href="#continuous-skill-development"></a>
 </h3>
-<p><strong>Maintain your skills:</strong> - Practice coding without AI
-regularly - Study algorithms and data structures - Read high-quality
-code from experts - Contribute to code reviews - Teach others what you
-learn</p>
+<p><strong>Maintain your skills:</strong></p>
+<ul>
+<li>Practice coding without AI regularly</li>
+<li>Study algorithms and data structures</li>
+<li>Read high-quality code from experts</li>
+<li>Contribute to code reviews</li>
+<li>Teach others what you learn</li>
+</ul>
 </div>
 <div class="section level3">
 <h3 id="stay-informed">5. Stay Informed<a class="anchor" aria-label="anchor" href="#stay-informed"></a>
 </h3>
-<p>AI capabilities and limitations change rapidly: - Follow updates to
-tools you use - Learn about new AI capabilities - Understand evolving
-best practices - Participate in communities discussing AI use</p>
+<p>AI capabilities and limitations change rapidly:</p>
+<ul>
+<li>Follow updates to tools you use</li>
+<li>Learn about new AI capabilities</li>
+<li>Understand evolving best practices</li>
+<li>Participate in communities discussing AI use</li>
+</ul>
 <div id="group-discussion" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
@@ -1874,31 +2001,49 @@ development?</p></li>
 <div class="section level3">
 <h3 id="copyright-and-licensing">Copyright and Licensing<a class="anchor" aria-label="anchor" href="#copyright-and-licensing"></a>
 </h3>
-<p><strong>Key concerns:</strong> - AI-generated code may resemble
-copyrighted code - Unclear legal status of AI-generated content -
-License compatibility issues - Potential copyright infringement</p>
-<p><strong>Best practices:</strong> - Understand your organization’s AI
-usage policies - Check licenses of suggested dependencies - Document AI
-usage for legal compliance - Consult legal counsel for commercial
-projects</p>
+<p><strong>Key concerns:</strong></p>
+<ul>
+<li>AI-generated code may resemble copyrighted code</li>
+<li>Unclear legal status of AI-generated content</li>
+<li>License compatibility issues</li>
+<li>Potential copyright infringement</li>
+</ul>
+<p><strong>Best practices:</strong></p>
+<ul>
+<li>Understand your organization’s AI usage policies</li>
+<li>Check licenses of suggested dependencies</li>
+<li>Document AI usage for legal compliance</li>
+<li>Consult legal counsel for commercial projects</li>
+</ul>
 </div>
 <div class="section level3">
 <h3 id="privacy-and-data-protection">Privacy and Data Protection<a class="anchor" aria-label="anchor" href="#privacy-and-data-protection"></a>
 </h3>
-<p><strong>Considerations:</strong> - Code sent to AI services may be
-stored - Proprietary algorithms might be leaked - Sensitive data in code
-could be exposed - Compliance with GDPR, HIPAA, etc.</p>
-<p><strong>Mitigation:</strong> - Use local AI models for sensitive code
-- Anonymize data in examples sent to AI - Review AI service terms of
-service - Follow organizational data policies</p>
+<p><strong>Considerations:</strong></p>
+<ul>
+<li>Code sent to AI services may be stored</li>
+<li>Proprietary algorithms might be leaked</li>
+<li>Sensitive data in code could be exposed</li>
+<li>Compliance with GDPR, HIPAA, etc.</li>
+</ul>
+<p><strong>Mitigation:</strong></p>
+<ul>
+<li>Use local AI models for sensitive code</li>
+<li>Anonymize data in examples sent to AI</li>
+<li>Review AI service terms of service</li>
+<li>Follow organizational data policies</li>
+</ul>
 </div>
 <div class="section level3">
 <h3 id="professional-ethics">Professional Ethics<a class="anchor" aria-label="anchor" href="#professional-ethics"></a>
 </h3>
-<p><strong>Ethical obligations:</strong> - Honesty about AI use
-(academic, professional) - Not claiming AI-generated work as entirely
-your own - Ensuring code quality and safety - Considering societal
-impact of your code</p>
+<p><strong>Ethical obligations:</strong></p>
+<ul>
+<li>Honesty about AI use (academic, professional)</li>
+<li>Not claiming AI-generated work as entirely your own</li>
+<li>Ensuring code quality and safety</li>
+<li>Considering societal impact of your code</li>
+</ul>
 </div>
 </section><section><h2 class="section-heading" id="conclusion">Conclusion<a class="anchor" aria-label="anchor" href="#conclusion"></a>
 </h2>
@@ -3345,7 +3490,7 @@ identify?</p>
   Issues AI Might Identify
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li>
@@ -3606,7 +3751,7 @@ Improve readability 4. Add documentation</p>
   Improved Version After Iterations
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -3826,7 +3971,7 @@ Documentation 5. Error handling</p>
   Comprehensive Improved Version
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb28">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -4299,7 +4444,7 @@ appropriate code.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Example Solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">MARKDOWN<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -4607,7 +4752,7 @@ needed</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p><strong>GitHub Issue</strong>:</p>
 <div class="codewrapper sourceCode" id="cb16">
@@ -4799,7 +4944,7 @@ Dependencies between issues</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p><strong>Parent Issue #80</strong>:</p>
 <div class="codewrapper sourceCode" id="cb23">
@@ -5202,8 +5347,8 @@ any links that you are not going to use.
   "url": "https://Dr-Eberle-Zentrum.github.io/AI-supported-coding-in-RStudio/aio.html",
   "identifier": "https://Dr-Eberle-Zentrum.github.io/AI-supported-coding-in-RStudio/aio.html",
   "dateCreated": "2024-11-10",
-  "dateModified": "2025-11-12",
-  "datePublished": "2025-11-12"
+  "dateModified": "2025-11-17",
+  "datePublished": "2025-11-17"
 }
 
   </script><script>
