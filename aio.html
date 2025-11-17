@@ -758,7 +758,7 @@ assistance.</p>
   Example Solutions
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>Examples might include:</p>
 <ul>
@@ -928,7 +928,7 @@ accepting the suggestion?</p>
   Questions to Consider
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>Before accepting AI-generated code, ask:</p>
 <ol style="list-style-type: decimal">
@@ -1288,97 +1288,23 @@ request)</li>
 <div class="section level3">
 <h3 id="license-and-copyright-issues">4. License and Copyright Issues<a class="anchor" aria-label="anchor" href="#license-and-copyright-issues"></a>
 </h3>
-<p>AI models are trained on public code repositories, which may include:
-- Code with restrictive licenses (GPL, AGPL) - Proprietary code that
-shouldn’t have been public - Code with unclear licensing</p>
-<p><strong>Risks:</strong> - Inadvertently incorporating GPL code into
-proprietary projects - Copyright infringement claims - License
-compliance violations</p>
-<div id="challenge-1-identify-the-bug" class="callout challenge">
-<div class="callout-square">
-<i class="callout-icon" data-feather="zap"></i>
-</div>
-<span class="callout-header">Challenge</span>
-<div id="challenge-1-identify-the-bug" class="callout-inner">
-<h3 class="callout-title">Challenge 1: Identify the Bug</h3>
-<div class="callout-content">
-<p>Ask an AI assistant to generate a function that removes duplicates
-from a vector while preserving order. Test the result with edge
-cases:</p>
-<div class="codewrapper sourceCode" id="cb4">
-<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">test_data</span> <span class="op">&lt;-</span> <span class="fu">c</span><span class="op">(</span><span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">2</span>, <span class="fl">5</span>, <span class="fl">1</span>, <span class="fl">4</span>, <span class="cn">NA</span>, <span class="fl">3</span>, <span class="cn">NA</span><span class="op">)</span></span></code></pre>
-</div>
-<p>What might go wrong?</p>
-</div>
-</div>
-</div>
-<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
-  <h4 class="accordion-header" id="headingSolution1">
-  Potential Issues
-  </h4>
-</button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
-<div class="accordion-body">
-<p>AI might generate code that:</p>
-<ol style="list-style-type: decimal">
-<li><strong>Doesn’t handle NA values as intended (e.g. listing or not
-listing them):</strong></li>
-</ol>
-<div class="codewrapper sourceCode" id="cb5">
-<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># Might remove all NAs or fail</span></span>
-<span><span class="fu">unique</span><span class="op">(</span><span class="va">test_data</span><span class="op">)</span>  <span class="co"># This actually works, but AI might suggest worse</span></span></code></pre>
-</div>
-<ol start="2" style="list-style-type: decimal">
-<li><strong>Uses inefficient approaches:</strong></li>
-</ol>
-<div class="codewrapper sourceCode" id="cb6">
-<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># Slow for large vectors</span></span>
-<span><span class="va">result</span> <span class="op">&lt;-</span> <span class="fu">c</span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="kw">for</span><span class="op">(</span><span class="va">x</span> <span class="kw">in</span> <span class="va">test_data</span><span class="op">)</span> <span class="op">{</span></span>
-<span> <span class="kw">if</span><span class="op">(</span><span class="op">!</span><span class="op">(</span><span class="va">x</span> <span class="op">%in%</span> <span class="va">result</span><span class="op">)</span><span class="op">)</span> <span class="va">result</span> <span class="op">&lt;-</span> <span class="fu">c</span><span class="op">(</span><span class="va">result</span>, <span class="va">x</span><span class="op">)</span></span>
-<span><span class="op">}</span></span></code></pre>
-</div>
-<ol start="3" style="list-style-type: decimal">
-<li><strong>Doesn’t preserve order as required:</strong></li>
-</ol>
-<div class="codewrapper sourceCode" id="cb7">
-<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># sort() changes order</span></span>
-<span><span class="fu">sort</span><span class="op">(</span><span class="fu">unique</span><span class="op">(</span><span class="va">test_data</span><span class="op">)</span><span class="op">)</span></span></code></pre>
-</div>
-<p><strong>Better solution:</strong></p>
-<div class="codewrapper sourceCode" id="cb8">
-<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">remove_duplicates</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span>, <span class="va">na.rm</span> <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="kw">if</span><span class="op">(</span><span class="va">na.rm</span><span class="op">)</span> <span class="op">{</span></span>
-<span>    <span class="va">x</span><span class="op">[</span><span class="op">!</span><span class="fu">duplicated</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">&amp;</span> <span class="op">!</span><span class="fu">is.na</span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">]</span>  <span class="co"># Preserves order, removes NA</span></span>
-<span>  <span class="op">}</span> <span class="kw">else</span> <span class="op">{</span></span>
-<span>    <span class="fu">unique</span><span class="op">(</span><span class="va">x</span><span class="op">)</span>  <span class="co"># Preserves order, keeps NA</span></span>
-<span>  <span class="op">}</span></span>
-<span><span class="op">}</span></span>
-<span><span class="fu">remove_duplicates</span><span class="op">(</span><span class="va">test_data</span><span class="op">)</span></span></code></pre>
-</div>
-<p><strong>Lesson:</strong> Always <strong>test</strong> AI-generated
-code with <strong>edge cases</strong>!</p>
-</div>
-</div>
-</div>
-</div>
+<p>AI models are trained on public code repositories, which may
+include:</p>
+<ul>
+<li>Code with restrictive licenses (GPL, AGPL)</li>
+<li>Proprietary code that shouldn’t have been public</li>
+<li>Code with unclear licensing</li>
+</ul>
+<p><strong>Risks:</strong></p>
+<ul>
+<li>Inadvertently incorporating GPL code into proprietary projects
+<ul>
+<li>Note: GPL requires derivative works to also be GPL</li>
+</ul>
+</li>
+<li>Copyright infringement claims</li>
+<li>License compliance violations</li>
+</ul>
 </div>
 </section><section><h2 class="section-heading" id="your-responsibilities-as-an-ai-user">Your Responsibilities as an AI User<a class="anchor" aria-label="anchor" href="#your-responsibilities-as-an-ai-user"></a>
 </h2>
@@ -1401,8 +1327,11 @@ problems</li>
 <div class="section level3">
 <h3 id="verification-and-testing">2. Verification and Testing<a class="anchor" aria-label="anchor" href="#verification-and-testing"></a>
 </h3>
-<p><strong>Never blindly accept AI suggestions.</strong> Always:</p>
-<div class="codewrapper sourceCode" id="cb9">
+<p>Especially when it comes to the generation of complex functions or
+algorithms, <strong>never blindly accept AI suggestions.</strong> Always
+verify through testing. This should be standard practice anyway, but is
+especially critical with AI-generated code.</p>
+<div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1426,6 +1355,9 @@ problems</li>
 <span>  <span class="fu">expect_lt</span><span class="op">(</span><span class="fu">system.time</span><span class="op">(</span><span class="fu">ai_suggested_function</span><span class="op">(</span><span class="va">large_data</span><span class="op">)</span><span class="op">)</span><span class="op">[</span><span class="fl">3</span><span class="op">]</span>, <span class="fl">1.0</span><span class="op">)</span></span>
 <span><span class="op">}</span><span class="op">)</span></span></code></pre>
 </div>
+<p><em>Note</em>, creating test code is another area where AI can assist
+you very efficiently, but you must still verify the tests themselves and
+check if they cover all relevant cases.</p>
 </div>
 <div class="section level3">
 <h3 id="security-awareness">3. Security Awareness<a class="anchor" aria-label="anchor" href="#security-awareness"></a>
@@ -1434,7 +1366,8 @@ problems</li>
 <ul>
 <li>Review all AI-generated code for security vulnerabilities</li>
 <li>Never include sensitive data in prompts to AI tools</li>
-<li>Understand that code sent to cloud-based AI may be logged</li>
+<li>Understand that code sent to cloud-based AI may be logged or used
+for subsequent training and answering</li>
 <li>Follow security best practices even when AI suggests otherwise</li>
 </ul>
 <div id="data-privacy-alert" class="callout">
@@ -1447,7 +1380,7 @@ problems</li>
 <div class="callout-content">
 <p>When using cloud-based AI assistants:</p>
 <ul>
-<li>Your code snippets may be sent to external servers</li>
+<li>Your code snippets are in most cases sent to external servers</li>
 <li>Avoid including passwords, API keys, or sensitive data</li>
 <li>Check your organization’s policies on AI tool usage</li>
 <li>Consider using local AI models for sensitive projects</li>
@@ -1482,21 +1415,7 @@ problems</li>
 </h2>
 <hr class="half-width">
 <div class="section level3">
-<h3 id="critical-systems">1. Critical Systems<a class="anchor" aria-label="anchor" href="#critical-systems"></a>
-</h3>
-<p><strong>Avoid AI for:</strong></p>
-<ul>
-<li>Medical device software</li>
-<li>Financial transaction systems</li>
-<li>Safety-critical aerospace or automotive code</li>
-<li>Security authentication systems</li>
-<li>Life-dependent systems</li>
-</ul>
-<p><strong>Why:</strong> The stakes are too high for AI-generated code
-without extensive human review and testing.</p>
-</div>
-<div class="section level3">
-<h3 id="specialized-or-novel-algorithms">2. Specialized or Novel Algorithms<a class="anchor" aria-label="anchor" href="#specialized-or-novel-algorithms"></a>
+<h3 id="specialized-or-novel-algorithms">1. Specialized or Novel Algorithms<a class="anchor" aria-label="anchor" href="#specialized-or-novel-algorithms"></a>
 </h3>
 <p><strong>Be cautious with:</strong></p>
 <ul>
@@ -1509,89 +1428,18 @@ without extensive human review and testing.</p>
 implementations of specialized techniques.</p>
 </div>
 <div class="section level3">
-<h3 id="highly-regulated-domains">3. Highly Regulated Domains<a class="anchor" aria-label="anchor" href="#highly-regulated-domains"></a>
-</h3>
-<p><strong>Extra caution in:</strong></p>
-<ul>
-<li>Healthcare (HIPAA compliance)</li>
-<li>Finance (SOX, PCI-DSS compliance)</li>
-<li>Government (security clearances required)</li>
-<li>Privacy-sensitive applications (GDPR)</li>
-</ul>
-<p><strong>Why:</strong> Compliance requirements demand human oversight
-and documentation that AI cannot provide.</p>
-</div>
-<div class="section level3">
-<h3 id="learning-fundamentals">4. Learning Fundamentals<a class="anchor" aria-label="anchor" href="#learning-fundamentals"></a>
+<h3 id="learning-fundamentals">2. Learning Fundamentals<a class="anchor" aria-label="anchor" href="#learning-fundamentals"></a>
 </h3>
 <p><strong>Don’t use AI when:</strong></p>
 <ul>
-<li>Learning a new programming language</li>
-<li>Studying fundamental algorithms and data structures</li>
+<li>When not familiar with a new programming language</li>
+<li>You have no time or interest in understanding basic concepts and
+getting further explanations</li>
 <li>Completing academic assignments (unless explicitly allowed)</li>
 <li>Building foundational skills</li>
 </ul>
 <p><strong>Why:</strong> You need to develop core competencies
 yourself.</p>
-<div id="challenge-2-ethical-scenarios" class="callout challenge">
-<div class="callout-square">
-<i class="callout-icon" data-feather="zap"></i>
-</div>
-<span class="callout-header">Challenge</span>
-<div id="challenge-2-ethical-scenarios" class="callout-inner">
-<h3 class="callout-title">Challenge 2: Ethical Scenarios</h3>
-<div class="callout-content">
-<p>Discuss these scenarios with a partner:</p>
-<ol style="list-style-type: decimal">
-<li><p>You’re a student. Your professor hasn’t explicitly forbidden AI
-use. Is it okay to use Copilot for homework?</p></li>
-<li><p>You’re on a tight deadline. AI generates a function you don’t
-fully understand, but it seems to work. Do you use it?</p></li>
-<li><p>You discover that AI-suggested code solves your problem but uses
-a GPL license library in a proprietary project. What do you do?</p></li>
-</ol>
-</div>
-</div>
-</div>
-<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
-  <h4 class="accordion-header" id="headingSolution2">
-  Discussion Points
-  </h4>
-</button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
-<div class="accordion-body">
-<p><strong>Scenario 1 - Academic Integrity:</strong></p>
-<ul>
-<li>If not explicitly allowed, assume it’s not permitted</li>
-<li>Academic assignments are for learning, not just completion</li>
-<li>Using AI without understanding violates learning objectives</li>
-<li>
-<strong>Best practice:</strong> Ask your professor about AI
-policy</li>
-</ul>
-<p><strong>Scenario 2 - Code Understanding:</strong></p>
-<ul>
-<li>Using code you don’t understand is dangerous</li>
-<li>It may have bugs or security issues you can’t detect</li>
-<li>You won’t be able to maintain or debug it later</li>
-<li>
-<strong>Best practice:</strong> Take time to understand, refactor if
-needed, or find another solution</li>
-</ul>
-<p><strong>Scenario 3 - License Compliance:</strong></p>
-<ul>
-<li>Using GPL code in proprietary software violates the license</li>
-<li>This could lead to legal issues for your organization</li>
-<li>
-<strong>Best practice:</strong> Remove the code and find an
-alternative with a compatible license (MIT, Apache, BSD)</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
 </div>
 </section><section><h2 class="section-heading" id="side-effects-of-heavy-ai-reliance">Side Effects of Heavy AI Reliance<a class="anchor" aria-label="anchor" href="#side-effects-of-heavy-ai-reliance"></a>
 </h2>
@@ -1607,9 +1455,13 @@ alternative with a compatible license (MIT, Apache, BSD)</li>
 <li>Dependency on AI availability</li>
 </ul>
 <p><strong>Example:</strong></p>
-<p>A developer who always uses AI for basic tasks may struggle when: -
-Working offline - Debugging complex issues - Interviewing for new
-positions - Mentoring junior developers</p>
+<p>A developer who always uses AI for basic tasks may struggle when:</p>
+<ul>
+<li>Working offline</li>
+<li>Debugging complex issues</li>
+<li>Interviewing for new positions</li>
+<li>Mentoring junior developers</li>
+</ul>
 </div>
 <div class="section level3">
 <h3 id="reduced-code-understanding">2. Reduced Code Understanding<a class="anchor" aria-label="anchor" href="#reduced-code-understanding"></a>
@@ -1627,9 +1479,8 @@ positions - Mentoring junior developers</p>
 </h3>
 <p><strong>Problems:</strong></p>
 <ul>
-<li>Everyone’s code starts looking similar (AI patterns)</li>
+<li>Repetition of common mistakes or old patterns/approaches</li>
 <li>Loss of creative problem-solving approaches</li>
-<li>Reduced innovation in software design</li>
 <li>“Cargo cult” programming (copying without understanding)</li>
 </ul>
 </div>
@@ -1655,7 +1506,6 @@ positions - Mentoring junior developers</p>
 <ul>
 <li>Set aside time for coding without AI assistance</li>
 <li>Practice fundamental skills regularly</li>
-<li>Do code katas or programming challenges manually</li>
 <li>Review and understand all AI-generated code</li>
 <li>Explain solutions to others to test your understanding</li>
 </ul>
@@ -1677,7 +1527,7 @@ positions - Mentoring junior developers</p>
 <li>They replicate patterns even when inappropriate</li>
 </ul>
 <p><strong>Example:</strong></p>
-<div class="codewrapper sourceCode" id="cb10">
+<div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1724,13 +1574,13 @@ positions - Mentoring junior developers</p>
 <li>Can’t verify correctness through testing</li>
 <li>Doesn’t catch runtime errors</li>
 </ul>
-<div id="challenge-3-prompt-engineering-for-better-code" class="callout challenge">
+<div id="challenge-prompt-engineering-for-better-code" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <span class="callout-header">Challenge</span>
-<div id="challenge-3-prompt-engineering-for-better-code" class="callout-inner">
-<h3 class="callout-title">Challenge 3: Prompt Engineering for Better
+<div id="challenge-prompt-engineering-for-better-code" class="callout-inner">
+<h3 class="callout-title">Challenge: Prompt Engineering for Better
 Code</h3>
 <div class="callout-content">
 <p>Try improving AI-generated code quality by refining your prompts.
@@ -1750,14 +1600,14 @@ differ?</p>
 </div>
 </div>
 </div>
-<div id="accordionSolution3" class="accordion challenge-accordion accordion-flush">
+<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
-  <h4 class="accordion-header" id="headingSolution3">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
+  <h4 class="accordion-header" id="headingSolution1">
   Observations
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p><strong>Poor prompt typically produces:</strong></p>
 <ul>
@@ -1797,7 +1647,7 @@ the output!</p>
 <h3 id="adopt-a-verification-mindset">1. Adopt a Verification Mindset<a class="anchor" aria-label="anchor" href="#adopt-a-verification-mindset"></a>
 </h3>
 <p><strong>Question everything:</strong></p>
-<div class="codewrapper sourceCode" id="cb11">
+<div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1813,7 +1663,7 @@ the output!</p>
 <div class="section level3">
 <h3 id="use-comprehensive-testing">2. Use Comprehensive Testing<a class="anchor" aria-label="anchor" href="#use-comprehensive-testing"></a>
 </h3>
-<div class="codewrapper sourceCode" id="cb12">
+<div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1855,7 +1705,7 @@ the output!</p>
 <h3 id="iterative-refinement">4. Iterative Refinement<a class="anchor" aria-label="anchor" href="#iterative-refinement"></a>
 </h3>
 <p>Don’t accept the first suggestion:</p>
-<div class="codewrapper sourceCode" id="cb13">
+<div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1869,7 +1719,7 @@ the output!</p>
 <div class="section level3">
 <h3 id="use-linting-and-static-analysis">5. Use Linting and Static Analysis<a class="anchor" aria-label="anchor" href="#use-linting-and-static-analysis"></a>
 </h3>
-<div class="codewrapper sourceCode" id="cb14">
+<div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1888,7 +1738,7 @@ the output!</p>
 <div class="section level3">
 <h3 id="benchmark-and-profile">6. Benchmark and Profile<a class="anchor" aria-label="anchor" href="#benchmark-and-profile"></a>
 </h3>
-<div class="codewrapper sourceCode" id="cb15">
+<div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1930,7 +1780,7 @@ work</p>
 <div class="section level3">
 <h3 id="document-ai-usage">3. Document AI Usage<a class="anchor" aria-label="anchor" href="#document-ai-usage"></a>
 </h3>
-<div class="codewrapper sourceCode" id="cb16">
+<div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -2831,7 +2681,7 @@ file.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2975,7 +2825,7 @@ findings</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Example Solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -3210,7 +3060,7 @@ posts <strong>Option B</strong>: Process customer support tickets
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Example for Option B: Support Tickets </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb19">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -3490,7 +3340,7 @@ identify?</p>
   Issues AI Might Identify
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li>
@@ -3751,7 +3601,7 @@ Improve readability 4. Add documentation</p>
   Improved Version After Iterations
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -3971,7 +3821,7 @@ Documentation 5. Error handling</p>
   Comprehensive Improved Version
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb28">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -4444,7 +4294,7 @@ appropriate code.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Example Solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">MARKDOWN<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -4752,7 +4602,7 @@ needed</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p><strong>GitHub Issue</strong>:</p>
 <div class="codewrapper sourceCode" id="cb16">
@@ -4944,7 +4794,7 @@ Dependencies between issues</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <p><strong>Parent Issue #80</strong>:</p>
 <div class="codewrapper sourceCode" id="cb23">
