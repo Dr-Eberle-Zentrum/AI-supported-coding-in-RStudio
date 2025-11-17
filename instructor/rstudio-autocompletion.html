@@ -342,7 +342,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>RStudio Autocompletion with Copilot</h1>
-        <p>Last updated on 2025-11-10 |
+        <p>Last updated on 2025-11-17 |
 
         <a href="https://github.com/Dr-Eberle-Zentrum/AI-supported-coding-in-RStudio/edit/main/episodes/rstudio-autocompletion.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -391,10 +391,12 @@ or blocks of code. This chapter covers how to use Copilot effectively as
 an autocompletion assistant.</p>
 </section><section><h2 class="section-heading" id="how-copilot-works">How Copilot Works<a class="anchor" aria-label="anchor" href="#how-copilot-works"></a></h2>
 <hr class="half-width"><p>GitHub Copilot uses machine learning models trained on billions of
-lines of public code to: - Analyze the context of your current code -
-Understand comments and function names - Predict what you’re trying to
-accomplish - Generate relevant code suggestions</p>
-<div id="context-is-key" class="callout">
+lines of public code to:</p>
+<ul><li>Analyze the context of your current code</li>
+<li>Understand comments and function names</li>
+<li>Predict what you’re trying to accomplish</li>
+<li>Generate relevant code suggestions</li>
+</ul><div id="context-is-key" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
@@ -402,10 +404,14 @@ accomplish - Generate relevant code suggestions</p>
 <div id="context-is-key" class="callout-inner">
 <h3 class="callout-title">Context is Key</h3>
 <div class="callout-content">
-<p>Copilot examines: - Your current file’s code - Open files in RStudio
-- Comments you’ve written - Variable and function names - The structure
-of your code</p>
-<p>The more context you provide, the better the suggestions!</p>
+<p>Copilot examines:</p>
+<ul><li>Your current file’s code
+<ul><li>Comments you’ve written</li>
+<li>Variable and function names</li>
+<li>The structure of your code</li>
+</ul></li>
+<li>Open files in RStudio (depending on your settings)</li>
+</ul><p>The more context you provide, the better the suggestions!</p>
 </div>
 </div>
 </div>
@@ -452,7 +458,7 @@ students with an average above 70.</p>
   Example Solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -475,18 +481,18 @@ students with an average above 70.</p>
 <li>
 <strong>Esc:</strong> Dismiss the current suggestion</li>
 <li>
-<strong>Alt + ]</strong> or <strong>Cmd + ]:</strong> See next
-suggestion (if available)</li>
-<li>
-<strong>Alt + [</strong> or <strong>Cmd + [:</strong> See previous
-suggestion</li>
+<strong>Ctrl + Shift + L</strong> or <strong>Cmd + Shift +
+L:</strong> Request a new suggestion</li>
 </ul></div>
 <div class="section level3">
 <h3 id="partial-acceptance">Partial Acceptance<a class="anchor" aria-label="anchor" href="#partial-acceptance"></a></h3>
-<p>You can accept suggestions word-by-word: - <strong>Ctrl + →</strong>
-or <strong>Cmd + →:</strong> Accept next word - This allows you to use
-parts of a suggestion while continuing to type</p>
-<div id="ghost-text" class="callout">
+<p>You can accept suggestions word-by-word:</p>
+<ul><li>
+<strong>Ctrl + →</strong> or <strong>Cmd + →:</strong> Accept next
+word</li>
+<li>This allows you to use parts of a suggestion while continuing to
+type</li>
+</ul><div id="ghost-text" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
@@ -555,13 +561,14 @@ flow.</p>
 <div class="callout-content">
 <p>Try generating code for the same task with different levels of
 context:</p>
-<ol style="list-style-type: decimal"><li><p>Just type: <code>read.csv(</code></p></li>
-<li><p>Add a comment first:
+<ol style="list-style-type: decimal"><li>Just type: <code>read.csv(</code>
+</li>
+<li>Add a comment first:
 <code># Load student data from grades.csv</code> then
-<code>read.csv(</code></p></li>
-<li>
-<p>Add more context:</p>
-<div class="codewrapper sourceCode" id="cb7">
+<code>read.csv(</code>
+</li>
+<li>Add more context:</li>
+</ol><div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -569,8 +576,7 @@ context:</p>
 <span><span class="co"># Load student data from grades.csv</span></span></code></pre>
 </div>
 <p>then <code>read.csv(</code></p>
-</li>
-</ol></div>
+</div>
 </div>
 </div>
 <div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
@@ -580,14 +586,17 @@ context:</p>
   Observation
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
-<p>You should notice that: - With minimal context, Copilot might just
-complete the parentheses - With a comment, it might suggest the filename
-- With detailed context, it might suggest the filename AND additional
+<p>You should notice that:</p>
+<ul><li>With minimal context, Copilot might just complete the
+parentheses</li>
+<li>With a comment, it might suggest the filename</li>
+<li>With detailed context, it might suggest the filename AND additional
 parameters like <code>stringsAsFactors = FALSE</code> or
-<code>header = TRUE</code></p>
-</div>
+<code>header = TRUE</code>
+</li>
+</ul></div>
 </div>
 </div>
 </div>
@@ -595,9 +604,11 @@ parameters like <code>stringsAsFactors = FALSE</code> or
 </section><section><h2 class="section-heading" id="working-with-different-types-of-suggestions">Working with Different Types of Suggestions<a class="anchor" aria-label="anchor" href="#working-with-different-types-of-suggestions"></a></h2>
 <hr class="half-width"><div class="section level3">
 <h3 id="single-line-completions">Single-Line Completions<a class="anchor" aria-label="anchor" href="#single-line-completions"></a></h3>
-<p>Best for: - Completing function calls - Finishing variable
-assignments - Adding package imports</p>
-<p>Example:</p>
+<p>Best for:</p>
+<ul><li>Completing function calls</li>
+<li>Finishing variable assignments</li>
+<li>Adding package imports</li>
+</ul><p>Example:</p>
 <div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -606,9 +617,11 @@ assignments - Adding package imports</p>
 </div>
 <div class="section level3">
 <h3 id="multi-line-suggestions">Multi-Line Suggestions<a class="anchor" aria-label="anchor" href="#multi-line-suggestions"></a></h3>
-<p>Best for: - Function implementations - Code blocks (if/else, loops) -
-Multiple related operations</p>
-<p>Example:</p>
+<p>Best for:</p>
+<ul><li>Function implementations</li>
+<li>Code blocks (if/else, loops)</li>
+<li>Multiple related operations</li>
+</ul><p>Example:</p>
 <div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -619,19 +632,14 @@ Multiple related operations</p>
 <span><span class="op">}</span></span></code></pre>
 </div>
 </div>
-<div class="section level3">
-<h3 id="alternative-suggestions">Alternative Suggestions<a class="anchor" aria-label="anchor" href="#alternative-suggestions"></a></h3>
-<p>Copilot often has multiple suggestions. Cycle through them to find
-the best option: - Different approaches to the same problem - Various
-package implementations (base R vs. tidyverse) - Different levels of
-complexity</p>
-</div>
 </section><section><h2 class="section-heading" id="best-practices-for-efficient-workflow">Best Practices for Efficient Workflow<a class="anchor" aria-label="anchor" href="#best-practices-for-efficient-workflow"></a></h2>
 <hr class="half-width"><div class="section level3">
 <h3 id="review-before-accepting">1. Review Before Accepting<a class="anchor" aria-label="anchor" href="#review-before-accepting"></a></h3>
-<p>Always read the suggestion before pressing Tab: - Check for logical
-errors - Verify it matches your intent - Look for security issues</p>
-</div>
+<p>Always read the suggestion before pressing <code>Tab</code> key:</p>
+<ul><li>Check for logical errors</li>
+<li>Verify it matches your intent</li>
+<li>Look for security issues</li>
+</ul></div>
 <div class="section level3">
 <h3 id="iterate-and-refine">2. Iterate and Refine<a class="anchor" aria-label="anchor" href="#iterate-and-refine"></a></h3>
 <ul><li>Accept a suggestion as a starting point</li>
@@ -651,10 +659,11 @@ errors - Verify it matches your intent - Look for security issues</p>
 <div id="maintain-your-coding-skills" class="callout-inner">
 <h3 class="callout-title">Maintain Your Coding Skills</h3>
 <div class="callout-content">
-<p>While Copilot is helpful, continue to: - Understand the code you’re
-using - Practice writing code without assistance - Learn from the
-suggestions Copilot provides</p>
-</div>
+<p>While Copilot is helpful, continue to:</p>
+<ul><li>Understand the code you’re using</li>
+<li>Practice writing code without assistance</li>
+<li>Learn from the suggestions Copilot provides</li>
+</ul></div>
 </div>
 </div>
 </div>
@@ -700,10 +709,11 @@ suggestions Copilot provides</p>
 <h3 class="callout-title">Challenge 3: Build a Function with
 Copilot</h3>
 <div class="callout-content">
-<p>Use Copilot to help you create a function that: 1. Takes a numeric
-vector as input 2. Removes outliers (values &gt; 3 standard deviations
-from mean) 3. Returns the cleaned vector</p>
-<p>Start with a descriptive comment and function signature.</p>
+<p>Use Copilot to help you create a function that:</p>
+<ol style="list-style-type: decimal"><li>Takes a numeric vector as input</li>
+<li>Removes outliers (values &gt; 3 standard deviations from mean)</li>
+<li>Returns the cleaned vector</li>
+</ol><p>Start with a descriptive comment and function signature.</p>
 </div>
 </div>
 </div>
@@ -714,7 +724,7 @@ from mean) 3. Returns the cleaned vector</p>
   Example Approach
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb13">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -795,8 +805,7 @@ from mean) 3. Returns the cleaned vector</p>
 <ul><li>Copilot generates suggestions based on context from your code and
 comments</li>
 <li>Write clear, descriptive comments to get better suggestions</li>
-<li>Use Tab to accept, Esc to dismiss, and Alt/Cmd + [ or ] to cycle
-through suggestions</li>
+<li>Use Tab to accept, and Esc to dismiss suggestions</li>
 <li>Break complex tasks into smaller steps for more accurate
 suggestions</li>
 <li>Always review and test AI-generated code before using it</li>
@@ -868,7 +877,7 @@ any links that you are not going to use.
   "url": "https://Dr-Eberle-Zentrum.github.io/AI-supported-coding-in-RStudio/instructor/rstudio-autocompletion.html",
   "identifier": "https://Dr-Eberle-Zentrum.github.io/AI-supported-coding-in-RStudio/instructor/rstudio-autocompletion.html",
   "dateCreated": "2024-11-10",
-  "dateModified": "2025-11-10",
+  "dateModified": "2025-11-17",
   "datePublished": "2025-11-17"
 }
 
