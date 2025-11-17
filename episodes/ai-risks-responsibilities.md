@@ -51,6 +51,7 @@ you shouldn't use AI coding assistants without understanding their limitations a
 AI models can generate code that appears correct but contains subtle bugs:
 
 **Example:**
+
 ```r
 # AI might suggest
 remove_last <- function(data) {
@@ -118,75 +119,17 @@ calculate_means <- function(data) {
 ### 4. License and Copyright Issues
 
 AI models are trained on public code repositories, which may include:
+
 - Code with restrictive licenses (GPL, AGPL)
 - Proprietary code that shouldn't have been public
 - Code with unclear licensing
 
 **Risks:**
+
 - Inadvertently incorporating GPL code into proprietary projects
+  - Note: GPL requires derivative works to also be GPL
 - Copyright infringement claims
 - License compliance violations
-
-::::::::::::::::::::::::::::::::::::: challenge 
-
-## Challenge 1: Identify the Bug
-
-Ask an AI assistant to generate a function that removes duplicates from a 
-vector while preserving order. Test the result with edge cases:
-
-```r
-test_data <- c(1, 2, 2, 5, 1, 4, NA, 3, NA)
-```
-
-What might go wrong?
-
-:::::::::::::::::::::::: solution 
-
-## Potential Issues
-
-AI might generate code that:
-
-1. **Doesn't handle NA values as intended (e.g. listing or not listing them):**
-
-```r
-# Might remove all NAs or fail
-unique(test_data)  # This actually works, but AI might suggest worse
-```
-
-2. **Uses inefficient approaches:**
-
-```r
-# Slow for large vectors
-result <- c()
-for(x in test_data) {
- if(!(x %in% result)) result <- c(result, x)
-}
-```
-
-3. **Doesn't preserve order as required:**
-
-```r
-# sort() changes order
-sort(unique(test_data))
-```
-
-**Better solution:**
-
-```r
-remove_duplicates <- function(x, na.rm = TRUE) {
-  if(na.rm) {
-    x[!duplicated(x) & !is.na(x)]  # Preserves order, removes NA
-  } else {
-    unique(x)  # Preserves order, keeps NA
-  }
-}
-remove_duplicates(test_data)
-```
-
-**Lesson:** Always **test** AI-generated code with **edge cases**!
-
-:::::::::::::::::::::::::::::::::
-::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Your Responsibilities as an AI User
 
@@ -204,7 +147,10 @@ regardless of whether it was written by you or suggested by AI.
 
 ### 2. Verification and Testing
 
-**Never blindly accept AI suggestions.** Always:
+Especially when it comes to the generation of complex functions or algorithms,
+**never blindly accept AI suggestions.** 
+Always verify through testing.
+This should be standard practice anyway, but is especially critical with AI-generated code.
 
 ```r
 # Example verification workflow
@@ -228,13 +174,17 @@ test_that("ai_suggested_function works correctly", {
 })
 ```
 
+*Note*, creating test code is another area where AI can assist you very efficiently, 
+but you must still verify the tests themselves and check if they cover all relevant cases.
+
+
 ### 3. Security Awareness
 
 You must:
 
 - Review all AI-generated code for security vulnerabilities
 - Never include sensitive data in prompts to AI tools
-- Understand that code sent to cloud-based AI may be logged
+- Understand that code sent to cloud-based AI may be logged or used for subsequent training and answering
 - Follow security best practices even when AI suggests otherwise
 
 ::::::::::::::::::::::::::::::::::::: callout
@@ -243,7 +193,7 @@ You must:
 
 When using cloud-based AI assistants:
 
-- Your code snippets may be sent to external servers
+- Your code snippets are in most cases sent to external servers
 - Avoid including passwords, API keys, or sensitive data
 - Check your organization's policies on AI tool usage
 - Consider using local AI models for sensitive projects
@@ -270,19 +220,7 @@ Be transparent about AI usage:
 
 ## When AI Usage Is a No-Go
 
-### 1. Critical Systems
-
-**Avoid AI for:**
-
-- Medical device software
-- Financial transaction systems
-- Safety-critical aerospace or automotive code
-- Security authentication systems
-- Life-dependent systems
-
-**Why:** The stakes are too high for AI-generated code without extensive human review and testing.
-
-### 2. Specialized or Novel Algorithms
+### 1. Specialized or Novel Algorithms
 
 **Be cautious with:**
 
@@ -293,66 +231,16 @@ Be transparent about AI usage:
 
 **Why:** AI training data may not include correct implementations of specialized techniques.
 
-### 3. Highly Regulated Domains
-
-**Extra caution in:**
-
-- Healthcare (HIPAA compliance)
-- Finance (SOX, PCI-DSS compliance)
-- Government (security clearances required)
-- Privacy-sensitive applications (GDPR)
-
-**Why:** Compliance requirements demand human oversight and documentation that AI cannot provide.
-
-### 4. Learning Fundamentals
+### 2. Learning Fundamentals
 
 **Don't use AI when:**
 
-- Learning a new programming language
-- Studying fundamental algorithms and data structures
+- When not familiar with a new programming language
+- You have no time or interest in understanding basic concepts and getting further explanations
 - Completing academic assignments (unless explicitly allowed)
 - Building foundational skills
 
 **Why:** You need to develop core competencies yourself.
-
-::::::::::::::::::::::::::::::::::::: challenge 
-
-## Challenge 2: Ethical Scenarios
-
-Discuss these scenarios with a partner:
-
-1. You're a student. Your professor hasn't explicitly forbidden AI use. Is it okay to use Copilot for homework?
-
-2. You're on a tight deadline. AI generates a function you don't fully understand, but it seems to work. Do you use it?
-
-3. You discover that AI-suggested code solves your problem but uses a GPL license library in a proprietary project. What do you do?
-
-:::::::::::::::::::::::: solution 
-
-## Discussion Points
-
-**Scenario 1 - Academic Integrity:**
-
-- If not explicitly allowed, assume it's not permitted
-- Academic assignments are for learning, not just completion
-- Using AI without understanding violates learning objectives
-- **Best practice:** Ask your professor about AI policy
-
-**Scenario 2 - Code Understanding:**
-
-- Using code you don't understand is dangerous
-- It may have bugs or security issues you can't detect
-- You won't be able to maintain or debug it later
-- **Best practice:** Take time to understand, refactor if needed, or find another solution
-
-**Scenario 3 - License Compliance:**
-
-- Using GPL code in proprietary software violates the license
-- This could lead to legal issues for your organization
-- **Best practice:** Remove the code and find an alternative with a compatible license (MIT, Apache, BSD)
-
-:::::::::::::::::::::::::::::::::
-::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Side Effects of Heavy AI Reliance
 
@@ -368,6 +256,7 @@ Discuss these scenarios with a partner:
 **Example:**
 
 A developer who always uses AI for basic tasks may struggle when:
+
 - Working offline
 - Debugging complex issues
 - Interviewing for new positions
@@ -386,9 +275,8 @@ A developer who always uses AI for basic tasks may struggle when:
 
 **Problems:**
 
-- Everyone's code starts looking similar (AI patterns)
+- Repetition of common mistakes or old patterns/approaches
 - Loss of creative problem-solving approaches
-- Reduced innovation in software design
 - "Cargo cult" programming (copying without understanding)
 
 ### 4. False Confidence
@@ -408,7 +296,6 @@ A developer who always uses AI for basic tasks may struggle when:
 
 - Set aside time for coding without AI assistance
 - Practice fundamental skills regularly
-- Do code katas or programming challenges manually
 - Review and understand all AI-generated code
 - Explain solutions to others to test your understanding
 
@@ -468,7 +355,7 @@ calculate_average <- function(x) {
 
 ::::::::::::::::::::::::::::::::::::: challenge 
 
-## Challenge 3: Prompt Engineering for Better Code
+## Challenge: Prompt Engineering for Better Code
 
 Try improving AI-generated code quality by refining your prompts. Compare results:
 
