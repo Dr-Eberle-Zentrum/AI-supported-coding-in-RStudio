@@ -23,11 +23,14 @@ exercises: 15
 
 ## Introduction
 
-GitHub Copilot functions as an advanced autocompletion tool in RStudio, going beyond simple syntax completion to suggest entire lines or blocks of code. This chapter covers how to use Copilot effectively as an autocompletion assistant.
+GitHub Copilot functions as an advanced autocompletion tool in RStudio, 
+going beyond simple syntax completion to suggest entire lines or blocks of code. 
+This chapter covers how to use Copilot effectively as an autocompletion assistant.
 
 ## How Copilot Works
 
 GitHub Copilot uses machine learning models trained on billions of lines of public code to:
+
 - Analyze the context of your current code
 - Understand comments and function names
 - Predict what you're trying to accomplish
@@ -38,11 +41,12 @@ GitHub Copilot uses machine learning models trained on billions of lines of publ
 ### Context is Key
 
 Copilot examines:
+
 - Your current file's code
-- Open files in RStudio
-- Comments you've written
-- Variable and function names
-- The structure of your code
+  - Comments you've written
+  - Variable and function names
+  - The structure of your code
+- Open files in RStudio (depending on your settings)
 
 The more context you provide, the better the suggestions!
 
@@ -55,11 +59,13 @@ The more context you provide, the better the suggestions!
 One of the most effective ways to use Copilot is to write descriptive comments first:
 
 **Good Example:**
+
 ```r
 # Load data from CSV, remove rows with missing values, and convert date column to Date type
 ```
 
 **Less Effective:**
+
 ```r
 # Load data
 ```
@@ -70,7 +76,8 @@ One of the most effective ways to use Copilot is to write descriptive comments f
 
 Write a detailed comment describing what you want the code to do for the following scenario:
 
-You need to create a function that takes a data frame of student grades, calculates the average grade for each student, and returns only students with an average above 70.
+You need to create a function that takes a data frame of student grades, 
+calculates the average grade for each student, and returns only students with an average above 70.
 
 :::::::::::::::::::::::: solution 
 
@@ -91,12 +98,12 @@ You need to create a function that takes a data frame of student grades, calcula
 
 - **Tab:** Accept the entire suggestion
 - **Esc:** Dismiss the current suggestion
-- **Alt + ]** or **Cmd + ]:** See next suggestion (if available)
-- **Alt + [** or **Cmd + [:** See previous suggestion
+- **Ctrl + Shift + L** or **Cmd + Shift + L:** Request a new suggestion
 
 ### Partial Acceptance
 
 You can accept suggestions word-by-word:
+
 - **Ctrl + →** or **Cmd + →:** Accept next word
 - This allows you to use parts of a suggestion while continuing to type
 
@@ -104,7 +111,8 @@ You can accept suggestions word-by-word:
 
 ### Ghost Text
 
-Copilot suggestions appear as gray "ghost text" in your editor. This makes it easy to see suggestions without disrupting your coding flow.
+Copilot suggestions appear as gray "ghost text" in your editor. 
+This makes it easy to see suggestions without disrupting your coding flow.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -156,17 +164,19 @@ Try generating code for the same task with different levels of context:
 1. Just type: `read.csv(`
 2. Add a comment first: `# Load student data from grades.csv` then `read.csv(`
 3. Add more context: 
-   ```r
-   # Data has columns: student_id, name, grade, date
-   # Load student data from grades.csv
-   ```
-   then `read.csv(`
+
+ ```r
+ # Data has columns: student_id, name, grade, date
+ # Load student data from grades.csv
+ ```
+ then `read.csv(`
 
 :::::::::::::::::::::::: solution 
 
 ## Observation
 
 You should notice that:
+
 - With minimal context, Copilot might just complete the parentheses
 - With a comment, it might suggest the filename
 - With detailed context, it might suggest the filename AND additional parameters like `stringsAsFactors = FALSE` or `header = TRUE`
@@ -179,11 +189,13 @@ You should notice that:
 ### Single-Line Completions
 
 Best for:
+
 - Completing function calls
 - Finishing variable assignments
 - Adding package imports
 
 Example:
+
 ```r
 library(# Copilot suggests: tidyverse)
 ```
@@ -191,11 +203,13 @@ library(# Copilot suggests: tidyverse)
 ### Multi-Line Suggestions
 
 Best for:
+
 - Function implementations
 - Code blocks (if/else, loops)
 - Multiple related operations
 
 Example:
+
 ```r
 # Function to plot distribution with ggplot2
 plot_distribution <- function(data, column) {
@@ -203,18 +217,12 @@ plot_distribution <- function(data, column) {
 }
 ```
 
-### Alternative Suggestions
-
-Copilot often has multiple suggestions. Cycle through them to find the best option:
-- Different approaches to the same problem
-- Various package implementations (base R vs. tidyverse)
-- Different levels of complexity
-
 ## Best Practices for Efficient Workflow
 
 ### 1. Review Before Accepting
 
-Always read the suggestion before pressing Tab:
+Always read the suggestion before pressing `Tab` key:
+
 - Check for logical errors
 - Verify it matches your intent
 - Look for security issues
@@ -236,6 +244,7 @@ Always read the suggestion before pressing Tab:
 ### Maintain Your Coding Skills
 
 While Copilot is helpful, continue to:
+
 - Understand the code you're using
 - Practice writing code without assistance
 - Learn from the suggestions Copilot provides
@@ -275,6 +284,7 @@ validate_email <- function(email) {
 ## Challenge 3: Build a Function with Copilot
 
 Use Copilot to help you create a function that:
+
 1. Takes a numeric vector as input
 2. Removes outliers (values > 3 standard deviations from mean)
 3. Returns the cleaned vector
@@ -349,7 +359,7 @@ Remember to test the function with sample data!
 
 - Copilot generates suggestions based on context from your code and comments
 - Write clear, descriptive comments to get better suggestions
-- Use Tab to accept, Esc to dismiss, and Alt/Cmd + [ or ] to cycle through suggestions
+- Use Tab to accept, and Esc to dismiss suggestions
 - Break complex tasks into smaller steps for more accurate suggestions
 - Always review and test AI-generated code before using it
 - Combine Copilot assistance with your own coding expertise for best results
