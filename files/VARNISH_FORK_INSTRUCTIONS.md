@@ -75,6 +75,6 @@ For now, using an updated fork of varnish is the most practical solution:
 
 The fork only needs to change ~10 lines of code (color variables and carpentry-specific selectors), making it easy to merge upstream updates when needed.
 
-##  files in this directory
+## Files in this Directory
 
 The `ut-branding.css` file in this directory contains the standalone CSS that would be applied. It can serve as a reference for what colors to use in your varnish fork.

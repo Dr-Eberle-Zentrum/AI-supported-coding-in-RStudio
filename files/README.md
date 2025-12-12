@@ -5,6 +5,7 @@ This directory contains custom styling files for University of Tübingen (UT) br
 ## Files
 
 - `ut-branding.css` - Custom CSS with UT color overrides
+- `VARNISH_FORK_INSTRUCTIONS.md` - Step-by-step guide for creating a minimal varnish fork
 
 ## UT Brand Colors
 
