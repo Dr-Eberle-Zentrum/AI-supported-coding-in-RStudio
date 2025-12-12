@@ -167,7 +167,7 @@ Try generating code for the same task with different levels of context:
 
  ```r
  # Data has columns: student_id, name, grade, date
- # Load student data from grades.csv
+ # Load student data from grades.csv with explicit column types
  ```
  then `read.csv(`
 

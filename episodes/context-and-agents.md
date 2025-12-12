@@ -89,6 +89,7 @@ You can place AGENTS.md files at different levels of your project hierarchy. AI 
 - **Module-level** (`/src/data-processing/AGENTS.md`): Defines specialized rules for specific components
 
 **Example hierarchy:**
+
 ```
 my-r-project/
 ├── AGENTS.md                    # General tidyverse standards
@@ -349,6 +350,7 @@ Create an AGENTS.md file for one of your own R projects. Consider:
 ## Example Solution
 
 Your AGENTS.md should include:
+
 - Clear statement of purpose
 - Specific package preferences with examples
 - Do's and don'ts with code comparisons
@@ -393,6 +395,7 @@ When using AI chat interfaces, provide context explicitly:
 ```
 I'm working on an R project that follows strict tidyverse conventions. 
 Please generate all code using:
+
 - dplyr for data manipulation
 - Piping (%>%) for all multi-step operations
 - No variable overwriting
@@ -407,6 +410,7 @@ Include coding standards in your README.md:
 ## Coding Standards
 
 This project follows tidyverse conventions. All contributions must:
+
 - Use tidyverse packages
 - Implement piping for data transformations
 - Avoid variable overwriting
@@ -458,13 +462,15 @@ repos:
 
 ### 7. Copilot Instructions in IDE
 
-Some IDEs allow workspace-specific instructions for AI assistants. While specific settings vary by tool and may evolve, the concept involves configuring your IDE to provide additional context files or instructions to the AI assistant.
+Some IDEs allow workspace-specific instructions for AI assistants. 
+While specific settings vary by tool and may evolve, the concept involves configuring your IDE to provide additional context files or instructions to the AI assistant.
 
 ::::::::::::::::::::::::::::::::::::: callout
 
 ### Note on IDE-Specific Settings
 
-The availability and configuration of AI assistant settings varies across IDEs and tools. Check your specific IDE's documentation for current options to provide context to AI coding assistants.
+The availability and configuration of AI assistant settings varies across IDEs and tools. 
+Check your specific IDE's documentation for current options to provide context to AI coding assistants.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -473,6 +479,7 @@ The availability and configuration of AI assistant settings varies across IDEs a
 ### Combining Approaches
 
 The most effective strategy often combines multiple approaches:
+
 1. **AGENTS.md** for comprehensive, machine-readable guidelines
 2. **Inline comments** for implementation-specific context
 3. **Chat instructions** for interactive sessions
