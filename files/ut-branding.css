@@ -1,0 +1,48 @@
+/**
+ * Custom styling for University of Tübingen (UT) branding
+ * 
+ * This file provides UT-specific color overrides for the Carpentries Workbench
+ * varnish template. It replaces the default Carpentries colors (blues/purples)
+ * with UT brand colors (reds).
+ * 
+ * UT Brand Colors:
+ * - Primary Red: #A51E37
+ * - Light Red/Pink: #ffd9e0
+ * - Dark Red: #a82a41
+ *
+ * Note: This file needs to be manually linked in the HTML templates or
+ * included via a custom varnish fork for full integration.
+ */
+
+/* Top navigation border - UT Red */
+.top-nav {
+  border-top-color: #A51E37 !important;
+}
+
+/* Bottom navigation border - UT Red */
+.bottom-nav {
+  border-top-color: #A51E37 !important;
+}
+
+/* Progress bar background - Light UT Red/Pink */
+.progress {
+  background-color: #ffd9e0 !important;
+}
+
+/* Progress bar foreground - Dark UT Red */
+.progress-bar {
+  background-color: #a82a41 !important;
+}
+
+/* Override specific carpentry type styling if needed */
+.bottom-nav.UT {
+  border-top-color: #A51E37 !important;
+}
+
+.progress.UT {
+  background-color: #ffd9e0 !important;
+}
+
+.progress-bar.UT {
+  background-color: #a82a41 !important;
+}
