@@ -80,6 +80,32 @@ When an AI assistant (like GitHub Copilot, Cursor, or other AI tools) works in a
 3. **Reference the standards** when reviewing or revising code
 4. **Adapt behavior** to match project-specific preferences
 
+### Multiple AGENTS.md Files
+
+You can place AGENTS.md files at different levels of your project hierarchy. AI assistants typically use the **closest** AGENTS.md file relative to the current working file:
+
+- **Repository root** (`/AGENTS.md`): Defines project-wide standards that apply to all code
+- **Subdirectory** (`/src/AGENTS.md`, `/tests/AGENTS.md`): Provides context-specific guidelines that override or extend root-level rules
+- **Module-level** (`/src/data-processing/AGENTS.md`): Defines specialized rules for specific components
+
+**Example hierarchy:**
+```
+my-r-project/
+├── AGENTS.md                    # General tidyverse standards
+├── src/
+│   └── analysis/
+│       └── AGENTS.md            # Additional statistical analysis guidelines
+└── tests/
+    └── AGENTS.md                # Testing-specific conventions
+```
+
+When working on a file like `/src/analysis/models.R`, the AI assistant will prioritize:
+1. `/src/analysis/AGENTS.md` (most specific)
+2. `/src/AGENTS.md` (if it exists)
+3. `/AGENTS.md` (project-wide defaults)
+
+This hierarchical approach allows you to maintain general standards while accommodating specialized needs in different parts of your codebase.
+
 ::::::::::::::::::::::::::::::::::::: callout
 
 ### Version Control Benefits
@@ -106,7 +132,7 @@ AI assistants should generate code that adheres to these guidelines.
 
 ## Language and Framework
 
-- **Primary Language**: R (version 4.0 or higher)
+- **Primary Language**: R (version 4.1 or higher)
 - **Core Framework**: tidyverse
 - **Required Packages**: dplyr, tidyr, ggplot2, purrr, readr
 
@@ -296,12 +322,6 @@ analysis <- cleaned_data %>%
   # Final filtering
   filter(n_obs >= min_sample_size)
 ```
-
-## Testing
-
-- All functions must have unit tests using `testthat`
-- Tests should verify both correctness and adherence to pipeline style
-- Use `testthat::expect_*()` functions within pipeline contexts
 
 ## Additional Guidelines
 
@@ -521,19 +541,14 @@ The key is redundancy across human and AI channels.
 
 Providing proper context to AI coding assistants is essential for generating high-quality, consistent code. The AGENTS.md concept offers a standardized, version-controlled approach to defining project-specific guidelines. Combined with other context specification methods, it creates a comprehensive environment where AI assistants can truly enhance your development workflow.
 
-Key takeaways:
-
-- **Context improves consistency**: AI-generated code matches your project standards
-- **AGENTS.md is machine-readable**: Standardized format AI tools can parse and apply
-- **Multiple approaches complement each other**: Use AGENTS.md alongside other methods
-- **Start simple, iterate**: Begin with core principles and expand based on needs
-- **Version control your context**: Treat guidelines as code documentation
-
 ::::::::::::::::::::::::::::::::::::: keypoints
 
 - Context definitions help AI assistants generate code that matches your project standards
-- AGENTS.md provides a standardized, version-controlled way to specify coding guidelines
+- Context improves consistency: AI-generated code matches your project standards
+- AGENTS.md provides a standardized, version-controlled, machine-readable way to specify coding guidelines
+- Multiple AGENTS.md files can exist at different hierarchy levels; AI assistants use the closest file
 - Effective AGENTS.md files include clear examples of preferred and forbidden patterns
+- Start simple and iterate: Begin with core principles and expand based on needs
 - Combining AGENTS.md with inline comments, chat instructions, and tooling creates robust context
 - R projects benefit from explicit tidyverse usage and piping conventions in context definitions
 
