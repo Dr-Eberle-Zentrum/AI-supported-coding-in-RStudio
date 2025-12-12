@@ -68,6 +68,7 @@ episodes:
 - getting-started-with-copilot.md
 - where-ai-support.md
 - ai-risks-responsibilities.md
+- context-and-agents.md
 - rstudio-autocompletion.md
 - ai-pipelines-ellmer.md
 - revise-code-with-ai.md
