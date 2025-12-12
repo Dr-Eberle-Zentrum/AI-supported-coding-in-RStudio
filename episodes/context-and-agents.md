@@ -417,8 +417,8 @@ linters: linters_with_defaults(
   line_length_linter(120),
   object_usage_linter = NULL,
   # Enforce tidyverse style
-  assignment_linter = assignment_linter("right"),
-  pipe_continuation_linter = pipe_continuation_linter()
+  assignment_linter(),
+  pipe_continuation_linter()
 )
 ```
 
@@ -438,19 +438,15 @@ repos:
 
 ### 7. Copilot Instructions in IDE
 
-Some IDEs allow workspace-specific Copilot settings:
+Some IDEs allow workspace-specific instructions for AI assistants. While specific settings vary by tool and may evolve, the concept involves configuring your IDE to provide additional context files or instructions to the AI assistant.
 
-```json
-// .vscode/settings.json or similar
-{
-  "github.copilot.advanced": {
-    "contextFiles": {
-      "AGENTS.md": true,
-      "CODING_STANDARDS.md": true
-    }
-  }
-}
-```
+::::::::::::::::::::::::::::::::::::: callout
+
+### Note on IDE-Specific Settings
+
+The availability and configuration of AI assistant settings varies across IDEs and tools. Check your specific IDE's documentation for current options to provide context to AI coding assistants.
+
+::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: callout
 
