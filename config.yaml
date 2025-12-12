@@ -13,7 +13,8 @@ carpentry: 'UT'
 carpentry_description: 'Universität Tübingen'
 
 # UT-specific styling
-varnish: Dr-Eberle-Zentrum/varnish
+# Updated to use latest carpentries/varnish to fix missing citation template
+varnish: carpentries/varnish
 
 # Overall title for pages.
 title: 'AI-supported Coding with GitHub Copilot in RStudio' # FIXME
