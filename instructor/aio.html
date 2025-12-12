@@ -568,7 +568,7 @@ function, such as:</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>GitHub Copilot should suggest a function implementation below your
 comment. The suggestion might look something like:</p>
@@ -773,7 +773,7 @@ assistance.</p>
   Example Solutions
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>Examples might include:</p>
 <ul>
@@ -943,7 +943,7 @@ accepting the suggestion?</p>
   Questions to Consider
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>Before accepting AI-generated code, ask:</p>
 <ol style="list-style-type: decimal">
@@ -2381,10 +2381,14 @@ Consider:</p>
 </button>
 <div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
-<p>Your AGENTS.md should include: - Clear statement of purpose -
-Specific package preferences with examples - Do’s and don’ts with code
-comparisons - Documentation requirements - Examples of good
-practices</p>
+<p>Your AGENTS.md should include:</p>
+<ul>
+<li>Clear statement of purpose</li>
+<li>Specific package preferences with examples</li>
+<li>Do’s and don’ts with code comparisons</li>
+<li>Documentation requirements</li>
+<li>Examples of good practices</li>
+</ul>
 <p>Remember: Start simple and expand based on your project’s needs.</p>
 </div>
 </div>
@@ -2426,6 +2430,7 @@ or alternative approaches to providing context to AI assistants:</p>
 <p>When using AI chat interfaces, provide context explicitly:</p>
 <pre><code>I'm working on an R project that follows strict tidyverse conventions.
 Please generate all code using:
+
 - dplyr for data manipulation
 - Piping (%&gt;%) for all multi-step operations
 - No variable overwriting
@@ -2441,10 +2446,11 @@ Please generate all code using:
 <pre class="sourceCode markdown" tabindex="0"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="fu">## Coding Standards</span></span>
 <span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a>This project follows tidyverse conventions. All contributions must:</span>
-<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a><span class="ss">- </span>Use tidyverse packages</span>
-<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a><span class="ss">- </span>Implement piping for data transformations</span>
-<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a><span class="ss">- </span>Avoid variable overwriting</span>
-<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a><span class="ss">- </span>Include inline documentation</span></code></pre>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a><span class="ss">- </span>Use tidyverse packages</span>
+<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a><span class="ss">- </span>Implement piping for data transformations</span>
+<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a><span class="ss">- </span>Avoid variable overwriting</span>
+<span id="cb5-8"><a href="#cb5-8" tabindex="-1"></a><span class="ss">- </span>Include inline documentation</span></code></pre>
 </div>
 </div>
 <div class="section level3">
@@ -2526,12 +2532,19 @@ current options to provide context to AI coding assistants.</p>
 <div id="combining-approaches" class="callout-inner">
 <h3 class="callout-title">Combining Approaches</h3>
 <div class="callout-content">
-<p>The most effective strategy often combines multiple approaches: 1.
+<p>The most effective strategy often combines multiple approaches:</p>
+<ol style="list-style-type: decimal">
+<li>
 <strong>AGENTS.md</strong> for comprehensive, machine-readable
-guidelines 2. <strong>Inline comments</strong> for
-implementation-specific context 3. <strong>Chat instructions</strong>
-for interactive sessions 4. <strong>Automated tools</strong> for
-enforcement</p>
+guidelines</li>
+<li>
+<strong>Inline comments</strong> for implementation-specific
+context</li>
+<li>
+<strong>Chat instructions</strong> for interactive sessions</li>
+<li>
+<strong>Automated tools</strong> for enforcement</li>
+</ol>
 </div>
 </div>
 </div>
@@ -2677,7 +2690,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-rstudio-autocompletion"><p>Content from <a href="rstudio-autocompletion.html">RStudio Autocompletion with Copilot</a></p>
 <hr>
-<p>Last updated on 2025-11-17 |
+<p>Last updated on 2025-12-12 |
 
         <a href="https://github.com/Dr-Eberle-Zentrum/AI-supported-coding-in-RStudio/edit/main/episodes/rstudio-autocompletion.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 40 minutes</p>
@@ -2803,7 +2816,7 @@ students with an average above 70.</p>
   Example Solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2933,7 +2946,7 @@ context:</p>
 </h3>
 <pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Data has columns: student_id, name, grade, date</span></span>
-<span><span class="co"># Load student data from grades.csv</span></span></code></pre>
+<span><span class="co"># Load student data from grades.csv with explicit column types</span></span></code></pre>
 </div>
 <p>then <code>read.csv(</code></p>
 </div>
@@ -2946,7 +2959,7 @@ context:</p>
   Observation
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>You should notice that:</p>
 <ul>
@@ -3114,7 +3127,7 @@ Copilot</h3>
   Example Approach
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb13">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -5035,7 +5048,7 @@ appropriate code.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Example Solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">MARKDOWN<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -5343,7 +5356,7 @@ needed</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p><strong>GitHub Issue</strong>:</p>
 <div class="codewrapper sourceCode" id="cb16">
@@ -5535,7 +5548,7 @@ Dependencies between issues</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p><strong>Parent Issue #80</strong>:</p>
 <div class="codewrapper sourceCode" id="cb23">
