@@ -60,7 +60,8 @@ As of November 2025, GitHub offers free access to GitHub Copilot and other premi
 
 ### Application Processing Time
 
-GitHub typically processes student applications within a few days, but it can take up to 2 weeks. You'll receive an email notification once your application is approved.
+GitHub typically processes student applications within a few days, but it can take up to 2 weeks. 
+You'll receive an email notification once your application is approved.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -154,14 +155,23 @@ You can customize how GitHub Copilot works in RStudio:
 For this course, we recommend to 
 
 **disable** *"Index project files with GitHub Copilot"* 
-  - to speed up performance
-  - to reduce traffic
-  - to keep private code private
-  - to reduce unwanted suggestions from your existing codebase.
+
+- to speed up performance
+- to reduce traffic
+- to keep private code private
+- to reduce unwanted suggestions from your existing codebase.
    
 ::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Troubleshooting Common Issues
+
+### Github Education Programm Registration fails
+
+Check the security settings of your browser!
+
+- Github (and thus the browser) want to check your location to verify your student status
+- This check is sometimes blocked by strict privacy settings
+- Try a different browser or adjust (temporarily) your privacy settings
 
 ### Copilot is not showing suggestions
 
@@ -176,6 +186,11 @@ For this course, we recommend to
 - Clear your browser cache and try again
 - Make sure you're using the correct GitHub account
 - Check that your GitHub Copilot access is active
+
+### It's all not working !!!
+
+- Give us a ring! We are happy to help you to get started.
+
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
