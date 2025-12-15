@@ -28,5 +28,6 @@ Basic knowledge of R is assumed.
 
 ## Literature
 
-As additional reading, we recommend the official RStudio documentation on AI-supported features.
+As additional reading, we recommend the official RStudio documentation on AI-supported features, 
+since it is regularly updated with the latest information.
 
