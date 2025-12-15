@@ -197,24 +197,12 @@
                   <div class="accordion accordion-flush" id="accordionFlushcurrent">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-headingcurrent">
-      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapsecurrent" aria-expanded="true" aria-controls="flush-collapsecurrent">
         <span class="visually-hidden">Current Chapter</span>
         <span class="current-chapter">
         Summary and Setup
         </span>
-      </button>
+      
     </div><!--/div.accordion-header-->
-
-    <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
-      <div class="accordion-body">
-        <ul><li><a href="#software-requirements">Software Requirements</a></li>
-<li><a href="#github-account-required">GitHub Account (Required)</a></li>
-<li><a href="#optional-r-packages">Optional: R Packages</a></li>
-<li><a href="#setup-verification">Setup Verification</a></li>
-<li><a href="#getting-help">Getting Help</a></li>
-<li><a href="#whats-next">What’s Next?</a></li>
-        </ul></div><!--/div.accordion-body-->
-    </div><!--/div.accordion-collapse-->
 
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
@@ -376,17 +364,21 @@ knowledge of R is assumed.</p>
 </div>
 <section><h2 class="section-heading" id="literature">Literature<a class="anchor" aria-label="anchor" href="#literature"></a></h2>
 <hr class="half-width"><p>As additional reading, we recommend the official RStudio
-documentation on AI-supported features.</p>
+documentation on AI-supported features, since it is regularly updated
+with the latest information.</p>
 <!--
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
-</section><section id="setup"><p>This lesson introduces AI-supported coding tools in RStudio,
+</section><section id="setup"><div class="section level1">
+<h1 id="setup">Setup<a class="anchor" aria-label="anchor" href="#setup"></a></h1>
+<p>This lesson introduces AI-supported coding tools in RStudio,
 specifically focusing on GitHub Copilot and other AI assistants. To
 participate in this lesson, you will need to set up the required
 software and accounts.</p>
-<section><h2 class="section-heading" id="software-requirements">Software Requirements<a class="anchor" aria-label="anchor" href="#software-requirements"></a></h2>
-<hr class="half-width"><div class="section level3">
+<div class="section level2">
+<h2 id="software-requirements">Software Requirements<a class="anchor" aria-label="anchor" href="#software-requirements"></a></h2>
+<div class="section level3">
 <h3 id="r">R<a class="anchor" aria-label="anchor" href="#r"></a></h3>
 <p>You will need a recent version of R installed on your computer. We
 recommend:</p>
@@ -416,38 +408,10 @@ essential for this lesson.</p>
 </div>
 </div>
 </div>
-</section><section><h2 class="section-heading" id="github-account-required">GitHub Account (Required)<a class="anchor" aria-label="anchor" href="#github-account-required"></a></h2>
-<hr class="half-width"><p><strong>A GitHub account is essential for this lesson</strong> as
-GitHub Copilot requires authentication through GitHub.</p>
-<p>If you don’t already have a GitHub account:</p>
-<ol style="list-style-type: decimal"><li>Go to <a href="https://github.com" class="external-link">github.com</a>
-</li>
-<li>Click “Sign up” and follow the registration process</li>
-</ol><div id="github-student-developer-pack" class="callout">
-<div class="callout-square">
-<i class="callout-icon" data-feather="bell"></i>
 </div>
-<span class="callout-header">Callout</span>
-<div id="github-student-developer-pack" class="callout-inner">
-<h3 class="callout-title">GitHub Student Developer Pack</h3>
-<div class="callout-content">
-<p><strong>Note:</strong> As of November 2025, students can get free
-access to GitHub Copilot through the GitHub Student Developer Pack.</p>
-<p>Students can get <strong>free access to GitHub Copilot</strong>
-through the GitHub Student Developer Pack. This includes:</p>
-<ul><li>Free GitHub Copilot subscription</li>
-<li>Access to other premium development tools</li>
-<li>Cloud credits and educational resources</li>
-</ul><p>We recommend applying for the Student Developer Pack before the
-lesson. The application process is covered in detail in the <a href="getting-started-with-copilot.html">Getting Started with GitHub
-Copilot</a> chapter, but you can start the process early at <a href="https://education.github.com/pack" class="external-link">education.github.com/pack</a>.</p>
-<p><strong>Note:</strong> Application approval typically takes a few
-days, so please apply in advance if possible.</p>
-</div>
-</div>
-</div>
-</section><section><h2 class="section-heading" id="optional-r-packages">Optional: R Packages<a class="anchor" aria-label="anchor" href="#optional-r-packages"></a></h2>
-<hr class="half-width"><p>Some chapters in this lesson use additional R packages. These will be
+<div class="section level2">
+<h2 id="optional-r-packages">Optional: R Packages<a class="anchor" aria-label="anchor" href="#optional-r-packages"></a></h2>
+<p>Some chapters in this lesson use additional R packages. These will be
 introduced as needed during the lesson, but you may want to install them
 in advance:</p>
 <div class="codewrapper sourceCode" id="cb1">
@@ -474,8 +438,10 @@ chapter, having it pre-installed will save time during the lesson.</p>
 </div>
 </div>
 </div>
-</section><section><h2 class="section-heading" id="setup-verification">Setup Verification<a class="anchor" aria-label="anchor" href="#setup-verification"></a></h2>
-<hr class="half-width"><p>Before the lesson begins, verify your setup:</p>
+</div>
+<div class="section level2">
+<h2 id="setup-verification">Setup Verification<a class="anchor" aria-label="anchor" href="#setup-verification"></a></h2>
+<p>Before the lesson begins, verify your setup:</p>
 <ol style="list-style-type: decimal"><li>
 <p><strong>Check R version:</strong></p>
 <div class="codewrapper sourceCode" id="cb2">
@@ -484,33 +450,27 @@ chapter, having it pre-installed will save time during the lesson.</p>
 <pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">R.version.string</span></span></code></pre>
 </div>
-<p>Should show R version 4.0.0 or later.</p>
+<p>Should show R version 4.2.0 or later.</p>
 </li>
 <li>
 <p><strong>Check RStudio version:</strong></p>
 <ul><li>Open RStudio</li>
 <li>Go to <code>Help</code> → <code>About RStudio</code>
 </li>
-<li>Verify the version is 2022.02 or later</li>
+<li>Verify the version is 2024.02 or later</li>
 </ul></li>
-<li>
-<p><strong>Verify GitHub account:</strong></p>
-<ul><li>Ensure you can log in at <a href="https://github.com" class="external-link">github.com</a>
-</li>
-<li>Check if you have applied for the Student Developer Pack (if
-applicable)</li>
-</ul></li>
-</ol></section><section><h2 class="section-heading" id="getting-help">Getting Help<a class="anchor" aria-label="anchor" href="#getting-help"></a></h2>
-<hr class="half-width"><p>If you encounter issues with setup:</p>
-<ul><li>Check the <a href="getting-started-with-copilot.html">Getting
-Started with GitHub Copilot</a> chapter for detailed GitHub Copilot
-setup instructions</li>
-<li>Refer to the <a href="https://docs.posit.co/ide/user/" class="external-link">RStudio
+</ol></div>
+<div class="section level2">
+<h2 id="getting-help">Getting Help<a class="anchor" aria-label="anchor" href="#getting-help"></a></h2>
+<p>If you encounter issues with setup:</p>
+<ul><li>Refer to the <a href="https://docs.posit.co/ide/user/" class="external-link">RStudio
 documentation</a> for RStudio-specific questions</li>
 <li>Contact the instructors before the lesson if you have persistent
 setup problems</li>
-</ul></section><section><h2 class="section-heading" id="whats-next">What’s Next?<a class="anchor" aria-label="anchor" href="#whats-next"></a></h2>
-<hr class="half-width"><p>Once your setup is complete, you’re ready to start the lesson! The
+</ul></div>
+<div class="section level2">
+<h2 id="whats-next">What’s Next?<a class="anchor" aria-label="anchor" href="#whats-next"></a></h2>
+<p>Once your setup is complete, you’re ready to start the lesson! The
 first chapter, <a href="getting-started-with-copilot.html">Getting
 Started with GitHub Copilot</a>, will guide you through:</p>
 <ul><li>Registering for GitHub (if you haven’t already)</li>
@@ -522,7 +482,10 @@ Started with GitHub Copilot</a>, will guide you through:</p>
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
-</section></section></main><nav class="bottom-pagination mx-md-4" aria-label="Next Chapter"><!-- content for small screens --><div class="d-block d-sm-block d-md-none">
+</div>
+</div>
+
+      </section></main><nav class="bottom-pagination mx-md-4" aria-label="Next Chapter"><!-- content for small screens --><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link float-end" href="getting-started-with-copilot.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
       </div>
       <!-- content for large screens -->
@@ -573,8 +536,8 @@ any links that you are not going to use.
   "url": "https://Dr-Eberle-Zentrum.github.io/AI-supported-coding-in-RStudio/index.html",
   "identifier": "https://Dr-Eberle-Zentrum.github.io/AI-supported-coding-in-RStudio/index.html",
   "dateCreated": "2024-11-10",
-  "dateModified": "2025-12-12",
-  "datePublished": "2025-12-12"
+  "dateModified": "2025-12-15",
+  "datePublished": "2025-12-15"
 }
 
   </script><script>
