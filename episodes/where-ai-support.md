@@ -220,33 +220,11 @@ Prioritize human judgment for:
 
 Typically, one distinguishes between three **ways of AI usage**:
 
-- **Assistively**: 
-  AI helps you by suggesting code snippets, completing lines, or generating boilerplate code.
-  This is typically done automatically without the need to explicitly ask for it.
-- **Directively**: 
-  AI takes a more active role, generating larger code blocks or even entire functions based on your prompts.
-  Here, you explicitly ask the AI to perform a specific task.
-- **Autonomously**: 
-  AI independently creates code with minimal human input, often used in automated code generation scenarios.
-  To this end, you provide high-level requirements or a description of a larger task, and the AI generates the code accordingly.
-
-the same content in table form with one row for each type:
-
-| Way of AI Usage | Description | How it Works |
-|----------------|-------------|--------------|
-| ![Assistively](ai-mode-1.png)  | AI helps you by suggesting code snippets, completing lines, or generating boilerplate code. This is typically done automatically without the need to explicitly ask for it. |
-| ![Directively](ai-mode-2.png)  | AI takes a more active role, generating larger code blocks or even entire functions based on your prompts. Here, you explicitly ask the AI to perform a specific task. |
-| ![Autonomously](ai-mode-3.png) | AI independently creates code with minimal human input, often used in automated code generation scenarios. To this end, you provide high-level requirements or a description of a larger task, and the AI generates
-
-
 | Assistively | Directively | Autonomously |
 |-------------|-------------|--------------|
 | ![](ai-mode-1.png) | ![](ai-mode-2.png) | ![](ai-mode-3.png) |
-|-------------|-------------|--------------|
 | AI suggests code snippets, completes lines, or generates boilerplate code automatically. | AI generates larger code blocks or entire functions based on explicit prompts. | AI independently creates code with minimal human input based on high-level requirements. |
-|-------------|-------------|--------------|
 | This is typically done automatically without the need to explicitly ask for it. | Here, you explicitly ask the AI to perform a specific task. | You provide high-level requirements or a description of a larger task, and the AI generates the code accordingly. |
-
 
 
 
@@ -268,7 +246,7 @@ Beside the way *how* AI is used, one can also distinguish *what process is suppo
     - **optimization support**: AI helps improve code performance, suggesting optimizations, refactoring, or resource management techniques.
 - **Data Processing Support**: AI assists in cleaning, transforming, and preparing data for analysis.
   - i.e. AI is used as a tool within data processing pipelines.
-  - e.g. we will use the `ellmer` R package later in this course for AI-supported data cleaning.
+  - e.g. we will use the `ellmer` R package later in this course for AI-supported data generation.
 - **Project Management Support**
   - AI aids in organizing tasks, tracking progress, and managing timelines.
   - i.e. AI is used as a tool within project management software
@@ -285,14 +263,16 @@ Beside the way *how* AI is used, one can also distinguish *what process is suppo
 
 ::::::::::::::::::::::::::::::::::::: discussion
 
-### Group Discussion
+### Preparation of Group Discussion
 
-In small groups, discuss:
+In small groups, we want to discuss:
 
 - Have you used AI coding assistants before? What was your experience?
 - Can you share an example where AI helped you solve a problem?
 - Can you share an example where AI suggestions were incorrect or unhelpful?
 - How do you decide when to use AI assistance versus figuring things out yourself?
+
+Thus, please think on these questions for our upcoming group discussion.
 
 :::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -304,6 +284,8 @@ AI assistants are rapidly evolving. As they improve, we should:
 - Continuously refine our approach to using these tools
 - Share knowledge about effective practices
 - Contribute to discussions about responsible AI use
+
+
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
