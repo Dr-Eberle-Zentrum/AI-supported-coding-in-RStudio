@@ -53,7 +53,7 @@ Examples might include:
 
 - Reading CSV files and performing basic data cleaning
 - Creating standard plotting functions with ggplot2
-- Writing function documentation in roxygen2 format
+- Writing function documentation in [roxygen2 format](https://roxygen2.r-lib.org/index.html)
 - Setting up standard data frame transformations with dplyr
 
 :::::::::::::::::::::::::::::::::
@@ -82,6 +82,7 @@ Writing clear documentation is time-consuming but essential. AI can assist with:
 When working with unfamiliar packages or functions:
 
 - AI can suggest appropriate functions for specific tasks
+- Explain function parameters and usage or given code
 - Provide example implementations
 - Offer alternative approaches
 
@@ -131,10 +132,12 @@ Be cautious when:
 
 ### Data Privacy Considerations
 
-Remember that code sent to AI services may be used for training. Never include:
+Remember that code sent to AI services may be used for training. 
+
+**Never include:**
 
 - API keys or passwords
-- Proprietary algorithms
+- Proprietary algorithms/code
 - Sensitive data
 - Personal information
 
@@ -173,12 +176,14 @@ What questions should you ask yourself before accepting the suggestion?
 
 Before accepting AI-generated code, ask:
 
-1. Does this code produce statistically valid results?
+1. Does this code produce valid results?
 2. Are the assumptions appropriate for my data?
 3. Does it handle missing data correctly?
 4. Are there edge cases that aren't covered?
 5. Is this the most efficient approach?
 6. Does it align with best practices in my field?
+
+*Keep asking/investigating until you can confidently answer "yes" to all questions!*
 
 :::::::::::::::::::::::::::::::::
 ::::::::::::::::::::::::::::::::::::::::::::::::
@@ -188,10 +193,15 @@ Before accepting AI-generated code, ask:
 ### Best Practices for Using AI Assistants
 
 1. **Start with a clear goal:** Know what you want to achieve before asking for AI help
+   - Best decompose complex tasks into smaller, manageable parts that can be easily checked
 2. **Review and understand:** Never accept suggestions blindly
+   - Request explanations for AI-generated code until you understand it fully
 3. **Test thoroughly:** Validate all AI-generated code
+   - Think about "What can go wrong?" (edge cases) and design tests accordingly
 4. **Iterate and refine:** Use AI suggestions as a starting point, not the final solution
+   - Often AI helps with code fragments. Do/request a final revision to merge them into a coherent whole
 5. **Maintain ownership:** You are responsible for the code in your project
+   - Ensure it meets your project's standards and requirements
 
 ### When to Rely on Human Expertise
 
@@ -219,6 +229,26 @@ Typically, one distinguishes between three **ways of AI usage**:
 - **Autonomously**: 
   AI independently creates code with minimal human input, often used in automated code generation scenarios.
   To this end, you provide high-level requirements or a description of a larger task, and the AI generates the code accordingly.
+
+the same content in table form with one row for each type:
+
+| Way of AI Usage | Description | How it Works |
+|----------------|-------------|--------------|
+| ![Assistively](ai-mode-1.png)  | AI helps you by suggesting code snippets, completing lines, or generating boilerplate code. This is typically done automatically without the need to explicitly ask for it. |
+| ![Directively](ai-mode-2.png)  | AI takes a more active role, generating larger code blocks or even entire functions based on your prompts. Here, you explicitly ask the AI to perform a specific task. |
+| ![Autonomously](ai-mode-3.png) | AI independently creates code with minimal human input, often used in automated code generation scenarios. To this end, you provide high-level requirements or a description of a larger task, and the AI generates
+
+
+| Assistively | Directively | Autonomously |
+|-------------|-------------|--------------|
+| ![](ai-mode-1.png) | ![](ai-mode-2.png) | ![](ai-mode-3.png) |
+|-------------|-------------|--------------|
+| AI suggests code snippets, completes lines, or generates boilerplate code automatically. | AI generates larger code blocks or entire functions based on explicit prompts. | AI independently creates code with minimal human input based on high-level requirements. |
+|-------------|-------------|--------------|
+| This is typically done automatically without the need to explicitly ask for it. | Here, you explicitly ask the AI to perform a specific task. | You provide high-level requirements or a description of a larger task, and the AI generates the code accordingly. |
+
+
+
 
 Within this course, we will investigate all three ways of AI usage.
 
