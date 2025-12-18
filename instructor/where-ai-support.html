@@ -350,7 +350,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Where Do We Need AI Support?</h1>
-        <p>Last updated on 2025-11-12 |
+        <p>Last updated on 2025-12-18 |
 
         <a href="https://github.com/Dr-Eberle-Zentrum/AI-supported-coding-in-RStudio/edit/main/episodes/where-ai-support.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -426,12 +426,13 @@ assistance.</p>
   Example Solutions
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>Examples might include:</p>
 <ul><li>Reading CSV files and performing basic data cleaning</li>
 <li>Creating standard plotting functions with ggplot2</li>
-<li>Writing function documentation in roxygen2 format</li>
+<li>Writing function documentation in <a href="https://roxygen2.r-lib.org/index.html" class="external-link">roxygen2 format</a>
+</li>
 <li>Setting up standard data frame transformations with dplyr</li>
 </ul></div>
 </div>
@@ -459,6 +460,7 @@ assist with:</p>
 <h3 id="learning-new-libraries-and-functions">4. Learning New Libraries and Functions<a class="anchor" aria-label="anchor" href="#learning-new-libraries-and-functions"></a></h3>
 <p>When working with unfamiliar packages or functions:</p>
 <ul><li>AI can suggest appropriate functions for specific tasks</li>
+<li>Explain function parameters and usage or given code</li>
 <li>Provide example implementations</li>
 <li>Offer alternative approaches</li>
 </ul></div>
@@ -510,10 +512,10 @@ assist with:</p>
 <div id="data-privacy-considerations" class="callout-inner">
 <h3 class="callout-title">Data Privacy Considerations</h3>
 <div class="callout-content">
-<p>Remember that code sent to AI services may be used for training.
-Never include:</p>
+<p>Remember that code sent to AI services may be used for training.</p>
+<p><strong>Never include:</strong></p>
 <ul><li>API keys or passwords</li>
-<li>Proprietary algorithms</li>
+<li>Proprietary algorithms/code</li>
 <li>Sensitive data</li>
 <li>Personal information</li>
 </ul></div>
@@ -559,16 +561,18 @@ accepting the suggestion?</p>
   Questions to Consider
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>Before accepting AI-generated code, ask:</p>
-<ol style="list-style-type: decimal"><li>Does this code produce statistically valid results?</li>
+<ol style="list-style-type: decimal"><li>Does this code produce valid results?</li>
 <li>Are the assumptions appropriate for my data?</li>
 <li>Does it handle missing data correctly?</li>
 <li>Are there edge cases that aren’t covered?</li>
 <li>Is this the most efficient approach?</li>
 <li>Does it align with best practices in my field?</li>
-</ol></div>
+</ol><p><em>Keep asking/investigating until you can confidently answer “yes”
+to all questions!</em></p>
+</div>
 </div>
 </div>
 </div>
@@ -578,19 +582,32 @@ accepting the suggestion?</p>
 <h3 id="best-practices-for-using-ai-assistants">Best Practices for Using AI Assistants<a class="anchor" aria-label="anchor" href="#best-practices-for-using-ai-assistants"></a></h3>
 <ol style="list-style-type: decimal"><li>
 <strong>Start with a clear goal:</strong> Know what you want to
-achieve before asking for AI help</li>
+achieve before asking for AI help
+<ul><li>Best decompose complex tasks into smaller, manageable parts that can
+be easily checked</li>
+</ul></li>
 <li>
 <strong>Review and understand:</strong> Never accept suggestions
-blindly</li>
+blindly
+<ul><li>Request explanations for AI-generated code until you understand it
+fully</li>
+</ul></li>
 <li>
-<strong>Test thoroughly:</strong> Validate all AI-generated
-code</li>
+<strong>Test thoroughly:</strong> Validate all AI-generated code
+<ul><li>Think about “What can go wrong?” (edge cases) and design tests
+accordingly</li>
+</ul></li>
 <li>
 <strong>Iterate and refine:</strong> Use AI suggestions as a
-starting point, not the final solution</li>
+starting point, not the final solution
+<ul><li>Often AI helps with code fragments. Do/request a final revision to
+merge them into a coherent whole</li>
+</ul></li>
 <li>
 <strong>Maintain ownership:</strong> You are responsible for the
-code in your project</li>
+code in your project
+<ul><li>Ensure it meets your project’s standards and requirements</li>
+</ul></li>
 </ol></div>
 <div class="section level3">
 <h3 id="when-to-rely-on-human-expertise">When to Rely on Human Expertise<a class="anchor" aria-label="anchor" href="#when-to-rely-on-human-expertise"></a></h3>
@@ -619,7 +636,50 @@ task.</li>
 minimal human input, often used in automated code generation scenarios.
 To this end, you provide high-level requirements or a description of a
 larger task, and the AI generates the code accordingly.</li>
-</ul><p>Within this course, we will investigate all three ways of AI
+</ul><p>the same content in table form with one row for each type:</p>
+<table class="table"><colgroup><col width="37%"><col width="30%"><col width="32%"></colgroup><thead><tr class="header"><th>Way of AI Usage</th>
+<th>Description</th>
+<th>How it Works</th>
+</tr></thead><tbody><tr class="odd"><td><img src="../ai-mode-1.png" alt="Assistively" class="figure"></td>
+<td>AI helps you by suggesting code snippets, completing lines, or
+generating boilerplate code. This is typically done automatically
+without the need to explicitly ask for it.</td>
+<td></td>
+</tr><tr class="even"><td><img src="../ai-mode-2.png" alt="Directively" class="figure"></td>
+<td>AI takes a more active role, generating larger code blocks or even
+entire functions based on your prompts. Here, you explicitly ask the AI
+to perform a specific task.</td>
+<td></td>
+</tr><tr class="odd"><td><img src="../ai-mode-3.png" alt="Autonomously" class="figure"></td>
+<td>AI independently creates code with minimal human input, often used
+in automated code generation scenarios. To this end, you provide
+high-level requirements or a description of a larger task, and the AI
+generates</td>
+<td></td>
+</tr></tbody></table><table class="table"><colgroup><col width="32%"><col width="32%"><col width="35%"></colgroup><thead><tr class="header"><th>Assistively</th>
+<th>Directively</th>
+<th>Autonomously</th>
+</tr></thead><tbody><tr class="odd"><td><img src="../ai-mode-1.png" class="figure"></td>
+<td><img src="../ai-mode-2.png" class="figure"></td>
+<td><img src="../ai-mode-3.png" class="figure"></td>
+</tr><tr class="even"><td>————-</td>
+<td>————-</td>
+<td>————–</td>
+</tr><tr class="odd"><td>AI suggests code snippets, completes lines, or generates boilerplate
+code automatically.</td>
+<td>AI generates larger code blocks or entire functions based on
+explicit prompts.</td>
+<td>AI independently creates code with minimal human input based on
+high-level requirements.</td>
+</tr><tr class="even"><td>————-</td>
+<td>————-</td>
+<td>————–</td>
+</tr><tr class="odd"><td>This is typically done automatically without the need to explicitly
+ask for it.</td>
+<td>Here, you explicitly ask the AI to perform a specific task.</td>
+<td>You provide high-level requirements or a description of a larger
+task, and the AI generates the code accordingly.</td>
+</tr></tbody></table><p>Within this course, we will investigate all three ways of AI
 usage.</p>
 </section><section><h2 class="section-heading" id="what-is-supported-by-ai">What is Supported by AI?<a class="anchor" aria-label="anchor" href="#what-is-supported-by-ai"></a></h2>
 <hr class="half-width"><p>Beside the way <em>how</em> AI is used, one can also distinguish
@@ -787,8 +847,8 @@ any links that you are not going to use.
   "url": "https://Dr-Eberle-Zentrum.github.io/AI-supported-coding-in-RStudio/instructor/where-ai-support.html",
   "identifier": "https://Dr-Eberle-Zentrum.github.io/AI-supported-coding-in-RStudio/instructor/where-ai-support.html",
   "dateCreated": "2024-11-10",
-  "dateModified": "2025-11-12",
-  "datePublished": "2025-12-16"
+  "dateModified": "2025-12-18",
+  "datePublished": "2025-12-18"
 }
 
   </script><script>
