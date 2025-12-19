@@ -118,11 +118,11 @@
   AI-supported Coding with GitHub Copilot in RStudio
 </div>
 
-<aside class="col-md-12 lesson-progress"><div style="width: 44%" class="percentage">
-    44%
+<aside class="col-md-12 lesson-progress"><div style="width: 33%" class="percentage">
+    33%
   </div>
   <div class="progress UT">
-    <div class="progress-bar UT" role="progressbar" style="width: 44%" aria-valuenow="44" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100">
+    <div class="progress-bar UT" role="progressbar" style="width: 33%" aria-valuenow="33" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100">
     </div>
   </div>
 </aside><div class="container">
@@ -230,22 +230,13 @@
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
 
-<div class="accordion accordion-flush" id="accordionFlush5">
-  <div class="accordion-item">
-    <div class="accordion-header" id="flush-heading5">
-        <a href="context-and-agents.html">4. Context Definition and the AGENTS.md Concept</a>
-    </div><!--/div.accordion-header-->
-
-  </div><!--/div.accordion-item-->
-</div><!--/div.accordion-flush-->
-
 <div class="accordion accordion-flush" id="accordionFlushcurrent">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-headingcurrent">
       <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapsecurrent" aria-expanded="true" aria-controls="flush-collapsecurrent">
         <span class="visually-hidden">Current Chapter</span>
         <span class="current-chapter">
-        5. RStudio Autocompletion with Copilot
+        4. RStudio Autocompletion with Copilot
         </span>
       </button>
     </div><!--/div.accordion-header-->
@@ -264,6 +255,15 @@
 <li><a href="#advanced-tips">Advanced Tips</a></li>
         </ul></div><!--/div.accordion-body-->
     </div><!--/div.accordion-collapse-->
+
+  </div><!--/div.accordion-item-->
+</div><!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush6">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading6">
+        <a href="context-and-agents.html">5. Context Definition and the AGENTS.md Concept</a>
+    </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
@@ -337,23 +337,23 @@
         <!-- START: inst/pkgdown/templates/content-instructor.html -->
   <div class="col-xl-8 col-lg-12 primary-content">
     <nav class="lesson-content mx-md-4" aria-label="Previous and Next Chapter"><!-- content for small screens --><div class="d-block d-sm-block d-md-none">
-        <a class="chapter-link" href="context-and-agents.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
-        <a class="chapter-link float-end" href="ai-pipelines-ellmer.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
+        <a class="chapter-link" href="ai-risks-responsibilities.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
+        <a class="chapter-link float-end" href="context-and-agents.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
       </div>
       <!-- content for large screens -->
       <div class="d-none d-sm-none d-md-block">
-        <a class="chapter-link" href="context-and-agents.html" rel="prev">
+        <a class="chapter-link" href="ai-risks-responsibilities.html" rel="prev">
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>
-          Previous: Context Definition
+          Previous: Risks, Drawbacks and
         </a>
-        <a class="chapter-link float-end" href="ai-pipelines-ellmer.html" rel="next">
-          Next: Using AI within...
+        <a class="chapter-link float-end" href="context-and-agents.html" rel="next">
+          Next: Context Definition...
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i>
         </a>
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>RStudio Autocompletion with Copilot</h1>
-        <p>Last updated on 2025-12-12 |
+        <p>Last updated on 2025-12-19 |
 
         <a href="https://github.com/Dr-Eberle-Zentrum/AI-supported-coding-in-RStudio/edit/main/episodes/rstudio-autocompletion.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -419,7 +419,7 @@ lines of public code to:</p>
 <li>Variable and function names</li>
 <li>The structure of your code</li>
 </ul></li>
-<li>Open files in RStudio (depending on your settings)</li>
+<li>Files from your RStudio project (depending on your settings)</li>
 </ul><p>The more context you provide, the better the suggestions!</p>
 </div>
 </div>
@@ -434,14 +434,14 @@ comments first:</p>
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># Load data from CSV, remove rows with missing values, and convert date column to Date type</span></span></code></pre>
+<code class="sourceCode R"><span><span class="co"># Load data from CSV file 'dat.csv', remove rows with missing values, and convert date column to Date type</span></span></code></pre>
 </div>
 <p><strong>Less Effective:</strong></p>
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># Load data</span></span></code></pre>
+<code class="sourceCode R"><span><span class="co"># Load data from 'dat.csv'</span></span></code></pre>
 </div>
 <div id="challenge-1-practice-writing-effective-comments" class="callout challenge">
 <div class="callout-square">
@@ -641,6 +641,46 @@ parameters like <code>stringsAsFactors = FALSE</code> or
 <span><span class="op">}</span></span></code></pre>
 </div>
 </div>
+<div class="section level3">
+<h3 id="questions">Questions<a class="anchor" aria-label="anchor" href="#questions"></a></h3>
+<p>It is also possible to ask Copilot questions in comments:</p>
+<ul><li>write a comment starting with <code># q:</code> followed by your
+question</li>
+</ul><p>For instance</p>
+<div class="codewrapper sourceCode" id="cb10">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># q: What is meant with facetting in ggplot2?</span></span></code></pre>
+</div>
+<p>produced</p>
+<div class="codewrapper sourceCode" id="cb11">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># A: Facetting in ggplot2 refers to the process of creating multiple subplots (facets) within a single plot, based on the values of one or more categorical variables. </span></span>
+<span><span class="co"># This allows for easy comparison of distributions or relationships across different subsets of the data.</span></span></code></pre>
+</div>
+<div id="why-is-the-suggestion-incomplete" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div id="why-is-the-suggestion-incomplete" class="callout-inner">
+<h3 class="callout-title">Why is the suggestion incomplete?</h3>
+<div class="callout-content">
+<p>Communication between RStudio and the AI service is done in chunks
+and the amount of ‘tokens’ (words/pieces of words) that can be sent at
+once is limited. The same holds true for the response from the AI
+service. If your code or comment is very long, or if the AI service
+generates a long suggestion, it may get cut off.</p>
+<p>In that case, it is typically sufficient to accept what has been
+suggested so far and then request a new suggestion (just wait) to
+continue from there.</p>
+</div>
+</div>
+</div>
+</div>
 </section><section><h2 class="section-heading" id="best-practices-for-efficient-workflow">Best Practices for Efficient Workflow<a class="anchor" aria-label="anchor" href="#best-practices-for-efficient-workflow"></a></h2>
 <hr class="half-width"><div class="section level3">
 <h3 id="review-before-accepting">1. Review Before Accepting<a class="anchor" aria-label="anchor" href="#review-before-accepting"></a></h3>
@@ -677,38 +717,48 @@ parameters like <code>stringsAsFactors = FALSE</code> or
 </div>
 </div>
 </section><section><h2 class="section-heading" id="common-patterns-and-use-cases">Common Patterns and Use Cases<a class="anchor" aria-label="anchor" href="#common-patterns-and-use-cases"></a></h2>
-<hr class="half-width"><div class="section level3">
+<hr class="half-width"><p>In the following, we highlight some common coding patterns where
+Copilot can be particularly useful. Therein, <code>[...]</code>
+indicates your cursor position where Copilot will provide
+suggestions.</p>
+<div class="section level3">
 <h3 id="data-manipulation-with-dplyr">Data Manipulation with dplyr<a class="anchor" aria-label="anchor" href="#data-manipulation-with-dplyr"></a></h3>
-<div class="codewrapper sourceCode" id="cb10">
-<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="co"># Copilot excels at suggesting dplyr pipelines</span></span>
-<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a><span class="co"># Filter data for specific conditions and group by category</span></span>
-<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
-<span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a>  <span class="co"># Copilot suggests the rest</span></span></code></pre>
-</div>
-</div>
-<div class="section level3">
-<h3 id="creating-plots-with-ggplot2">Creating Plots with ggplot2<a class="anchor" aria-label="anchor" href="#creating-plots-with-ggplot2"></a></h3>
-<div class="codewrapper sourceCode" id="cb11">
-<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="co"># Create a scatter plot with regression line</span></span>
-<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> height, <span class="at">y =</span> weight)) <span class="sc">+</span></span>
-<span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a>  <span class="co"># Copilot suggests layers</span></span></code></pre>
-</div>
-</div>
-<div class="section level3">
-<h3 id="writing-functions">Writing Functions<a class="anchor" aria-label="anchor" href="#writing-functions"></a></h3>
 <div class="codewrapper sourceCode" id="cb12">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># Function to validate email addresses</span></span>
-<span><span class="va">validate_email</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">email</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="co"># Copilot suggests regex patterns and validation logic</span></span>
-<span><span class="op">}</span></span></code></pre>
+<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="co"># Copilot excels at suggesting dplyr pipelines</span></span>
+<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a><span class="co"># Filter data for specific conditions and group by category</span></span>
+<span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
+<span id="cb12-4"><a href="#cb12-4" tabindex="-1"></a>[...]</span></code></pre>
 </div>
+<p>Copilot suggests the rest..</p>
+<p><em>Note:</em> triggering extensions via comments can also be used
+<em>at the end</em> or <em>within</em> a pipeline to add the next step
+or add an intermediate transformation.</p>
+</div>
+<div class="section level3">
+<h3 id="creating-plots-with-ggplot2">Creating Plots with ggplot2<a class="anchor" aria-label="anchor" href="#creating-plots-with-ggplot2"></a></h3>
+<div class="codewrapper sourceCode" id="cb13">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> height, <span class="at">y =</span> weight)) <span class="sc">+</span></span>
+<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a><span class="co"># Create a scatter plot with regression line</span></span>
+<span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a>[...]</span></code></pre>
+</div>
+<p>Copilot will suggest respective geoms and themes..</p>
+</div>
+<div class="section level3">
+<h3 id="writing-functions">Writing Functions<a class="anchor" aria-label="anchor" href="#writing-functions"></a></h3>
+<div class="codewrapper sourceCode" id="cb14">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="co"># Function to validate email addresses</span></span>
+<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a>validate_email <span class="ot">&lt;-</span> <span class="cf">function</span>(email) {</span>
+<span id="cb14-3"><a href="#cb14-3" tabindex="-1"></a>[...]</span>
+<span id="cb14-4"><a href="#cb14-4" tabindex="-1"></a>}</span></code></pre>
+</div>
+<p>Copilot will suggest the function body, e.g. using regex patterns and
+validation logic</p>
 <div id="challenge-3-build-a-function-with-copilot" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
@@ -735,7 +785,7 @@ Copilot</h3>
 </button>
 <div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
-<div class="codewrapper sourceCode" id="cb13">
+<div class="codewrapper sourceCode" id="cb15">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -780,7 +830,7 @@ Copilot</h3>
 </section><section><h2 class="section-heading" id="advanced-tips">Advanced Tips<a class="anchor" aria-label="anchor" href="#advanced-tips"></a></h2>
 <hr class="half-width"><div class="section level3">
 <h3 id="specifying-packages">Specifying Packages<a class="anchor" aria-label="anchor" href="#specifying-packages"></a></h3>
-<div class="codewrapper sourceCode" id="cb14">
+<div class="codewrapper sourceCode" id="cb16">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -789,7 +839,7 @@ Copilot</h3>
 </div>
 <div class="section level3">
 <h3 id="requesting-specific-approaches">Requesting Specific Approaches<a class="anchor" aria-label="anchor" href="#requesting-specific-approaches"></a></h3>
-<div class="codewrapper sourceCode" id="cb15">
+<div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -798,7 +848,7 @@ Copilot</h3>
 </div>
 <div class="section level3">
 <h3 id="setting-constraints">Setting Constraints<a class="anchor" aria-label="anchor" href="#setting-constraints"></a></h3>
-<div class="codewrapper sourceCode" id="cb16">
+<div class="codewrapper sourceCode" id="cb18">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -830,17 +880,17 @@ any links that you are not going to use.
 </div>
 </section></div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Previous and Next Chapter"><div class="d-block d-sm-block d-md-none">
-        <a class="chapter-link" href="context-and-agents.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
-        <a class="chapter-link float-end" href="ai-pipelines-ellmer.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
+        <a class="chapter-link" href="ai-risks-responsibilities.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
+        <a class="chapter-link float-end" href="context-and-agents.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
       </div>
       <!-- content for large screens -->
       <div class="d-none d-sm-none d-md-block">
-        <a class="chapter-link" href="context-and-agents.html" rel="prev">
+        <a class="chapter-link" href="ai-risks-responsibilities.html" rel="prev">
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>
-          Previous: Context Definition
+          Previous: Risks, Drawbacks and
         </a>
-        <a class="chapter-link float-end" href="ai-pipelines-ellmer.html" rel="next">
-          Next: Using AI within...
+        <a class="chapter-link float-end" href="context-and-agents.html" rel="next">
+          Next: Context Definition...
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i>
         </a>
       </div>
@@ -888,8 +938,8 @@ any links that you are not going to use.
   "url": "https://Dr-Eberle-Zentrum.github.io/AI-supported-coding-in-RStudio/rstudio-autocompletion.html",
   "identifier": "https://Dr-Eberle-Zentrum.github.io/AI-supported-coding-in-RStudio/rstudio-autocompletion.html",
   "dateCreated": "2024-11-10",
-  "dateModified": "2025-12-12",
-  "datePublished": "2025-12-18"
+  "dateModified": "2025-12-19",
+  "datePublished": "2025-12-19"
 }
 
   </script><script>

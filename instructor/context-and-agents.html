@@ -118,11 +118,11 @@
   AI-supported Coding with GitHub Copilot in RStudio
 </div>
 
-<aside class="col-md-12 lesson-progress"><div style="width: 33%" class="percentage">
-    33%
+<aside class="col-md-12 lesson-progress"><div style="width: 46%" class="percentage">
+    46%
   </div>
   <div class="progress UT">
-    <div class="progress-bar UT" role="progressbar" style="width: 33%" aria-valuenow="33" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100">
+    <div class="progress-bar UT" role="progressbar" style="width: 46%" aria-valuenow="46" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100">
     </div>
   </div>
 </aside><div class="container">
@@ -230,13 +230,22 @@
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
 
+<div class="accordion accordion-flush" id="accordionFlush5">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading5">
+        <a href="rstudio-autocompletion.html">4. RStudio Autocompletion with Copilot</a>
+    </div><!--/div.accordion-header-->
+
+  </div><!--/div.accordion-item-->
+</div><!--/div.accordion-flush-->
+
 <div class="accordion accordion-flush" id="accordionFlushcurrent">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-headingcurrent">
       <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapsecurrent" aria-expanded="true" aria-controls="flush-collapsecurrent">
         <span class="visually-hidden">Current Chapter</span>
         <span class="current-chapter">
-        4. Context Definition and the AGENTS.md Concept
+        5. Context Definition and the AGENTS.md Concept
         </span>
       </button>
     </div><!--/div.accordion-header-->
@@ -252,15 +261,6 @@
 <li><a href="#summary">Summary</a></li>
         </ul></div><!--/div.accordion-body-->
     </div><!--/div.accordion-collapse-->
-
-  </div><!--/div.accordion-item-->
-</div><!--/div.accordion-flush-->
-
-<div class="accordion accordion-flush" id="accordionFlush6">
-  <div class="accordion-item">
-    <div class="accordion-header" id="flush-heading6">
-        <a href="rstudio-autocompletion.html">5. RStudio Autocompletion with Copilot</a>
-    </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
@@ -333,23 +333,23 @@
         <!-- START: inst/pkgdown/templates/content-instructor.html -->
   <div class="col-xl-8 col-lg-12 primary-content">
     <nav class="lesson-content mx-md-4" aria-label="Previous and Next Chapter"><!-- content for small screens --><div class="d-block d-sm-block d-md-none">
-        <a class="chapter-link" href="../instructor/ai-risks-responsibilities.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
-        <a class="chapter-link float-end" href="../instructor/rstudio-autocompletion.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
+        <a class="chapter-link" href="../instructor/rstudio-autocompletion.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
+        <a class="chapter-link float-end" href="../instructor/ai-pipelines-ellmer.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
       </div>
       <!-- content for large screens -->
       <div class="d-none d-sm-none d-md-block">
-        <a class="chapter-link" href="../instructor/ai-risks-responsibilities.html" rel="prev">
+        <a class="chapter-link" href="../instructor/rstudio-autocompletion.html" rel="prev">
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>
-          Previous: Risks, Drawbacks and
+          Previous: RStudio
         </a>
-        <a class="chapter-link float-end" href="../instructor/rstudio-autocompletion.html" rel="next">
-          Next: RStudio...
+        <a class="chapter-link float-end" href="../instructor/ai-pipelines-ellmer.html" rel="next">
+          Next: Using AI within...
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i>
         </a>
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Context Definition and the AGENTS.md Concept</h1>
-        <p>Last updated on 2025-12-12 |
+        <p>Last updated on 2025-12-19 |
 
         <a href="https://github.com/Dr-Eberle-Zentrum/AI-supported-coding-in-RStudio/edit/main/episodes/context-and-agents.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -371,7 +371,7 @@
 <div class="inner">
 <h3 class="card-title">Questions</h3>
 <ul><li>Why is context important for AI coding assistants?</li>
-<li>What is the AGENTS.md concept?</li>
+<li>What is the <code>AGENTS.md</code> concept?</li>
 <li>How can I define coding standards for AI agents in my R
 project?</li>
 <li>What are other ways to provide context to AI assistants?</li>
@@ -383,8 +383,9 @@ project?</li>
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
 <ul><li>Understand the importance of context definitions for AI agents</li>
-<li>Learn about the AGENTS.md specification</li>
-<li>Create an AGENTS.md file with R project-specific guidelines</li>
+<li>Learn about the <code>AGENTS.md</code> specification</li>
+<li>Create an <code>AGENTS.md</code> file with R project-specific
+guidelines</li>
 <li>Explore alternative methods for providing context to AI
 assistants</li>
 </ul></div>
@@ -399,8 +400,8 @@ project-specific conventions, coding standards, and preferences. Without
 proper context, AI assistants may generate code that, while functionally
 correct, doesn’t align with your project’s style or best practices.</p>
 <p>This chapter explores how to define context for AI agents, focusing
-on the AGENTS.md concept and other strategies for communicating your
-project’s coding standards to AI assistants.</p>
+on the <code>AGENTS.md</code> concept and other strategies for
+communicating your project’s coding standards to AI assistants.</p>
 <div id="context-is-key" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
@@ -426,7 +427,7 @@ ensure:</p>
 project’s existing style and patterns</li>
 <li>
 <strong>Best Practices</strong>: AI follows domain-specific
-conventions (e.g., tidyverse in R)</li>
+conventions (e.g., using tidyverse packages in R)</li>
 <li>
 <strong>Efficiency</strong>: Less time spent revising AI-generated
 code to match your standards</li>
@@ -465,7 +466,7 @@ placing an <code>AGENTS.md</code> file in your repository root, you
 create a machine-readable specification that AI tools can reference when
 generating or reviewing code.</p>
 <p>The concept is documented at <a href="https://agents.md/" class="external-link">https://agents.md/</a>, which provides:</p>
-<ul><li>Specifications for the AGENTS.md format</li>
+<ul><li>Specifications for the <code>AGENTS.md</code> format</li>
 <li>Examples from various programming languages and domains</li>
 <li>Best practices for writing effective agent guidelines</li>
 <li>Community-contributed templates and patterns</li>
@@ -473,7 +474,7 @@ generating or reviewing code.</p>
 <div class="section level3">
 <h3 id="how-agents-md-works">How AGENTS.md Works<a class="anchor" aria-label="anchor" href="#how-agents-md-works"></a></h3>
 <p>When an AI assistant (like GitHub Copilot, Cursor, or other AI tools)
-works in a repository with an AGENTS.md file, it can:</p>
+works in a repository with an <code>AGENTS.md</code> file, it can:</p>
 <ol style="list-style-type: decimal"><li>
 <strong>Read the guidelines</strong> at the start of a session</li>
 <li>
@@ -488,9 +489,10 @@ preferences</li>
 </ol></div>
 <div class="section level3">
 <h3 id="multiple-agents-md-files">Multiple AGENTS.md Files<a class="anchor" aria-label="anchor" href="#multiple-agents-md-files"></a></h3>
-<p>You can place AGENTS.md files at different levels of your project
-hierarchy. AI assistants typically use the <strong>closest</strong>
-AGENTS.md file relative to the current working file:</p>
+<p>You can place <code>AGENTS.md</code> files at different levels of
+your project hierarchy. AI assistants typically use the
+<strong>closest</strong> <code>AGENTS.md</code> file relative to the
+current working file:</p>
 <ul><li>
 <strong>Repository root</strong> (<code>/AGENTS.md</code>): Defines
 project-wide standards that apply to all code</li>
@@ -504,12 +506,12 @@ that override or extend root-level rules</li>
 for specific components</li>
 </ul><p><strong>Example hierarchy:</strong></p>
 <pre><code>my-r-project/
-├── AGENTS.md                    # General tidyverse standards
+├── AGENTS.md               # General tidyverse standards
 ├── src/
 │   └── analysis/
-│       └── AGENTS.md            # Additional statistical analysis guidelines
+│       └── AGENTS.md       # Additional statistical analysis guidelines
 └── tests/
-    └── AGENTS.md                # Testing-specific conventions</code></pre>
+    └── AGENTS.md           # Testing-specific conventions</code></pre>
 <p>When working on a file like <code>/src/analysis/models.R</code>, the
 AI assistant will prioritize: 1. <code>/src/analysis/AGENTS.md</code>
 (most specific) 2. <code>/src/AGENTS.md</code> (if it exists) 3.
@@ -525,18 +527,21 @@ codebase.</p>
 <div id="version-control-benefits" class="callout-inner">
 <h3 class="callout-title">Version Control Benefits</h3>
 <div class="callout-content">
-<p>Since AGENTS.md is version-controlled alongside your code, it: -
-Evolves with your project - Can be reviewed and improved through pull
-requests - Maintains consistency across different development stages -
-Provides historical context for coding decisions</p>
-</div>
+<p>Since <code>AGENTS.md</code> is a simple text file and can be easily
+version-controlled alongside your code, e.g. using <code>git</code>,
+it:</p>
+<ul><li>Evolves with your project</li>
+<li>Can be reviewed and improved through pull requests</li>
+<li>Maintains consistency across different development stages</li>
+<li>Provides historical context for coding decisions</li>
+</ul></div>
 </div>
 </div>
 </div>
 </section><section><h2 class="section-heading" id="example-agents-md-for-an-r-project">Example: AGENTS.md for an R Project<a class="anchor" aria-label="anchor" href="#example-agents-md-for-an-r-project"></a></h2>
-<hr class="half-width"><p>Here’s a comprehensive example of an AGENTS.md file for an R project
-that emphasizes tidyverse principles and functional programming
-patterns:</p>
+<hr class="half-width"><p>Here’s a comprehensive but quite extensive example of an
+<code>AGENTS.md</code> file for an R project that emphasizes tidyverse
+principles and functional programming patterns:</p>
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">MARKDOWN<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -756,7 +761,7 @@ patterns:</p>
 <div id="challenge-1-create-your-own-agents.md" class="callout-inner">
 <h3 class="callout-title">Challenge 1: Create Your Own AGENTS.md</h3>
 <div class="callout-content">
-<p>Create an AGENTS.md file for one of your own R projects.
+<p>Create an <code>AGENTS.md</code> file for one of your own R projects.
 Consider:</p>
 <ol style="list-style-type: decimal"><li>What coding style do you prefer?</li>
 <li>Which packages should be favored?</li>
@@ -772,9 +777,9 @@ Consider:</p>
   Example Solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
-<p>Your AGENTS.md should include:</p>
+<p>Your <code>AGENTS.md</code> should include:</p>
 <ul><li>Clear statement of purpose</li>
 <li>Specific package preferences with examples</li>
 <li>Do’s and don’ts with code comparisons</li>
@@ -856,7 +861,8 @@ Please generate all code using:
 </div>
 <div class="section level3">
 <h3 id="style-guides-with-tools">5. Style Guides with Tools<a class="anchor" aria-label="anchor" href="#style-guides-with-tools"></a></h3>
-<p>Use automated style checking tools:</p>
+<p>Use automated style checking tools like <a href="https://lintr.r-lib.org/" class="external-link"><code>lintr</code></a> to enforce
+standards:</p>
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -873,7 +879,8 @@ Please generate all code using:
 </div>
 <div class="section level3">
 <h3 id="pre-commit-hooks">6. Pre-commit Hooks<a class="anchor" aria-label="anchor" href="#pre-commit-hooks"></a></h3>
-<p>Enforce standards before code is committed:</p>
+<p>Enforce standards before code is committed via <a href="https://stefaniemolin.com/articles/devx/pre-commit/setup-guide/" class="external-link">pre-commit
+hooks</a></p>
 <div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">YAML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -970,7 +977,7 @@ Strategy</h3>
 <div class="callout-content">
 <p>For a team R project, design a context specification strategy that
 includes:</p>
-<ol style="list-style-type: decimal"><li>What would go in AGENTS.md?</li>
+<ol style="list-style-type: decimal"><li>What would go in <code>AGENTS.md</code>?</li>
 <li>What would be better as inline comments?</li>
 <li>How would you communicate standards to new team members?</li>
 </ol></div>
@@ -983,7 +990,7 @@ includes:</p>
   Example Strategy
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <ol style="list-style-type: decimal"><li>
 <strong>AGENTS.md</strong>: Core style principles, mandatory
@@ -1008,11 +1015,11 @@ documented standards</li>
 </div>
 </section><section><h2 class="section-heading" id="summary">Summary<a class="anchor" aria-label="anchor" href="#summary"></a></h2>
 <hr class="half-width"><p>Providing proper context to AI coding assistants is essential for
-generating high-quality, consistent code. The AGENTS.md concept offers a
-standardized, version-controlled approach to defining project-specific
-guidelines. Combined with other context specification methods, it
-creates a comprehensive environment where AI assistants can truly
-enhance your development workflow.</p>
+generating high-quality, consistent code. The <code>AGENTS.md</code>
+concept offers a standardized, version-controlled approach to defining
+project-specific guidelines. Combined with other context specification
+methods, it creates a comprehensive environment where AI assistants can
+truly enhance your development workflow.</p>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -1024,16 +1031,17 @@ enhance your development workflow.</p>
 your project standards</li>
 <li>Context improves consistency: AI-generated code matches your project
 standards</li>
-<li>AGENTS.md provides a standardized, version-controlled,
+<li>
+<code>AGENTS.md</code> provides a standardized, version-controlled,
 machine-readable way to specify coding guidelines</li>
-<li>Multiple AGENTS.md files can exist at different hierarchy levels; AI
-assistants use the closest file</li>
-<li>Effective AGENTS.md files include clear examples of preferred and
-forbidden patterns</li>
+<li>Multiple <code>AGENTS.md</code> files can exist at different
+hierarchy levels; AI assistants use the closest file</li>
+<li>Effective <code>AGENTS.md</code> files include clear examples of
+preferred and forbidden patterns</li>
 <li>Start simple and iterate: Begin with core principles and expand
 based on needs</li>
-<li>Combining AGENTS.md with inline comments, chat instructions, and
-tooling creates robust context</li>
+<li>Combining <code>AGENTS.md</code> with inline comments, chat
+instructions, and tooling creates robust context</li>
 <li>R projects benefit from explicit tidyverse usage and piping
 conventions in context definitions</li>
 </ul></div>
@@ -1045,17 +1053,17 @@ any links that you are not going to use.
  -->
 </section></div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Previous and Next Chapter"><div class="d-block d-sm-block d-md-none">
-        <a class="chapter-link" href="../instructor/ai-risks-responsibilities.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
-        <a class="chapter-link float-end" href="../instructor/rstudio-autocompletion.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
+        <a class="chapter-link" href="../instructor/rstudio-autocompletion.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
+        <a class="chapter-link float-end" href="../instructor/ai-pipelines-ellmer.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
       </div>
       <!-- content for large screens -->
       <div class="d-none d-sm-none d-md-block">
-        <a class="chapter-link" href="../instructor/ai-risks-responsibilities.html" rel="prev">
+        <a class="chapter-link" href="../instructor/rstudio-autocompletion.html" rel="prev">
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>
-          Previous: Risks, Drawbacks and
+          Previous: RStudio
         </a>
-        <a class="chapter-link float-end" href="../instructor/rstudio-autocompletion.html" rel="next">
-          Next: RStudio...
+        <a class="chapter-link float-end" href="../instructor/ai-pipelines-ellmer.html" rel="next">
+          Next: Using AI within...
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i>
         </a>
       </div>
@@ -1103,8 +1111,8 @@ any links that you are not going to use.
   "url": "https://Dr-Eberle-Zentrum.github.io/AI-supported-coding-in-RStudio/instructor/context-and-agents.html",
   "identifier": "https://Dr-Eberle-Zentrum.github.io/AI-supported-coding-in-RStudio/instructor/context-and-agents.html",
   "dateCreated": "2024-11-10",
-  "dateModified": "2025-12-12",
-  "datePublished": "2025-12-18"
+  "dateModified": "2025-12-19",
+  "datePublished": "2025-12-19"
 }
 
   </script><script>

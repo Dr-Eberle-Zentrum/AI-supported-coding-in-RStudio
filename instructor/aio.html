@@ -278,7 +278,7 @@
 <div class="accordion accordion-flush" id="accordionFlush5">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading5">
-        <a href="context-and-agents.html">4. Context Definition and the AGENTS.md Concept</a>
+        <a href="rstudio-autocompletion.html">4. RStudio Autocompletion with Copilot</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -290,7 +290,7 @@
 <div class="accordion accordion-flush" id="accordionFlush6">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading6">
-        <a href="rstudio-autocompletion.html">5. RStudio Autocompletion with Copilot</a>
+        <a href="context-and-agents.html">5. Context Definition and the AGENTS.md Concept</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -796,7 +796,7 @@ assistance.</p>
   Example Solutions
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>Examples might include:</p>
 <ul>
@@ -968,7 +968,7 @@ accepting the suggestion?</p>
   Questions to Consider
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>Before accepting AI-generated code, ask:</p>
 <ol style="list-style-type: decimal">
@@ -1221,7 +1221,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-ai-risks-responsibilities"><p>Content from <a href="ai-risks-responsibilities.html">Risks, Drawbacks and Responsibilities with AI Usage</a></p>
 <hr>
-<p>Last updated on 2025-11-17 |
+<p>Last updated on 2025-12-19 |
 
         <a href="https://github.com/Dr-Eberle-Zentrum/AI-supported-coding-in-RStudio/edit/main/episodes/ai-risks-responsibilities.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 45 minutes</p>
@@ -1339,7 +1339,9 @@ bugs:</p>
 </div>
 <p><strong>Security risks include:</strong></p>
 <ul>
-<li>SQL injection vulnerabilities (misuse/manipulation of the database
+<li>
+<a href="https://portswigger.net/web-security/sql-injection" class="external-link">SQL
+injection vulnerabilities</a> (misuse/manipulation of the database
 request)</li>
 <li>Cross-site scripting (XSS) in web applications</li>
 <li>Hardcoded credentials or API keys</li>
@@ -1376,7 +1378,9 @@ request)</li>
 <p>AI models are trained on public code repositories, which may
 include:</p>
 <ul>
-<li>Code with restrictive licenses (GPL, AGPL)</li>
+<li>Code with <a href="https://bearingpoint.services/foss/en/newsblogs/dont-be-afraid-of-gplv3/" class="external-link">restrictive
+licenses (e.g. GPL)</a>
+</li>
 <li>Proprietary code that shouldn’t have been public</li>
 <li>Code with unclear licensing</li>
 </ul>
@@ -1692,7 +1696,7 @@ differ?</p>
   Observations
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p><strong>Poor prompt typically produces:</strong></p>
 <ul>
@@ -1800,17 +1804,26 @@ prompts or initial context to guide all subsequent suggestions.</p>
 <h3 id="the-8020-rule">1. The 80/20 Rule<a class="anchor" aria-label="anchor" href="#the-8020-rule"></a>
 </h3>
 <p>Use AI for the 80% of straightforward, repetitive tasks. Reserve
-human expertise for the critical 20% involving: - Complex algorithms -
-Security-sensitive code - Performance optimization - Architectural
-decisions - Domain-specific logic</p>
+human expertise for the critical 20% involving:</p>
+<ul>
+<li>Complex algorithms</li>
+<li>Security-sensitive code</li>
+<li>Performance optimization</li>
+<li>Architectural decisions</li>
+<li>Domain-specific logic</li>
+</ul>
 </div>
 <div class="section level3">
 <h3 id="treat-ai-as-a-junior-developer">2. Treat AI as a Junior Developer<a class="anchor" aria-label="anchor" href="#treat-ai-as-a-junior-developer"></a>
 </h3>
-<p>Think of AI as a smart but inexperienced assistant: - It needs clear
-instructions - It requires supervision - Its work must be reviewed - It
-shouldn’t handle critical tasks alone - It can help with routine
-work</p>
+<p>Think of AI as a smart but inexperienced assistant:</p>
+<ul>
+<li>It needs clear instructions</li>
+<li>It requires supervision</li>
+<li>Its work must be reviewed</li>
+<li>It shouldn’t handle critical tasks alone</li>
+<li>It can help with routine work</li>
+</ul>
 </div>
 <div class="section level3">
 <h3 id="document-ai-usage">3. Document AI Usage<a class="anchor" aria-label="anchor" href="#document-ai-usage"></a>
@@ -2001,765 +2014,9 @@ thinking</li>
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
-</section></section><section id="aio-context-and-agents"><p>Content from <a href="context-and-agents.html">Context Definition and the AGENTS.md Concept</a></p>
-<hr>
-<p>Last updated on 2025-12-12 |
-
-        <a href="https://github.com/Dr-Eberle-Zentrum/AI-supported-coding-in-RStudio/edit/main/episodes/context-and-agents.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
-<p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 35 minutes</p>
-<div class="text-end">
-          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
-        </div>
-<div class="overview card">
-<h2 class="card-header">Overview</h2>
-<div class="row g-0">
-<div class="col-md-4">
-<div class="card-body">
-<div class="inner">
-<h3 class="card-title">Questions</h3>
-<ul>
-<li>Why is context important for AI coding assistants?</li>
-<li>What is the AGENTS.md concept?</li>
-<li>How can I define coding standards for AI agents in my R
-project?</li>
-<li>What are other ways to provide context to AI assistants?</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="col-md-8">
-<div class="card-body">
-<div class="inner bordered">
-<h3 class="card-title">Objectives</h3>
-<ul>
-<li>Understand the importance of context definitions for AI agents</li>
-<li>Learn about the AGENTS.md specification</li>
-<li>Create an AGENTS.md file with R project-specific guidelines</li>
-<li>Explore alternative methods for providing context to AI
-assistants</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</div>
-<section><h2 class="section-heading" id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
-</h2>
-<hr class="half-width">
-<p>As AI coding assistants become more integrated into our development
-workflows, it’s crucial to provide them with appropriate context about
-project-specific conventions, coding standards, and preferences. Without
-proper context, AI assistants may generate code that, while functionally
-correct, doesn’t align with your project’s style or best practices.</p>
-<p>This chapter explores how to define context for AI agents, focusing
-on the AGENTS.md concept and other strategies for communicating your
-project’s coding standards to AI assistants.</p>
-<div id="context-is-key" class="callout">
-<div class="callout-square">
-<i class="callout-icon" data-feather="bell"></i>
-</div>
-<span class="callout-header">Callout</span>
-<div id="context-is-key" class="callout-inner">
-<h3 class="callout-title">Context is Key</h3>
-<div class="callout-content">
-<p>Just as human developers need onboarding documentation to understand
-a project’s conventions, AI assistants benefit from explicit context
-definitions. Clear guidelines help AI tools generate code that fits
-seamlessly into your existing codebase.</p>
-</div>
-</div>
-</div>
-</section><section><h2 class="section-heading" id="the-need-for-general-context-definitions">The Need for General Context Definitions<a class="anchor" aria-label="anchor" href="#the-need-for-general-context-definitions"></a>
-</h2>
-<hr class="half-width">
-<div class="section level3">
-<h3 id="why-context-matters">Why Context Matters<a class="anchor" aria-label="anchor" href="#why-context-matters"></a>
-</h3>
-<p>When working with AI coding assistants, providing clear context helps
-ensure:</p>
-<ul>
-<li>
-<strong>Consistency</strong>: Code generated by AI matches your
-project’s existing style and patterns</li>
-<li>
-<strong>Best Practices</strong>: AI follows domain-specific
-conventions (e.g., tidyverse in R)</li>
-<li>
-<strong>Efficiency</strong>: Less time spent revising AI-generated
-code to match your standards</li>
-<li>
-<strong>Maintainability</strong>: Generated code is easier for team
-members to understand and maintain</li>
-<li>
-<strong>Learning</strong>: AI can help reinforce good coding
-practices by consistently applying them</li>
-</ul>
-</div>
-<div class="section level3">
-<h3 id="types-of-context">Types of Context<a class="anchor" aria-label="anchor" href="#types-of-context"></a>
-</h3>
-<p>Context for AI assistants can include:</p>
-<ul>
-<li>
-<strong>Language-specific conventions</strong>: Which libraries or
-frameworks to prefer</li>
-<li>
-<strong>Style guidelines</strong>: Naming conventions, formatting,
-documentation standards</li>
-<li>
-<strong>Architectural patterns</strong>: How to structure code,
-which design patterns to use</li>
-<li>
-<strong>Project-specific rules</strong>: Custom conventions unique
-to your codebase</li>
-<li>
-<strong>Domain knowledge</strong>: Specialized terminology or
-domain-specific best practices</li>
-</ul>
-</div>
-</section><section><h2 class="section-heading" id="the-agents-md-concept">The AGENTS.md Concept<a class="anchor" aria-label="anchor" href="#the-agents-md-concept"></a>
-</h2>
-<hr class="half-width">
-<div class="section level3">
-<h3 id="what-is-agents-md">What is AGENTS.md?<a class="anchor" aria-label="anchor" href="#what-is-agents-md"></a>
-</h3>
-<p>AGENTS.md is a standardized approach to providing context and
-guidelines for AI coding assistants directly within your repository. By
-placing an <code>AGENTS.md</code> file in your repository root, you
-create a machine-readable specification that AI tools can reference when
-generating or reviewing code.</p>
-<p>The concept is documented at <a href="https://agents.md/" class="external-link">https://agents.md/</a>, which provides:</p>
-<ul>
-<li>Specifications for the AGENTS.md format</li>
-<li>Examples from various programming languages and domains</li>
-<li>Best practices for writing effective agent guidelines</li>
-<li>Community-contributed templates and patterns</li>
-</ul>
-</div>
-<div class="section level3">
-<h3 id="how-agents-md-works">How AGENTS.md Works<a class="anchor" aria-label="anchor" href="#how-agents-md-works"></a>
-</h3>
-<p>When an AI assistant (like GitHub Copilot, Cursor, or other AI tools)
-works in a repository with an AGENTS.md file, it can:</p>
-<ol style="list-style-type: decimal">
-<li>
-<strong>Read the guidelines</strong> at the start of a session</li>
-<li>
-<strong>Apply the rules</strong> when generating code
-suggestions</li>
-<li>
-<strong>Reference the standards</strong> when reviewing or revising
-code</li>
-<li>
-<strong>Adapt behavior</strong> to match project-specific
-preferences</li>
-</ol>
-</div>
-<div class="section level3">
-<h3 id="multiple-agents-md-files">Multiple AGENTS.md Files<a class="anchor" aria-label="anchor" href="#multiple-agents-md-files"></a>
-</h3>
-<p>You can place AGENTS.md files at different levels of your project
-hierarchy. AI assistants typically use the <strong>closest</strong>
-AGENTS.md file relative to the current working file:</p>
-<ul>
-<li>
-<strong>Repository root</strong> (<code>/AGENTS.md</code>): Defines
-project-wide standards that apply to all code</li>
-<li>
-<strong>Subdirectory</strong> (<code>/src/AGENTS.md</code>,
-<code>/tests/AGENTS.md</code>): Provides context-specific guidelines
-that override or extend root-level rules</li>
-<li>
-<strong>Module-level</strong>
-(<code>/src/data-processing/AGENTS.md</code>): Defines specialized rules
-for specific components</li>
-</ul>
-<p><strong>Example hierarchy:</strong></p>
-<pre><code>my-r-project/
-├── AGENTS.md                    # General tidyverse standards
-├── src/
-│   └── analysis/
-│       └── AGENTS.md            # Additional statistical analysis guidelines
-└── tests/
-    └── AGENTS.md                # Testing-specific conventions</code></pre>
-<p>When working on a file like <code>/src/analysis/models.R</code>, the
-AI assistant will prioritize: 1. <code>/src/analysis/AGENTS.md</code>
-(most specific) 2. <code>/src/AGENTS.md</code> (if it exists) 3.
-<code>/AGENTS.md</code> (project-wide defaults)</p>
-<p>This hierarchical approach allows you to maintain general standards
-while accommodating specialized needs in different parts of your
-codebase.</p>
-<div id="version-control-benefits" class="callout">
-<div class="callout-square">
-<i class="callout-icon" data-feather="bell"></i>
-</div>
-<span class="callout-header">Callout</span>
-<div id="version-control-benefits" class="callout-inner">
-<h3 class="callout-title">Version Control Benefits</h3>
-<div class="callout-content">
-<p>Since AGENTS.md is version-controlled alongside your code, it: -
-Evolves with your project - Can be reviewed and improved through pull
-requests - Maintains consistency across different development stages -
-Provides historical context for coding decisions</p>
-</div>
-</div>
-</div>
-</div>
-</section><section><h2 class="section-heading" id="example-agents-md-for-an-r-project">Example: AGENTS.md for an R Project<a class="anchor" aria-label="anchor" href="#example-agents-md-for-an-r-project"></a>
-</h2>
-<hr class="half-width">
-<p>Here’s a comprehensive example of an AGENTS.md file for an R project
-that emphasizes tidyverse principles and functional programming
-patterns:</p>
-<div class="codewrapper sourceCode" id="cb2">
-<h3 class="code-label">MARKDOWN<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode markdown" tabindex="0"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="fu"># AGENTS.md - R Project Coding Guidelines</span></span>
-<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="fu">## Overview</span></span>
-<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a>This R project follows tidyverse conventions and functional programming principles. </span>
-<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a>AI assistants should generate code that adheres to these guidelines.</span>
-<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a></span>
-<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a><span class="fu">## Language and Framework</span></span>
-<span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a></span>
-<span id="cb2-10"><a href="#cb2-10" tabindex="-1"></a><span class="ss">- </span>**Primary Language**: R (version 4.1 or higher)</span>
-<span id="cb2-11"><a href="#cb2-11" tabindex="-1"></a><span class="ss">- </span>**Core Framework**: tidyverse</span>
-<span id="cb2-12"><a href="#cb2-12" tabindex="-1"></a><span class="ss">- </span>**Required Packages**: dplyr, tidyr, ggplot2, purrr, readr</span>
-<span id="cb2-13"><a href="#cb2-13" tabindex="-1"></a></span>
-<span id="cb2-14"><a href="#cb2-14" tabindex="-1"></a><span class="fu">## Code Style Principles</span></span>
-<span id="cb2-15"><a href="#cb2-15" tabindex="-1"></a></span>
-<span id="cb2-16"><a href="#cb2-16" tabindex="-1"></a><span class="fu">### 1. Mandatory Tidyverse Usage</span></span>
-<span id="cb2-17"><a href="#cb2-17" tabindex="-1"></a></span>
-<span id="cb2-18"><a href="#cb2-18" tabindex="-1"></a>All data manipulation and analysis code MUST use tidyverse packages and functions.</span>
-<span id="cb2-19"><a href="#cb2-19" tabindex="-1"></a></span>
-<span id="cb2-20"><a href="#cb2-20" tabindex="-1"></a>**Prefer:**</span>
-<span id="cb2-21"><a href="#cb2-21" tabindex="-1"></a><span class="in">```r</span></span>
-<span id="cb2-22"><a href="#cb2-22" tabindex="-1"></a>mtcars <span class="sc">%&gt;%</span></span>
-<span id="cb2-23"><a href="#cb2-23" tabindex="-1"></a>  <span class="fu">filter</span>(mpg <span class="sc">&gt;</span> <span class="dv">20</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb2-24"><a href="#cb2-24" tabindex="-1"></a>  <span class="fu">select</span>(mpg, cyl, hp)</span>
-<span id="cb2-25"><a href="#cb2-25" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-26"><a href="#cb2-26" tabindex="-1"></a></span>
-<span id="cb2-27"><a href="#cb2-27" tabindex="-1"></a>**Avoid:**</span>
-<span id="cb2-28"><a href="#cb2-28" tabindex="-1"></a><span class="in">```r</span></span>
-<span id="cb2-29"><a href="#cb2-29" tabindex="-1"></a>mtcars[mtcars<span class="sc">$</span>mpg <span class="sc">&gt;</span> <span class="dv">20</span>, <span class="fu">c</span>(<span class="st">"mpg"</span>, <span class="st">"cyl"</span>, <span class="st">"hp"</span>)]</span>
-<span id="cb2-30"><a href="#cb2-30" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-31"><a href="#cb2-31" tabindex="-1"></a></span>
-<span id="cb2-32"><a href="#cb2-32" tabindex="-1"></a><span class="fu">### 2. Piping Over Local Variables</span></span>
-<span id="cb2-33"><a href="#cb2-33" tabindex="-1"></a></span>
-<span id="cb2-34"><a href="#cb2-34" tabindex="-1"></a>ALWAYS favor piping operations over creating intermediate local variables.</span>
-<span id="cb2-35"><a href="#cb2-35" tabindex="-1"></a></span>
-<span id="cb2-36"><a href="#cb2-36" tabindex="-1"></a>**Prefer:**</span>
-<span id="cb2-37"><a href="#cb2-37" tabindex="-1"></a><span class="in">```r</span></span>
-<span id="cb2-38"><a href="#cb2-38" tabindex="-1"></a>mtcars <span class="sc">%&gt;%</span></span>
-<span id="cb2-39"><a href="#cb2-39" tabindex="-1"></a>  <span class="fu">filter</span>(cyl <span class="sc">==</span> <span class="dv">6</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb2-40"><a href="#cb2-40" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">efficiency =</span> mpg <span class="sc">/</span> hp) <span class="sc">%&gt;%</span></span>
-<span id="cb2-41"><a href="#cb2-41" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(efficiency)) <span class="sc">%&gt;%</span></span>
-<span id="cb2-42"><a href="#cb2-42" tabindex="-1"></a>  <span class="fu">head</span>(<span class="dv">10</span>)</span>
-<span id="cb2-43"><a href="#cb2-43" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-44"><a href="#cb2-44" tabindex="-1"></a></span>
-<span id="cb2-45"><a href="#cb2-45" tabindex="-1"></a>**Avoid:**</span>
-<span id="cb2-46"><a href="#cb2-46" tabindex="-1"></a><span class="in">```r</span></span>
-<span id="cb2-47"><a href="#cb2-47" tabindex="-1"></a>cars_filtered <span class="ot">&lt;-</span> <span class="fu">filter</span>(mtcars, cyl <span class="sc">==</span> <span class="dv">6</span>)</span>
-<span id="cb2-48"><a href="#cb2-48" tabindex="-1"></a>cars_mutated <span class="ot">&lt;-</span> <span class="fu">mutate</span>(cars_filtered, <span class="at">efficiency =</span> mpg <span class="sc">/</span> hp)</span>
-<span id="cb2-49"><a href="#cb2-49" tabindex="-1"></a>cars_sorted <span class="ot">&lt;-</span> <span class="fu">arrange</span>(cars_mutated, <span class="fu">desc</span>(efficiency))</span>
-<span id="cb2-50"><a href="#cb2-50" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">head</span>(cars_sorted, <span class="dv">10</span>)</span>
-<span id="cb2-51"><a href="#cb2-51" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-52"><a href="#cb2-52" tabindex="-1"></a></span>
-<span id="cb2-53"><a href="#cb2-53" tabindex="-1"></a><span class="fu">### 3. Prohibition of Variable Overwriting</span></span>
-<span id="cb2-54"><a href="#cb2-54" tabindex="-1"></a></span>
-<span id="cb2-55"><a href="#cb2-55" tabindex="-1"></a>NEVER overwrite existing variables. Use piping to transform data in a single flow.</span>
-<span id="cb2-56"><a href="#cb2-56" tabindex="-1"></a></span>
-<span id="cb2-57"><a href="#cb2-57" tabindex="-1"></a>**Forbidden:**</span>
-<span id="cb2-58"><a href="#cb2-58" tabindex="-1"></a><span class="in">```r</span></span>
-<span id="cb2-59"><a href="#cb2-59" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"input.csv"</span>)</span>
-<span id="cb2-60"><a href="#cb2-60" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">filter</span>(data, value <span class="sc">&gt;</span> <span class="dv">0</span>)</span>
-<span id="cb2-61"><a href="#cb2-61" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">mutate</span>(data, <span class="at">log_value =</span> <span class="fu">log</span>(value))</span>
-<span id="cb2-62"><a href="#cb2-62" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">arrange</span>(data, date)</span>
-<span id="cb2-63"><a href="#cb2-63" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-64"><a href="#cb2-64" tabindex="-1"></a></span>
-<span id="cb2-65"><a href="#cb2-65" tabindex="-1"></a>**Required:**</span>
-<span id="cb2-66"><a href="#cb2-66" tabindex="-1"></a><span class="in">```r</span></span>
-<span id="cb2-67"><a href="#cb2-67" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"input.csv"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb2-68"><a href="#cb2-68" tabindex="-1"></a>  <span class="fu">filter</span>(value <span class="sc">&gt;</span> <span class="dv">0</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb2-69"><a href="#cb2-69" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">log_value =</span> <span class="fu">log</span>(value)) <span class="sc">%&gt;%</span></span>
-<span id="cb2-70"><a href="#cb2-70" tabindex="-1"></a>  <span class="fu">arrange</span>(date)</span>
-<span id="cb2-71"><a href="#cb2-71" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-72"><a href="#cb2-72" tabindex="-1"></a></span>
-<span id="cb2-73"><a href="#cb2-73" tabindex="-1"></a><span class="fu">### 4. Sparse Use of Local Variables</span></span>
-<span id="cb2-74"><a href="#cb2-74" tabindex="-1"></a></span>
-<span id="cb2-75"><a href="#cb2-75" tabindex="-1"></a>Minimize the creation of intermediate variables. Only create local variables when:</span>
-<span id="cb2-76"><a href="#cb2-76" tabindex="-1"></a><span class="ss">- </span>The result will be used multiple times in different contexts</span>
-<span id="cb2-77"><a href="#cb2-77" tabindex="-1"></a><span class="ss">- </span>The variable name significantly improves code readability</span>
-<span id="cb2-78"><a href="#cb2-78" tabindex="-1"></a><span class="ss">- </span>The computation is expensive and should not be repeated</span>
-<span id="cb2-79"><a href="#cb2-79" tabindex="-1"></a></span>
-<span id="cb2-80"><a href="#cb2-80" tabindex="-1"></a>**Acceptable local variable usage:**</span>
-<span id="cb2-81"><a href="#cb2-81" tabindex="-1"></a><span class="in">```r</span></span>
-<span id="cb2-82"><a href="#cb2-82" tabindex="-1"></a><span class="co"># Used in multiple independent operations</span></span>
-<span id="cb2-83"><a href="#cb2-83" tabindex="-1"></a>base_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data.csv"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb2-84"><a href="#cb2-84" tabindex="-1"></a>  <span class="fu">filter</span>(status <span class="sc">==</span> <span class="st">"active"</span>)</span>
-<span id="cb2-85"><a href="#cb2-85" tabindex="-1"></a></span>
-<span id="cb2-86"><a href="#cb2-86" tabindex="-1"></a>summary_stats <span class="ot">&lt;-</span> base_data <span class="sc">%&gt;%</span></span>
-<span id="cb2-87"><a href="#cb2-87" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_value =</span> <span class="fu">mean</span>(value), <span class="at">sd_value =</span> <span class="fu">sd</span>(value))</span>
-<span id="cb2-88"><a href="#cb2-88" tabindex="-1"></a></span>
-<span id="cb2-89"><a href="#cb2-89" tabindex="-1"></a>detailed_analysis <span class="ot">&lt;-</span> base_data <span class="sc">%&gt;%</span></span>
-<span id="cb2-90"><a href="#cb2-90" tabindex="-1"></a>  <span class="fu">group_by</span>(category) <span class="sc">%&gt;%</span></span>
-<span id="cb2-91"><a href="#cb2-91" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="fu">across</span>(<span class="fu">where</span>(is.numeric), <span class="fu">list</span>(<span class="at">mean =</span> mean, <span class="at">sd =</span> sd)))</span>
-<span id="cb2-92"><a href="#cb2-92" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-93"><a href="#cb2-93" tabindex="-1"></a></span>
-<span id="cb2-94"><a href="#cb2-94" tabindex="-1"></a><span class="fu">### 5. Multiline Pipes with Documentation</span></span>
-<span id="cb2-95"><a href="#cb2-95" tabindex="-1"></a></span>
-<span id="cb2-96"><a href="#cb2-96" tabindex="-1"></a>Pipelines MUST be formatted across multiple lines with inline documentation.</span>
-<span id="cb2-97"><a href="#cb2-97" tabindex="-1"></a></span>
-<span id="cb2-98"><a href="#cb2-98" tabindex="-1"></a>**Required format:**</span>
-<span id="cb2-99"><a href="#cb2-99" tabindex="-1"></a><span class="in">```r</span></span>
-<span id="cb2-100"><a href="#cb2-100" tabindex="-1"></a>analysis_results <span class="ot">&lt;-</span> raw_data <span class="sc">%&gt;%</span></span>
-<span id="cb2-101"><a href="#cb2-101" tabindex="-1"></a>  <span class="co"># Remove incomplete cases and outliers</span></span>
-<span id="cb2-102"><a href="#cb2-102" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">complete.cases</span>(.), <span class="fu">between</span>(value, <span class="dv">0</span>, <span class="dv">100</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb2-103"><a href="#cb2-103" tabindex="-1"></a>  <span class="co"># Normalize values by group</span></span>
-<span id="cb2-104"><a href="#cb2-104" tabindex="-1"></a>  <span class="fu">group_by</span>(category) <span class="sc">%&gt;%</span></span>
-<span id="cb2-105"><a href="#cb2-105" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">normalized =</span> (value <span class="sc">-</span> <span class="fu">mean</span>(value)) <span class="sc">/</span> <span class="fu">sd</span>(value)) <span class="sc">%&gt;%</span></span>
-<span id="cb2-106"><a href="#cb2-106" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb2-107"><a href="#cb2-107" tabindex="-1"></a>  <span class="co"># Calculate derived metrics</span></span>
-<span id="cb2-108"><a href="#cb2-108" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb2-109"><a href="#cb2-109" tabindex="-1"></a>    <span class="at">log_value =</span> <span class="fu">log1p</span>(value),</span>
-<span id="cb2-110"><a href="#cb2-110" tabindex="-1"></a>    <span class="at">squared_value =</span> value<span class="sc">^</span><span class="dv">2</span>,</span>
-<span id="cb2-111"><a href="#cb2-111" tabindex="-1"></a>    <span class="at">interaction =</span> value <span class="sc">*</span> normalized</span>
-<span id="cb2-112"><a href="#cb2-112" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb2-113"><a href="#cb2-113" tabindex="-1"></a>  <span class="co"># Sort by importance</span></span>
-<span id="cb2-114"><a href="#cb2-114" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(<span class="fu">abs</span>(normalized)))</span>
-<span id="cb2-115"><a href="#cb2-115" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-116"><a href="#cb2-116" tabindex="-1"></a></span>
-<span id="cb2-117"><a href="#cb2-117" tabindex="-1"></a>Each step in a pipeline should:</span>
-<span id="cb2-118"><a href="#cb2-118" tabindex="-1"></a><span class="ss">- </span>Be on its own line</span>
-<span id="cb2-119"><a href="#cb2-119" tabindex="-1"></a><span class="ss">- </span>Have a preceding comment explaining its purpose</span>
-<span id="cb2-120"><a href="#cb2-120" tabindex="-1"></a><span class="ss">- </span>Use meaningful intermediate calculations when needed</span>
-<span id="cb2-121"><a href="#cb2-121" tabindex="-1"></a></span>
-<span id="cb2-122"><a href="#cb2-122" tabindex="-1"></a><span class="fu">### 6. Function Definitions</span></span>
-<span id="cb2-123"><a href="#cb2-123" tabindex="-1"></a></span>
-<span id="cb2-124"><a href="#cb2-124" tabindex="-1"></a>Functions should also follow piping principles when applicable:</span>
-<span id="cb2-125"><a href="#cb2-125" tabindex="-1"></a></span>
-<span id="cb2-126"><a href="#cb2-126" tabindex="-1"></a><span class="in">```r</span></span>
-<span id="cb2-127"><a href="#cb2-127" tabindex="-1"></a>process_dataset <span class="ot">&lt;-</span> <span class="cf">function</span>(data, <span class="at">threshold =</span> <span class="fl">0.05</span>) {</span>
-<span id="cb2-128"><a href="#cb2-128" tabindex="-1"></a>  data <span class="sc">%&gt;%</span></span>
-<span id="cb2-129"><a href="#cb2-129" tabindex="-1"></a>    <span class="co"># Filter based on significance threshold</span></span>
-<span id="cb2-130"><a href="#cb2-130" tabindex="-1"></a>    <span class="fu">filter</span>(p_value <span class="sc">&lt;</span> threshold) <span class="sc">%&gt;%</span></span>
-<span id="cb2-131"><a href="#cb2-131" tabindex="-1"></a>    <span class="co"># Calculate effect sizes</span></span>
-<span id="cb2-132"><a href="#cb2-132" tabindex="-1"></a>    <span class="fu">mutate</span>(</span>
-<span id="cb2-133"><a href="#cb2-133" tabindex="-1"></a>      <span class="at">effect_size =</span> (mean_treatment <span class="sc">-</span> mean_control) <span class="sc">/</span> pooled_sd,</span>
-<span id="cb2-134"><a href="#cb2-134" tabindex="-1"></a>      <span class="at">ci_lower =</span> effect_size <span class="sc">-</span> <span class="fl">1.96</span> <span class="sc">*</span> se,</span>
-<span id="cb2-135"><a href="#cb2-135" tabindex="-1"></a>      <span class="at">ci_upper =</span> effect_size <span class="sc">+</span> <span class="fl">1.96</span> <span class="sc">*</span> se</span>
-<span id="cb2-136"><a href="#cb2-136" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span></span>
-<span id="cb2-137"><a href="#cb2-137" tabindex="-1"></a>    <span class="co"># Add interpretation</span></span>
-<span id="cb2-138"><a href="#cb2-138" tabindex="-1"></a>    <span class="fu">mutate</span>(</span>
-<span id="cb2-139"><a href="#cb2-139" tabindex="-1"></a>      <span class="at">significant =</span> p_value <span class="sc">&lt;</span> threshold,</span>
-<span id="cb2-140"><a href="#cb2-140" tabindex="-1"></a>      <span class="at">effect_magnitude =</span> <span class="fu">case_when</span>(</span>
-<span id="cb2-141"><a href="#cb2-141" tabindex="-1"></a>        <span class="fu">abs</span>(effect_size) <span class="sc">&lt;</span> <span class="fl">0.2</span> <span class="sc">~</span> <span class="st">"small"</span>,</span>
-<span id="cb2-142"><a href="#cb2-142" tabindex="-1"></a>        <span class="fu">abs</span>(effect_size) <span class="sc">&lt;</span> <span class="fl">0.8</span> <span class="sc">~</span> <span class="st">"medium"</span>,</span>
-<span id="cb2-143"><a href="#cb2-143" tabindex="-1"></a>        <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"large"</span></span>
-<span id="cb2-144"><a href="#cb2-144" tabindex="-1"></a>      )</span>
-<span id="cb2-145"><a href="#cb2-145" tabindex="-1"></a>    )</span>
-<span id="cb2-146"><a href="#cb2-146" tabindex="-1"></a>}</span>
-<span id="cb2-147"><a href="#cb2-147" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-148"><a href="#cb2-148" tabindex="-1"></a></span>
-<span id="cb2-149"><a href="#cb2-149" tabindex="-1"></a><span class="fu">## Forbidden Patterns</span></span>
-<span id="cb2-150"><a href="#cb2-150" tabindex="-1"></a></span>
-<span id="cb2-151"><a href="#cb2-151" tabindex="-1"></a><span class="ss">1. </span>**Loop-based operations** when vectorized or tidyverse alternatives exist</span>
-<span id="cb2-152"><a href="#cb2-152" tabindex="-1"></a><span class="ss">2. </span>**Direct variable assignment in loops** - use <span class="in">`purrr::map()`</span> family instead</span>
-<span id="cb2-153"><a href="#cb2-153" tabindex="-1"></a><span class="ss">3. </span>**Base R subsetting syntax** - use <span class="in">`dplyr::filter()`</span> and <span class="in">`dplyr::select()`</span></span>
-<span id="cb2-154"><a href="#cb2-154" tabindex="-1"></a><span class="ss">4. </span>**Nested function calls** without pipes when multiple operations are chained</span>
-<span id="cb2-155"><a href="#cb2-155" tabindex="-1"></a><span class="ss">5. </span>**`attach()` function** - always use explicit data references</span>
-<span id="cb2-156"><a href="#cb2-156" tabindex="-1"></a></span>
-<span id="cb2-157"><a href="#cb2-157" tabindex="-1"></a><span class="fu">## Documentation Standards</span></span>
-<span id="cb2-158"><a href="#cb2-158" tabindex="-1"></a></span>
-<span id="cb2-159"><a href="#cb2-159" tabindex="-1"></a><span class="ss">- </span>Use roxygen2-style comments for all functions</span>
-<span id="cb2-160"><a href="#cb2-160" tabindex="-1"></a><span class="ss">- </span>Include inline comments for complex pipeline steps</span>
-<span id="cb2-161"><a href="#cb2-161" tabindex="-1"></a><span class="ss">- </span>Document assumptions and data requirements</span>
-<span id="cb2-162"><a href="#cb2-162" tabindex="-1"></a><span class="ss">- </span>Explain any deviations from these guidelines (rare cases only)</span>
-<span id="cb2-163"><a href="#cb2-163" tabindex="-1"></a></span>
-<span id="cb2-164"><a href="#cb2-164" tabindex="-1"></a><span class="fu">## Examples of Complete Workflows</span></span>
-<span id="cb2-165"><a href="#cb2-165" tabindex="-1"></a></span>
-<span id="cb2-166"><a href="#cb2-166" tabindex="-1"></a><span class="fu">### Data Import and Cleaning</span></span>
-<span id="cb2-167"><a href="#cb2-167" tabindex="-1"></a><span class="in">```r</span></span>
-<span id="cb2-168"><a href="#cb2-168" tabindex="-1"></a>cleaned_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"raw_data.csv"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb2-169"><a href="#cb2-169" tabindex="-1"></a>  <span class="co"># Handle missing values</span></span>
-<span id="cb2-170"><a href="#cb2-170" tabindex="-1"></a>  <span class="fu">drop_na</span>(key_columns) <span class="sc">%&gt;%</span></span>
-<span id="cb2-171"><a href="#cb2-171" tabindex="-1"></a>  <span class="co"># Standardize column names</span></span>
-<span id="cb2-172"><a href="#cb2-172" tabindex="-1"></a>  <span class="fu">rename_with</span>(tolower) <span class="sc">%&gt;%</span></span>
-<span id="cb2-173"><a href="#cb2-173" tabindex="-1"></a>  <span class="co"># Type conversion</span></span>
-<span id="cb2-174"><a href="#cb2-174" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">ends_with</span>(<span class="st">"_date"</span>), ymd)) <span class="sc">%&gt;%</span></span>
-<span id="cb2-175"><a href="#cb2-175" tabindex="-1"></a>  <span class="co"># Remove duplicates</span></span>
-<span id="cb2-176"><a href="#cb2-176" tabindex="-1"></a>  <span class="fu">distinct</span>()</span>
-<span id="cb2-177"><a href="#cb2-177" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-178"><a href="#cb2-178" tabindex="-1"></a></span>
-<span id="cb2-179"><a href="#cb2-179" tabindex="-1"></a><span class="fu">### Analysis Pipeline</span></span>
-<span id="cb2-180"><a href="#cb2-180" tabindex="-1"></a><span class="in">```r</span></span>
-<span id="cb2-181"><a href="#cb2-181" tabindex="-1"></a>analysis <span class="ot">&lt;-</span> cleaned_data <span class="sc">%&gt;%</span></span>
-<span id="cb2-182"><a href="#cb2-182" tabindex="-1"></a>  <span class="co"># Subset to relevant period</span></span>
-<span id="cb2-183"><a href="#cb2-183" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">between</span>(date, start_date, end_date)) <span class="sc">%&gt;%</span></span>
-<span id="cb2-184"><a href="#cb2-184" tabindex="-1"></a>  <span class="co"># Group-level transformations</span></span>
-<span id="cb2-185"><a href="#cb2-185" tabindex="-1"></a>  <span class="fu">group_by</span>(category, region) <span class="sc">%&gt;%</span></span>
-<span id="cb2-186"><a href="#cb2-186" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
-<span id="cb2-187"><a href="#cb2-187" tabindex="-1"></a>    <span class="at">n_obs =</span> <span class="fu">n</span>(),</span>
-<span id="cb2-188"><a href="#cb2-188" tabindex="-1"></a>    <span class="at">mean_value =</span> <span class="fu">mean</span>(value, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb2-189"><a href="#cb2-189" tabindex="-1"></a>    <span class="at">median_value =</span> <span class="fu">median</span>(value, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb2-190"><a href="#cb2-190" tabindex="-1"></a>    <span class="at">.groups =</span> <span class="st">"drop"</span></span>
-<span id="cb2-191"><a href="#cb2-191" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb2-192"><a href="#cb2-192" tabindex="-1"></a>  <span class="co"># Calculate derived metrics</span></span>
-<span id="cb2-193"><a href="#cb2-193" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb2-194"><a href="#cb2-194" tabindex="-1"></a>    <span class="at">relative_value =</span> mean_value <span class="sc">/</span> median_value,</span>
-<span id="cb2-195"><a href="#cb2-195" tabindex="-1"></a>    <span class="at">weight =</span> n_obs <span class="sc">/</span> <span class="fu">sum</span>(n_obs)</span>
-<span id="cb2-196"><a href="#cb2-196" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb2-197"><a href="#cb2-197" tabindex="-1"></a>  <span class="co"># Final filtering</span></span>
-<span id="cb2-198"><a href="#cb2-198" tabindex="-1"></a>  <span class="fu">filter</span>(n_obs <span class="sc">&gt;=</span> min_sample_size)</span>
-<span id="cb2-199"><a href="#cb2-199" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-200"><a href="#cb2-200" tabindex="-1"></a></span>
-<span id="cb2-201"><a href="#cb2-201" tabindex="-1"></a><span class="fu">## Additional Guidelines</span></span>
-<span id="cb2-202"><a href="#cb2-202" tabindex="-1"></a></span>
-<span id="cb2-203"><a href="#cb2-203" tabindex="-1"></a><span class="ss">- </span>Prefer <span class="in">`tibble`</span> over <span class="in">`data.frame`</span></span>
-<span id="cb2-204"><a href="#cb2-204" tabindex="-1"></a><span class="ss">- </span>Use <span class="in">`readr::read_*()`</span> over base R <span class="in">`read.*()`</span> functions</span>
-<span id="cb2-205"><a href="#cb2-205" tabindex="-1"></a><span class="ss">- </span>Always specify <span class="in">`.groups`</span> argument when using <span class="in">`summarize()`</span> with <span class="in">`group_by()`</span></span>
-<span id="cb2-206"><a href="#cb2-206" tabindex="-1"></a><span class="ss">- </span>Use <span class="in">`across()`</span> for operations on multiple columns</span>
-<span id="cb2-207"><a href="#cb2-207" tabindex="-1"></a><span class="ss">- </span>Leverage <span class="in">`case_when()`</span> for complex conditional logic</span></code></pre>
-</div>
-<div id="challenge-1-create-your-own-agents.md" class="callout challenge">
-<div class="callout-square">
-<i class="callout-icon" data-feather="zap"></i>
-</div>
-<span class="callout-header">Challenge</span>
-<div id="challenge-1-create-your-own-agents.md" class="callout-inner">
-<h3 class="callout-title">Challenge 1: Create Your Own AGENTS.md</h3>
-<div class="callout-content">
-<p>Create an AGENTS.md file for one of your own R projects.
-Consider:</p>
-<ol style="list-style-type: decimal">
-<li>What coding style do you prefer?</li>
-<li>Which packages should be favored?</li>
-<li>What patterns should be avoided?</li>
-<li>How should functions be documented?</li>
-</ol>
-</div>
-</div>
-</div>
-<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
-  <h4 class="accordion-header" id="headingSolution1">
-  Example Solution
-  </h4>
-</button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
-<div class="accordion-body">
-<p>Your AGENTS.md should include:</p>
-<ul>
-<li>Clear statement of purpose</li>
-<li>Specific package preferences with examples</li>
-<li>Do’s and don’ts with code comparisons</li>
-<li>Documentation requirements</li>
-<li>Examples of good practices</li>
-</ul>
-<p>Remember: Start simple and expand based on your project’s needs.</p>
-</div>
-</div>
-</div>
-</div>
-</section><section><h2 class="section-heading" id="other-options-to-specify-context">Other Options to Specify Context<a class="anchor" aria-label="anchor" href="#other-options-to-specify-context"></a>
-</h2>
-<hr class="half-width">
-<p>While AGENTS.md is a powerful tool, there are several complementary
-or alternative approaches to providing context to AI assistants:</p>
-<div class="section level3">
-<h3 id="inline-comments-and-documentation">1. Inline Comments and Documentation<a class="anchor" aria-label="anchor" href="#inline-comments-and-documentation"></a>
-</h3>
-<p>AI assistants can learn from well-documented code:</p>
-<div class="codewrapper sourceCode" id="cb3">
-<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># This project uses tidyverse conventions exclusively</span></span>
-<span><span class="kw">library</span><span class="op">(</span><span class="va">tidyverse</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co">#' Process customer data following tidyverse patterns</span></span>
-<span><span class="co">#' </span></span>
-<span><span class="co">#' @param data A tibble with customer information</span></span>
-<span><span class="co">#' @return A processed tibble with standardized columns</span></span>
-<span><span class="co">#' @examples</span></span>
-<span><span class="co">#' process_customers(raw_customers)</span></span>
-<span><span class="va">process_customers</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">data</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="co"># Always use piping for multi-step transformations</span></span>
-<span>  <span class="va">data</span> <span class="op">%&gt;%</span></span>
-<span>    <span class="fu">filter</span><span class="op">(</span><span class="op">!</span><span class="fu">is.na</span><span class="op">(</span><span class="va">customer_id</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
-<span>    <span class="fu">mutate</span><span class="op">(</span>name <span class="op">=</span> <span class="fu">str_to_title</span><span class="op">(</span><span class="va">name</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="op">}</span></span></code></pre>
-</div>
-</div>
-<div class="section level3">
-<h3 id="chat-instructions">2. Chat Instructions<a class="anchor" aria-label="anchor" href="#chat-instructions"></a>
-</h3>
-<p>When using AI chat interfaces, provide context explicitly:</p>
-<pre><code>I'm working on an R project that follows strict tidyverse conventions.
-Please generate all code using:
-
-- dplyr for data manipulation
-- Piping (%&gt;%) for all multi-step operations
-- No variable overwriting
-- Comments before each pipe step</code></pre>
-</div>
-<div class="section level3">
-<h3 id="project-readme-files">3. Project README Files<a class="anchor" aria-label="anchor" href="#project-readme-files"></a>
-</h3>
-<p>Include coding standards in your README.md:</p>
-<div class="codewrapper sourceCode" id="cb5">
-<h3 class="code-label">MARKDOWN<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode markdown" tabindex="0"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="fu">## Coding Standards</span></span>
-<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a>This project follows tidyverse conventions. All contributions must:</span>
-<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a></span>
-<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a><span class="ss">- </span>Use tidyverse packages</span>
-<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a><span class="ss">- </span>Implement piping for data transformations</span>
-<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a><span class="ss">- </span>Avoid variable overwriting</span>
-<span id="cb5-8"><a href="#cb5-8" tabindex="-1"></a><span class="ss">- </span>Include inline documentation</span></code></pre>
-</div>
-</div>
-<div class="section level3">
-<h3 id="code-templates-and-snippets">4. Code Templates and Snippets<a class="anchor" aria-label="anchor" href="#code-templates-and-snippets"></a>
-</h3>
-<p>Create RStudio code snippets that enforce your patterns:</p>
-<div class="codewrapper sourceCode" id="cb6">
-<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="co"># In RStudio: Tools &gt; Global Options &gt; Code &gt; Snippets</span></span>
-<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a>snippet tidypipe</span>
-<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a>	<span class="sc">$</span>{<span class="dv">1</span><span class="sc">:</span>data} <span class="sc">%&gt;%</span></span>
-<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a>		<span class="co"># ${2:description}</span></span>
-<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a>		<span class="er">$</span>{<span class="dv">3</span><span class="sc">:</span>operation}() <span class="sc">%&gt;%</span></span>
-<span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a>		<span class="co"># ${4:description}</span></span>
-<span id="cb6-7"><a href="#cb6-7" tabindex="-1"></a>		<span class="er">$</span>{<span class="dv">5</span><span class="sc">:</span>operation}()</span></code></pre>
-</div>
-</div>
-<div class="section level3">
-<h3 id="style-guides-with-tools">5. Style Guides with Tools<a class="anchor" aria-label="anchor" href="#style-guides-with-tools"></a>
-</h3>
-<p>Use automated style checking tools:</p>
-<div class="codewrapper sourceCode" id="cb7">
-<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># .lintr configuration</span></span>
-<span><span class="va">linters</span><span class="op">:</span> <span class="fu">linters_with_defaults</span><span class="op">(</span></span>
-<span>  <span class="fu">line_length_linter</span><span class="op">(</span><span class="fl">120</span><span class="op">)</span>,</span>
-<span>  object_usage_linter <span class="op">=</span> <span class="cn">NULL</span>,</span>
-<span>  <span class="co"># Enforce tidyverse style</span></span>
-<span>  <span class="fu">assignment_linter</span><span class="op">(</span><span class="op">)</span>,</span>
-<span>  <span class="fu">pipe_continuation_linter</span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="op">)</span></span></code></pre>
-</div>
-</div>
-<div class="section level3">
-<h3 id="pre-commit-hooks">6. Pre-commit Hooks<a class="anchor" aria-label="anchor" href="#pre-commit-hooks"></a>
-</h3>
-<p>Enforce standards before code is committed:</p>
-<div class="codewrapper sourceCode" id="cb8">
-<h3 class="code-label">YAML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="co"># .pre-commit-config.yaml</span></span>
-<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a><span class="fu">repos</span><span class="kw">:</span></span>
-<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">repo</span><span class="kw">:</span><span class="at"> https://github.com/lorenzwalthert/precommit</span></span>
-<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a><span class="at">    </span><span class="fu">rev</span><span class="kw">:</span><span class="at"> v0.3.2</span></span>
-<span id="cb8-5"><a href="#cb8-5" tabindex="-1"></a><span class="at">    </span><span class="fu">hooks</span><span class="kw">:</span></span>
-<span id="cb8-6"><a href="#cb8-6" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> style-files</span></span>
-<span id="cb8-7"><a href="#cb8-7" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> lintr</span></span></code></pre>
-</div>
-</div>
-<div class="section level3">
-<h3 id="copilot-instructions-in-ide">7. Copilot Instructions in IDE<a class="anchor" aria-label="anchor" href="#copilot-instructions-in-ide"></a>
-</h3>
-<p>Some IDEs allow workspace-specific instructions for AI assistants.
-While specific settings vary by tool and may evolve, the concept
-involves configuring your IDE to provide additional context files or
-instructions to the AI assistant.</p>
-<div id="note-on-ide-specific-settings" class="callout">
-<div class="callout-square">
-<i class="callout-icon" data-feather="bell"></i>
-</div>
-<span class="callout-header">Callout</span>
-<div id="note-on-ide-specific-settings" class="callout-inner">
-<h3 class="callout-title">Note on IDE-Specific Settings</h3>
-<div class="callout-content">
-<p>The availability and configuration of AI assistant settings varies
-across IDEs and tools. Check your specific IDE’s documentation for
-current options to provide context to AI coding assistants.</p>
-</div>
-</div>
-</div>
-<div id="combining-approaches" class="callout">
-<div class="callout-square">
-<i class="callout-icon" data-feather="bell"></i>
-</div>
-<span class="callout-header">Callout</span>
-<div id="combining-approaches" class="callout-inner">
-<h3 class="callout-title">Combining Approaches</h3>
-<div class="callout-content">
-<p>The most effective strategy often combines multiple approaches:</p>
-<ol style="list-style-type: decimal">
-<li>
-<strong>AGENTS.md</strong> for comprehensive, machine-readable
-guidelines</li>
-<li>
-<strong>Inline comments</strong> for implementation-specific
-context</li>
-<li>
-<strong>Chat instructions</strong> for interactive sessions</li>
-<li>
-<strong>Automated tools</strong> for enforcement</li>
-</ol>
-</div>
-</div>
-</div>
-</div>
-</section><section><h2 class="section-heading" id="best-practices-for-context-definitions">Best Practices for Context Definitions<a class="anchor" aria-label="anchor" href="#best-practices-for-context-definitions"></a>
-</h2>
-<hr class="half-width">
-<div class="section level3">
-<h3 id="keep-it-focused">Keep It Focused<a class="anchor" aria-label="anchor" href="#keep-it-focused"></a>
-</h3>
-<ul>
-<li>Start with the most important rules</li>
-<li>Don’t try to specify everything at once</li>
-<li>Expand based on actual needs and pain points</li>
-</ul>
-</div>
-<div class="section level3">
-<h3 id="use-examples-liberally">Use Examples Liberally<a class="anchor" aria-label="anchor" href="#use-examples-liberally"></a>
-</h3>
-<ul>
-<li>Show preferred patterns with code examples</li>
-<li>Demonstrate anti-patterns to avoid</li>
-<li>Include both simple and complex scenarios</li>
-</ul>
-</div>
-<div class="section level3">
-<h3 id="make-it-discoverable">Make It Discoverable<a class="anchor" aria-label="anchor" href="#make-it-discoverable"></a>
-</h3>
-<ul>
-<li>Place context files in repository root</li>
-<li>Reference them in README and contributing guides</li>
-<li>Keep them up-to-date with project evolution</li>
-</ul>
-</div>
-<div class="section level3">
-<h3 id="test-your-guidelines">Test Your Guidelines<a class="anchor" aria-label="anchor" href="#test-your-guidelines"></a>
-</h3>
-<ul>
-<li>Verify that AI actually follows your guidelines</li>
-<li>Iterate based on the quality of generated code</li>
-<li>Collect feedback from team members</li>
-</ul>
-</div>
-<div class="section level3">
-<h3 id="version-control-context">Version Control Context<a class="anchor" aria-label="anchor" href="#version-control-context"></a>
-</h3>
-<ul>
-<li>Track changes to context definitions</li>
-<li>Review updates through pull requests</li>
-<li>Document why rules were added or changed</li>
-</ul>
-<div id="challenge-2-context-specification-strategy" class="callout challenge">
-<div class="callout-square">
-<i class="callout-icon" data-feather="zap"></i>
-</div>
-<span class="callout-header">Challenge</span>
-<div id="challenge-2-context-specification-strategy" class="callout-inner">
-<h3 class="callout-title">Challenge 2: Context Specification
-Strategy</h3>
-<div class="callout-content">
-<p>For a team R project, design a context specification strategy that
-includes:</p>
-<ol style="list-style-type: decimal">
-<li>What would go in AGENTS.md?</li>
-<li>What would be better as inline comments?</li>
-<li>How would you communicate standards to new team members?</li>
-</ol>
-</div>
-</div>
-</div>
-<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
-  <h4 class="accordion-header" id="headingSolution2">
-  Example Strategy
-  </h4>
-</button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
-<div class="accordion-body">
-<ol style="list-style-type: decimal">
-<li>
-<strong>AGENTS.md</strong>: Core style principles, mandatory
-patterns, forbidden practices</li>
-<li>
-<strong>Inline comments</strong>: Function-specific logic, data flow
-explanations, edge cases</li>
-<li>
-<strong>README.md</strong>: Quick-start guide, links to detailed
-standards, setup instructions</li>
-<li>
-<strong>Onboarding docs</strong>: Human-readable explanation of why
-standards exist, examples</li>
-<li>
-<strong>Code reviews</strong>: Consistent feedback referring to
-documented standards</li>
-</ol>
-<p>The key is redundancy across human and AI channels.</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section><section><h2 class="section-heading" id="summary">Summary<a class="anchor" aria-label="anchor" href="#summary"></a>
-</h2>
-<hr class="half-width">
-<p>Providing proper context to AI coding assistants is essential for
-generating high-quality, consistent code. The AGENTS.md concept offers a
-standardized, version-controlled approach to defining project-specific
-guidelines. Combined with other context specification methods, it
-creates a comprehensive environment where AI assistants can truly
-enhance your development workflow.</p>
-<div id="keypoints1" class="callout keypoints">
-<div class="callout-square">
-<i class="callout-icon" data-feather="key"></i>
-</div>
-<span class="callout-header">Key Points</span>
-<div class="callout-inner">
-<div class="callout-content">
-<ul>
-<li>Context definitions help AI assistants generate code that matches
-your project standards</li>
-<li>Context improves consistency: AI-generated code matches your project
-standards</li>
-<li>AGENTS.md provides a standardized, version-controlled,
-machine-readable way to specify coding guidelines</li>
-<li>Multiple AGENTS.md files can exist at different hierarchy levels; AI
-assistants use the closest file</li>
-<li>Effective AGENTS.md files include clear examples of preferred and
-forbidden patterns</li>
-<li>Start simple and iterate: Begin with core principles and expand
-based on needs</li>
-<li>Combining AGENTS.md with inline comments, chat instructions, and
-tooling creates robust context</li>
-<li>R projects benefit from explicit tidyverse usage and piping
-conventions in context definitions</li>
-</ul>
-</div>
-</div>
-</div>
-<!--
-Place links that you need to refer to multiple times across pages here. Delete
-any links that you are not going to use.
- -->
 </section></section><section id="aio-rstudio-autocompletion"><p>Content from <a href="rstudio-autocompletion.html">RStudio Autocompletion with Copilot</a></p>
 <hr>
-<p>Last updated on 2025-12-12 |
+<p>Last updated on 2025-12-19 |
 
         <a href="https://github.com/Dr-Eberle-Zentrum/AI-supported-coding-in-RStudio/edit/main/episodes/rstudio-autocompletion.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 40 minutes</p>
@@ -2833,7 +2090,7 @@ lines of public code to:</p>
 <li>The structure of your code</li>
 </ul>
 </li>
-<li>Open files in RStudio (depending on your settings)</li>
+<li>Files from your RStudio project (depending on your settings)</li>
 </ul>
 <p>The more context you provide, the better the suggestions!</p>
 </div>
@@ -2852,14 +2109,14 @@ comments first:</p>
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># Load data from CSV, remove rows with missing values, and convert date column to Date type</span></span></code></pre>
+<code class="sourceCode R"><span><span class="co"># Load data from CSV file 'dat.csv', remove rows with missing values, and convert date column to Date type</span></span></code></pre>
 </div>
 <p><strong>Less Effective:</strong></p>
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># Load data</span></span></code></pre>
+<code class="sourceCode R"><span><span class="co"># Load data from 'dat.csv'</span></span></code></pre>
 </div>
 <div id="challenge-1-practice-writing-effective-comments" class="callout challenge">
 <div class="callout-square">
@@ -3084,6 +2341,49 @@ parameters like <code>stringsAsFactors = FALSE</code> or
 <span><span class="op">}</span></span></code></pre>
 </div>
 </div>
+<div class="section level3">
+<h3 id="questions">Questions<a class="anchor" aria-label="anchor" href="#questions"></a>
+</h3>
+<p>It is also possible to ask Copilot questions in comments:</p>
+<ul>
+<li>write a comment starting with <code># q:</code> followed by your
+question</li>
+</ul>
+<p>For instance</p>
+<div class="codewrapper sourceCode" id="cb10">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># q: What is meant with facetting in ggplot2?</span></span></code></pre>
+</div>
+<p>produced</p>
+<div class="codewrapper sourceCode" id="cb11">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># A: Facetting in ggplot2 refers to the process of creating multiple subplots (facets) within a single plot, based on the values of one or more categorical variables. </span></span>
+<span><span class="co"># This allows for easy comparison of distributions or relationships across different subsets of the data.</span></span></code></pre>
+</div>
+<div id="why-is-the-suggestion-incomplete" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div id="why-is-the-suggestion-incomplete" class="callout-inner">
+<h3 class="callout-title">Why is the suggestion incomplete?</h3>
+<div class="callout-content">
+<p>Communication between RStudio and the AI service is done in chunks
+and the amount of ‘tokens’ (words/pieces of words) that can be sent at
+once is limited. The same holds true for the response from the AI
+service. If your code or comment is very long, or if the AI service
+generates a long suggestion, it may get cut off.</p>
+<p>In that case, it is typically sufficient to accept what has been
+suggested so far and then request a new suggestion (just wait) to
+continue from there.</p>
+</div>
+</div>
+</div>
+</div>
 </section><section><h2 class="section-heading" id="best-practices-for-efficient-workflow">Best Practices for Efficient Workflow<a class="anchor" aria-label="anchor" href="#best-practices-for-efficient-workflow"></a>
 </h2>
 <hr class="half-width">
@@ -3135,41 +2435,51 @@ parameters like <code>stringsAsFactors = FALSE</code> or
 </section><section><h2 class="section-heading" id="common-patterns-and-use-cases">Common Patterns and Use Cases<a class="anchor" aria-label="anchor" href="#common-patterns-and-use-cases"></a>
 </h2>
 <hr class="half-width">
+<p>In the following, we highlight some common coding patterns where
+Copilot can be particularly useful. Therein, <code>[...]</code>
+indicates your cursor position where Copilot will provide
+suggestions.</p>
 <div class="section level3">
 <h3 id="data-manipulation-with-dplyr">Data Manipulation with dplyr<a class="anchor" aria-label="anchor" href="#data-manipulation-with-dplyr"></a>
-</h3>
-<div class="codewrapper sourceCode" id="cb10">
-<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="co"># Copilot excels at suggesting dplyr pipelines</span></span>
-<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a><span class="co"># Filter data for specific conditions and group by category</span></span>
-<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
-<span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a>  <span class="co"># Copilot suggests the rest</span></span></code></pre>
-</div>
-</div>
-<div class="section level3">
-<h3 id="creating-plots-with-ggplot2">Creating Plots with ggplot2<a class="anchor" aria-label="anchor" href="#creating-plots-with-ggplot2"></a>
-</h3>
-<div class="codewrapper sourceCode" id="cb11">
-<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="co"># Create a scatter plot with regression line</span></span>
-<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> height, <span class="at">y =</span> weight)) <span class="sc">+</span></span>
-<span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a>  <span class="co"># Copilot suggests layers</span></span></code></pre>
-</div>
-</div>
-<div class="section level3">
-<h3 id="writing-functions">Writing Functions<a class="anchor" aria-label="anchor" href="#writing-functions"></a>
 </h3>
 <div class="codewrapper sourceCode" id="cb12">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># Function to validate email addresses</span></span>
-<span><span class="va">validate_email</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">email</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="co"># Copilot suggests regex patterns and validation logic</span></span>
-<span><span class="op">}</span></span></code></pre>
+<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="co"># Copilot excels at suggesting dplyr pipelines</span></span>
+<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a><span class="co"># Filter data for specific conditions and group by category</span></span>
+<span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
+<span id="cb12-4"><a href="#cb12-4" tabindex="-1"></a>[...]</span></code></pre>
 </div>
+<p>Copilot suggests the rest..</p>
+<p><em>Note:</em> triggering extensions via comments can also be used
+<em>at the end</em> or <em>within</em> a pipeline to add the next step
+or add an intermediate transformation.</p>
+</div>
+<div class="section level3">
+<h3 id="creating-plots-with-ggplot2">Creating Plots with ggplot2<a class="anchor" aria-label="anchor" href="#creating-plots-with-ggplot2"></a>
+</h3>
+<div class="codewrapper sourceCode" id="cb13">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> height, <span class="at">y =</span> weight)) <span class="sc">+</span></span>
+<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a><span class="co"># Create a scatter plot with regression line</span></span>
+<span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a>[...]</span></code></pre>
+</div>
+<p>Copilot will suggest respective geoms and themes..</p>
+</div>
+<div class="section level3">
+<h3 id="writing-functions">Writing Functions<a class="anchor" aria-label="anchor" href="#writing-functions"></a>
+</h3>
+<div class="codewrapper sourceCode" id="cb14">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="co"># Function to validate email addresses</span></span>
+<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a>validate_email <span class="ot">&lt;-</span> <span class="cf">function</span>(email) {</span>
+<span id="cb14-3"><a href="#cb14-3" tabindex="-1"></a>[...]</span>
+<span id="cb14-4"><a href="#cb14-4" tabindex="-1"></a>}</span></code></pre>
+</div>
+<p>Copilot will suggest the function body, e.g. using regex patterns and
+validation logic</p>
 <div id="challenge-3-build-a-function-with-copilot" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
@@ -3198,7 +2508,7 @@ Copilot</h3>
 </button>
 <div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
-<div class="codewrapper sourceCode" id="cb13">
+<div class="codewrapper sourceCode" id="cb15">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -3257,7 +2567,7 @@ Copilot</h3>
 <div class="section level3">
 <h3 id="specifying-packages">Specifying Packages<a class="anchor" aria-label="anchor" href="#specifying-packages"></a>
 </h3>
-<div class="codewrapper sourceCode" id="cb14">
+<div class="codewrapper sourceCode" id="cb16">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -3267,7 +2577,7 @@ Copilot</h3>
 <div class="section level3">
 <h3 id="requesting-specific-approaches">Requesting Specific Approaches<a class="anchor" aria-label="anchor" href="#requesting-specific-approaches"></a>
 </h3>
-<div class="codewrapper sourceCode" id="cb15">
+<div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -3277,7 +2587,7 @@ Copilot</h3>
 <div class="section level3">
 <h3 id="setting-constraints">Setting Constraints<a class="anchor" aria-label="anchor" href="#setting-constraints"></a>
 </h3>
-<div class="codewrapper sourceCode" id="cb16">
+<div class="codewrapper sourceCode" id="cb18">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -3309,6 +2619,772 @@ Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
 </div>
+</section></section><section id="aio-context-and-agents"><p>Content from <a href="context-and-agents.html">Context Definition and the AGENTS.md Concept</a></p>
+<hr>
+<p>Last updated on 2025-12-19 |
+
+        <a href="https://github.com/Dr-Eberle-Zentrum/AI-supported-coding-in-RStudio/edit/main/episodes/context-and-agents.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+<p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 35 minutes</p>
+<div class="text-end">
+          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
+        </div>
+<div class="overview card">
+<h2 class="card-header">Overview</h2>
+<div class="row g-0">
+<div class="col-md-4">
+<div class="card-body">
+<div class="inner">
+<h3 class="card-title">Questions</h3>
+<ul>
+<li>Why is context important for AI coding assistants?</li>
+<li>What is the <code>AGENTS.md</code> concept?</li>
+<li>How can I define coding standards for AI agents in my R
+project?</li>
+<li>What are other ways to provide context to AI assistants?</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-8">
+<div class="card-body">
+<div class="inner bordered">
+<h3 class="card-title">Objectives</h3>
+<ul>
+<li>Understand the importance of context definitions for AI agents</li>
+<li>Learn about the <code>AGENTS.md</code> specification</li>
+<li>Create an <code>AGENTS.md</code> file with R project-specific
+guidelines</li>
+<li>Explore alternative methods for providing context to AI
+assistants</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<section><h2 class="section-heading" id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
+</h2>
+<hr class="half-width">
+<p>As AI coding assistants become more integrated into our development
+workflows, it’s crucial to provide them with appropriate context about
+project-specific conventions, coding standards, and preferences. Without
+proper context, AI assistants may generate code that, while functionally
+correct, doesn’t align with your project’s style or best practices.</p>
+<p>This chapter explores how to define context for AI agents, focusing
+on the <code>AGENTS.md</code> concept and other strategies for
+communicating your project’s coding standards to AI assistants.</p>
+<div id="context-is-key" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div id="context-is-key" class="callout-inner">
+<h3 class="callout-title">Context is Key</h3>
+<div class="callout-content">
+<p>Just as human developers need onboarding documentation to understand
+a project’s conventions, AI assistants benefit from explicit context
+definitions. Clear guidelines help AI tools generate code that fits
+seamlessly into your existing codebase.</p>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="the-need-for-general-context-definitions">The Need for General Context Definitions<a class="anchor" aria-label="anchor" href="#the-need-for-general-context-definitions"></a>
+</h2>
+<hr class="half-width">
+<div class="section level3">
+<h3 id="why-context-matters">Why Context Matters<a class="anchor" aria-label="anchor" href="#why-context-matters"></a>
+</h3>
+<p>When working with AI coding assistants, providing clear context helps
+ensure:</p>
+<ul>
+<li>
+<strong>Consistency</strong>: Code generated by AI matches your
+project’s existing style and patterns</li>
+<li>
+<strong>Best Practices</strong>: AI follows domain-specific
+conventions (e.g., using tidyverse packages in R)</li>
+<li>
+<strong>Efficiency</strong>: Less time spent revising AI-generated
+code to match your standards</li>
+<li>
+<strong>Maintainability</strong>: Generated code is easier for team
+members to understand and maintain</li>
+<li>
+<strong>Learning</strong>: AI can help reinforce good coding
+practices by consistently applying them</li>
+</ul>
+</div>
+<div class="section level3">
+<h3 id="types-of-context">Types of Context<a class="anchor" aria-label="anchor" href="#types-of-context"></a>
+</h3>
+<p>Context for AI assistants can include:</p>
+<ul>
+<li>
+<strong>Language-specific conventions</strong>: Which libraries or
+frameworks to prefer</li>
+<li>
+<strong>Style guidelines</strong>: Naming conventions, formatting,
+documentation standards</li>
+<li>
+<strong>Architectural patterns</strong>: How to structure code,
+which design patterns to use</li>
+<li>
+<strong>Project-specific rules</strong>: Custom conventions unique
+to your codebase</li>
+<li>
+<strong>Domain knowledge</strong>: Specialized terminology or
+domain-specific best practices</li>
+</ul>
+</div>
+</section><section><h2 class="section-heading" id="the-agents-md-concept">The AGENTS.md Concept<a class="anchor" aria-label="anchor" href="#the-agents-md-concept"></a>
+</h2>
+<hr class="half-width">
+<div class="section level3">
+<h3 id="what-is-agents-md">What is AGENTS.md?<a class="anchor" aria-label="anchor" href="#what-is-agents-md"></a>
+</h3>
+<p>AGENTS.md is a standardized approach to providing context and
+guidelines for AI coding assistants directly within your repository. By
+placing an <code>AGENTS.md</code> file in your repository root, you
+create a machine-readable specification that AI tools can reference when
+generating or reviewing code.</p>
+<p>The concept is documented at <a href="https://agents.md/" class="external-link">https://agents.md/</a>, which provides:</p>
+<ul>
+<li>Specifications for the <code>AGENTS.md</code> format</li>
+<li>Examples from various programming languages and domains</li>
+<li>Best practices for writing effective agent guidelines</li>
+<li>Community-contributed templates and patterns</li>
+</ul>
+</div>
+<div class="section level3">
+<h3 id="how-agents-md-works">How AGENTS.md Works<a class="anchor" aria-label="anchor" href="#how-agents-md-works"></a>
+</h3>
+<p>When an AI assistant (like GitHub Copilot, Cursor, or other AI tools)
+works in a repository with an <code>AGENTS.md</code> file, it can:</p>
+<ol style="list-style-type: decimal">
+<li>
+<strong>Read the guidelines</strong> at the start of a session</li>
+<li>
+<strong>Apply the rules</strong> when generating code
+suggestions</li>
+<li>
+<strong>Reference the standards</strong> when reviewing or revising
+code</li>
+<li>
+<strong>Adapt behavior</strong> to match project-specific
+preferences</li>
+</ol>
+</div>
+<div class="section level3">
+<h3 id="multiple-agents-md-files">Multiple AGENTS.md Files<a class="anchor" aria-label="anchor" href="#multiple-agents-md-files"></a>
+</h3>
+<p>You can place <code>AGENTS.md</code> files at different levels of
+your project hierarchy. AI assistants typically use the
+<strong>closest</strong> <code>AGENTS.md</code> file relative to the
+current working file:</p>
+<ul>
+<li>
+<strong>Repository root</strong> (<code>/AGENTS.md</code>): Defines
+project-wide standards that apply to all code</li>
+<li>
+<strong>Subdirectory</strong> (<code>/src/AGENTS.md</code>,
+<code>/tests/AGENTS.md</code>): Provides context-specific guidelines
+that override or extend root-level rules</li>
+<li>
+<strong>Module-level</strong>
+(<code>/src/data-processing/AGENTS.md</code>): Defines specialized rules
+for specific components</li>
+</ul>
+<p><strong>Example hierarchy:</strong></p>
+<pre><code>my-r-project/
+├── AGENTS.md               # General tidyverse standards
+├── src/
+│   └── analysis/
+│       └── AGENTS.md       # Additional statistical analysis guidelines
+└── tests/
+    └── AGENTS.md           # Testing-specific conventions</code></pre>
+<p>When working on a file like <code>/src/analysis/models.R</code>, the
+AI assistant will prioritize: 1. <code>/src/analysis/AGENTS.md</code>
+(most specific) 2. <code>/src/AGENTS.md</code> (if it exists) 3.
+<code>/AGENTS.md</code> (project-wide defaults)</p>
+<p>This hierarchical approach allows you to maintain general standards
+while accommodating specialized needs in different parts of your
+codebase.</p>
+<div id="version-control-benefits" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div id="version-control-benefits" class="callout-inner">
+<h3 class="callout-title">Version Control Benefits</h3>
+<div class="callout-content">
+<p>Since <code>AGENTS.md</code> is a simple text file and can be easily
+version-controlled alongside your code, e.g. using <code>git</code>,
+it:</p>
+<ul>
+<li>Evolves with your project</li>
+<li>Can be reviewed and improved through pull requests</li>
+<li>Maintains consistency across different development stages</li>
+<li>Provides historical context for coding decisions</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="example-agents-md-for-an-r-project">Example: AGENTS.md for an R Project<a class="anchor" aria-label="anchor" href="#example-agents-md-for-an-r-project"></a>
+</h2>
+<hr class="half-width">
+<p>Here’s a comprehensive but quite extensive example of an
+<code>AGENTS.md</code> file for an R project that emphasizes tidyverse
+principles and functional programming patterns:</p>
+<div class="codewrapper sourceCode" id="cb2">
+<h3 class="code-label">MARKDOWN<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode markdown" tabindex="0"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="fu"># AGENTS.md - R Project Coding Guidelines</span></span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="fu">## Overview</span></span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a>This R project follows tidyverse conventions and functional programming principles. </span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a>AI assistants should generate code that adheres to these guidelines.</span>
+<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a><span class="fu">## Language and Framework</span></span>
+<span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" tabindex="-1"></a><span class="ss">- </span>**Primary Language**: R (version 4.1 or higher)</span>
+<span id="cb2-11"><a href="#cb2-11" tabindex="-1"></a><span class="ss">- </span>**Core Framework**: tidyverse</span>
+<span id="cb2-12"><a href="#cb2-12" tabindex="-1"></a><span class="ss">- </span>**Required Packages**: dplyr, tidyr, ggplot2, purrr, readr</span>
+<span id="cb2-13"><a href="#cb2-13" tabindex="-1"></a></span>
+<span id="cb2-14"><a href="#cb2-14" tabindex="-1"></a><span class="fu">## Code Style Principles</span></span>
+<span id="cb2-15"><a href="#cb2-15" tabindex="-1"></a></span>
+<span id="cb2-16"><a href="#cb2-16" tabindex="-1"></a><span class="fu">### 1. Mandatory Tidyverse Usage</span></span>
+<span id="cb2-17"><a href="#cb2-17" tabindex="-1"></a></span>
+<span id="cb2-18"><a href="#cb2-18" tabindex="-1"></a>All data manipulation and analysis code MUST use tidyverse packages and functions.</span>
+<span id="cb2-19"><a href="#cb2-19" tabindex="-1"></a></span>
+<span id="cb2-20"><a href="#cb2-20" tabindex="-1"></a>**Prefer:**</span>
+<span id="cb2-21"><a href="#cb2-21" tabindex="-1"></a><span class="in">```r</span></span>
+<span id="cb2-22"><a href="#cb2-22" tabindex="-1"></a>mtcars <span class="sc">%&gt;%</span></span>
+<span id="cb2-23"><a href="#cb2-23" tabindex="-1"></a>  <span class="fu">filter</span>(mpg <span class="sc">&gt;</span> <span class="dv">20</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb2-24"><a href="#cb2-24" tabindex="-1"></a>  <span class="fu">select</span>(mpg, cyl, hp)</span>
+<span id="cb2-25"><a href="#cb2-25" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-26"><a href="#cb2-26" tabindex="-1"></a></span>
+<span id="cb2-27"><a href="#cb2-27" tabindex="-1"></a>**Avoid:**</span>
+<span id="cb2-28"><a href="#cb2-28" tabindex="-1"></a><span class="in">```r</span></span>
+<span id="cb2-29"><a href="#cb2-29" tabindex="-1"></a>mtcars[mtcars<span class="sc">$</span>mpg <span class="sc">&gt;</span> <span class="dv">20</span>, <span class="fu">c</span>(<span class="st">"mpg"</span>, <span class="st">"cyl"</span>, <span class="st">"hp"</span>)]</span>
+<span id="cb2-30"><a href="#cb2-30" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-31"><a href="#cb2-31" tabindex="-1"></a></span>
+<span id="cb2-32"><a href="#cb2-32" tabindex="-1"></a><span class="fu">### 2. Piping Over Local Variables</span></span>
+<span id="cb2-33"><a href="#cb2-33" tabindex="-1"></a></span>
+<span id="cb2-34"><a href="#cb2-34" tabindex="-1"></a>ALWAYS favor piping operations over creating intermediate local variables.</span>
+<span id="cb2-35"><a href="#cb2-35" tabindex="-1"></a></span>
+<span id="cb2-36"><a href="#cb2-36" tabindex="-1"></a>**Prefer:**</span>
+<span id="cb2-37"><a href="#cb2-37" tabindex="-1"></a><span class="in">```r</span></span>
+<span id="cb2-38"><a href="#cb2-38" tabindex="-1"></a>mtcars <span class="sc">%&gt;%</span></span>
+<span id="cb2-39"><a href="#cb2-39" tabindex="-1"></a>  <span class="fu">filter</span>(cyl <span class="sc">==</span> <span class="dv">6</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb2-40"><a href="#cb2-40" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">efficiency =</span> mpg <span class="sc">/</span> hp) <span class="sc">%&gt;%</span></span>
+<span id="cb2-41"><a href="#cb2-41" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(efficiency)) <span class="sc">%&gt;%</span></span>
+<span id="cb2-42"><a href="#cb2-42" tabindex="-1"></a>  <span class="fu">head</span>(<span class="dv">10</span>)</span>
+<span id="cb2-43"><a href="#cb2-43" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-44"><a href="#cb2-44" tabindex="-1"></a></span>
+<span id="cb2-45"><a href="#cb2-45" tabindex="-1"></a>**Avoid:**</span>
+<span id="cb2-46"><a href="#cb2-46" tabindex="-1"></a><span class="in">```r</span></span>
+<span id="cb2-47"><a href="#cb2-47" tabindex="-1"></a>cars_filtered <span class="ot">&lt;-</span> <span class="fu">filter</span>(mtcars, cyl <span class="sc">==</span> <span class="dv">6</span>)</span>
+<span id="cb2-48"><a href="#cb2-48" tabindex="-1"></a>cars_mutated <span class="ot">&lt;-</span> <span class="fu">mutate</span>(cars_filtered, <span class="at">efficiency =</span> mpg <span class="sc">/</span> hp)</span>
+<span id="cb2-49"><a href="#cb2-49" tabindex="-1"></a>cars_sorted <span class="ot">&lt;-</span> <span class="fu">arrange</span>(cars_mutated, <span class="fu">desc</span>(efficiency))</span>
+<span id="cb2-50"><a href="#cb2-50" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">head</span>(cars_sorted, <span class="dv">10</span>)</span>
+<span id="cb2-51"><a href="#cb2-51" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-52"><a href="#cb2-52" tabindex="-1"></a></span>
+<span id="cb2-53"><a href="#cb2-53" tabindex="-1"></a><span class="fu">### 3. Prohibition of Variable Overwriting</span></span>
+<span id="cb2-54"><a href="#cb2-54" tabindex="-1"></a></span>
+<span id="cb2-55"><a href="#cb2-55" tabindex="-1"></a>NEVER overwrite existing variables. Use piping to transform data in a single flow.</span>
+<span id="cb2-56"><a href="#cb2-56" tabindex="-1"></a></span>
+<span id="cb2-57"><a href="#cb2-57" tabindex="-1"></a>**Forbidden:**</span>
+<span id="cb2-58"><a href="#cb2-58" tabindex="-1"></a><span class="in">```r</span></span>
+<span id="cb2-59"><a href="#cb2-59" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"input.csv"</span>)</span>
+<span id="cb2-60"><a href="#cb2-60" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">filter</span>(data, value <span class="sc">&gt;</span> <span class="dv">0</span>)</span>
+<span id="cb2-61"><a href="#cb2-61" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">mutate</span>(data, <span class="at">log_value =</span> <span class="fu">log</span>(value))</span>
+<span id="cb2-62"><a href="#cb2-62" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">arrange</span>(data, date)</span>
+<span id="cb2-63"><a href="#cb2-63" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-64"><a href="#cb2-64" tabindex="-1"></a></span>
+<span id="cb2-65"><a href="#cb2-65" tabindex="-1"></a>**Required:**</span>
+<span id="cb2-66"><a href="#cb2-66" tabindex="-1"></a><span class="in">```r</span></span>
+<span id="cb2-67"><a href="#cb2-67" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"input.csv"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb2-68"><a href="#cb2-68" tabindex="-1"></a>  <span class="fu">filter</span>(value <span class="sc">&gt;</span> <span class="dv">0</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb2-69"><a href="#cb2-69" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">log_value =</span> <span class="fu">log</span>(value)) <span class="sc">%&gt;%</span></span>
+<span id="cb2-70"><a href="#cb2-70" tabindex="-1"></a>  <span class="fu">arrange</span>(date)</span>
+<span id="cb2-71"><a href="#cb2-71" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-72"><a href="#cb2-72" tabindex="-1"></a></span>
+<span id="cb2-73"><a href="#cb2-73" tabindex="-1"></a><span class="fu">### 4. Sparse Use of Local Variables</span></span>
+<span id="cb2-74"><a href="#cb2-74" tabindex="-1"></a></span>
+<span id="cb2-75"><a href="#cb2-75" tabindex="-1"></a>Minimize the creation of intermediate variables. Only create local variables when:</span>
+<span id="cb2-76"><a href="#cb2-76" tabindex="-1"></a><span class="ss">- </span>The result will be used multiple times in different contexts</span>
+<span id="cb2-77"><a href="#cb2-77" tabindex="-1"></a><span class="ss">- </span>The variable name significantly improves code readability</span>
+<span id="cb2-78"><a href="#cb2-78" tabindex="-1"></a><span class="ss">- </span>The computation is expensive and should not be repeated</span>
+<span id="cb2-79"><a href="#cb2-79" tabindex="-1"></a></span>
+<span id="cb2-80"><a href="#cb2-80" tabindex="-1"></a>**Acceptable local variable usage:**</span>
+<span id="cb2-81"><a href="#cb2-81" tabindex="-1"></a><span class="in">```r</span></span>
+<span id="cb2-82"><a href="#cb2-82" tabindex="-1"></a><span class="co"># Used in multiple independent operations</span></span>
+<span id="cb2-83"><a href="#cb2-83" tabindex="-1"></a>base_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data.csv"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb2-84"><a href="#cb2-84" tabindex="-1"></a>  <span class="fu">filter</span>(status <span class="sc">==</span> <span class="st">"active"</span>)</span>
+<span id="cb2-85"><a href="#cb2-85" tabindex="-1"></a></span>
+<span id="cb2-86"><a href="#cb2-86" tabindex="-1"></a>summary_stats <span class="ot">&lt;-</span> base_data <span class="sc">%&gt;%</span></span>
+<span id="cb2-87"><a href="#cb2-87" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_value =</span> <span class="fu">mean</span>(value), <span class="at">sd_value =</span> <span class="fu">sd</span>(value))</span>
+<span id="cb2-88"><a href="#cb2-88" tabindex="-1"></a></span>
+<span id="cb2-89"><a href="#cb2-89" tabindex="-1"></a>detailed_analysis <span class="ot">&lt;-</span> base_data <span class="sc">%&gt;%</span></span>
+<span id="cb2-90"><a href="#cb2-90" tabindex="-1"></a>  <span class="fu">group_by</span>(category) <span class="sc">%&gt;%</span></span>
+<span id="cb2-91"><a href="#cb2-91" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="fu">across</span>(<span class="fu">where</span>(is.numeric), <span class="fu">list</span>(<span class="at">mean =</span> mean, <span class="at">sd =</span> sd)))</span>
+<span id="cb2-92"><a href="#cb2-92" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-93"><a href="#cb2-93" tabindex="-1"></a></span>
+<span id="cb2-94"><a href="#cb2-94" tabindex="-1"></a><span class="fu">### 5. Multiline Pipes with Documentation</span></span>
+<span id="cb2-95"><a href="#cb2-95" tabindex="-1"></a></span>
+<span id="cb2-96"><a href="#cb2-96" tabindex="-1"></a>Pipelines MUST be formatted across multiple lines with inline documentation.</span>
+<span id="cb2-97"><a href="#cb2-97" tabindex="-1"></a></span>
+<span id="cb2-98"><a href="#cb2-98" tabindex="-1"></a>**Required format:**</span>
+<span id="cb2-99"><a href="#cb2-99" tabindex="-1"></a><span class="in">```r</span></span>
+<span id="cb2-100"><a href="#cb2-100" tabindex="-1"></a>analysis_results <span class="ot">&lt;-</span> raw_data <span class="sc">%&gt;%</span></span>
+<span id="cb2-101"><a href="#cb2-101" tabindex="-1"></a>  <span class="co"># Remove incomplete cases and outliers</span></span>
+<span id="cb2-102"><a href="#cb2-102" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">complete.cases</span>(.), <span class="fu">between</span>(value, <span class="dv">0</span>, <span class="dv">100</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb2-103"><a href="#cb2-103" tabindex="-1"></a>  <span class="co"># Normalize values by group</span></span>
+<span id="cb2-104"><a href="#cb2-104" tabindex="-1"></a>  <span class="fu">group_by</span>(category) <span class="sc">%&gt;%</span></span>
+<span id="cb2-105"><a href="#cb2-105" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">normalized =</span> (value <span class="sc">-</span> <span class="fu">mean</span>(value)) <span class="sc">/</span> <span class="fu">sd</span>(value)) <span class="sc">%&gt;%</span></span>
+<span id="cb2-106"><a href="#cb2-106" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb2-107"><a href="#cb2-107" tabindex="-1"></a>  <span class="co"># Calculate derived metrics</span></span>
+<span id="cb2-108"><a href="#cb2-108" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb2-109"><a href="#cb2-109" tabindex="-1"></a>    <span class="at">log_value =</span> <span class="fu">log1p</span>(value),</span>
+<span id="cb2-110"><a href="#cb2-110" tabindex="-1"></a>    <span class="at">squared_value =</span> value<span class="sc">^</span><span class="dv">2</span>,</span>
+<span id="cb2-111"><a href="#cb2-111" tabindex="-1"></a>    <span class="at">interaction =</span> value <span class="sc">*</span> normalized</span>
+<span id="cb2-112"><a href="#cb2-112" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb2-113"><a href="#cb2-113" tabindex="-1"></a>  <span class="co"># Sort by importance</span></span>
+<span id="cb2-114"><a href="#cb2-114" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(<span class="fu">abs</span>(normalized)))</span>
+<span id="cb2-115"><a href="#cb2-115" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-116"><a href="#cb2-116" tabindex="-1"></a></span>
+<span id="cb2-117"><a href="#cb2-117" tabindex="-1"></a>Each step in a pipeline should:</span>
+<span id="cb2-118"><a href="#cb2-118" tabindex="-1"></a><span class="ss">- </span>Be on its own line</span>
+<span id="cb2-119"><a href="#cb2-119" tabindex="-1"></a><span class="ss">- </span>Have a preceding comment explaining its purpose</span>
+<span id="cb2-120"><a href="#cb2-120" tabindex="-1"></a><span class="ss">- </span>Use meaningful intermediate calculations when needed</span>
+<span id="cb2-121"><a href="#cb2-121" tabindex="-1"></a></span>
+<span id="cb2-122"><a href="#cb2-122" tabindex="-1"></a><span class="fu">### 6. Function Definitions</span></span>
+<span id="cb2-123"><a href="#cb2-123" tabindex="-1"></a></span>
+<span id="cb2-124"><a href="#cb2-124" tabindex="-1"></a>Functions should also follow piping principles when applicable:</span>
+<span id="cb2-125"><a href="#cb2-125" tabindex="-1"></a></span>
+<span id="cb2-126"><a href="#cb2-126" tabindex="-1"></a><span class="in">```r</span></span>
+<span id="cb2-127"><a href="#cb2-127" tabindex="-1"></a>process_dataset <span class="ot">&lt;-</span> <span class="cf">function</span>(data, <span class="at">threshold =</span> <span class="fl">0.05</span>) {</span>
+<span id="cb2-128"><a href="#cb2-128" tabindex="-1"></a>  data <span class="sc">%&gt;%</span></span>
+<span id="cb2-129"><a href="#cb2-129" tabindex="-1"></a>    <span class="co"># Filter based on significance threshold</span></span>
+<span id="cb2-130"><a href="#cb2-130" tabindex="-1"></a>    <span class="fu">filter</span>(p_value <span class="sc">&lt;</span> threshold) <span class="sc">%&gt;%</span></span>
+<span id="cb2-131"><a href="#cb2-131" tabindex="-1"></a>    <span class="co"># Calculate effect sizes</span></span>
+<span id="cb2-132"><a href="#cb2-132" tabindex="-1"></a>    <span class="fu">mutate</span>(</span>
+<span id="cb2-133"><a href="#cb2-133" tabindex="-1"></a>      <span class="at">effect_size =</span> (mean_treatment <span class="sc">-</span> mean_control) <span class="sc">/</span> pooled_sd,</span>
+<span id="cb2-134"><a href="#cb2-134" tabindex="-1"></a>      <span class="at">ci_lower =</span> effect_size <span class="sc">-</span> <span class="fl">1.96</span> <span class="sc">*</span> se,</span>
+<span id="cb2-135"><a href="#cb2-135" tabindex="-1"></a>      <span class="at">ci_upper =</span> effect_size <span class="sc">+</span> <span class="fl">1.96</span> <span class="sc">*</span> se</span>
+<span id="cb2-136"><a href="#cb2-136" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span></span>
+<span id="cb2-137"><a href="#cb2-137" tabindex="-1"></a>    <span class="co"># Add interpretation</span></span>
+<span id="cb2-138"><a href="#cb2-138" tabindex="-1"></a>    <span class="fu">mutate</span>(</span>
+<span id="cb2-139"><a href="#cb2-139" tabindex="-1"></a>      <span class="at">significant =</span> p_value <span class="sc">&lt;</span> threshold,</span>
+<span id="cb2-140"><a href="#cb2-140" tabindex="-1"></a>      <span class="at">effect_magnitude =</span> <span class="fu">case_when</span>(</span>
+<span id="cb2-141"><a href="#cb2-141" tabindex="-1"></a>        <span class="fu">abs</span>(effect_size) <span class="sc">&lt;</span> <span class="fl">0.2</span> <span class="sc">~</span> <span class="st">"small"</span>,</span>
+<span id="cb2-142"><a href="#cb2-142" tabindex="-1"></a>        <span class="fu">abs</span>(effect_size) <span class="sc">&lt;</span> <span class="fl">0.8</span> <span class="sc">~</span> <span class="st">"medium"</span>,</span>
+<span id="cb2-143"><a href="#cb2-143" tabindex="-1"></a>        <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"large"</span></span>
+<span id="cb2-144"><a href="#cb2-144" tabindex="-1"></a>      )</span>
+<span id="cb2-145"><a href="#cb2-145" tabindex="-1"></a>    )</span>
+<span id="cb2-146"><a href="#cb2-146" tabindex="-1"></a>}</span>
+<span id="cb2-147"><a href="#cb2-147" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-148"><a href="#cb2-148" tabindex="-1"></a></span>
+<span id="cb2-149"><a href="#cb2-149" tabindex="-1"></a><span class="fu">## Forbidden Patterns</span></span>
+<span id="cb2-150"><a href="#cb2-150" tabindex="-1"></a></span>
+<span id="cb2-151"><a href="#cb2-151" tabindex="-1"></a><span class="ss">1. </span>**Loop-based operations** when vectorized or tidyverse alternatives exist</span>
+<span id="cb2-152"><a href="#cb2-152" tabindex="-1"></a><span class="ss">2. </span>**Direct variable assignment in loops** - use <span class="in">`purrr::map()`</span> family instead</span>
+<span id="cb2-153"><a href="#cb2-153" tabindex="-1"></a><span class="ss">3. </span>**Base R subsetting syntax** - use <span class="in">`dplyr::filter()`</span> and <span class="in">`dplyr::select()`</span></span>
+<span id="cb2-154"><a href="#cb2-154" tabindex="-1"></a><span class="ss">4. </span>**Nested function calls** without pipes when multiple operations are chained</span>
+<span id="cb2-155"><a href="#cb2-155" tabindex="-1"></a><span class="ss">5. </span>**`attach()` function** - always use explicit data references</span>
+<span id="cb2-156"><a href="#cb2-156" tabindex="-1"></a></span>
+<span id="cb2-157"><a href="#cb2-157" tabindex="-1"></a><span class="fu">## Documentation Standards</span></span>
+<span id="cb2-158"><a href="#cb2-158" tabindex="-1"></a></span>
+<span id="cb2-159"><a href="#cb2-159" tabindex="-1"></a><span class="ss">- </span>Use roxygen2-style comments for all functions</span>
+<span id="cb2-160"><a href="#cb2-160" tabindex="-1"></a><span class="ss">- </span>Include inline comments for complex pipeline steps</span>
+<span id="cb2-161"><a href="#cb2-161" tabindex="-1"></a><span class="ss">- </span>Document assumptions and data requirements</span>
+<span id="cb2-162"><a href="#cb2-162" tabindex="-1"></a><span class="ss">- </span>Explain any deviations from these guidelines (rare cases only)</span>
+<span id="cb2-163"><a href="#cb2-163" tabindex="-1"></a></span>
+<span id="cb2-164"><a href="#cb2-164" tabindex="-1"></a><span class="fu">## Examples of Complete Workflows</span></span>
+<span id="cb2-165"><a href="#cb2-165" tabindex="-1"></a></span>
+<span id="cb2-166"><a href="#cb2-166" tabindex="-1"></a><span class="fu">### Data Import and Cleaning</span></span>
+<span id="cb2-167"><a href="#cb2-167" tabindex="-1"></a><span class="in">```r</span></span>
+<span id="cb2-168"><a href="#cb2-168" tabindex="-1"></a>cleaned_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"raw_data.csv"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb2-169"><a href="#cb2-169" tabindex="-1"></a>  <span class="co"># Handle missing values</span></span>
+<span id="cb2-170"><a href="#cb2-170" tabindex="-1"></a>  <span class="fu">drop_na</span>(key_columns) <span class="sc">%&gt;%</span></span>
+<span id="cb2-171"><a href="#cb2-171" tabindex="-1"></a>  <span class="co"># Standardize column names</span></span>
+<span id="cb2-172"><a href="#cb2-172" tabindex="-1"></a>  <span class="fu">rename_with</span>(tolower) <span class="sc">%&gt;%</span></span>
+<span id="cb2-173"><a href="#cb2-173" tabindex="-1"></a>  <span class="co"># Type conversion</span></span>
+<span id="cb2-174"><a href="#cb2-174" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">ends_with</span>(<span class="st">"_date"</span>), ymd)) <span class="sc">%&gt;%</span></span>
+<span id="cb2-175"><a href="#cb2-175" tabindex="-1"></a>  <span class="co"># Remove duplicates</span></span>
+<span id="cb2-176"><a href="#cb2-176" tabindex="-1"></a>  <span class="fu">distinct</span>()</span>
+<span id="cb2-177"><a href="#cb2-177" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-178"><a href="#cb2-178" tabindex="-1"></a></span>
+<span id="cb2-179"><a href="#cb2-179" tabindex="-1"></a><span class="fu">### Analysis Pipeline</span></span>
+<span id="cb2-180"><a href="#cb2-180" tabindex="-1"></a><span class="in">```r</span></span>
+<span id="cb2-181"><a href="#cb2-181" tabindex="-1"></a>analysis <span class="ot">&lt;-</span> cleaned_data <span class="sc">%&gt;%</span></span>
+<span id="cb2-182"><a href="#cb2-182" tabindex="-1"></a>  <span class="co"># Subset to relevant period</span></span>
+<span id="cb2-183"><a href="#cb2-183" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">between</span>(date, start_date, end_date)) <span class="sc">%&gt;%</span></span>
+<span id="cb2-184"><a href="#cb2-184" tabindex="-1"></a>  <span class="co"># Group-level transformations</span></span>
+<span id="cb2-185"><a href="#cb2-185" tabindex="-1"></a>  <span class="fu">group_by</span>(category, region) <span class="sc">%&gt;%</span></span>
+<span id="cb2-186"><a href="#cb2-186" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb2-187"><a href="#cb2-187" tabindex="-1"></a>    <span class="at">n_obs =</span> <span class="fu">n</span>(),</span>
+<span id="cb2-188"><a href="#cb2-188" tabindex="-1"></a>    <span class="at">mean_value =</span> <span class="fu">mean</span>(value, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb2-189"><a href="#cb2-189" tabindex="-1"></a>    <span class="at">median_value =</span> <span class="fu">median</span>(value, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb2-190"><a href="#cb2-190" tabindex="-1"></a>    <span class="at">.groups =</span> <span class="st">"drop"</span></span>
+<span id="cb2-191"><a href="#cb2-191" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb2-192"><a href="#cb2-192" tabindex="-1"></a>  <span class="co"># Calculate derived metrics</span></span>
+<span id="cb2-193"><a href="#cb2-193" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb2-194"><a href="#cb2-194" tabindex="-1"></a>    <span class="at">relative_value =</span> mean_value <span class="sc">/</span> median_value,</span>
+<span id="cb2-195"><a href="#cb2-195" tabindex="-1"></a>    <span class="at">weight =</span> n_obs <span class="sc">/</span> <span class="fu">sum</span>(n_obs)</span>
+<span id="cb2-196"><a href="#cb2-196" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb2-197"><a href="#cb2-197" tabindex="-1"></a>  <span class="co"># Final filtering</span></span>
+<span id="cb2-198"><a href="#cb2-198" tabindex="-1"></a>  <span class="fu">filter</span>(n_obs <span class="sc">&gt;=</span> min_sample_size)</span>
+<span id="cb2-199"><a href="#cb2-199" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-200"><a href="#cb2-200" tabindex="-1"></a></span>
+<span id="cb2-201"><a href="#cb2-201" tabindex="-1"></a><span class="fu">## Additional Guidelines</span></span>
+<span id="cb2-202"><a href="#cb2-202" tabindex="-1"></a></span>
+<span id="cb2-203"><a href="#cb2-203" tabindex="-1"></a><span class="ss">- </span>Prefer <span class="in">`tibble`</span> over <span class="in">`data.frame`</span></span>
+<span id="cb2-204"><a href="#cb2-204" tabindex="-1"></a><span class="ss">- </span>Use <span class="in">`readr::read_*()`</span> over base R <span class="in">`read.*()`</span> functions</span>
+<span id="cb2-205"><a href="#cb2-205" tabindex="-1"></a><span class="ss">- </span>Always specify <span class="in">`.groups`</span> argument when using <span class="in">`summarize()`</span> with <span class="in">`group_by()`</span></span>
+<span id="cb2-206"><a href="#cb2-206" tabindex="-1"></a><span class="ss">- </span>Use <span class="in">`across()`</span> for operations on multiple columns</span>
+<span id="cb2-207"><a href="#cb2-207" tabindex="-1"></a><span class="ss">- </span>Leverage <span class="in">`case_when()`</span> for complex conditional logic</span></code></pre>
+</div>
+<div id="challenge-1-create-your-own-agents.md" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<span class="callout-header">Challenge</span>
+<div id="challenge-1-create-your-own-agents.md" class="callout-inner">
+<h3 class="callout-title">Challenge 1: Create Your Own AGENTS.md</h3>
+<div class="callout-content">
+<p>Create an <code>AGENTS.md</code> file for one of your own R projects.
+Consider:</p>
+<ol style="list-style-type: decimal">
+<li>What coding style do you prefer?</li>
+<li>Which packages should be favored?</li>
+<li>What patterns should be avoided?</li>
+<li>How should functions be documented?</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
+  <h4 class="accordion-header" id="headingSolution1">
+  Example Solution
+  </h4>
+</button>
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div class="accordion-body">
+<p>Your <code>AGENTS.md</code> should include:</p>
+<ul>
+<li>Clear statement of purpose</li>
+<li>Specific package preferences with examples</li>
+<li>Do’s and don’ts with code comparisons</li>
+<li>Documentation requirements</li>
+<li>Examples of good practices</li>
+</ul>
+<p>Remember: Start simple and expand based on your project’s needs.</p>
+</div>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="other-options-to-specify-context">Other Options to Specify Context<a class="anchor" aria-label="anchor" href="#other-options-to-specify-context"></a>
+</h2>
+<hr class="half-width">
+<p>While AGENTS.md is a powerful tool, there are several complementary
+or alternative approaches to providing context to AI assistants:</p>
+<div class="section level3">
+<h3 id="inline-comments-and-documentation">1. Inline Comments and Documentation<a class="anchor" aria-label="anchor" href="#inline-comments-and-documentation"></a>
+</h3>
+<p>AI assistants can learn from well-documented code:</p>
+<div class="codewrapper sourceCode" id="cb3">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># This project uses tidyverse conventions exclusively</span></span>
+<span><span class="kw">library</span><span class="op">(</span><span class="va">tidyverse</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co">#' Process customer data following tidyverse patterns</span></span>
+<span><span class="co">#' </span></span>
+<span><span class="co">#' @param data A tibble with customer information</span></span>
+<span><span class="co">#' @return A processed tibble with standardized columns</span></span>
+<span><span class="co">#' @examples</span></span>
+<span><span class="co">#' process_customers(raw_customers)</span></span>
+<span><span class="va">process_customers</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">data</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="co"># Always use piping for multi-step transformations</span></span>
+<span>  <span class="va">data</span> <span class="op">%&gt;%</span></span>
+<span>    <span class="fu">filter</span><span class="op">(</span><span class="op">!</span><span class="fu">is.na</span><span class="op">(</span><span class="va">customer_id</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>    <span class="fu">mutate</span><span class="op">(</span>name <span class="op">=</span> <span class="fu">str_to_title</span><span class="op">(</span><span class="va">name</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="op">}</span></span></code></pre>
+</div>
+</div>
+<div class="section level3">
+<h3 id="chat-instructions">2. Chat Instructions<a class="anchor" aria-label="anchor" href="#chat-instructions"></a>
+</h3>
+<p>When using AI chat interfaces, provide context explicitly:</p>
+<pre><code>I'm working on an R project that follows strict tidyverse conventions.
+Please generate all code using:
+
+- dplyr for data manipulation
+- Piping (%&gt;%) for all multi-step operations
+- No variable overwriting
+- Comments before each pipe step</code></pre>
+</div>
+<div class="section level3">
+<h3 id="project-readme-files">3. Project README Files<a class="anchor" aria-label="anchor" href="#project-readme-files"></a>
+</h3>
+<p>Include coding standards in your README.md:</p>
+<div class="codewrapper sourceCode" id="cb5">
+<h3 class="code-label">MARKDOWN<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode markdown" tabindex="0"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="fu">## Coding Standards</span></span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a>This project follows tidyverse conventions. All contributions must:</span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a><span class="ss">- </span>Use tidyverse packages</span>
+<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a><span class="ss">- </span>Implement piping for data transformations</span>
+<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a><span class="ss">- </span>Avoid variable overwriting</span>
+<span id="cb5-8"><a href="#cb5-8" tabindex="-1"></a><span class="ss">- </span>Include inline documentation</span></code></pre>
+</div>
+</div>
+<div class="section level3">
+<h3 id="code-templates-and-snippets">4. Code Templates and Snippets<a class="anchor" aria-label="anchor" href="#code-templates-and-snippets"></a>
+</h3>
+<p>Create RStudio code snippets that enforce your patterns:</p>
+<div class="codewrapper sourceCode" id="cb6">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="co"># In RStudio: Tools &gt; Global Options &gt; Code &gt; Snippets</span></span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a>snippet tidypipe</span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a>	<span class="sc">$</span>{<span class="dv">1</span><span class="sc">:</span>data} <span class="sc">%&gt;%</span></span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a>		<span class="co"># ${2:description}</span></span>
+<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a>		<span class="er">$</span>{<span class="dv">3</span><span class="sc">:</span>operation}() <span class="sc">%&gt;%</span></span>
+<span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a>		<span class="co"># ${4:description}</span></span>
+<span id="cb6-7"><a href="#cb6-7" tabindex="-1"></a>		<span class="er">$</span>{<span class="dv">5</span><span class="sc">:</span>operation}()</span></code></pre>
+</div>
+</div>
+<div class="section level3">
+<h3 id="style-guides-with-tools">5. Style Guides with Tools<a class="anchor" aria-label="anchor" href="#style-guides-with-tools"></a>
+</h3>
+<p>Use automated style checking tools like <a href="https://lintr.r-lib.org/" class="external-link"><code>lintr</code></a> to enforce
+standards:</p>
+<div class="codewrapper sourceCode" id="cb7">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># .lintr configuration</span></span>
+<span><span class="va">linters</span><span class="op">:</span> <span class="fu">linters_with_defaults</span><span class="op">(</span></span>
+<span>  <span class="fu">line_length_linter</span><span class="op">(</span><span class="fl">120</span><span class="op">)</span>,</span>
+<span>  object_usage_linter <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  <span class="co"># Enforce tidyverse style</span></span>
+<span>  <span class="fu">assignment_linter</span><span class="op">(</span><span class="op">)</span>,</span>
+<span>  <span class="fu">pipe_continuation_linter</span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="op">)</span></span></code></pre>
+</div>
+</div>
+<div class="section level3">
+<h3 id="pre-commit-hooks">6. Pre-commit Hooks<a class="anchor" aria-label="anchor" href="#pre-commit-hooks"></a>
+</h3>
+<p>Enforce standards before code is committed via <a href="https://stefaniemolin.com/articles/devx/pre-commit/setup-guide/" class="external-link">pre-commit
+hooks</a></p>
+<div class="codewrapper sourceCode" id="cb8">
+<h3 class="code-label">YAML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="co"># .pre-commit-config.yaml</span></span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a><span class="fu">repos</span><span class="kw">:</span></span>
+<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">repo</span><span class="kw">:</span><span class="at"> https://github.com/lorenzwalthert/precommit</span></span>
+<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a><span class="at">    </span><span class="fu">rev</span><span class="kw">:</span><span class="at"> v0.3.2</span></span>
+<span id="cb8-5"><a href="#cb8-5" tabindex="-1"></a><span class="at">    </span><span class="fu">hooks</span><span class="kw">:</span></span>
+<span id="cb8-6"><a href="#cb8-6" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> style-files</span></span>
+<span id="cb8-7"><a href="#cb8-7" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> lintr</span></span></code></pre>
+</div>
+</div>
+<div class="section level3">
+<h3 id="copilot-instructions-in-ide">7. Copilot Instructions in IDE<a class="anchor" aria-label="anchor" href="#copilot-instructions-in-ide"></a>
+</h3>
+<p>Some IDEs allow workspace-specific instructions for AI assistants.
+While specific settings vary by tool and may evolve, the concept
+involves configuring your IDE to provide additional context files or
+instructions to the AI assistant.</p>
+<div id="note-on-ide-specific-settings" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div id="note-on-ide-specific-settings" class="callout-inner">
+<h3 class="callout-title">Note on IDE-Specific Settings</h3>
+<div class="callout-content">
+<p>The availability and configuration of AI assistant settings varies
+across IDEs and tools. Check your specific IDE’s documentation for
+current options to provide context to AI coding assistants.</p>
+</div>
+</div>
+</div>
+<div id="combining-approaches" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div id="combining-approaches" class="callout-inner">
+<h3 class="callout-title">Combining Approaches</h3>
+<div class="callout-content">
+<p>The most effective strategy often combines multiple approaches:</p>
+<ol style="list-style-type: decimal">
+<li>
+<strong>AGENTS.md</strong> for comprehensive, machine-readable
+guidelines</li>
+<li>
+<strong>Inline comments</strong> for implementation-specific
+context</li>
+<li>
+<strong>Chat instructions</strong> for interactive sessions</li>
+<li>
+<strong>Automated tools</strong> for enforcement</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="best-practices-for-context-definitions">Best Practices for Context Definitions<a class="anchor" aria-label="anchor" href="#best-practices-for-context-definitions"></a>
+</h2>
+<hr class="half-width">
+<div class="section level3">
+<h3 id="keep-it-focused">Keep It Focused<a class="anchor" aria-label="anchor" href="#keep-it-focused"></a>
+</h3>
+<ul>
+<li>Start with the most important rules</li>
+<li>Don’t try to specify everything at once</li>
+<li>Expand based on actual needs and pain points</li>
+</ul>
+</div>
+<div class="section level3">
+<h3 id="use-examples-liberally">Use Examples Liberally<a class="anchor" aria-label="anchor" href="#use-examples-liberally"></a>
+</h3>
+<ul>
+<li>Show preferred patterns with code examples</li>
+<li>Demonstrate anti-patterns to avoid</li>
+<li>Include both simple and complex scenarios</li>
+</ul>
+</div>
+<div class="section level3">
+<h3 id="make-it-discoverable">Make It Discoverable<a class="anchor" aria-label="anchor" href="#make-it-discoverable"></a>
+</h3>
+<ul>
+<li>Place context files in repository root</li>
+<li>Reference them in README and contributing guides</li>
+<li>Keep them up-to-date with project evolution</li>
+</ul>
+</div>
+<div class="section level3">
+<h3 id="test-your-guidelines">Test Your Guidelines<a class="anchor" aria-label="anchor" href="#test-your-guidelines"></a>
+</h3>
+<ul>
+<li>Verify that AI actually follows your guidelines</li>
+<li>Iterate based on the quality of generated code</li>
+<li>Collect feedback from team members</li>
+</ul>
+</div>
+<div class="section level3">
+<h3 id="version-control-context">Version Control Context<a class="anchor" aria-label="anchor" href="#version-control-context"></a>
+</h3>
+<ul>
+<li>Track changes to context definitions</li>
+<li>Review updates through pull requests</li>
+<li>Document why rules were added or changed</li>
+</ul>
+<div id="challenge-2-context-specification-strategy" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<span class="callout-header">Challenge</span>
+<div id="challenge-2-context-specification-strategy" class="callout-inner">
+<h3 class="callout-title">Challenge 2: Context Specification
+Strategy</h3>
+<div class="callout-content">
+<p>For a team R project, design a context specification strategy that
+includes:</p>
+<ol style="list-style-type: decimal">
+<li>What would go in <code>AGENTS.md</code>?</li>
+<li>What would be better as inline comments?</li>
+<li>How would you communicate standards to new team members?</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
+  <h4 class="accordion-header" id="headingSolution2">
+  Example Strategy
+  </h4>
+</button>
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div class="accordion-body">
+<ol style="list-style-type: decimal">
+<li>
+<strong>AGENTS.md</strong>: Core style principles, mandatory
+patterns, forbidden practices</li>
+<li>
+<strong>Inline comments</strong>: Function-specific logic, data flow
+explanations, edge cases</li>
+<li>
+<strong>README.md</strong>: Quick-start guide, links to detailed
+standards, setup instructions</li>
+<li>
+<strong>Onboarding docs</strong>: Human-readable explanation of why
+standards exist, examples</li>
+<li>
+<strong>Code reviews</strong>: Consistent feedback referring to
+documented standards</li>
+</ol>
+<p>The key is redundancy across human and AI channels.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="summary">Summary<a class="anchor" aria-label="anchor" href="#summary"></a>
+</h2>
+<hr class="half-width">
+<p>Providing proper context to AI coding assistants is essential for
+generating high-quality, consistent code. The <code>AGENTS.md</code>
+concept offers a standardized, version-controlled approach to defining
+project-specific guidelines. Combined with other context specification
+methods, it creates a comprehensive environment where AI assistants can
+truly enhance your development workflow.</p>
+<div id="keypoints1" class="callout keypoints">
+<div class="callout-square">
+<i class="callout-icon" data-feather="key"></i>
+</div>
+<span class="callout-header">Key Points</span>
+<div class="callout-inner">
+<div class="callout-content">
+<ul>
+<li>Context definitions help AI assistants generate code that matches
+your project standards</li>
+<li>Context improves consistency: AI-generated code matches your project
+standards</li>
+<li>
+<code>AGENTS.md</code> provides a standardized, version-controlled,
+machine-readable way to specify coding guidelines</li>
+<li>Multiple <code>AGENTS.md</code> files can exist at different
+hierarchy levels; AI assistants use the closest file</li>
+<li>Effective <code>AGENTS.md</code> files include clear examples of
+preferred and forbidden patterns</li>
+<li>Start simple and iterate: Begin with core principles and expand
+based on needs</li>
+<li>Combining <code>AGENTS.md</code> with inline comments, chat
+instructions, and tooling creates robust context</li>
+<li>R projects benefit from explicit tidyverse usage and piping
+conventions in context definitions</li>
+</ul>
+</div>
+</div>
+</div>
+<!--
+Place links that you need to refer to multiple times across pages here. Delete
+any links that you are not going to use.
+ -->
 </section></section><section id="aio-ai-pipelines-ellmer"><p>Content from <a href="ai-pipelines-ellmer.html">Using AI within Pipelines via ellmer</a></p>
 <hr>
 <p>Last updated on 2025-11-10 |
@@ -3502,7 +3578,7 @@ file.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -3646,7 +3722,7 @@ findings</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Example Solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -3881,7 +3957,7 @@ posts <strong>Option B</strong>: Process customer support tickets
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Example for Option B: Support Tickets </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb19">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -5117,7 +5193,7 @@ appropriate code.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Example Solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">MARKDOWN<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -5425,7 +5501,7 @@ needed</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p><strong>GitHub Issue</strong>:</p>
 <div class="codewrapper sourceCode" id="cb16">
@@ -5617,7 +5693,7 @@ Dependencies between issues</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <p><strong>Parent Issue #80</strong>:</p>
 <div class="codewrapper sourceCode" id="cb23">
@@ -6022,8 +6098,8 @@ any links that you are not going to use.
   "url": "https://Dr-Eberle-Zentrum.github.io/AI-supported-coding-in-RStudio/instructor/aio.html",
   "identifier": "https://Dr-Eberle-Zentrum.github.io/AI-supported-coding-in-RStudio/instructor/aio.html",
   "dateCreated": "2024-11-10",
-  "dateModified": "2025-12-18",
-  "datePublished": "2025-12-18"
+  "dateModified": "2025-12-19",
+  "datePublished": "2025-12-19"
 }
 
   </script><script>

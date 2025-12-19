@@ -253,7 +253,7 @@
 <div class="accordion accordion-flush" id="accordionFlush5">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading5">
-        <a href="context-and-agents.html">4. Context Definition and the AGENTS.md Concept</a>
+        <a href="rstudio-autocompletion.html">4. RStudio Autocompletion with Copilot</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -262,7 +262,7 @@
 <div class="accordion accordion-flush" id="accordionFlush6">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading6">
-        <a href="rstudio-autocompletion.html">5. RStudio Autocompletion with Copilot</a>
+        <a href="context-and-agents.html">5. Context Definition and the AGENTS.md Concept</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -337,7 +337,7 @@
   <div class="col-xl-8 col-lg-12 primary-content">
     <nav class="lesson-content mx-md-4" aria-label="Previous and Next Chapter"><!-- content for small screens --><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="../instructor/where-ai-support.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
-        <a class="chapter-link float-end" href="../instructor/context-and-agents.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
+        <a class="chapter-link float-end" href="../instructor/rstudio-autocompletion.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
       </div>
       <!-- content for large screens -->
       <div class="d-none d-sm-none d-md-block">
@@ -345,14 +345,14 @@
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>
           Previous: Where Do We Need AI
         </a>
-        <a class="chapter-link float-end" href="../instructor/context-and-agents.html" rel="next">
-          Next: Context Definition...
+        <a class="chapter-link float-end" href="../instructor/rstudio-autocompletion.html" rel="next">
+          Next: RStudio...
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i>
         </a>
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Risks, Drawbacks and Responsibilities with AI Usage</h1>
-        <p>Last updated on 2025-11-17 |
+        <p>Last updated on 2025-12-19 |
 
         <a href="https://github.com/Dr-Eberle-Zentrum/AI-supported-coding-in-RStudio/edit/main/episodes/ai-risks-responsibilities.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -464,7 +464,9 @@ bugs:</p>
 <span><span class="op">}</span></span></code></pre>
 </div>
 <p><strong>Security risks include:</strong></p>
-<ul><li>SQL injection vulnerabilities (misuse/manipulation of the database
+<ul><li>
+<a href="https://portswigger.net/web-security/sql-injection" class="external-link">SQL
+injection vulnerabilities</a> (misuse/manipulation of the database
 request)</li>
 <li>Cross-site scripting (XSS) in web applications</li>
 <li>Hardcoded credentials or API keys</li>
@@ -497,7 +499,9 @@ request)</li>
 <h3 id="license-and-copyright-issues">4. License and Copyright Issues<a class="anchor" aria-label="anchor" href="#license-and-copyright-issues"></a></h3>
 <p>AI models are trained on public code repositories, which may
 include:</p>
-<ul><li>Code with restrictive licenses (GPL, AGPL)</li>
+<ul><li>Code with <a href="https://bearingpoint.services/foss/en/newsblogs/dont-be-afraid-of-gplv3/" class="external-link">restrictive
+licenses (e.g. GPL)</a>
+</li>
 <li>Proprietary code that shouldn’t have been public</li>
 <li>Code with unclear licensing</li>
 </ul><p><strong>Risks:</strong></p>
@@ -751,7 +755,7 @@ differ?</p>
   Observations
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p><strong>Poor prompt typically produces:</strong></p>
 <ul><li>Generic, vague code</li>
@@ -840,17 +844,22 @@ prompts or initial context to guide all subsequent suggestions.</p>
 <hr class="half-width"><div class="section level3">
 <h3 id="the-8020-rule">1. The 80/20 Rule<a class="anchor" aria-label="anchor" href="#the-8020-rule"></a></h3>
 <p>Use AI for the 80% of straightforward, repetitive tasks. Reserve
-human expertise for the critical 20% involving: - Complex algorithms -
-Security-sensitive code - Performance optimization - Architectural
-decisions - Domain-specific logic</p>
-</div>
+human expertise for the critical 20% involving:</p>
+<ul><li>Complex algorithms</li>
+<li>Security-sensitive code</li>
+<li>Performance optimization</li>
+<li>Architectural decisions</li>
+<li>Domain-specific logic</li>
+</ul></div>
 <div class="section level3">
 <h3 id="treat-ai-as-a-junior-developer">2. Treat AI as a Junior Developer<a class="anchor" aria-label="anchor" href="#treat-ai-as-a-junior-developer"></a></h3>
-<p>Think of AI as a smart but inexperienced assistant: - It needs clear
-instructions - It requires supervision - Its work must be reviewed - It
-shouldn’t handle critical tasks alone - It can help with routine
-work</p>
-</div>
+<p>Think of AI as a smart but inexperienced assistant:</p>
+<ul><li>It needs clear instructions</li>
+<li>It requires supervision</li>
+<li>Its work must be reviewed</li>
+<li>It shouldn’t handle critical tasks alone</li>
+<li>It can help with routine work</li>
+</ul></div>
 <div class="section level3">
 <h3 id="document-ai-usage">3. Document AI Usage<a class="anchor" aria-label="anchor" href="#document-ai-usage"></a></h3>
 <div class="codewrapper sourceCode" id="cb8">
@@ -1013,7 +1022,7 @@ any links that you are not going to use.
 </section></div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Previous and Next Chapter"><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="../instructor/where-ai-support.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
-        <a class="chapter-link float-end" href="../instructor/context-and-agents.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
+        <a class="chapter-link float-end" href="../instructor/rstudio-autocompletion.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
       </div>
       <!-- content for large screens -->
       <div class="d-none d-sm-none d-md-block">
@@ -1021,8 +1030,8 @@ any links that you are not going to use.
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>
           Previous: Where Do We Need AI
         </a>
-        <a class="chapter-link float-end" href="../instructor/context-and-agents.html" rel="next">
-          Next: Context Definition...
+        <a class="chapter-link float-end" href="../instructor/rstudio-autocompletion.html" rel="next">
+          Next: RStudio...
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i>
         </a>
       </div>
@@ -1070,8 +1079,8 @@ any links that you are not going to use.
   "url": "https://Dr-Eberle-Zentrum.github.io/AI-supported-coding-in-RStudio/instructor/ai-risks-responsibilities.html",
   "identifier": "https://Dr-Eberle-Zentrum.github.io/AI-supported-coding-in-RStudio/instructor/ai-risks-responsibilities.html",
   "dateCreated": "2024-11-10",
-  "dateModified": "2025-11-17",
-  "datePublished": "2025-12-18"
+  "dateModified": "2025-12-19",
+  "datePublished": "2025-12-19"
 }
 
   </script><script>
