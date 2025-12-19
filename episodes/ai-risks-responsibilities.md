@@ -90,7 +90,7 @@ execute_query <- function(user_input) {
 
 **Security risks include:**
 
-- SQL injection vulnerabilities (misuse/manipulation of the database request)
+- [SQL injection vulnerabilities](https://portswigger.net/web-security/sql-injection) (misuse/manipulation of the database request)
 - Cross-site scripting (XSS) in web applications
 - Hardcoded credentials or API keys
 - Unsafe file operations
@@ -120,7 +120,7 @@ calculate_means <- function(data) {
 
 AI models are trained on public code repositories, which may include:
 
-- Code with restrictive licenses (GPL, AGPL)
+- Code with [restrictive licenses (e.g. GPL)](https://bearingpoint.services/foss/en/newsblogs/dont-be-afraid-of-gplv3/)
 - Proprietary code that shouldn't have been public
 - Code with unclear licensing
 
@@ -460,7 +460,9 @@ Don't accept the first suggestion:
 
 ### 1. The 80/20 Rule
 
-Use AI for the 80% of straightforward, repetitive tasks. Reserve human expertise for the critical 20% involving:
+Use AI for the 80% of straightforward, repetitive tasks. 
+Reserve human expertise for the critical 20% involving:
+
 - Complex algorithms
 - Security-sensitive code
 - Performance optimization
@@ -470,6 +472,7 @@ Use AI for the 80% of straightforward, repetitive tasks. Reserve human expertise
 ### 2. Treat AI as a Junior Developer
 
 Think of AI as a smart but inexperienced assistant:
+
 - It needs clear instructions
 - It requires supervision
 - Its work must be reviewed

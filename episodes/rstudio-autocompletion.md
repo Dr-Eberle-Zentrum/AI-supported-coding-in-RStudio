@@ -46,7 +46,7 @@ Copilot examines:
   - Comments you've written
   - Variable and function names
   - The structure of your code
-- Open files in RStudio (depending on your settings)
+- Files from your RStudio project (depending on your settings)
 
 The more context you provide, the better the suggestions!
 
@@ -61,13 +61,13 @@ One of the most effective ways to use Copilot is to write descriptive comments f
 **Good Example:**
 
 ```r
-# Load data from CSV, remove rows with missing values, and convert date column to Date type
+# Load data from CSV file 'dat.csv', remove rows with missing values, and convert date column to Date type
 ```
 
 **Less Effective:**
 
 ```r
-# Load data
+# Load data from 'dat.csv'
 ```
 
 ::::::::::::::::::::::::::::::::::::: challenge 
@@ -217,6 +217,43 @@ plot_distribution <- function(data, column) {
 }
 ```
 
+### Questions
+
+It is also possible to ask Copilot questions in comments:
+
+- write a comment starting with `# q:` followed by your question
+
+For instance
+
+```r
+# q: What is meant with facetting in ggplot2?
+```
+
+produced
+
+```r
+# A: Facetting in ggplot2 refers to the process of creating multiple subplots (facets) within a single plot, based on the values of one or more categorical variables. 
+# This allows for easy comparison of distributions or relationships across different subsets of the data.
+```
+
+
+
+:::::::::: callout
+
+## Why is the suggestion incomplete?
+
+Communication between RStudio and the AI service is done in chunks and the amount of 'tokens' (words/pieces of words) that can be sent at once is limited.
+The same holds true for the response from the AI service.
+If your code or comment is very long, or if the AI service generates a long suggestion, it may get cut off.
+
+In that case, it is typically sufficient to accept what has been suggested so far and then request a new suggestion (just wait) to continue from there.
+
+:::::::::::::::::::::
+
+
+
+
+
 ## Best Practices for Efficient Workflow
 
 ### 1. Review Before Accepting
@@ -253,31 +290,42 @@ While Copilot is helpful, continue to:
 
 ## Common Patterns and Use Cases
 
+In the following, we highlight some common coding patterns where Copilot can be particularly useful.
+Therein, `[...]` indicates your cursor position where Copilot will provide suggestions.
+
 ### Data Manipulation with dplyr
 
 ```r
 # Copilot excels at suggesting dplyr pipelines
 # Filter data for specific conditions and group by category
 data %>%
-  # Copilot suggests the rest
+[...]
 ```
+Copilot suggests the rest..
+
+*Note:* triggering extensions via comments can also be used *at the end* or *within* a pipeline to 
+add the next step or 
+add an intermediate transformation.
 
 ### Creating Plots with ggplot2
 
 ```r
-# Create a scatter plot with regression line
 ggplot(data, aes(x = height, y = weight)) +
-  # Copilot suggests layers
+# Create a scatter plot with regression line
+[...]
 ```
+Copilot will suggest respective geoms and themes..
 
 ### Writing Functions
 
 ```r
 # Function to validate email addresses
 validate_email <- function(email) {
-  # Copilot suggests regex patterns and validation logic
+[...]
 }
 ```
+
+Copilot will suggest the function body, e.g. using regex patterns and validation logic
 
 ::::::::::::::::::::::::::::::::::::: challenge 
 
