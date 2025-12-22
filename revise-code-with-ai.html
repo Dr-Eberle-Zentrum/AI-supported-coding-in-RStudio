@@ -280,7 +280,6 @@
 <li><a href="#double-checking-ai-suggestions">Double-Checking AI Suggestions</a></li>
 <li><a href="#advanced-code-review-techniques">Advanced Code Review Techniques</a></li>
 <li><a href="#best-practices-for-ai-assisted-code-review">Best Practices for AI-Assisted Code Review</a></li>
-<li><a href="#tools-for-ai-assisted-code-review">Tools for AI-Assisted Code Review</a></li>
 <li><a href="#limitations-and-cautions">Limitations and Cautions</a></li>
         </ul></div><!--/div.accordion-body-->
     </div><!--/div.accordion-collapse-->
@@ -435,44 +434,58 @@ risks</li>
 </div>
 </section><section><h2 class="section-heading" id="setting-up-for-ai-code-review">Setting Up for AI Code Review<a class="anchor" aria-label="anchor" href="#setting-up-for-ai-code-review"></a></h2>
 <hr class="half-width"><div class="section level3">
-<h3 id="using-github-copilot-chat">Using GitHub Copilot Chat<a class="anchor" aria-label="anchor" href="#using-github-copilot-chat"></a></h3>
-<p>If you have GitHub Copilot enabled in RStudio:</p>
-<ol style="list-style-type: decimal"><li>Open the Copilot Chat panel:
-<ul><li>Go to <code>Tools</code> → <code>Copilot</code> →
-<code>Open Chat</code>
-</li>
-<li>Or use keyboard shortcut (varies by platform)</li>
+<h3 id="using-github-copilot-chat-in-your-browser">Using GitHub Copilot Chat in your browser<a class="anchor" aria-label="anchor" href="#using-github-copilot-chat-in-your-browser"></a></h3>
+<p>Currently (as of end 2025), RStudio has no built-in AI chat
+interface</p>
+<p>However, you can use GitHub Copilot Chat within your browser.</p>
+<p>To this end:</p>
+<ul><li>Navigate to [<a href="https::github.com/copilot" class="uri">https::github.com/copilot</a>]</li>
+<li>For an extended list of models:
+<ul><li>Ensure you have a GitHub Copilot subscription</li>
+<li>Sign in</li>
 </ul></li>
-<li>The chat interface appears as a sidebar in RStudio</li>
-</ol></div>
+</ul><p>If you have any other AI chat interface you prefer (e.g., ChatGPT,
+Claude), you can use that as well.</p>
+<p>When using a browser, you have to manually copy and paste code
+snippets between RStudio and the chat interface to get reviews and
+suggestions. While this is less seamless than an integrated solution, it
+still allows you to leverage AI for code review.</p>
+</div>
 <div class="section level3">
-<h3 id="alternative-using-ellmer-for-code-review">Alternative: Using ellmer for Code Review<a class="anchor" aria-label="anchor" href="#alternative-using-ellmer-for-code-review"></a></h3>
+<h3 id="alternative-use-the-chattr-app-within-rstudio">Alternative: Use the <code>chattr</code> app within RStudio<a class="anchor" aria-label="anchor" href="#alternative-use-the-chattr-app-within-rstudio"></a></h3>
+<p>The <a href="https://mlverse.github.io/chattr/" class="external-link"><code>chattr</code>
+package</a> provides an interface to chat with AI models directly within
+RStudio.</p>
+<p>The <code>chattr_app()</code> function will open a Shiny app where
+you can interact with various AI models. Alternatively, you can run the
+app via the RStudio “Addins”” menu by selecting “Open chat”.</p>
+<p>Unfortunately, running the chat interface will “block” your R session
+until you close the app.</p>
+<p>A workaround is to run the app in “job” mode using</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw">library</span><span class="op">(</span><span class="va">ellmer</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Initialize a chat session</span></span>
-<span><span class="va">code_review_chat</span> <span class="op">&lt;-</span> <span class="fu">chat_github</span><span class="op">(</span><span class="st">"gpt-4o"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Function to review code</span></span>
-<span><span class="va">review_code</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">code_string</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="va">prompt</span> <span class="op">&lt;-</span> <span class="fu">paste0</span><span class="op">(</span></span>
-<span>    <span class="st">"Review this R code for:\n"</span>,</span>
-<span>    <span class="st">"1. Potential bugs\n"</span>,</span>
-<span>    <span class="st">"2. Performance issues\n"</span>,</span>
-<span>    <span class="st">"3. Best practices\n"</span>,</span>
-<span>    <span class="st">"4. Readability\n\n"</span>,</span>
-<span>    <span class="st">"Code:\n"</span>, <span class="va">code_string</span></span>
-<span>  <span class="op">)</span></span>
-<span>  </span>
-<span>  <span class="va">code_review_chat</span><span class="op">$</span><span class="fu">chat</span><span class="op">(</span><span class="va">prompt</span><span class="op">)</span></span>
-<span><span class="op">}</span></span></code></pre>
+<code class="sourceCode R"><span><span class="fu">chattr</span><span class="fu">::</span><span class="fu">chattr_app</span><span class="op">(</span>as_job <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre>
 </div>
+<p>That way, you can continue working in your main R session while
+chatting with the AI in a separate window. The con is that the chattr
+app won’t be able to directly interact with your current document in
+RStudio.</p>
+<p>Via the same “Addins” menu, you can also <strong>select code in your
+R script and choose “Send prompt”</strong> to get AI feedback on that
+specific code snippet, which will be copied back directly below your
+selection.</p>
+<p>As of now, I personally find using GitHub Copilot Chat in the browser
+more flexible for code review tasks, but the <code>chattr</code> package
+is a promising option for integrated RStudio workflows.</p>
+<p>If you are interested in a more sophisticated AI integration into
+your IDE, you might have to consider to try another IDE such as <a href="https://positron.posit.co/" class="external-link">Positron</a> or <a href="https://code.visualstudio.com/" class="external-link">Visual Studio Code</a>.</p>
 </div>
 </section><section><h2 class="section-heading" id="basic-code-review-workflow">Basic Code Review Workflow<a class="anchor" aria-label="anchor" href="#basic-code-review-workflow"></a></h2>
-<hr class="half-width"><div class="section level3">
+<hr class="half-width"><p>The following steps are a general workflow for using AI to review and
+improve your R code.</p>
+<div class="section level3">
 <h3 id="step-1-request-an-initial-review">Step 1: Request an Initial Review<a class="anchor" aria-label="anchor" href="#step-1-request-an-initial-review"></a></h3>
 <p>Select your code and ask AI to review it:</p>
 <div class="codewrapper sourceCode" id="cb2">
@@ -682,6 +695,8 @@ partner:</p>
 <span>  <span class="fu">process</span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span><span class="op">)</span></span>
 <span><span class="op">}</span></span></code></pre>
 </div>
+<p>Did you notice the change from <code>&amp;</code> to
+<code>&amp;&amp;</code>? If you don’t know why, ask AI!</p>
 </div>
 <div class="section level3">
 <h3 id="performance-problems">2. Performance Problems<a class="anchor" aria-label="anchor" href="#performance-problems"></a></h3>
@@ -834,7 +849,11 @@ assistance:</p>
 <li>Calculates mean value per category</li>
 <li>Drops grouping structure</li>
 <li>Filters for top 25% of means</li>
-</ol></section><section><h2 class="section-heading" id="double-checking-ai-suggestions">Double-Checking AI Suggestions<a class="anchor" aria-label="anchor" href="#double-checking-ai-suggestions"></a></h2>
+</ol><p>Often it is a good idea to ask the AI to <strong>incorporate
+explanations as comments in the code itself</strong>. That way, you have
+both the code and the explanation together for future reference and
+rereading.</p>
+</section><section><h2 class="section-heading" id="double-checking-ai-suggestions">Double-Checking AI Suggestions<a class="anchor" aria-label="anchor" href="#double-checking-ai-suggestions"></a></h2>
 <hr class="half-width"><div class="section level3">
 <h3 id="always-validate-ai-recommendations">Always Validate AI Recommendations<a class="anchor" aria-label="anchor" href="#always-validate-ai-recommendations"></a></h3>
 <div class="codewrapper sourceCode" id="cb19">
@@ -898,6 +917,9 @@ assistance:</p>
 <span>  <span class="fu">expect_equal</span><span class="op">(</span><span class="fu">safe_divide</span><span class="op">(</span><span class="op">-</span><span class="fl">10</span>, <span class="fl">2</span><span class="op">)</span>, <span class="op">-</span><span class="fl">5</span><span class="op">)</span></span>
 <span><span class="op">}</span><span class="op">)</span></span></code></pre>
 </div>
+<p>While this will provide the needed code for tests, make sure to
+<strong>review the tested values</strong> and adapt the tests to your
+specific needs.</p>
 </div>
 </section><section><h2 class="section-heading" id="advanced-code-review-techniques">Advanced Code Review Techniques<a class="anchor" aria-label="anchor" href="#advanced-code-review-techniques"></a></h2>
 <hr class="half-width"><div class="section level3">
@@ -1062,7 +1084,17 @@ assistance:</p>
 <li>Edge case handling</li>
 <li>Uses built-in statistical functions</li>
 <li>Named list output</li>
-</ul></div>
+</ul><p>What you might have noticed at this point: well documented and robust
+code often spends more lines on validation and documentation than on the
+actual logic itself.</p>
+<p><strong>That’s fine!!!</strong></p>
+<p>Writing maintainable code is more important than keeping it
+short.</p>
+<p>From this code, you can also automatically generate documentation
+pages using <code>roxygen2</code>, which is a great bonus for future
+users (including yourself). Or you can use the documentation to generate
+vignettes or tutorials.</p>
+</div>
 </div>
 </div>
 </div>
@@ -1091,12 +1123,13 @@ correctly?”</p>
 <h3 id="combine-multiple-perspectives">4. Combine Multiple Perspectives<a class="anchor" aria-label="anchor" href="#combine-multiple-perspectives"></a></h3>
 <ul><li>AI review</li>
 <li>Peer review</li>
-<li>Automated linting (<code>lintr</code> package)</li>
-<li>Testing (<code>testthat</code> package)</li>
+<li>Automated linting (e.g. <a href="https://lintr.r-lib.org/" class="external-link"><code>lintr</code> package</a>)</li>
+<li>Testing (e.g. <a href="https://testthat.r-lib.org/" class="external-link"><code>testthat</code>
+package</a>)</li>
 </ul></div>
 <div class="section level3">
 <h3 id="document-changes">5. Document Changes<a class="anchor" aria-label="anchor" href="#document-changes"></a></h3>
-<p>Keep track of improvements:</p>
+<p>Keep track of improvements.</p>
 <div class="codewrapper sourceCode" id="cb29">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1105,46 +1138,15 @@ correctly?”</p>
 <span><span class="co"># Version 2 (after AI review): Added input validation</span></span>
 <span><span class="co"># Version 3 (after testing): Improved edge case handling</span></span></code></pre>
 </div>
-</div>
-</section><section><h2 class="section-heading" id="tools-for-ai-assisted-code-review">Tools for AI-Assisted Code Review<a class="anchor" aria-label="anchor" href="#tools-for-ai-assisted-code-review"></a></h2>
-<hr class="half-width"><div class="section level3">
-<h3 id="in-rstudio">In RStudio<a class="anchor" aria-label="anchor" href="#in-rstudio"></a></h3>
-<ul><li>
-<strong>GitHub Copilot Chat</strong>: Integrated chat interface</li>
-<li>
-<strong>Code selection review</strong>: Select code and ask for
-review</li>
-</ul></div>
-<div class="section level3">
-<h3 id="external-tools">External Tools<a class="anchor" aria-label="anchor" href="#external-tools"></a></h3>
-<ul><li>
-<strong>ChatGPT</strong>: Copy code for detailed analysis</li>
-<li>
-<strong>Claude</strong>: Good for explaining complex logic</li>
-<li>
-<strong>GitHub Copilot CLI</strong>: Command-line interface for code
-review</li>
-</ul></div>
-<div class="section level3">
-<h3 id="r-packages">R Packages<a class="anchor" aria-label="anchor" href="#r-packages"></a></h3>
-<div class="codewrapper sourceCode" id="cb30">
-<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># Use ellmer for programmatic code review</span></span>
-<span><span class="kw">library</span><span class="op">(</span><span class="va">ellmer</span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">review_chat</span> <span class="op">&lt;-</span> <span class="fu">chat_github</span><span class="op">(</span><span class="st">"gpt-4o"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Automated review function</span></span>
-<span><span class="va">auto_review</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">code_file</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="va">code</span> <span class="op">&lt;-</span> <span class="fu">readLines</span><span class="op">(</span><span class="va">code_file</span><span class="op">)</span></span>
-<span>  <span class="va">review_chat</span><span class="op">$</span><span class="fu">chat</span><span class="op">(</span><span class="fu">paste</span><span class="op">(</span></span>
-<span>    <span class="st">"Review this R code for best practices:"</span>,</span>
-<span>    <span class="fu">paste</span><span class="op">(</span><span class="va">code</span>, collapse <span class="op">=</span> <span class="st">"\n"</span><span class="op">)</span></span>
-<span>  <span class="op">)</span><span class="op">)</span></span>
-<span><span class="op">}</span></span></code></pre>
-</div>
+<p>But best not via comments, rather via a proper version control system
+such as Git. The latter is especially important when collaborating in
+teams and neatly integrated into RStudio.</p>
+<p>In combination with GitHub, you can even use AI tools to help you
+write better commit messages, set up automated post-push actions for
+linting, testing, and documentation generation. And the GitHub Copilot
+can even help you via the GitHub web interface to review pull requests,
+suggest solutions for issues and improvements, as we will discuss in
+more detail in later chapters.</p>
 <div id="group-discussion" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
