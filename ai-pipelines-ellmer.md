@@ -165,9 +165,11 @@ texts <- c(
 
 # Use AI to classify sentiment
 chat <- chat_github()
-results <- sapply(texts, function(text) {
-  chat$chat(paste("Classify the sentiment (positive/negative/neutral):", text))
-})
+# iterative call of chat interface using sapply() or purrr::map()
+results <- purrr::map_chr(texts, 
+  function(text) {
+    chat$chat(paste("Classify the sentiment (positive/negative/neutral):", text))
+  })
 ```
 
 ### Processing Data in Pipelines

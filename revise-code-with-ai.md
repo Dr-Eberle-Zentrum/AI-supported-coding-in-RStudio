@@ -52,40 +52,62 @@ AI code review should complement, not replace:
 
 ## Setting Up for AI Code Review
 
-### Using GitHub Copilot Chat
+### Using GitHub Copilot Chat in your browser
 
-If you have GitHub Copilot enabled in RStudio:
+Currently (as of end 2025), RStudio has no built-in AI chat interface
 
-1. Open the Copilot Chat panel:
-   - Go to `Tools` → `Copilot` → `Open Chat`
-   - Or use keyboard shortcut (varies by platform)
+However, you can use GitHub Copilot Chat within your browser.
 
-2. The chat interface appears as a sidebar in RStudio
+To this end:
 
-### Alternative: Using ellmer for Code Review
+- Navigate to [https::github.com/copilot]
+- For an extended list of models:
+  - Ensure you have a GitHub Copilot subscription
+  - Sign in
+
+If you have any other AI chat interface you prefer (e.g., ChatGPT, Claude), 
+you can use that as well.
+
+When using a browser, you have to manually copy and paste code snippets between 
+RStudio and the chat interface to get reviews and suggestions.
+While this is less seamless than an integrated solution, 
+it still allows you to leverage AI for code review.
+
+### Alternative: Use the `chattr` app within RStudio
+
+The [`chattr` package](https://mlverse.github.io/chattr/) provides an interface 
+to chat with AI models directly within RStudio.
+
+The `chattr_app()` function will open a Shiny app where you can interact with various AI models.
+Alternatively, you can run the app via the RStudio "Addins"" menu by selecting "Open chat".
+
+Unfortunately, running the chat interface will "block" your R session until you close the app.
+
+A workaround is to run the app in "job" mode using
 
 ```r
-library(ellmer)
-
-# Initialize a chat session
-code_review_chat <- chat_github("gpt-4o")
-
-# Function to review code
-review_code <- function(code_string) {
-  prompt <- paste0(
-    "Review this R code for:\n",
-    "1. Potential bugs\n",
-    "2. Performance issues\n",
-    "3. Best practices\n",
-    "4. Readability\n\n",
-    "Code:\n", code_string
-  )
-  
-  code_review_chat$chat(prompt)
-}
+chattr::chattr_app(as_job = TRUE)
 ```
 
+That way, you can continue working in your main R session while chatting with the AI in a separate window.
+The con is that the chattr app won't be able to directly interact with your current document in RStudio.
+
+
+Via the same "Addins" menu, you can also **select code in your R script and choose "Send prompt"** to get AI feedback 
+on that specific code snippet, which will be copied back directly below your selection.
+
+As of now, I personally find using GitHub Copilot Chat in the browser more flexible for code review tasks,
+but the `chattr` package is a promising option for integrated RStudio workflows.
+
+If you are interested in a more sophisticated AI integration into your IDE,
+you might have to consider to try another IDE such as 
+[Positron](https://positron.posit.co/) or 
+[Visual Studio Code](https://code.visualstudio.com/).
+
+
 ## Basic Code Review Workflow
+
+The following steps are a general workflow for using AI to review and improve your R code.
 
 ### Step 1: Request an Initial Review
 
@@ -259,6 +281,8 @@ if (!is.na(x) && !is.na(y) && x > 0 && y > 0) {
 }
 ```
 
+Did you notice the change from `&` to `&&`? If you don't know why, ask AI! 
+
 ### 2. Performance Problems
 
 ```r
@@ -390,6 +414,9 @@ result <- df %>%
 3. Drops grouping structure
 4. Filters for top 25% of means
 
+Often it is a good idea to ask the AI to **incorporate explanations as comments in the code itself**.
+That way, you have both the code and the explanation together for future reference and rereading.
+
 ## Double-Checking AI Suggestions
 
 ### Always Validate AI Recommendations
@@ -448,6 +475,9 @@ test_that("safe_divide works correctly", {
   expect_equal(safe_divide(-10, 2), -5)
 })
 ```
+
+While this will provide the needed code for tests, 
+make sure to **review the tested values** and adapt the tests to your specific needs.
 
 ## Advanced Code Review Techniques
 
@@ -592,6 +622,17 @@ Improvements:
 - Uses built-in statistical functions
 - Named list output
 
+What you might have noticed at this point: well documented and robust code often 
+spends more lines on validation and documentation than on the actual logic itself.
+
+**That's fine!!!**
+
+Writing maintainable code is more important than keeping it short.
+
+From this code, you can also automatically generate documentation pages using `roxygen2`,
+ which is a great bonus for future users (including yourself).
+Or you can use the documentation to generate vignettes or tutorials.
+
 :::::::::::::::::::::::::::::::::
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -621,12 +662,12 @@ Understanding helps you learn, not just copy.
 
 - AI review
 - Peer review
-- Automated linting (`lintr` package)
-- Testing (`testthat` package)
+- Automated linting (e.g. [`lintr` package](https://lintr.r-lib.org/))
+- Testing (e.g. [`testthat` package](https://testthat.r-lib.org/))
 
 ### 5. Document Changes
 
-Keep track of improvements:
+Keep track of improvements.
 
 ```r
 # Version 1 (original): Simple but no error handling
@@ -634,36 +675,14 @@ Keep track of improvements:
 # Version 3 (after testing): Improved edge case handling
 ```
 
-## Tools for AI-Assisted Code Review
+But best not via comments, rather via a proper version control system such as Git.
+The latter is especially important when collaborating in teams and neatly integrated into RStudio.
 
-### In RStudio
+In combination with GitHub, you can even use AI tools to help you write better commit messages,
+set up automated post-push actions for linting, testing, and documentation generation.
+And the GitHub Copilot can even help you via the GitHub web interface to review pull requests, 
+suggest solutions for issues and improvements, as we will discuss in more detail in later chapters.
 
-- **GitHub Copilot Chat**: Integrated chat interface
-- **Code selection review**: Select code and ask for review
-
-### External Tools
-
-- **ChatGPT**: Copy code for detailed analysis
-- **Claude**: Good for explaining complex logic
-- **GitHub Copilot CLI**: Command-line interface for code review
-
-### R Packages
-
-```r
-# Use ellmer for programmatic code review
-library(ellmer)
-
-review_chat <- chat_github("gpt-4o")
-
-# Automated review function
-auto_review <- function(code_file) {
-  code <- readLines(code_file)
-  review_chat$chat(paste(
-    "Review this R code for best practices:",
-    paste(code, collapse = "\n")
-  ))
-}
-```
 
 ::::::::::::::::::::::::::::::::::::: discussion
 
