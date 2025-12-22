@@ -107,7 +107,7 @@ In **Risks, Drawbacks and Responsibilities with AI Usage**, you explored:
 - Leveraging issues to provide context for AI assistants
 - Best practices for issue-driven development workflows
 - Using AI as a collaborative team member on specific tasks
-- How to effectively "employ" AI on parallel development tasks
+- How to effectively employ AI on parallel development tasks
 
 ## Beyond This Workshop: Further AI Applications
 
