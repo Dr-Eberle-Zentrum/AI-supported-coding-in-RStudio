@@ -21,7 +21,9 @@ exercises: 15
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Introduction
+## Using an AI assistively
+
+![Assistive AI usage](ai-mode-1.png)
 
 GitHub Copilot functions as an advanced autocompletion tool in RStudio, 
 going beyond simple syntax completion to suggest entire lines or blocks of code. 

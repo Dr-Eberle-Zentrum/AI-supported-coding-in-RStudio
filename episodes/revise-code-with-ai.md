@@ -23,9 +23,13 @@ exercises: 15
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Introduction
+## Using AI directively
 
-AI-powered tools can serve as an additional pair of eyes when reviewing and improving your code. This chapter explores how to effectively use AI chat interfaces to check, revise, and validate your R code, ensuring better quality and maintainability.
+![Directive AI usage](ai-mode-2.png)
+
+
+AI-powered tools can serve as an additional pair of eyes when reviewing and improving your code. 
+This chapter explores how to effectively use AI chat interfaces to check, revise, and validate your R code, ensuring better quality and maintainability.
 
 ## Why Use AI for Code Review?
 
