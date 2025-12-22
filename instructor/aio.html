@@ -568,7 +568,7 @@ function, such as:</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>GitHub Copilot should suggest a function implementation below your
 comment. The suggestion might look something like:</p>
@@ -796,7 +796,7 @@ assistance.</p>
   Example Solutions
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>Examples might include:</p>
 <ul>
@@ -968,7 +968,7 @@ accepting the suggestion?</p>
   Questions to Consider
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>Before accepting AI-generated code, ask:</p>
 <ol style="list-style-type: decimal">
@@ -1696,7 +1696,7 @@ differ?</p>
   Observations
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p><strong>Poor prompt typically produces:</strong></p>
 <ul>
@@ -3387,7 +3387,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-ai-pipelines-ellmer"><p>Content from <a href="ai-pipelines-ellmer.html">Using AI within Pipelines via ellmer</a></p>
 <hr>
-<p>Last updated on 2025-11-10 |
+<p>Last updated on 2025-12-22 |
 
         <a href="https://github.com/Dr-Eberle-Zentrum/AI-supported-coding-in-RStudio/edit/main/episodes/ai-pipelines-ellmer.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 50 minutes</p>
@@ -3402,8 +3402,10 @@ any links that you are not going to use.
 <div class="inner">
 <h3 class="card-title">Questions</h3>
 <ul>
-<li>What is ellmer and how does it integrate with AI models?</li>
-<li>How can I set up ellmer with GitHub Copilot in RStudio?</li>
+<li>What is <code>ellmer</code> and how does it integrate with AI
+models?</li>
+<li>How can I set up <code>ellmer</code> with GitHub Copilot in
+RStudio?</li>
 <li>How can I use AI prompts to process data within my analysis
 pipelines?</li>
 <li>What are the best practices for integrating AI into data processing
@@ -3417,8 +3419,9 @@ workflows?</li>
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
 <ul>
-<li>Understand the ellmer package and its capabilities</li>
-<li>Install and configure ellmer for use with AI models</li>
+<li>Understand the <code>ellmer</code> package and its capabilities</li>
+<li>Install and configure <code>ellmer</code> for use with AI
+models</li>
 <li>Integrate AI prompts into data processing pipelines</li>
 <li>Apply AI-powered transformations to datasets</li>
 <li>Develop reproducible AI-enhanced workflows</li>
@@ -3440,12 +3443,21 @@ assistance.</p>
 </h2>
 <hr class="half-width">
 <p><code>ellmer</code> is an R package that provides a unified interface
-to various LLM providers, including: - GitHub Copilot (via GitHub
-Models) - OpenAI models - Anthropic Claude - Google Gemini - Local
-models via Ollama</p>
-<p>It allows you to: - Send prompts to AI models from R code - Process
-text data with AI assistance - Generate structured outputs - Stream
-responses for interactive applications</p>
+to various LLM providers, including:</p>
+<ul>
+<li>GitHub Copilot (via GitHub Models)</li>
+<li>OpenAI models</li>
+<li>Anthropic Claude</li>
+<li>Google Gemini</li>
+<li>Local models via Ollama</li>
+</ul>
+<p>It allows you to:</p>
+<ul>
+<li>Send prompts to AI models from R code</li>
+<li>Process text data with AI assistance</li>
+<li>Generate structured outputs</li>
+<li>Stream responses for interactive applications</li>
+</ul>
 <div id="why-use-ellmer" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
@@ -3474,7 +3486,8 @@ code</li>
 </section><section><h2 class="section-heading" id="installing-ellmer">Installing ellmer<a class="anchor" aria-label="anchor" href="#installing-ellmer"></a>
 </h2>
 <hr class="half-width">
-<p>First, install the ellmer package from CRAN or GitHub:</p>
+<p>First, install the <code>ellmer</code> package from CRAN or
+GitHub:</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -3497,11 +3510,20 @@ code</li>
 </section><section><h2 class="section-heading" id="setting-up-ellmer-with-github-copilot">Setting Up ellmer with GitHub Copilot<a class="anchor" aria-label="anchor" href="#setting-up-ellmer-with-github-copilot"></a>
 </h2>
 <hr class="half-width">
-<p>To use ellmer with GitHub Copilot (via GitHub Models), you need to
-set up authentication.</p>
+<p>To use <code>ellmer</code> with GitHub Copilot (via GitHub Models),
+you need to set up authentication.</p>
 <div class="section level3">
-<h3 id="step-1-get-a-github-token">Step 1: Get a GitHub Token<a class="anchor" aria-label="anchor" href="#step-1-get-a-github-token"></a>
+<h3 id="step-1-pat-getting-access-to-github-models">Step 1-pat: Getting Access to GitHub Models<a class="anchor" aria-label="anchor" href="#step-1-pat-getting-access-to-github-models"></a>
 </h3>
+<p>Given that we have already registered our GitHub account in RStudio
+to use the GitHub Copilot features, we can proceed to use the GitHub
+Models via <code>ellmer</code>.</p>
+</div>
+<div class="section level3">
+<h3 id="step-1-explicit-get-a-github-token-and-store-it-securely">Step 1-explicit: Get a GitHub Token and Store It Securely<a class="anchor" aria-label="anchor" href="#step-1-explicit-get-a-github-token-and-store-it-securely"></a>
+</h3>
+<p><strong>The following steps are only needed, if you have not already
+set up GitHub authentication in RStudio.</strong></p>
 <ol style="list-style-type: decimal">
 <li>Go to <a href="https://github.com/settings/tokens" class="external-link">github.com/settings/tokens</a>
 </li>
@@ -3511,10 +3533,6 @@ set up authentication.</p>
 <code>user</code>)</li>
 <li>Click “Generate token” and copy it immediately</li>
 </ol>
-</div>
-<div class="section level3">
-<h3 id="step-2-configure-your-token">Step 2: Configure Your Token<a class="anchor" aria-label="anchor" href="#step-2-configure-your-token"></a>
-</h3>
 <p>Store your token securely in your R environment:</p>
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -3544,17 +3562,17 @@ file.</p>
 </div>
 </div>
 <div class="section level3">
-<h3 id="step-3-initialize-a-chat-object">Step 3: Initialize a Chat Object<a class="anchor" aria-label="anchor" href="#step-3-initialize-a-chat-object"></a>
+<h3 id="step-2-initialize-a-chat-object">Step 2: Initialize a Chat Object<a class="anchor" aria-label="anchor" href="#step-2-initialize-a-chat-object"></a>
 </h3>
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Create a chat session with GitHub Copilot</span></span>
-<span><span class="va">chat</span> <span class="op">&lt;-</span> <span class="fu">chat_github</span><span class="op">(</span><span class="st">"gpt-4o"</span><span class="op">)</span>  <span class="co"># or other available models</span></span>
+<span><span class="va">chat</span> <span class="op">&lt;-</span> <span class="fu">chat_github</span><span class="op">(</span><span class="op">)</span>  <span class="co"># the used default model will be printed</span></span>
 <span></span>
 <span><span class="co"># Test the connection</span></span>
-<span><span class="va">chat</span><span class="op">$</span><span class="fu">chat</span><span class="op">(</span><span class="st">"Hello! Can you help me analyze data in R?"</span><span class="op">)</span></span></code></pre>
+<span><span class="va">chat</span><span class="op">$</span><span class="fu">chat</span><span class="op">(</span><span class="st">"Hi, please give me a joke!"</span><span class="op">)</span></span></code></pre>
 </div>
 <div id="challenge-1-setup-and-test-ellmer" class="callout challenge">
 <div class="callout-square">
@@ -3562,13 +3580,15 @@ file.</p>
 </div>
 <span class="callout-header">Challenge</span>
 <div id="challenge-1-setup-and-test-ellmer" class="callout-inner">
-<h3 class="callout-title">Challenge 1: Setup and Test ellmer</h3>
+<h3 class="callout-title">Challenge 1: Setup and Test
+<code>ellmer</code>
+</h3>
 <div class="callout-content">
 <ol style="list-style-type: decimal">
-<li>Install the ellmer package</li>
-<li>Set up your GitHub token</li>
+<li>Install the <code>ellmer</code> package</li>
 <li>Create a chat object and send a test message</li>
-<li>Verify you receive a response</li>
+<li>Verify you receive a response and enjoy your joke..</li>
+<li>What do you see, when you print your <code>chat</code> object?</li>
 </ol>
 </div>
 </div>
@@ -3580,24 +3600,13 @@ file.</p>
 </button>
 <div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
-<div class="codewrapper sourceCode" id="cb5">
-<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw">library</span><span class="op">(</span><span class="va">ellmer</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Set token (use your actual token)</span></span>
-<span><span class="fu">Sys.setenv</span><span class="op">(</span>GITHUB_TOKEN <span class="op">=</span> <span class="st">"ghp_your_token_here"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Create chat object</span></span>
-<span><span class="va">chat</span> <span class="op">&lt;-</span> <span class="fu">chat_github</span><span class="op">(</span><span class="st">"gpt-4o"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Test message</span></span>
-<span><span class="va">response</span> <span class="op">&lt;-</span> <span class="va">chat</span><span class="op">$</span><span class="fu">chat</span><span class="op">(</span><span class="st">"What are three uses of R in data science?"</span><span class="op">)</span></span>
-<span><span class="fu">print</span><span class="op">(</span><span class="va">response</span><span class="op">)</span></span></code></pre>
-</div>
-<p>You should receive a detailed response about R’s applications in data
-science.</p>
+<p>Printing the <code>chat</code> object shows</p>
+<ul>
+<li>the model being used</li>
+<li>the number of tokens sent and received</li>
+<li>the total cost incurred (if applicable)</li>
+<li>the history of messages exchanged</li>
+</ul>
 </div>
 </div>
 </div>
@@ -3610,7 +3619,7 @@ science.</p>
 <h3 id="basic-text-processing">Basic Text Processing<a class="anchor" aria-label="anchor" href="#basic-text-processing"></a>
 </h3>
 <p>Process individual text strings with AI:</p>
-<div class="codewrapper sourceCode" id="cb6">
+<div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -3622,7 +3631,7 @@ science.</p>
 <span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Use AI to classify sentiment</span></span>
-<span><span class="va">chat</span> <span class="op">&lt;-</span> <span class="fu">chat_github</span><span class="op">(</span><span class="st">"gpt-4o"</span><span class="op">)</span></span>
+<span><span class="va">chat</span> <span class="op">&lt;-</span> <span class="fu">chat_github</span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="va">results</span> <span class="op">&lt;-</span> <span class="fu">sapply</span><span class="op">(</span><span class="va">texts</span>, <span class="kw">function</span><span class="op">(</span><span class="va">text</span><span class="op">)</span> <span class="op">{</span></span>
 <span>  <span class="va">chat</span><span class="op">$</span><span class="fu">chat</span><span class="op">(</span><span class="fu">paste</span><span class="op">(</span><span class="st">"Classify the sentiment (positive/negative/neutral):"</span>, <span class="va">text</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="op">}</span><span class="op">)</span></span></code></pre>
@@ -3632,7 +3641,7 @@ science.</p>
 <h3 id="processing-data-in-pipelines">Processing Data in Pipelines<a class="anchor" aria-label="anchor" href="#processing-data-in-pipelines"></a>
 </h3>
 <p>Integrate AI into tidyverse pipelines:</p>
-<div class="codewrapper sourceCode" id="cb7">
+<div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -3650,7 +3659,7 @@ science.</p>
 <span></span>
 <span><span class="co"># Add AI-powered sentiment analysis</span></span>
 <span><span class="va">feedback_processed</span> <span class="op">&lt;-</span> <span class="va">feedback_data</span> <span class="op">%&gt;%</span></span>
-<span>  <span class="fu">rowwise</span><span class="op">(</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">rowwise</span><span class="op">(</span><span class="op">)</span> <span class="op">%&gt;%</span> <span class="co"># ensures each row/information is processed individually</span></span>
 <span>  <span class="fu">mutate</span><span class="op">(</span></span>
 <span>    sentiment <span class="op">=</span> <span class="va">chat</span><span class="op">$</span><span class="fu">chat</span><span class="op">(</span></span>
 <span>      <span class="fu">paste</span><span class="op">(</span><span class="st">"Classify as positive/negative/neutral:"</span>, <span class="va">comment</span><span class="op">)</span></span>
@@ -3668,18 +3677,23 @@ science.</p>
 <div id="rate-limits-and-costs" class="callout-inner">
 <h3 class="callout-title">Rate Limits and Costs</h3>
 <div class="callout-content">
-<p>Be aware of: - API rate limits for your chosen provider - Potential
-costs for API calls - Processing time for large datasets - Consider
-batching requests when possible</p>
+<p>Be aware of:</p>
+<ul>
+<li>API rate limits for your chosen provider (limited number of requests
+per minute/hour)</li>
+<li>Potential costs for API calls</li>
+<li>Processing time for large datasets</li>
+<li>Consider batching requests when possible (less tokens spent)</li>
+</ul>
 </div>
 </div>
 </div>
 </div>
-</section><section><h2 class="section-heading" id="advanced-structured-output-generation">Advanced: Structured Output Generation<a class="anchor" aria-label="anchor" href="#advanced-structured-output-generation"></a>
-</h2>
-<hr class="half-width">
+<div class="section level3">
+<h3 id="advanced-structured-output-generation">Advanced: Structured Output Generation<a class="anchor" aria-label="anchor" href="#advanced-structured-output-generation"></a>
+</h3>
 <p>Request structured data from AI models:</p>
-<div class="codewrapper sourceCode" id="cb8">
+<div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -3710,10 +3724,25 @@ batching requests when possible</p>
 <h3 class="callout-title">Challenge 2: Build a Data Processing
 Pipeline</h3>
 <div class="callout-content">
-<p>Create a pipeline that: 1. Takes a dataset with product reviews 2.
-Uses AI to classify the main topic of each review 3. Extracts a
-numerical satisfaction score (1-5) from the text 4. Summarizes
-findings</p>
+<p>Create a tidyverse pipeline that:</p>
+<ol style="list-style-type: decimal">
+<li>creates a <code>tibble</code> dataset (columns
+<code>review_id</code> and <code>text</code>) with the following product
+reviews</li>
+</ol>
+<ul>
+<li><em>The software is intuitive but lacks some features. Rating:
+4/5</em></li>
+<li><em>Terrible experience, crashed multiple times. Very
+disappointed.</em></li>
+<li><em>Perfect for my needs! Easy to use and fast. Highly
+recommend.</em></li>
+</ul>
+<ol start="2" style="list-style-type: decimal">
+<li>Uses AI to classify the main topic of each review in up to two
+words</li>
+<li>Extracts a numerical satisfaction score (1-5) from the text</li>
+</ol>
 </div>
 </div>
 </div>
@@ -3724,7 +3753,7 @@ findings</p>
 </button>
 <div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
-<div class="codewrapper sourceCode" id="cb9">
+<div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -3742,19 +3771,17 @@ findings</p>
 <span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Initialize chat</span></span>
-<span><span class="va">chat</span> <span class="op">&lt;-</span> <span class="fu">chat_github</span><span class="op">(</span><span class="st">"gpt-4o"</span><span class="op">)</span></span>
+<span><span class="va">chat</span> <span class="op">&lt;-</span> <span class="fu">chat_github</span><span class="op">(</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Process with AI</span></span>
-<span><span class="va">results</span> <span class="op">&lt;-</span> <span class="va">reviews</span> <span class="op">%&gt;%</span></span>
+<span><span class="va">reviews</span> <span class="op">%&gt;%</span></span>
 <span>  <span class="fu">rowwise</span><span class="op">(</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
 <span>  <span class="fu">mutate</span><span class="op">(</span></span>
 <span>    topic <span class="op">=</span> <span class="va">chat</span><span class="op">$</span><span class="fu">chat</span><span class="op">(</span><span class="fu">paste</span><span class="op">(</span><span class="st">"Main topic (1-2 words):"</span>, <span class="va">text</span><span class="op">)</span><span class="op">)</span>,</span>
 <span>    score <span class="op">=</span> <span class="va">chat</span><span class="op">$</span><span class="fu">chat</span><span class="op">(</span><span class="fu">paste</span><span class="op">(</span><span class="st">"Satisfaction score 1-5:"</span>, <span class="va">text</span><span class="op">)</span><span class="op">)</span>,</span>
-<span>    summary <span class="op">=</span> <span class="va">chat</span><span class="op">$</span><span class="fu">chat</span><span class="op">(</span><span class="fu">paste</span><span class="op">(</span><span class="st">"Summarize in 10 words:"</span>, <span class="va">text</span><span class="op">)</span><span class="op">)</span></span>
 <span>  <span class="op">)</span> <span class="op">%&gt;%</span></span>
-<span>  <span class="fu">ungroup</span><span class="op">(</span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu">print</span><span class="op">(</span><span class="va">results</span><span class="op">)</span></span></code></pre>
+<span>  <span class="fu">ungroup</span><span class="op">(</span><span class="op">)</span></span></code></pre>
+</div>
 </div>
 </div>
 </div>
@@ -3766,7 +3793,7 @@ findings</p>
 <div class="section level3">
 <h3 id="design-clear-prompts">1. Design Clear Prompts<a class="anchor" aria-label="anchor" href="#design-clear-prompts"></a>
 </h3>
-<div class="codewrapper sourceCode" id="cb10">
+<div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -3781,7 +3808,7 @@ findings</p>
 <div class="section level3">
 <h3 id="handle-errors-gracefully">2. Handle Errors Gracefully<a class="anchor" aria-label="anchor" href="#handle-errors-gracefully"></a>
 </h3>
-<div class="codewrapper sourceCode" id="cb11">
+<div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -3803,7 +3830,7 @@ findings</p>
 <div class="section level3">
 <h3 id="cache-results">3. Cache Results<a class="anchor" aria-label="anchor" href="#cache-results"></a>
 </h3>
-<div class="codewrapper sourceCode" id="cb12">
+<div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -3821,7 +3848,7 @@ findings</p>
 <div class="section level3">
 <h3 id="use-batch-processing-for-large-datasets">4. Use Batch Processing for Large Datasets<a class="anchor" aria-label="anchor" href="#use-batch-processing-for-large-datasets"></a>
 </h3>
-<div class="codewrapper sourceCode" id="cb13">
+<div class="codewrapper sourceCode" id="cb12">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -3840,13 +3867,16 @@ findings</p>
 </h2>
 <hr class="half-width">
 <p>Document your AI pipeline for reproducibility:</p>
-<div class="codewrapper sourceCode" id="cb14">
+<div class="codewrapper sourceCode" id="cb13">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># Record model and version</span></span>
+<code class="sourceCode R"><span><span class="co"># Initialize chat</span></span>
+<span><span class="va">chat</span> <span class="op">&lt;-</span> <span class="fu">chat_github</span><span class="op">(</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Record model and version</span></span>
 <span><span class="va">metadata</span> <span class="op">&lt;-</span> <span class="fu">list</span><span class="op">(</span></span>
-<span>  model <span class="op">=</span> <span class="st">"gpt-4o"</span>,</span>
+<span>  model <span class="op">=</span> <span class="va">chat</span><span class="op">$</span><span class="fu">get_model</span><span class="op">(</span><span class="op">)</span>,</span>
 <span>  provider <span class="op">=</span> <span class="st">"github"</span>,</span>
 <span>  date <span class="op">=</span> <span class="fu">Sys.Date</span><span class="op">(</span><span class="op">)</span>,</span>
 <span>  ellmer_version <span class="op">=</span> <span class="fu">packageVersion</span><span class="op">(</span><span class="st">"ellmer"</span><span class="op">)</span>,</span>
@@ -3868,12 +3898,17 @@ findings</p>
 <div id="group-discussion" class="callout-inner">
 <h3 class="callout-title">Group Discussion</h3>
 <div class="callout-content">
-<p>Consider the following questions: - What types of data processing
-tasks in your work could benefit from AI integration? - How would you
-balance reproducibility with using AI models that may change over time?
-- What ethical considerations arise when using AI to process data? - How
-do you validate the quality of AI-generated classifications or
-summaries?</p>
+<p>Consider the following questions:</p>
+<ul>
+<li>What types of data processing tasks in your work could benefit from
+AI integration?</li>
+<li>How would you balance reproducibility with using AI models that may
+change over time?</li>
+<li>What ethical considerations arise when using AI to process
+data?</li>
+<li>How do you validate the quality of AI-generated classifications or
+summaries?</li>
+</ul>
 </div>
 </div>
 </div>
@@ -3883,7 +3918,7 @@ summaries?</p>
 <div class="section level3">
 <h3 id="text-classification">Text Classification<a class="anchor" aria-label="anchor" href="#text-classification"></a>
 </h3>
-<div class="codewrapper sourceCode" id="cb15">
+<div class="codewrapper sourceCode" id="cb14">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -3897,7 +3932,7 @@ summaries?</p>
 <div class="section level3">
 <h3 id="data-cleaning">Data Cleaning<a class="anchor" aria-label="anchor" href="#data-cleaning"></a>
 </h3>
-<div class="codewrapper sourceCode" id="cb16">
+<div class="codewrapper sourceCode" id="cb15">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -3911,7 +3946,7 @@ summaries?</p>
 <div class="section level3">
 <h3 id="content-generation">Content Generation<a class="anchor" aria-label="anchor" href="#content-generation"></a>
 </h3>
-<div class="codewrapper sourceCode" id="cb17">
+<div class="codewrapper sourceCode" id="cb16">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -3925,7 +3960,7 @@ summaries?</p>
 <div class="section level3">
 <h3 id="translation-and-localization">Translation and Localization<a class="anchor" aria-label="anchor" href="#translation-and-localization"></a>
 </h3>
-<div class="codewrapper sourceCode" id="cb18">
+<div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -3945,9 +3980,15 @@ summaries?</p>
 Workflow</h3>
 <div class="callout-content">
 <p>Choose a scenario and implement a complete AI-enhanced pipeline:</p>
-<p><strong>Option A</strong>: Analyze a dataset of tweets/social media
-posts <strong>Option B</strong>: Process customer support tickets
-<strong>Option C</strong>: Categorize research papers by topic</p>
+<ul>
+<li>
+<strong>Option A</strong>: Analyze a dataset of tweets/social media
+posts</li>
+<li>
+<strong>Option B</strong>: Process customer support tickets</li>
+<li>
+<strong>Option C</strong>: Categorize research papers by topic</li>
+</ul>
 <p>Include error handling, caching, and metadata tracking.</p>
 </div>
 </div>
@@ -3959,7 +4000,7 @@ posts <strong>Option B</strong>: Process customer support tickets
 </button>
 <div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
-<div class="codewrapper sourceCode" id="cb19">
+<div class="codewrapper sourceCode" id="cb18">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -3967,7 +4008,7 @@ posts <strong>Option B</strong>: Process customer support tickets
 <span><span class="kw">library</span><span class="op">(</span><span class="va">tidyverse</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Initialize</span></span>
-<span><span class="va">chat</span> <span class="op">&lt;-</span> <span class="fu">chat_github</span><span class="op">(</span><span class="st">"gpt-4o"</span><span class="op">)</span></span>
+<span><span class="va">chat</span> <span class="op">&lt;-</span> <span class="fu">chat_github</span><span class="op">(</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Process tickets</span></span>
 <span><span class="va">process_ticket</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">ticket_text</span><span class="op">)</span> <span class="op">{</span></span>
@@ -3992,7 +4033,7 @@ posts <strong>Option B</strong>: Process customer support tickets
 <span>  data <span class="op">=</span> <span class="va">tickets_processed</span>,</span>
 <span>  metadata <span class="op">=</span> <span class="fu">list</span><span class="op">(</span></span>
 <span>    processed <span class="op">=</span> <span class="fu">Sys.time</span><span class="op">(</span><span class="op">)</span>,</span>
-<span>    model <span class="op">=</span> <span class="st">"gpt-4o"</span>,</span>
+<span>    model <span class="op">=</span> <span class="va">chat</span><span class="op">$</span><span class="fu">get_model</span><span class="op">(</span><span class="op">)</span>,</span>
 <span>    n_tickets <span class="op">=</span> <span class="fu">nrow</span><span class="op">(</span><span class="va">tickets</span><span class="op">)</span></span>
 <span>  <span class="op">)</span></span>
 <span><span class="op">)</span></span>
@@ -4012,7 +4053,14 @@ posts <strong>Option B</strong>: Process customer support tickets
 </h3>
 <ul>
 <li>Verify your token is set correctly:
-<code>Sys.getenv("GITHUB_TOKEN")</code>
+<ul>
+<li>
+<code>Sys.getenv("GITHUB_PAT_GITHUB_COM")</code> for RStudio
+setup</li>
+<li>
+<code>Sys.getenv("GITHUB_TOKEN")</code> for explicit token setup
+from above</li>
+</ul>
 </li>
 <li>Ensure token has required permissions</li>
 <li>Check token hasn’t expired</li>
@@ -4042,9 +4090,13 @@ posts <strong>Option B</strong>: Process customer support tickets
 </section><section><h2 class="section-heading" id="future-developments">Future Developments<a class="anchor" aria-label="anchor" href="#future-developments"></a>
 </h2>
 <hr class="half-width">
-<p>Stay updated with ellmer developments: - New model integrations -
-Enhanced streaming capabilities - Better error handling - Performance
-improvements</p>
+<p>Stay updated with <code>ellmer</code> developments:</p>
+<ul>
+<li>New model integrations</li>
+<li>Enhanced streaming capabilities</li>
+<li>Better error handling</li>
+<li>Performance improvements</li>
+</ul>
 <p>Check the <a href="https://ellmer.tidyverse.org" class="external-link">ellmer
 documentation</a> regularly for updates.</p>
 <div id="keypoints1" class="callout keypoints">
@@ -4055,8 +4107,9 @@ documentation</a> regularly for updates.</p>
 <div class="callout-inner">
 <div class="callout-content">
 <ul>
-<li>ellmer provides a unified interface for integrating LLMs into R
-workflows</li>
+<li>
+<code>ellmer</code> provides a unified interface for integrating
+LLMs into R workflows</li>
 <li>Set up authentication using environment variables for security</li>
 <li>Integrate AI prompts seamlessly into tidyverse pipelines</li>
 <li>Design clear, constrained prompts for consistent results</li>
@@ -4238,7 +4291,7 @@ identify?</p>
   Issues AI Might Identify
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li>
@@ -4499,7 +4552,7 @@ Improve readability 4. Add documentation</p>
   Improved Version After Iterations
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -4719,7 +4772,7 @@ Documentation 5. Error handling</p>
   Comprehensive Improved Version
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb28">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -5193,7 +5246,7 @@ appropriate code.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Example Solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">MARKDOWN<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -5501,7 +5554,7 @@ needed</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p><strong>GitHub Issue</strong>:</p>
 <div class="codewrapper sourceCode" id="cb16">
@@ -5693,7 +5746,7 @@ Dependencies between issues</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p><strong>Parent Issue #80</strong>:</p>
 <div class="codewrapper sourceCode" id="cb23">
@@ -6098,8 +6151,8 @@ any links that you are not going to use.
   "url": "https://Dr-Eberle-Zentrum.github.io/AI-supported-coding-in-RStudio/instructor/aio.html",
   "identifier": "https://Dr-Eberle-Zentrum.github.io/AI-supported-coding-in-RStudio/instructor/aio.html",
   "dateCreated": "2024-11-10",
-  "dateModified": "2025-12-19",
-  "datePublished": "2025-12-19"
+  "dateModified": "2025-12-22",
+  "datePublished": "2025-12-22"
 }
 
   </script><script>
