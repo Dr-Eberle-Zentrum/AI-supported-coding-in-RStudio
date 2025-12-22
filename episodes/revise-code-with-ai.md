@@ -30,6 +30,7 @@ AI-powered tools can serve as an additional pair of eyes when reviewing and impr
 ## Why Use AI for Code Review?
 
 AI assistants can help identify:
+
 - **Logic errors**: Potential bugs or incorrect implementations
 - **Performance issues**: Inefficient code patterns
 - **Style problems**: Code that doesn't follow best practices
@@ -41,6 +42,7 @@ AI assistants can help identify:
 ### AI as a Complement, Not Replacement
 
 AI code review should complement, not replace:
+
 - Your own understanding of the code
 - Human peer reviews
 - Automated testing and linting tools
@@ -153,12 +155,14 @@ process_data <- function(data) {
 Be specific about what you want to check:
 
 **Good prompts:**
+
 - "Does this function handle edge cases correctly?"
 - "Are there any performance bottlenecks in this loop?"
 - "Is this code following tidyverse style guidelines?"
 - "Could this code be more readable?"
 
 **Less effective prompts:**
+
 - "Is this good?"
 - "Check this code"
 
@@ -175,6 +179,7 @@ for(i in 1:length(data)) {
 > How can I make this code more efficient and R-idiomatic?
 
 **AI might suggest:**
+
 ```r
 # Vectorized approach (much faster)
 result <- data * 2
@@ -227,6 +232,7 @@ analyze_sales <- function(sales_data) {
 ### Iterative Improvement
 
 Don't expect perfect code in one iteration. Use AI as a collaborative partner:
+
 1. Get initial feedback
 2. Make changes
 3. Ask for review again
@@ -246,6 +252,7 @@ if (x > 0 & y > 0) {  # What if x or y is NA?
 ```
 
 **AI can suggest:**
+
 ```r
 if (!is.na(x) && !is.na(y) && x > 0 && y > 0) {
   process(x, y)
@@ -263,6 +270,7 @@ for(i in 1:10000) {
 ```
 
 **AI can suggest:**
+
 ```r
 # Fast: Pre-allocate vector
 result <- vector("numeric", 10000)
@@ -270,8 +278,8 @@ for(i in 1:10000) {
   result[i] <- calculate(i)
 }
 
-# Even better: Vectorize if possible
-result <- sapply(1:10000, calculate)
+# Even better: Vectorize if possible using sapply() or purrr
+result <- purrr::map_dbl(1:10000, calculate)
 ```
 
 ### 3. Code Readability
@@ -282,14 +290,16 @@ f <- function(x, y, z) { x + y * z / (x - y) }
 ```
 
 **AI can suggest:**
+
 ```r
 # More readable
-calculate_metric <- function(base_value, multiplier, divisor) {
-  adjustment <- multiplier * divisor
-  denominator <- base_value - multiplier
-  
-  base_value + (adjustment / denominator)
-}
+calculate_metric <- 
+  function(base_value, multiplier, divisor) {
+    adjustment <- multiplier * divisor
+    denominator <- base_value - multiplier
+    
+    base_value + (adjustment / denominator)
+  }
 ```
 
 ::::::::::::::::::::::::::::::::::::: challenge 
@@ -311,6 +321,7 @@ my_function <- function(x) {
 ```
 
 Ask AI to help you:
+
 1. Improve performance
 2. Add error handling
 3. Improve readability
@@ -343,11 +354,12 @@ double_positives <- function(x) {
 ```
 
 Key improvements:
+
 - Descriptive function name
 - Roxygen documentation
 - Input validation
 - Vectorized operations (much faster)
-- NA handling
+- `NA` handling
 
 :::::::::::::::::::::::::::::::::
 ::::::::::::::::::::::::::::::::::::::::::::::::
@@ -368,9 +380,11 @@ result <- df %>%
 ```
 
 **Prompt:**
+
 > Explain what this code does step by step.
 
 **AI response would explain:**
+
 1. Groups data by category
 2. Calculates mean value per category
 3. Drops grouping structure
@@ -386,6 +400,7 @@ result <- parallel::mclapply(data, complex_function)
 ```
 
 **Questions to ask yourself:**
+
 1. Does this actually work with my data?
 2. Is parallel processing appropriate here?
 3. Will this work on all platforms (Windows issues with mclapply)?
@@ -396,6 +411,7 @@ result <- parallel::mclapply(data, complex_function)
 ### Test AI Suggestions
 
 Never blindly accept AI code suggestions:
+
 - Run the code with test data
 - Verify results match expectations
 - Check edge cases
@@ -409,6 +425,7 @@ Never blindly accept AI code suggestions:
 Use AI to help generate tests:
 
 **Prompt:**
+
 > Generate test cases for this function, including edge cases.
 
 ```r
@@ -420,6 +437,7 @@ safe_divide <- function(a, b) {
 ```
 
 **AI-generated tests:**
+
 ```r
 # Test cases
 test_that("safe_divide works correctly", {
@@ -436,6 +454,7 @@ test_that("safe_divide works correctly", {
 ### 1. Security Review
 
 **Prompt:**
+
 > Review this code for security vulnerabilities.
 
 ```r
@@ -448,6 +467,7 @@ query <- paste0("SELECT * FROM users WHERE id = ", user_input)
 ### 2. Style Consistency
 
 **Prompt:**
+
 > Does this code follow tidyverse style guidelines?
 
 ```r
@@ -456,6 +476,7 @@ myFunction<-function(x,y){return(x+y)}
 ```
 
 **AI suggests:**
+
 ```r
 # Consistent style
 my_function <- function(x, y) {
@@ -466,6 +487,7 @@ my_function <- function(x, y) {
 ### 3. Documentation Review
 
 **Prompt:**
+
 > Is this function well-documented? Suggest improvements.
 
 ```r
@@ -475,6 +497,7 @@ calc <- function(x, y) {
 ```
 
 **AI suggests adding:**
+
 ```r
 #' Calculate weighted metric
 #'
@@ -504,6 +527,7 @@ analyze <- function(d) {
 ```
 
 Review for:
+
 1. Correctness
 2. Efficiency
 3. Readability
@@ -558,11 +582,12 @@ analyze_positive_values <- function(data, value_col = "val") {
 ```
 
 Improvements:
+
 - Clear, descriptive name
 - Full documentation
 - Input validation
 - Column name parameter
-- NA handling
+- `NA` handling
 - Edge case handling
 - Uses built-in statistical functions
 - Named list output
@@ -574,8 +599,9 @@ Improvements:
 
 ### 1. Start with Specific Questions
 
-Instead of: "Review this code"
-Try: "Does this function handle missing data correctly?"
+*Instead of*: "Review this code"
+
+**Try**: "Does this function handle missing data correctly?"
 
 ### 2. Review in Small Chunks
 
@@ -601,6 +627,7 @@ Understanding helps you learn, not just copy.
 ### 5. Document Changes
 
 Keep track of improvements:
+
 ```r
 # Version 1 (original): Simple but no error handling
 # Version 2 (after AI review): Added input validation
@@ -643,6 +670,7 @@ auto_review <- function(code_file) {
 ### Group Discussion
 
 Discuss with your peers:
+
 - What types of code issues have you discovered using AI review?
 - Have you encountered situations where AI gave incorrect advice?
 - How do you balance AI suggestions with your own judgment?
