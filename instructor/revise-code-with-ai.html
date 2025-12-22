@@ -354,7 +354,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Revise Your Code with AI</h1>
-        <p>Last updated on 2025-11-10 |
+        <p>Last updated on 2025-12-22 |
 
         <a href="https://github.com/Dr-Eberle-Zentrum/AI-supported-coding-in-RStudio/edit/main/episodes/revise-code-with-ai.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -403,13 +403,22 @@ reviewing and improving your code. This chapter explores how to
 effectively use AI chat interfaces to check, revise, and validate your R
 code, ensuring better quality and maintainability.</p>
 </section><section><h2 class="section-heading" id="why-use-ai-for-code-review">Why Use AI for Code Review?<a class="anchor" aria-label="anchor" href="#why-use-ai-for-code-review"></a></h2>
-<hr class="half-width"><p>AI assistants can help identify: - <strong>Logic errors</strong>:
-Potential bugs or incorrect implementations - <strong>Performance
-issues</strong>: Inefficient code patterns - <strong>Style
-problems</strong>: Code that doesn’t follow best practices -
-<strong>Documentation gaps</strong>: Missing or unclear comments -
-<strong>Security vulnerabilities</strong>: Potential security risks</p>
-<div id="ai-as-a-complement-not-replacement" class="callout">
+<hr class="half-width"><p>AI assistants can help identify:</p>
+<ul><li>
+<strong>Logic errors</strong>: Potential bugs or incorrect
+implementations</li>
+<li>
+<strong>Performance issues</strong>: Inefficient code patterns</li>
+<li>
+<strong>Style problems</strong>: Code that doesn’t follow best
+practices</li>
+<li>
+<strong>Documentation gaps</strong>: Missing or unclear
+comments</li>
+<li>
+<strong>Security vulnerabilities</strong>: Potential security
+risks</li>
+</ul><div id="ai-as-a-complement-not-replacement" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
@@ -417,10 +426,12 @@ problems</strong>: Code that doesn’t follow best practices -
 <div id="ai-as-a-complement-not-replacement" class="callout-inner">
 <h3 class="callout-title">AI as a Complement, Not Replacement</h3>
 <div class="callout-content">
-<p>AI code review should complement, not replace: - Your own
-understanding of the code - Human peer reviews - Automated testing and
-linting tools - Domain expertise</p>
-</div>
+<p>AI code review should complement, not replace:</p>
+<ul><li>Your own understanding of the code</li>
+<li>Human peer reviews</li>
+<li>Automated testing and linting tools</li>
+<li>Domain expertise</li>
+</ul></div>
 </div>
 </div>
 </section><section><h2 class="section-heading" id="setting-up-for-ai-code-review">Setting Up for AI Code Review<a class="anchor" aria-label="anchor" href="#setting-up-for-ai-code-review"></a></h2>
@@ -506,7 +517,7 @@ identify?</p>
   Issues AI Might Identify
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <ol style="list-style-type: decimal"><li>
 <strong>No NA handling</strong>: Function will fail if there are NA
@@ -553,13 +564,15 @@ exists without checking</li>
 <div class="section level3">
 <h3 id="step-2-ask-specific-questions">Step 2: Ask Specific Questions<a class="anchor" aria-label="anchor" href="#step-2-ask-specific-questions"></a></h3>
 <p>Be specific about what you want to check:</p>
-<p><strong>Good prompts:</strong> - “Does this function handle edge
-cases correctly?” - “Are there any performance bottlenecks in this
-loop?” - “Is this code following tidyverse style guidelines?” - “Could
-this code be more readable?”</p>
-<p><strong>Less effective prompts:</strong> - “Is this good?” - “Check
-this code”</p>
-</div>
+<p><strong>Good prompts:</strong></p>
+<ul><li>“Does this function handle edge cases correctly?”</li>
+<li>“Are there any performance bottlenecks in this loop?”</li>
+<li>“Is this code following tidyverse style guidelines?”</li>
+<li>“Could this code be more readable?”</li>
+</ul><p><strong>Less effective prompts:</strong></p>
+<ul><li>“Is this good?”</li>
+<li>“Check this code”</li>
+</ul></div>
 <div class="section level3">
 <h3 id="step-3-request-improvements">Step 3: Request Improvements<a class="anchor" aria-label="anchor" href="#step-3-request-improvements"></a></h3>
 <div class="codewrapper sourceCode" id="cb5">
@@ -640,9 +653,12 @@ input validation.”</p>
 <h3 class="callout-title">Iterative Improvement</h3>
 <div class="callout-content">
 <p>Don’t expect perfect code in one iteration. Use AI as a collaborative
-partner: 1. Get initial feedback 2. Make changes 3. Ask for review again
-4. Repeat until satisfied</p>
-</div>
+partner:</p>
+<ol style="list-style-type: decimal"><li>Get initial feedback</li>
+<li>Make changes</li>
+<li>Ask for review again</li>
+<li>Repeat until satisfied</li>
+</ol></div>
 </div>
 </div>
 </div>
@@ -691,8 +707,8 @@ partner: 1. Get initial feedback 2. Make changes 3. Ask for review again
 <span>  <span class="va">result</span><span class="op">[</span><span class="va">i</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="fu">calculate</span><span class="op">(</span><span class="va">i</span><span class="op">)</span></span>
 <span><span class="op">}</span></span>
 <span></span>
-<span><span class="co"># Even better: Vectorize if possible</span></span>
-<span><span class="va">result</span> <span class="op">&lt;-</span> <span class="fu">sapply</span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">10000</span>, <span class="va">calculate</span><span class="op">)</span></span></code></pre>
+<span><span class="co"># Even better: Vectorize if possible using sapply() or purrr</span></span>
+<span><span class="va">result</span> <span class="op">&lt;-</span> <span class="fu">purrr</span><span class="fu">::</span><span class="fu">map_dbl</span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">10000</span>, <span class="va">calculate</span><span class="op">)</span></span></code></pre>
 </div>
 </div>
 <div class="section level3">
@@ -710,12 +726,13 @@ partner: 1. Get initial feedback 2. Make changes 3. Ask for review again
 </h3>
 <pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># More readable</span></span>
-<span><span class="va">calculate_metric</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">base_value</span>, <span class="va">multiplier</span>, <span class="va">divisor</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="va">adjustment</span> <span class="op">&lt;-</span> <span class="va">multiplier</span> <span class="op">*</span> <span class="va">divisor</span></span>
-<span>  <span class="va">denominator</span> <span class="op">&lt;-</span> <span class="va">base_value</span> <span class="op">-</span> <span class="va">multiplier</span></span>
-<span>  </span>
-<span>  <span class="va">base_value</span> <span class="op">+</span> <span class="op">(</span><span class="va">adjustment</span> <span class="op">/</span> <span class="va">denominator</span><span class="op">)</span></span>
-<span><span class="op">}</span></span></code></pre>
+<span><span class="va">calculate_metric</span> <span class="op">&lt;-</span> </span>
+<span>  <span class="kw">function</span><span class="op">(</span><span class="va">base_value</span>, <span class="va">multiplier</span>, <span class="va">divisor</span><span class="op">)</span> <span class="op">{</span></span>
+<span>    <span class="va">adjustment</span> <span class="op">&lt;-</span> <span class="va">multiplier</span> <span class="op">*</span> <span class="va">divisor</span></span>
+<span>    <span class="va">denominator</span> <span class="op">&lt;-</span> <span class="va">base_value</span> <span class="op">-</span> <span class="va">multiplier</span></span>
+<span>    </span>
+<span>    <span class="va">base_value</span> <span class="op">+</span> <span class="op">(</span><span class="va">adjustment</span> <span class="op">/</span> <span class="va">denominator</span><span class="op">)</span></span>
+<span>  <span class="op">}</span></span></code></pre>
 </div>
 <div id="challenge-2-iterative-code-improvement" class="callout challenge">
 <div class="callout-square">
@@ -741,9 +758,12 @@ assistance:</p>
 <span>  <span class="kw">return</span><span class="op">(</span><span class="va">y</span><span class="op">)</span></span>
 <span><span class="op">}</span></span></code></pre>
 </div>
-<p>Ask AI to help you: 1. Improve performance 2. Add error handling 3.
-Improve readability 4. Add documentation</p>
-</div>
+<p>Ask AI to help you:</p>
+<ol style="list-style-type: decimal"><li>Improve performance</li>
+<li>Add error handling</li>
+<li>Improve readability</li>
+<li>Add documentation</li>
+</ol></div>
 </div>
 </div>
 <div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
@@ -753,7 +773,7 @@ Improve readability 4. Add documentation</p>
   Improved Version After Iterations
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -779,10 +799,14 @@ Improve readability 4. Add documentation</p>
 <span>  <span class="va">positive_values</span> <span class="op">*</span> <span class="fl">2</span></span>
 <span><span class="op">}</span></span></code></pre>
 </div>
-<p>Key improvements: - Descriptive function name - Roxygen documentation
-- Input validation - Vectorized operations (much faster) - NA
-handling</p>
-</div>
+<p>Key improvements:</p>
+<ul><li>Descriptive function name</li>
+<li>Roxygen documentation</li>
+<li>Input validation</li>
+<li>Vectorized operations (much faster)</li>
+<li>
+<code>NA</code> handling</li>
+</ul></div>
 </div>
 </div>
 </div>
@@ -802,12 +826,16 @@ handling</p>
 <span>  <span class="op">)</span> <span class="op">%&gt;%</span></span>
 <span>  <span class="fu">filter</span><span class="op">(</span><span class="va">mean_val</span> <span class="op">&gt;</span> <span class="fu">quantile</span><span class="op">(</span><span class="va">mean_val</span>, <span class="fl">0.75</span><span class="op">)</span><span class="op">)</span></span></code></pre>
 </div>
-<p><strong>Prompt:</strong> &gt; Explain what this code does step by
-step.</p>
-<p><strong>AI response would explain:</strong> 1. Groups data by
-category 2. Calculates mean value per category 3. Drops grouping
-structure 4. Filters for top 25% of means</p>
-</section><section><h2 class="section-heading" id="double-checking-ai-suggestions">Double-Checking AI Suggestions<a class="anchor" aria-label="anchor" href="#double-checking-ai-suggestions"></a></h2>
+<p><strong>Prompt:</strong></p>
+<blockquote>
+<p>Explain what this code does step by step.</p>
+</blockquote>
+<p><strong>AI response would explain:</strong></p>
+<ol style="list-style-type: decimal"><li>Groups data by category</li>
+<li>Calculates mean value per category</li>
+<li>Drops grouping structure</li>
+<li>Filters for top 25% of means</li>
+</ol></section><section><h2 class="section-heading" id="double-checking-ai-suggestions">Double-Checking AI Suggestions<a class="anchor" aria-label="anchor" href="#double-checking-ai-suggestions"></a></h2>
 <hr class="half-width"><div class="section level3">
 <h3 id="always-validate-ai-recommendations">Always Validate AI Recommendations<a class="anchor" aria-label="anchor" href="#always-validate-ai-recommendations"></a></h3>
 <div class="codewrapper sourceCode" id="cb19">
@@ -817,11 +845,12 @@ structure 4. Filters for top 25% of means</p>
 <code class="sourceCode R"><span><span class="co"># AI suggests: "Use this for better performance"</span></span>
 <span><span class="va">result</span> <span class="op">&lt;-</span> <span class="fu">parallel</span><span class="fu">::</span><span class="fu">mclapply</span><span class="op">(</span><span class="va">data</span>, <span class="va">complex_function</span><span class="op">)</span></span></code></pre>
 </div>
-<p><strong>Questions to ask yourself:</strong> 1. Does this actually
-work with my data? 2. Is parallel processing appropriate here? 3. Will
-this work on all platforms (Windows issues with mclapply)? 4. Is the
-complexity worth the performance gain?</p>
-<div id="test-ai-suggestions" class="callout">
+<p><strong>Questions to ask yourself:</strong></p>
+<ol style="list-style-type: decimal"><li>Does this actually work with my data?</li>
+<li>Is parallel processing appropriate here?</li>
+<li>Will this work on all platforms (Windows issues with mclapply)?</li>
+<li>Is the complexity worth the performance gain?</li>
+</ol><div id="test-ai-suggestions" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
@@ -829,18 +858,23 @@ complexity worth the performance gain?</p>
 <div id="test-ai-suggestions" class="callout-inner">
 <h3 class="callout-title">Test AI Suggestions</h3>
 <div class="callout-content">
-<p>Never blindly accept AI code suggestions: - Run the code with test
-data - Verify results match expectations - Check edge cases - Benchmark
-performance claims - Ensure compatibility with your environment</p>
-</div>
+<p>Never blindly accept AI code suggestions:</p>
+<ul><li>Run the code with test data</li>
+<li>Verify results match expectations</li>
+<li>Check edge cases</li>
+<li>Benchmark performance claims</li>
+<li>Ensure compatibility with your environment</li>
+</ul></div>
 </div>
 </div>
 </div>
 <div class="section level3">
 <h3 id="creating-test-cases">Creating Test Cases<a class="anchor" aria-label="anchor" href="#creating-test-cases"></a></h3>
 <p>Use AI to help generate tests:</p>
-<p><strong>Prompt:</strong> &gt; Generate test cases for this function,
-including edge cases.</p>
+<p><strong>Prompt:</strong></p>
+<blockquote>
+<p>Generate test cases for this function, including edge cases.</p>
+</blockquote>
 <div class="codewrapper sourceCode" id="cb20">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -869,8 +903,10 @@ including edge cases.</p>
 </section><section><h2 class="section-heading" id="advanced-code-review-techniques">Advanced Code Review Techniques<a class="anchor" aria-label="anchor" href="#advanced-code-review-techniques"></a></h2>
 <hr class="half-width"><div class="section level3">
 <h3 id="security-review">1. Security Review<a class="anchor" aria-label="anchor" href="#security-review"></a></h3>
-<p><strong>Prompt:</strong> &gt; Review this code for security
-vulnerabilities.</p>
+<p><strong>Prompt:</strong></p>
+<blockquote>
+<p>Review this code for security vulnerabilities.</p>
+</blockquote>
 <div class="codewrapper sourceCode" id="cb22">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -882,8 +918,10 @@ vulnerabilities.</p>
 </div>
 <div class="section level3">
 <h3 id="style-consistency">2. Style Consistency<a class="anchor" aria-label="anchor" href="#style-consistency"></a></h3>
-<p><strong>Prompt:</strong> &gt; Does this code follow tidyverse style
-guidelines?</p>
+<p><strong>Prompt:</strong></p>
+<blockquote>
+<p>Does this code follow tidyverse style guidelines?</p>
+</blockquote>
 <div class="codewrapper sourceCode" id="cb23">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -904,8 +942,10 @@ guidelines?</p>
 </div>
 <div class="section level3">
 <h3 id="documentation-review">3. Documentation Review<a class="anchor" aria-label="anchor" href="#documentation-review"></a></h3>
-<p><strong>Prompt:</strong> &gt; Is this function well-documented?
-Suggest improvements.</p>
+<p><strong>Prompt:</strong></p>
+<blockquote>
+<p>Is this function well-documented? Suggest improvements.</p>
+</blockquote>
 <div class="codewrapper sourceCode" id="cb25">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -950,9 +990,13 @@ Suggest improvements.</p>
 <span>  <span class="fu">list</span><span class="op">(</span><span class="va">m</span>, <span class="va">s</span><span class="op">)</span></span>
 <span><span class="op">}</span></span></code></pre>
 </div>
-<p>Review for: 1. Correctness 2. Efficiency 3. Readability 4.
-Documentation 5. Error handling</p>
-</div>
+<p>Review for:</p>
+<ol style="list-style-type: decimal"><li>Correctness</li>
+<li>Efficiency</li>
+<li>Readability</li>
+<li>Documentation</li>
+<li>Error handling</li>
+</ol></div>
 </div>
 </div>
 <div id="accordionSolution3" class="accordion challenge-accordion accordion-flush">
@@ -962,7 +1006,7 @@ Documentation 5. Error handling</p>
   Comprehensive Improved Version
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb28">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1009,10 +1053,17 @@ Documentation 5. Error handling</p>
 <span>  <span class="op">)</span></span>
 <span><span class="op">}</span></span></code></pre>
 </div>
-<p>Improvements: - Clear, descriptive name - Full documentation - Input
-validation - Column name parameter - NA handling - Edge case handling -
-Uses built-in statistical functions - Named list output</p>
-</div>
+<p>Improvements:</p>
+<ul><li>Clear, descriptive name</li>
+<li>Full documentation</li>
+<li>Input validation</li>
+<li>Column name parameter</li>
+<li>
+<code>NA</code> handling</li>
+<li>Edge case handling</li>
+<li>Uses built-in statistical functions</li>
+<li>Named list output</li>
+</ul></div>
 </div>
 </div>
 </div>
@@ -1020,8 +1071,9 @@ Uses built-in statistical functions - Named list output</p>
 </section><section><h2 class="section-heading" id="best-practices-for-ai-assisted-code-review">Best Practices for AI-Assisted Code Review<a class="anchor" aria-label="anchor" href="#best-practices-for-ai-assisted-code-review"></a></h2>
 <hr class="half-width"><div class="section level3">
 <h3 id="start-with-specific-questions">1. Start with Specific Questions<a class="anchor" aria-label="anchor" href="#start-with-specific-questions"></a></h3>
-<p>Instead of: “Review this code” Try: “Does this function handle
-missing data correctly?”</p>
+<p><em>Instead of</em>: “Review this code”</p>
+<p><strong>Try</strong>: “Does this function handle missing data
+correctly?”</p>
 </div>
 <div class="section level3">
 <h3 id="review-in-small-chunks">2. Review in Small Chunks<a class="anchor" aria-label="anchor" href="#review-in-small-chunks"></a></h3>
@@ -1102,12 +1154,13 @@ review</li>
 <div id="group-discussion" class="callout-inner">
 <h3 class="callout-title">Group Discussion</h3>
 <div class="callout-content">
-<p>Discuss with your peers: - What types of code issues have you
-discovered using AI review? - Have you encountered situations where AI
-gave incorrect advice? - How do you balance AI suggestions with your own
-judgment? - What are the limitations of AI code review compared to human
-review?</p>
-</div>
+<p>Discuss with your peers:</p>
+<ul><li>What types of code issues have you discovered using AI review?</li>
+<li>Have you encountered situations where AI gave incorrect advice?</li>
+<li>How do you balance AI suggestions with your own judgment?</li>
+<li>What are the limitations of AI code review compared to human
+review?</li>
+</ul></div>
 </div>
 </div>
 </div>
@@ -1224,7 +1277,7 @@ any links that you are not going to use.
   "url": "https://Dr-Eberle-Zentrum.github.io/AI-supported-coding-in-RStudio/instructor/revise-code-with-ai.html",
   "identifier": "https://Dr-Eberle-Zentrum.github.io/AI-supported-coding-in-RStudio/instructor/revise-code-with-ai.html",
   "dateCreated": "2024-11-10",
-  "dateModified": "2025-11-10",
+  "dateModified": "2025-12-22",
   "datePublished": "2025-12-22"
 }
 
