@@ -25,7 +25,7 @@ exercises: 15
 
 ## Using AI directively
 
-![Directive AI usage](ai-mode-2.png)
+![](ai-mode-2.png)
 
 
 AI-powered tools can serve as an additional pair of eyes when reviewing and improving your code. 

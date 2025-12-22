@@ -25,7 +25,7 @@ exercises: 15
 
 ## Using AI autonomously
 
-![Autonomous AI usage](ai-mode-3.png)
+![](ai-mode-3.png)
 
 
 GitHub issue-driven coding combines the structured approach of issue tracking 
