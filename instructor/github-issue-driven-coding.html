@@ -403,8 +403,7 @@ coding</li>
 </div>
 </div>
 <section><h2 class="section-heading" id="using-ai-autonomously">Using AI autonomously<a class="anchor" aria-label="anchor" href="#using-ai-autonomously"></a></h2>
-<hr class="half-width"><figure><img src="../ai-mode-3.png" alt="Autonomous AI usage" class="figure mx-auto d-block"><div class="figcaption">Autonomous AI usage</div>
-</figure><p>GitHub issue-driven coding combines the structured approach of issue
+<hr class="half-width"><figure><img src="../ai-mode-3.png" class="figure mx-auto d-block"></figure><p>GitHub issue-driven coding combines the structured approach of issue
 tracking with the power of AI-assisted development. By linking your
 coding work to specific GitHub issues, you create a clear workflow that
 helps both human collaborators and AI assistants understand the context
@@ -413,6 +412,11 @@ and goals of your code changes.</p>
 Copilot, as it provides the AI with rich context about what you’re
 trying to accomplish, leading to more relevant and accurate
 suggestions.</p>
+<p>Furthermore, you can “employ” the AI as additional team members,
+assigning them specific issues to work on in parallel with your own
+tasks. That way, you can leverage AI to accelerate development while
+focusing your efforts on reviewing the AI’s solutions and the more
+critical or complex parts of the project.</p>
 </section><section><h2 class="section-heading" id="what-is-issue-driven-coding">What is Issue-Driven Coding?<a class="anchor" aria-label="anchor" href="#what-is-issue-driven-coding"></a></h2>
 <hr class="half-width"><p>Issue-driven coding is a development practice where:</p>
 <ol style="list-style-type: decimal"><li>
@@ -436,12 +440,15 @@ current state of development</li>
 <h3 class="callout-title">Why Combine Issues with AI Assistance?</h3>
 <div class="callout-content">
 <p>When you work on code while referencing a GitHub issue, AI assistants
-like Copilot can: - Better understand the task context - Generate code
-that aligns with the stated requirements - Suggest implementations that
-match the issue’s acceptance criteria - Help maintain consistency across
-related changes - Enable parallelizing progress on multiple subtasks
-when issues are well-defined</p>
-</div>
+like Copilot can:</p>
+<ul><li>Better understand the task context</li>
+<li>Generate code that aligns with the stated requirements</li>
+<li>Suggest implementations that match the issue’s acceptance
+criteria</li>
+<li>Help maintain consistency across related changes</li>
+<li>Enable parallelizing progress on multiple subtasks when issues are
+well-defined</li>
+</ul></div>
 </div>
 </div>
 </section><section><h2 class="section-heading" id="use-cases-for-issue-driven-ai-coding">Use Cases for Issue-Driven AI Coding<a class="anchor" aria-label="anchor" href="#use-cases-for-issue-driven-ai-coding"></a></h2>
@@ -568,9 +575,12 @@ scenarios.</p>
 Development</h3>
 <div class="callout-content">
 <p>Write a GitHub issue for adding a data visualization function to your
-R project. Include: - Clear title - Detailed description - Specific
-requirements - Acceptance criteria</p>
-<p>Think about what information would help an AI assistant generate
+R project. Include:</p>
+<ul><li>Clear title</li>
+<li>Detailed description</li>
+<li>Specific requirements</li>
+<li>Acceptance criteria</li>
+</ul><p>Think about what information would help an AI assistant generate
 appropriate code.</p>
 </div>
 </div>
@@ -580,7 +590,7 @@ appropriate code.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Example Solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">MARKDOWN<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -708,13 +718,20 @@ issue</li>
 </div>
 <div class="section level3">
 <h3 id="step-4-leverage-copilots-context-understanding">Step 4: Leverage Copilot’s Context Understanding<a class="anchor" aria-label="anchor" href="#step-4-leverage-copilots-context-understanding"></a></h3>
-<p>GitHub Copilot can access: - <strong>Open files in your
-editor</strong>: Related code that provides context - <strong>Your
-comments</strong>: Especially comments that reference requirements -
-<strong>Function and variable names</strong>: Descriptive names guide
-suggestions - <strong>Your typing patterns</strong>: The direction
-you’re heading</p>
-<div id="maximizing-copilots-effectiveness" class="callout">
+<p>GitHub Copilot can access:</p>
+<ul><li>
+<strong>Open files in your editor</strong>: Related code that
+provides context</li>
+<li>
+<strong>Your comments</strong>: Especially comments that reference
+requirements</li>
+<li>
+<strong>Function and variable names</strong>: Descriptive names
+guide suggestions</li>
+<li>
+<strong>Your typing patterns</strong>: The direction you’re
+heading</li>
+</ul><div id="maximizing-copilots-effectiveness" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
@@ -722,10 +739,12 @@ you’re heading</p>
 <div id="maximizing-copilots-effectiveness" class="callout-inner">
 <h3 class="callout-title">Maximizing Copilot’s Effectiveness</h3>
 <div class="callout-content">
-<p>Write comments that: - Reference the issue number - Use exact wording
-from the issue requirements - Break down complex tasks into steps -
-Specify data types and expected behavior</p>
-<p>Example:</p>
+<p>Write comments that:</p>
+<ul><li>Reference the issue number</li>
+<li>Use exact wording from the issue requirements</li>
+<li>Break down complex tasks into steps</li>
+<li>Specify data types and expected behavior</li>
+</ul><p>Example:</p>
 <div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -797,12 +816,14 @@ code.</p>
 Instead of one large issue, create multiple related issues:
 
 **Parent Issue**: "Implement data export functionality"
+
 - Issue #45: Add CSV export function
 - Issue #46: Add Excel export function
 - Issue #47: Add export format validation
 - Issue #48: Add unit tests for export functions
 
 This gives you:
+
 - Clearer focus for each coding session
 - Better AI context for specific subtasks
 - Easier progress tracking
@@ -811,6 +832,7 @@ This gives you:
 ### 4. Keep Issues Updated
 
 As you work, update the issue with:
+
 - Progress notes
 - Discoveries or changes in approach
 - Questions or blockers
@@ -823,6 +845,7 @@ This maintains context for later work and helps team members (and AI) understand
 Create issue templates for common scenarios:
 
 **Feature Request Template**:
+
 ```markdown
 ## Feature Description
 [Clear description of the feature]
@@ -872,7 +895,7 @@ needed</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p><strong>GitHub Issue</strong>:</p>
 <div class="codewrapper sourceCode" id="cb16">
@@ -1041,14 +1064,19 @@ previous work.</p>
 <div class="callout-content">
 <p>You’re adding a new data analysis pipeline. Plan the issues
 needed:</p>
-<p>Requirements: - Load data from multiple file formats (CSV, Excel,
-RDS) - Validate data structure and types - Clean data (remove
-duplicates, handle missing values) - Perform statistical analysis -
-Generate report with visualizations - Export results</p>
-<p>Create an issue structure with: 1. A parent tracking issue 2.
-Individual implementation issues 3. Labels for each issue 4.
-Dependencies between issues</p>
-</div>
+<p>Requirements:</p>
+<ul><li>Load data from multiple file formats (CSV, Excel, RDS)</li>
+<li>Validate data structure and types</li>
+<li>Clean data (remove duplicates, handle missing values)</li>
+<li>Perform statistical analysis</li>
+<li>Generate report with visualizations</li>
+<li>Export results</li>
+</ul><p>Create an issue structure with:</p>
+<ol style="list-style-type: decimal"><li>A parent tracking issue</li>
+<li>Individual implementation issues</li>
+<li>Labels for each issue</li>
+<li>Dependencies between issues</li>
+</ol></div>
 </div>
 </div>
 <div id="accordionSolution3" class="accordion challenge-accordion accordion-flush">
@@ -1056,7 +1084,7 @@ Dependencies between issues</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <p><strong>Parent Issue #80</strong>:</p>
 <div class="codewrapper sourceCode" id="cb23">
@@ -1158,18 +1186,24 @@ Dependencies between issues</p>
 </div>
 <div class="section level3">
 <h3 id="use-issue-milestones">2. Use Issue Milestones<a class="anchor" aria-label="anchor" href="#use-issue-milestones"></a></h3>
-<p>Group related issues into milestones: - <strong>Milestone</strong>:
-“Version 2.0 - Enhanced Analysis Features” - Issue #100: Add advanced
-statistics - Issue #101: Implement machine learning models - Issue #102:
-Create interactive visualizations</p>
-<p>This provides higher-level context for your development work.</p>
+<p>Group related issues into milestones:</p>
+<ul><li>
+<strong>Milestone</strong>: “Version 2.0 - Enhanced Analysis
+Features”
+<ul><li>Issue #100: Add advanced statistics</li>
+<li>Issue #101: Implement machine learning models</li>
+<li>Issue #102: Create interactive visualizations</li>
+</ul></li>
+</ul><p>This provides higher-level context for your development work.</p>
 </div>
 <div class="section level3">
 <h3 id="automate-issue-references">3. Automate Issue References<a class="anchor" aria-label="anchor" href="#automate-issue-references"></a></h3>
-<p>Use Git hooks or GitHub Actions to automatically: - Link commits to
-issues - Update issue status when branches are merged - Generate
-changelogs from issue titles - Notify stakeholders of progress</p>
-</div>
+<p>Use Git hooks or GitHub Actions to automatically:</p>
+<ul><li>Link commits to issues</li>
+<li>Update issue status when branches are merged</li>
+<li>Generate changelogs from issue titles</li>
+<li>Notify stakeholders of progress</li>
+</ul></div>
 <div class="section level3">
 <h3 id="document-decisions-in-issues">4. Document Decisions in Issues<a class="anchor" aria-label="anchor" href="#document-decisions-in-issues"></a></h3>
 <p>When you make important technical decisions, document them in the
@@ -1213,21 +1247,27 @@ is structured a certain way.</p>
 </section><section><h2 class="section-heading" id="when-to-use-issue-driven-development">When to Use Issue-Driven Development<a class="anchor" aria-label="anchor" href="#when-to-use-issue-driven-development"></a></h2>
 <hr class="half-width"><div class="section level3">
 <h3 id="good-use-cases">Good Use Cases<a class="anchor" aria-label="anchor" href="#good-use-cases"></a></h3>
-<p>✅ <strong>Feature development</strong>: Clear requirements and
-acceptance criteria ✅ <strong>Bug fixes</strong>: Reproducible problems
-with expected behavior ✅ <strong>Refactoring</strong>: Specific
-improvements to existing code ✅ <strong>Testing</strong>: Adding test
-coverage to existing functions ✅ <strong>Documentation</strong>:
-Improving code documentation and examples</p>
-</div>
+<ul><li>✅ <strong>Feature development</strong>: Clear requirements and
+acceptance criteria</li>
+<li>✅ <strong>Bug fixes</strong>: Reproducible problems with expected
+behavior</li>
+<li>✅ <strong>Refactoring</strong>: Specific improvements to existing
+code</li>
+<li>✅ <strong>Testing</strong>: Adding test coverage to existing
+functions</li>
+<li>✅ <strong>Documentation</strong>: Improving code documentation and
+examples</li>
+</ul></div>
 <div class="section level3">
 <h3 id="less-suitable-cases">Less Suitable Cases<a class="anchor" aria-label="anchor" href="#less-suitable-cases"></a></h3>
-<p>❌ <strong>Exploratory coding</strong>: When you’re still figuring
-out what’s needed ❌ <strong>Very small changes</strong>: Single-line
-typo fixes ❌ <strong>Rapid prototyping</strong>: Quick experiments and
-throwaway code ❌ <strong>Emergency hotfixes</strong>: Critical fixes
-that need immediate deployment</p>
-<div id="balancing-structure-and-flexibility" class="callout">
+<ul><li>❌ <strong>Exploratory coding</strong>: When you’re still figuring
+out what’s needed</li>
+<li>❌ <strong>Very small changes</strong>: Single-line typo fixes</li>
+<li>❌ <strong>Rapid prototyping</strong>: Quick experiments and
+throwaway code</li>
+<li>❌ <strong>Emergency hotfixes</strong>: Critical fixes that need
+immediate deployment</li>
+</ul><div id="balancing-structure-and-flexibility" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
@@ -1236,47 +1276,53 @@ that need immediate deployment</p>
 <h3 class="callout-title">Balancing Structure and Flexibility</h3>
 <div class="callout-content">
 <p>Issue-driven development provides structure, but don’t let it slow
-you down: - Create lightweight issues for tracking, not bureaucracy -
-It’s OK to discover new requirements during implementation - Update
-issues as understanding evolves - Close or merge issues that become
-redundant</p>
-</div>
+you down:</p>
+<ul><li>Create lightweight issues for tracking, not bureaucracy</li>
+<li>It’s OK to discover new requirements during implementation</li>
+<li>Update issues as understanding evolves</li>
+<li>Close or merge issues that become redundant</li>
+</ul></div>
 </div>
 </div>
 </div>
 </section><section><h2 class="section-heading" id="common-pitfalls-and-how-to-avoid-them">Common Pitfalls and How to Avoid Them<a class="anchor" aria-label="anchor" href="#common-pitfalls-and-how-to-avoid-them"></a></h2>
 <hr class="half-width"><div class="section level3">
 <h3 id="pitfall-1-issues-too-vague">Pitfall 1: Issues Too Vague<a class="anchor" aria-label="anchor" href="#pitfall-1-issues-too-vague"></a></h3>
-<p><strong>Problem</strong>: “Make the code better”
-<strong>Solution</strong>: Specify what “better” means: - Faster?
-(Provide benchmark targets) - More readable? (Specify style guidelines)
-- More robust? (List edge cases to handle)</p>
-</div>
+<p><strong>Problem</strong>: “Make the code better”</p>
+<p><strong>Solution</strong>: Specify what “better” means:</p>
+<ul><li>Faster? (Provide benchmark targets)</li>
+<li>More readable? (Specify style guidelines)</li>
+<li>More robust? (List edge cases to handle)</li>
+</ul></div>
 <div class="section level3">
 <h3 id="pitfall-2-issues-too-detailed">Pitfall 2: Issues Too Detailed<a class="anchor" aria-label="anchor" href="#pitfall-2-issues-too-detailed"></a></h3>
-<p><strong>Problem</strong>: Issue contains complete implementation code
-<strong>Solution</strong>: Describe requirements and constraints, not
+<p><strong>Problem</strong>: Issue contains complete implementation
+code</p>
+<p><strong>Solution</strong>: Describe requirements and constraints, not
 implementation. Let AI and developer judgment determine the best
 approach.</p>
 </div>
 <div class="section level3">
 <h3 id="pitfall-3-not-updating-issues">Pitfall 3: Not Updating Issues<a class="anchor" aria-label="anchor" href="#pitfall-3-not-updating-issues"></a></h3>
 <p><strong>Problem</strong>: Issue doesn’t reflect current understanding
-or progress <strong>Solution</strong>: Edit issues as you learn. Add
-comments about discoveries, blockers, or approach changes.</p>
+or progress</p>
+<p><strong>Solution</strong>: Edit issues as you learn. Add comments
+about discoveries, blockers, or approach changes.</p>
 </div>
 <div class="section level3">
 <h3 id="pitfall-4-ignoring-issue-context-while-coding">Pitfall 4: Ignoring Issue Context While Coding<a class="anchor" aria-label="anchor" href="#pitfall-4-ignoring-issue-context-while-coding"></a></h3>
 <p><strong>Problem</strong>: Writing code without referencing the
-issue’s requirements <strong>Solution</strong>: Keep the issue open in
-your browser. Reference it in comments. Check off requirements as you
-implement them.</p>
+issue’s requirements</p>
+<p><strong>Solution</strong>: Keep the issue open in your browser.
+Reference it in comments. Check off requirements as you implement
+them.</p>
 </div>
 <div class="section level3">
 <h3 id="pitfall-5-over-relying-on-ai">Pitfall 5: Over-Relying on AI<a class="anchor" aria-label="anchor" href="#pitfall-5-over-relying-on-ai"></a></h3>
 <p><strong>Problem</strong>: Accepting all AI suggestions without
-validation <strong>Solution</strong>: Use issues to define test cases.
-Verify AI-generated code meets all requirements before committing.</p>
+validation</p>
+<p><strong>Solution</strong>: Use issues to define test cases. Verify
+AI-generated code meets all requirements before committing.</p>
 <div id="group-discussion" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
@@ -1285,12 +1331,14 @@ Verify AI-generated code meets all requirements before committing.</p>
 <div id="group-discussion" class="callout-inner">
 <h3 class="callout-title">Group Discussion</h3>
 <div class="callout-content">
-<p>Discuss with your peers: - How do you currently track development
-tasks? - What information do you typically include in issues? - How
-might issue-driven development change your workflow? - What challenges
-do you anticipate in adopting this approach? - How can AI assistance
-complement issue tracking in your projects?</p>
-</div>
+<p>Discuss with your peers:</p>
+<ul><li>How do you currently track development tasks?</li>
+<li>What information do you typically include in issues?</li>
+<li>How might issue-driven development change your workflow?</li>
+<li>What challenges do you anticipate in adopting this approach?</li>
+<li>How can AI assistance complement issue tracking in your
+projects?</li>
+</ul></div>
 </div>
 </div>
 </div>
