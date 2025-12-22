@@ -23,7 +23,10 @@ exercises: 15
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Introduction
+## Using AI autonomously
+
+![Autonomous AI usage](ai-mode-3.png)
+
 
 GitHub issue-driven coding combines the structured approach of issue tracking with the power of AI-assisted development. By linking your coding work to specific GitHub issues, you create a clear workflow that helps both human collaborators and AI assistants understand the context and goals of your code changes.
 
