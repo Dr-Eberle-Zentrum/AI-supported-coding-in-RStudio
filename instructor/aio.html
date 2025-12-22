@@ -568,7 +568,7 @@ function, such as:</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>GitHub Copilot should suggest a function implementation below your
 comment. The suggestion might look something like:</p>
@@ -1696,7 +1696,7 @@ differ?</p>
   Observations
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p><strong>Poor prompt typically produces:</strong></p>
 <ul>
@@ -2016,7 +2016,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-rstudio-autocompletion"><p>Content from <a href="rstudio-autocompletion.html">RStudio Autocompletion with Copilot</a></p>
 <hr>
-<p>Last updated on 2025-12-19 |
+<p>Last updated on 2025-12-22 |
 
         <a href="https://github.com/Dr-Eberle-Zentrum/AI-supported-coding-in-RStudio/edit/main/episodes/rstudio-autocompletion.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 40 minutes</p>
@@ -2055,10 +2055,11 @@ Copilot?</li>
 </div>
 </div>
 </div>
-<section><h2 class="section-heading" id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
+<section><h2 class="section-heading" id="using-an-ai-assistively">Using an AI assistively<a class="anchor" aria-label="anchor" href="#using-an-ai-assistively"></a>
 </h2>
 <hr class="half-width">
-<p>GitHub Copilot functions as an advanced autocompletion tool in
+<figure><img src="../ai-mode-1.png" alt="Assistive AI usage" class="figure mx-auto d-block"><div class="figcaption">Assistive AI usage</div>
+</figure><p>GitHub Copilot functions as an advanced autocompletion tool in
 RStudio, going beyond simple syntax completion to suggest entire lines
 or blocks of code. This chapter covers how to use Copilot effectively as
 an autocompletion assistant.</p>
@@ -3598,7 +3599,7 @@ file.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>Printing the <code>chat</code> object shows</p>
 <ul>
@@ -3753,7 +3754,7 @@ words</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Example Solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -4000,7 +4001,7 @@ posts</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Example for Option B: Support Tickets </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb18">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -4169,10 +4170,11 @@ assistants?</li>
 </div>
 </div>
 </div>
-<section><h2 class="section-heading" id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
+<section><h2 class="section-heading" id="using-ai-directively">Using AI directively<a class="anchor" aria-label="anchor" href="#using-ai-directively"></a>
 </h2>
 <hr class="half-width">
-<p>AI-powered tools can serve as an additional pair of eyes when
+<figure><img src="../ai-mode-2.png" alt="Directive AI usage" class="figure mx-auto d-block"><div class="figcaption">Directive AI usage</div>
+</figure><p>AI-powered tools can serve as an additional pair of eyes when
 reviewing and improving your code. This chapter explores how to
 effectively use AI chat interfaces to check, revise, and validate your R
 code, ensuring better quality and maintainability.</p>
@@ -5086,7 +5088,7 @@ any links that you are not going to use.
 </div>
 </section></section><section id="aio-github-issue-driven-coding"><p>Content from <a href="github-issue-driven-coding.html">GitHub Issue-Driven Coding with Copilot</a></p>
 <hr>
-<p>Last updated on 2025-11-10 |
+<p>Last updated on 2025-12-22 |
 
         <a href="https://github.com/Dr-Eberle-Zentrum/AI-supported-coding-in-RStudio/edit/main/episodes/github-issue-driven-coding.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 40 minutes</p>
@@ -5132,10 +5134,11 @@ coding</li>
 </div>
 </div>
 </div>
-<section><h2 class="section-heading" id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
+<section><h2 class="section-heading" id="using-ai-autonomously">Using AI autonomously<a class="anchor" aria-label="anchor" href="#using-ai-autonomously"></a>
 </h2>
 <hr class="half-width">
-<p>GitHub issue-driven coding combines the structured approach of issue
+<figure><img src="../ai-mode-3.png" alt="Autonomous AI usage" class="figure mx-auto d-block"><div class="figcaption">Autonomous AI usage</div>
+</figure><p>GitHub issue-driven coding combines the structured approach of issue
 tracking with the power of AI-assisted development. By linking your
 coding work to specific GitHub issues, you create a clear workflow that
 helps both human collaborators and AI assistants understand the context
