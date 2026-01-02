@@ -214,7 +214,7 @@ Thank you for joining us on this exploration of AI-supported coding in RStudio!
 The best practices you've learned provide a solid foundation for working effectively with AI tools. As you continue your journey, remember to:
 
 - **Be strategic** in choosing when to use AI assistance
-- **Be critical** in evaluating AI suggestions and outputs  
+- **Be critical** in evaluating AI suggestions and outputs
 - **Be responsible** for all code you commit
 - **Be adaptable** as AI capabilities continue to evolve
 - **Be engaged** with the community to share and learn
