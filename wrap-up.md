@@ -1,5 +1,5 @@
 ---
-title: "Wrap-Up: AI-Supported Coding Journey"
+title: "Wrap-Up and Next Steps"
 teaching: 15
 exercises: 5
 ---
