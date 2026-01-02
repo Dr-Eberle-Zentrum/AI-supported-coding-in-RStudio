@@ -23,11 +23,26 @@ exercises: 15
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Introduction
+## Using AI autonomously
 
-GitHub issue-driven coding combines the structured approach of issue tracking with the power of AI-assisted development. By linking your coding work to specific GitHub issues, you create a clear workflow that helps both human collaborators and AI assistants understand the context and goals of your code changes.
+![](ai-mode-3.png)
 
-This approach is particularly valuable when working with GitHub Copilot, as it provides the AI with rich context about what you're trying to accomplish, leading to more relevant and accurate suggestions.
+
+GitHub issue-driven coding combines the structured approach of issue tracking 
+with the power of AI-assisted development. 
+By linking your coding work to specific GitHub issues, 
+you create a clear workflow that helps both human collaborators 
+and AI assistants understand the context and goals of your code changes.
+
+This approach is particularly valuable when working with GitHub Copilot, 
+as it provides the AI with rich context about what you're trying to accomplish, 
+leading to more relevant and accurate suggestions.
+
+Furthermore, you can "employ" the AI as additional team members,
+assigning them specific issues to work on in parallel with your own tasks.
+That way, you can leverage AI to accelerate development 
+while focusing your efforts on reviewing the AI's solutions
+and the more critical or complex parts of the project.
 
 ## What is Issue-Driven Coding?
 
@@ -43,6 +58,7 @@ Issue-driven coding is a development practice where:
 ### Why Combine Issues with AI Assistance?
 
 When you work on code while referencing a GitHub issue, AI assistants like Copilot can:
+
 - Better understand the task context
 - Generate code that aligns with the stated requirements
 - Suggest implementations that match the issue's acceptance criteria
@@ -58,6 +74,7 @@ When you work on code while referencing a GitHub issue, AI assistants like Copil
 **Scenario**: You need to add a new feature to analyze data trends.
 
 **GitHub Issue Example**:
+
 ```markdown
 Title: Add trend analysis function to data processing module
 
@@ -84,6 +101,7 @@ Acceptance Criteria:
 **Scenario**: Users report incorrect calculations in your analysis code.
 
 **GitHub Issue Example**:
+
 ```markdown
 Title: Fix mean calculation ignoring NA values
 
@@ -108,6 +126,7 @@ to handle NA values.
 **Scenario**: You need to improve code performance or readability.
 
 **GitHub Issue Example**:
+
 ```markdown
 Title: Refactor data loading functions for better performance
 
@@ -134,6 +153,7 @@ Proposed Improvements:
 **Scenario**: You need to add test coverage for existing functions.
 
 **GitHub Issue Example**:
+
 ```markdown
 Title: Add unit tests for data validation functions
 
@@ -159,6 +179,7 @@ Target Coverage: 90%+
 ## Challenge 1: Create an Issue for AI-Assisted Development
 
 Write a GitHub issue for adding a data visualization function to your R project. Include:
+
 - Clear title
 - Detailed description
 - Specific requirements
@@ -220,12 +241,14 @@ Before starting to code, create a GitHub issue that clearly describes:
 ### Step 2: Reference the Issue in Your Work
 
 **In commit messages**:
+
 ```bash
 git commit -m "Add trend analysis function #42"
 git commit -m "Fix NA handling in statistics - fixes #38"
 ```
 
 **In code comments**:
+
 ```r
 # Implementation for GitHub issue #42: Add trend analysis
 # See: https://github.com/username/repo/issues/42
@@ -235,6 +258,7 @@ analyze_trend <- function(data, date_col, value_col) {
 ```
 
 **In pull request descriptions**:
+
 ```markdown
 Closes #42
 
@@ -277,6 +301,7 @@ analyze_trend <- function(data, date_col = "date", value_col = "value") {
 ### Step 4: Leverage Copilot's Context Understanding
 
 GitHub Copilot can access:
+
 - **Open files in your editor**: Related code that provides context
 - **Your comments**: Especially comments that reference requirements
 - **Function and variable names**: Descriptive names guide suggestions
@@ -287,12 +312,14 @@ GitHub Copilot can access:
 ### Maximizing Copilot's Effectiveness
 
 Write comments that:
+
 - Reference the issue number
 - Use exact wording from the issue requirements
 - Break down complex tasks into steps
 - Specify data types and expected behavior
 
 Example:
+
 ```r
 # Issue #42 requirement: calculate slope and intercept using linear regression
 # Input: data frame with numeric date and value columns
@@ -309,6 +336,7 @@ This gives Copilot clear, specific context for generating appropriate code.
 ### 1. Write Specific, Actionable Issues
 
 **Good Issue**:
+
 ```markdown
 Title: Add parameter validation to process_data function
 
@@ -326,6 +354,7 @@ Return informative error messages that guide users to fix the problem.
 ```
 
 **Less Effective Issue**:
+
 ```markdown
 Title: Improve process_data
 
@@ -358,12 +387,14 @@ process_data(bad_data)  # Should give clear error about missing columns
 Instead of one large issue, create multiple related issues:
 
 **Parent Issue**: "Implement data export functionality"
+
 - Issue #45: Add CSV export function
 - Issue #46: Add Excel export function  
 - Issue #47: Add export format validation
 - Issue #48: Add unit tests for export functions
 
 This gives you:
+
 - Clearer focus for each coding session
 - Better AI context for specific subtasks
 - Easier progress tracking
@@ -372,6 +403,7 @@ This gives you:
 ### 4. Keep Issues Updated
 
 As you work, update the issue with:
+
 - Progress notes
 - Discoveries or changes in approach
 - Questions or blockers
@@ -384,6 +416,7 @@ This maintains context for later work and helps team members (and AI) understand
 Create issue templates for common scenarios:
 
 **Feature Request Template**:
+
 ```markdown
 ## Feature Description
 [Clear description of the feature]
@@ -426,6 +459,7 @@ Users report it's unclear what this function does and it doesn't handle errors.
 ## Solution
 
 **GitHub Issue**:
+
 ```markdown
 Title: Improve calc() function documentation and error handling
 
@@ -453,6 +487,7 @@ Acceptance Criteria:
 ```
 
 **Code with comments**:
+
 ```r
 # Issue #50: Improve calc() documentation and error handling
 # Renamed from calc() to calculate_adjusted_sum() for clarity
@@ -484,6 +519,7 @@ calculate_adjusted_sum <- function(x, y) {
 ```
 
 **Commit structure**:
+
 ```bash
 # Commit 1: Rename function
 git commit -m "Rename calc to calculate_adjusted_sum for clarity (#50)"
@@ -577,6 +613,7 @@ This helps maintain context across a larger feature or project.
 You're adding a new data analysis pipeline. Plan the issues needed:
 
 Requirements:
+
 - Load data from multiple file formats (CSV, Excel, RDS)
 - Validate data structure and types
 - Clean data (remove duplicates, handle missing values)
@@ -585,6 +622,7 @@ Requirements:
 - Export results
 
 Create an issue structure with:
+
 1. A parent tracking issue
 2. Individual implementation issues
 3. Labels for each issue
@@ -595,6 +633,7 @@ Create an issue structure with:
 ## Solution
 
 **Parent Issue #80**:
+
 ```markdown
 Title: Implement Complete Data Analysis Pipeline
 Labels: enhancement, epic
@@ -621,6 +660,7 @@ Dependencies:
 ```
 
 **Issue #81**:
+
 ```markdown
 Title: Add multi-format data loading support
 Labels: enhancement, data-loading
@@ -637,6 +677,7 @@ Requirements:
 ```
 
 **Issue #82**:
+
 ```markdown
 Title: Implement data structure validation
 Labels: enhancement, validation
@@ -689,6 +730,7 @@ validate_data <- function(data, schema) {
 ### 2. Use Issue Milestones
 
 Group related issues into milestones:
+
 - **Milestone**: "Version 2.0 - Enhanced Analysis Features"
   - Issue #100: Add advanced statistics
   - Issue #101: Implement machine learning models
@@ -699,6 +741,7 @@ This provides higher-level context for your development work.
 ### 3. Automate Issue References
 
 Use Git hooks or GitHub Actions to automatically:
+
 - Link commits to issues
 - Update issue status when branches are merged
 - Generate changelogs from issue titles
@@ -745,24 +788,25 @@ Requirements:
 
 ### Good Use Cases
 
-✅ **Feature development**: Clear requirements and acceptance criteria
-✅ **Bug fixes**: Reproducible problems with expected behavior
-✅ **Refactoring**: Specific improvements to existing code
-✅ **Testing**: Adding test coverage to existing functions
-✅ **Documentation**: Improving code documentation and examples
+- ✅ **Feature development**: Clear requirements and acceptance criteria
+- ✅ **Bug fixes**: Reproducible problems with expected behavior
+- ✅ **Refactoring**: Specific improvements to existing code
+- ✅ **Testing**: Adding test coverage to existing functions
+- ✅ **Documentation**: Improving code documentation and examples
 
 ### Less Suitable Cases
 
-❌ **Exploratory coding**: When you're still figuring out what's needed
-❌ **Very small changes**: Single-line typo fixes
-❌ **Rapid prototyping**: Quick experiments and throwaway code
-❌ **Emergency hotfixes**: Critical fixes that need immediate deployment
+- ❌ **Exploratory coding**: When you're still figuring out what's needed
+- ❌ **Very small changes**: Single-line typo fixes
+- ❌ **Rapid prototyping**: Quick experiments and throwaway code
+- ❌ **Emergency hotfixes**: Critical fixes that need immediate deployment
 
 ::::::::::::::::::::::::::::::::::::: callout
 
 ### Balancing Structure and Flexibility
 
 Issue-driven development provides structure, but don't let it slow you down:
+
 - Create lightweight issues for tracking, not bureaucracy
 - It's OK to discover new requirements during implementation
 - Update issues as understanding evolves
@@ -775,7 +819,9 @@ Issue-driven development provides structure, but don't let it slow you down:
 ### Pitfall 1: Issues Too Vague
 
 **Problem**: "Make the code better"
+
 **Solution**: Specify what "better" means:
+
 - Faster? (Provide benchmark targets)
 - More readable? (Specify style guidelines)
 - More robust? (List edge cases to handle)
@@ -783,21 +829,25 @@ Issue-driven development provides structure, but don't let it slow you down:
 ### Pitfall 2: Issues Too Detailed
 
 **Problem**: Issue contains complete implementation code
+
 **Solution**: Describe requirements and constraints, not implementation. Let AI and developer judgment determine the best approach.
 
 ### Pitfall 3: Not Updating Issues
 
 **Problem**: Issue doesn't reflect current understanding or progress
+
 **Solution**: Edit issues as you learn. Add comments about discoveries, blockers, or approach changes.
 
 ### Pitfall 4: Ignoring Issue Context While Coding
 
 **Problem**: Writing code without referencing the issue's requirements
+
 **Solution**: Keep the issue open in your browser. Reference it in comments. Check off requirements as you implement them.
 
 ### Pitfall 5: Over-Relying on AI
 
 **Problem**: Accepting all AI suggestions without validation
+
 **Solution**: Use issues to define test cases. Verify AI-generated code meets all requirements before committing.
 
 ::::::::::::::::::::::::::::::::::::: discussion
@@ -805,6 +855,7 @@ Issue-driven development provides structure, but don't let it slow you down:
 ### Group Discussion
 
 Discuss with your peers:
+
 - How do you currently track development tasks?
 - What information do you typically include in issues?
 - How might issue-driven development change your workflow?

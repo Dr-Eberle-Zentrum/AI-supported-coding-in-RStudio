@@ -53,7 +53,7 @@ Examples might include:
 
 - Reading CSV files and performing basic data cleaning
 - Creating standard plotting functions with ggplot2
-- Writing function documentation in roxygen2 format
+- Writing function documentation in [roxygen2 format](https://roxygen2.r-lib.org/index.html)
 - Setting up standard data frame transformations with dplyr
 
 :::::::::::::::::::::::::::::::::
@@ -82,6 +82,7 @@ Writing clear documentation is time-consuming but essential. AI can assist with:
 When working with unfamiliar packages or functions:
 
 - AI can suggest appropriate functions for specific tasks
+- Explain function parameters and usage or given code
 - Provide example implementations
 - Offer alternative approaches
 
@@ -131,10 +132,12 @@ Be cautious when:
 
 ### Data Privacy Considerations
 
-Remember that code sent to AI services may be used for training. Never include:
+Remember that code sent to AI services may be used for training. 
+
+**Never include:**
 
 - API keys or passwords
-- Proprietary algorithms
+- Proprietary algorithms/code
 - Sensitive data
 - Personal information
 
@@ -173,12 +176,14 @@ What questions should you ask yourself before accepting the suggestion?
 
 Before accepting AI-generated code, ask:
 
-1. Does this code produce statistically valid results?
+1. Does this code produce valid results?
 2. Are the assumptions appropriate for my data?
 3. Does it handle missing data correctly?
 4. Are there edge cases that aren't covered?
 5. Is this the most efficient approach?
 6. Does it align with best practices in my field?
+
+*Keep asking/investigating until you can confidently answer "yes" to all questions!*
 
 :::::::::::::::::::::::::::::::::
 ::::::::::::::::::::::::::::::::::::::::::::::::
@@ -188,10 +193,15 @@ Before accepting AI-generated code, ask:
 ### Best Practices for Using AI Assistants
 
 1. **Start with a clear goal:** Know what you want to achieve before asking for AI help
+   - Best decompose complex tasks into smaller, manageable parts that can be easily checked
 2. **Review and understand:** Never accept suggestions blindly
+   - Request explanations for AI-generated code until you understand it fully
 3. **Test thoroughly:** Validate all AI-generated code
+   - Think about "What can go wrong?" (edge cases) and design tests accordingly
 4. **Iterate and refine:** Use AI suggestions as a starting point, not the final solution
+   - Often AI helps with code fragments. Do/request a final revision to merge them into a coherent whole
 5. **Maintain ownership:** You are responsible for the code in your project
+   - Ensure it meets your project's standards and requirements
 
 ### When to Rely on Human Expertise
 
@@ -210,15 +220,13 @@ Prioritize human judgment for:
 
 Typically, one distinguishes between three **ways of AI usage**:
 
-- **Assistively**: 
-  AI helps you by suggesting code snippets, completing lines, or generating boilerplate code.
-  This is typically done automatically without the need to explicitly ask for it.
-- **Directively**: 
-  AI takes a more active role, generating larger code blocks or even entire functions based on your prompts.
-  Here, you explicitly ask the AI to perform a specific task.
-- **Autonomously**: 
-  AI independently creates code with minimal human input, often used in automated code generation scenarios.
-  To this end, you provide high-level requirements or a description of a larger task, and the AI generates the code accordingly.
+| Assistively | Directively | Autonomously |
+|-------------|-------------|--------------|
+| ![](ai-mode-1.png) | ![](ai-mode-2.png) | ![](ai-mode-3.png) |
+| AI suggests code snippets, completes lines, or generates boilerplate code automatically. | AI generates larger code blocks or entire functions based on explicit prompts. | AI independently creates code with minimal human input based on high-level requirements. |
+| This is typically done automatically without the need to explicitly ask for it. | Here, you explicitly ask the AI to perform a specific task. | You provide high-level requirements or a description of a larger task, and the AI generates the code accordingly. |
+
+
 
 Within this course, we will investigate all three ways of AI usage.
 
@@ -238,7 +246,7 @@ Beside the way *how* AI is used, one can also distinguish *what process is suppo
     - **optimization support**: AI helps improve code performance, suggesting optimizations, refactoring, or resource management techniques.
 - **Data Processing Support**: AI assists in cleaning, transforming, and preparing data for analysis.
   - i.e. AI is used as a tool within data processing pipelines.
-  - e.g. we will use the `ellmer` R package later in this course for AI-supported data cleaning.
+  - e.g. we will use the `ellmer` R package later in this course for AI-supported data generation.
 - **Project Management Support**
   - AI aids in organizing tasks, tracking progress, and managing timelines.
   - i.e. AI is used as a tool within project management software
@@ -255,14 +263,16 @@ Beside the way *how* AI is used, one can also distinguish *what process is suppo
 
 ::::::::::::::::::::::::::::::::::::: discussion
 
-### Group Discussion
+### Preparation of Group Discussion
 
-In small groups, discuss:
+In small groups, we want to discuss:
 
 - Have you used AI coding assistants before? What was your experience?
 - Can you share an example where AI helped you solve a problem?
 - Can you share an example where AI suggestions were incorrect or unhelpful?
 - How do you decide when to use AI assistance versus figuring things out yourself?
+
+Thus, please think on these questions for our upcoming group discussion.
 
 :::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -274,6 +284,8 @@ AI assistants are rapidly evolving. As they improve, we should:
 - Continuously refine our approach to using these tools
 - Share knowledge about effective practices
 - Contribute to discussions about responsible AI use
+
+
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 

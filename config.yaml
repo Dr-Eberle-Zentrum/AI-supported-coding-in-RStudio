@@ -68,11 +68,12 @@ episodes:
 - getting-started-with-copilot.md
 - where-ai-support.md
 - ai-risks-responsibilities.md
-- context-and-agents.md
 - rstudio-autocompletion.md
+- context-and-agents.md
 - ai-pipelines-ellmer.md
 - revise-code-with-ai.md
 - github-issue-driven-coding.md
+- wrap-up.md
 
 # Information for Learners
 learners:
