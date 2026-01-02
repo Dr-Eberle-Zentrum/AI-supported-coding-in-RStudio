@@ -23,18 +23,13 @@ exercises: 15
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Using AI directively
+## Introduction
 
-![](ai-mode-2.png)
-
-
-AI-powered tools can serve as an additional pair of eyes when reviewing and improving your code. 
-This chapter explores how to effectively use AI chat interfaces to check, revise, and validate your R code, ensuring better quality and maintainability.
+AI-powered tools can serve as an additional pair of eyes when reviewing and improving your code. This chapter explores how to effectively use AI chat interfaces to check, revise, and validate your R code, ensuring better quality and maintainability.
 
 ## Why Use AI for Code Review?
 
 AI assistants can help identify:
-
 - **Logic errors**: Potential bugs or incorrect implementations
 - **Performance issues**: Inefficient code patterns
 - **Style problems**: Code that doesn't follow best practices
@@ -46,7 +41,6 @@ AI assistants can help identify:
 ### AI as a Complement, Not Replacement
 
 AI code review should complement, not replace:
-
 - Your own understanding of the code
 - Human peer reviews
 - Automated testing and linting tools
@@ -56,62 +50,40 @@ AI code review should complement, not replace:
 
 ## Setting Up for AI Code Review
 
-### Using GitHub Copilot Chat in your browser
+### Using GitHub Copilot Chat
 
-Currently (as of end 2025), RStudio has no built-in AI chat interface
+If you have GitHub Copilot enabled in RStudio:
 
-However, you can use GitHub Copilot Chat within your browser.
+1. Open the Copilot Chat panel:
+   - Go to `Tools` → `Copilot` → `Open Chat`
+   - Or use keyboard shortcut (varies by platform)
 
-To this end:
+2. The chat interface appears as a sidebar in RStudio
 
-- Navigate to [https::github.com/copilot]
-- For an extended list of models:
-  - Ensure you have a GitHub Copilot subscription
-  - Sign in
-
-If you have any other AI chat interface you prefer (e.g., ChatGPT, Claude), 
-you can use that as well.
-
-When using a browser, you have to manually copy and paste code snippets between 
-RStudio and the chat interface to get reviews and suggestions.
-While this is less seamless than an integrated solution, 
-it still allows you to leverage AI for code review.
-
-### Alternative: Use the `chattr` app within RStudio
-
-The [`chattr` package](https://mlverse.github.io/chattr/) provides an interface 
-to chat with AI models directly within RStudio.
-
-The `chattr_app()` function will open a Shiny app where you can interact with various AI models.
-Alternatively, you can run the app via the RStudio "Addins"" menu by selecting "Open chat".
-
-Unfortunately, running the chat interface will "block" your R session until you close the app.
-
-A workaround is to run the app in "job" mode using
+### Alternative: Using ellmer for Code Review
 
 ```r
-chattr::chattr_app(as_job = TRUE)
+library(ellmer)
+
+# Initialize a chat session
+code_review_chat <- chat_github("gpt-4o")
+
+# Function to review code
+review_code <- function(code_string) {
+  prompt <- paste0(
+    "Review this R code for:\n",
+    "1. Potential bugs\n",
+    "2. Performance issues\n",
+    "3. Best practices\n",
+    "4. Readability\n\n",
+    "Code:\n", code_string
+  )
+  
+  code_review_chat$chat(prompt)
+}
 ```
 
-That way, you can continue working in your main R session while chatting with the AI in a separate window.
-The con is that the chattr app won't be able to directly interact with your current document in RStudio.
-
-
-Via the same "Addins" menu, you can also **select code in your R script and choose "Send prompt"** to get AI feedback 
-on that specific code snippet, which will be copied back directly below your selection.
-
-As of now, I personally find using GitHub Copilot Chat in the browser more flexible for code review tasks,
-but the `chattr` package is a promising option for integrated RStudio workflows.
-
-If you are interested in a more sophisticated AI integration into your IDE,
-you might have to consider to try another IDE such as 
-[Positron](https://positron.posit.co/) or 
-[Visual Studio Code](https://code.visualstudio.com/).
-
-
 ## Basic Code Review Workflow
-
-The following steps are a general workflow for using AI to review and improve your R code.
 
 ### Step 1: Request an Initial Review
 
@@ -181,14 +153,12 @@ process_data <- function(data) {
 Be specific about what you want to check:
 
 **Good prompts:**
-
 - "Does this function handle edge cases correctly?"
 - "Are there any performance bottlenecks in this loop?"
 - "Is this code following tidyverse style guidelines?"
 - "Could this code be more readable?"
 
 **Less effective prompts:**
-
 - "Is this good?"
 - "Check this code"
 
@@ -205,7 +175,6 @@ for(i in 1:length(data)) {
 > How can I make this code more efficient and R-idiomatic?
 
 **AI might suggest:**
-
 ```r
 # Vectorized approach (much faster)
 result <- data * 2
@@ -258,7 +227,6 @@ analyze_sales <- function(sales_data) {
 ### Iterative Improvement
 
 Don't expect perfect code in one iteration. Use AI as a collaborative partner:
-
 1. Get initial feedback
 2. Make changes
 3. Ask for review again
@@ -278,14 +246,11 @@ if (x > 0 & y > 0) {  # What if x or y is NA?
 ```
 
 **AI can suggest:**
-
 ```r
 if (!is.na(x) && !is.na(y) && x > 0 && y > 0) {
   process(x, y)
 }
 ```
-
-Did you notice the change from `&` to `&&`? If you don't know why, ask AI! 
 
 ### 2. Performance Problems
 
@@ -298,7 +263,6 @@ for(i in 1:10000) {
 ```
 
 **AI can suggest:**
-
 ```r
 # Fast: Pre-allocate vector
 result <- vector("numeric", 10000)
@@ -306,8 +270,8 @@ for(i in 1:10000) {
   result[i] <- calculate(i)
 }
 
-# Even better: Vectorize if possible using sapply() or purrr
-result <- purrr::map_dbl(1:10000, calculate)
+# Even better: Vectorize if possible
+result <- sapply(1:10000, calculate)
 ```
 
 ### 3. Code Readability
@@ -318,16 +282,14 @@ f <- function(x, y, z) { x + y * z / (x - y) }
 ```
 
 **AI can suggest:**
-
 ```r
 # More readable
-calculate_metric <- 
-  function(base_value, multiplier, divisor) {
-    adjustment <- multiplier * divisor
-    denominator <- base_value - multiplier
-    
-    base_value + (adjustment / denominator)
-  }
+calculate_metric <- function(base_value, multiplier, divisor) {
+  adjustment <- multiplier * divisor
+  denominator <- base_value - multiplier
+  
+  base_value + (adjustment / denominator)
+}
 ```
 
 ::::::::::::::::::::::::::::::::::::: challenge 
@@ -349,7 +311,6 @@ my_function <- function(x) {
 ```
 
 Ask AI to help you:
-
 1. Improve performance
 2. Add error handling
 3. Improve readability
@@ -382,12 +343,11 @@ double_positives <- function(x) {
 ```
 
 Key improvements:
-
 - Descriptive function name
 - Roxygen documentation
 - Input validation
 - Vectorized operations (much faster)
-- `NA` handling
+- NA handling
 
 :::::::::::::::::::::::::::::::::
 ::::::::::::::::::::::::::::::::::::::::::::::::
@@ -408,18 +368,13 @@ result <- df %>%
 ```
 
 **Prompt:**
-
 > Explain what this code does step by step.
 
 **AI response would explain:**
-
 1. Groups data by category
 2. Calculates mean value per category
 3. Drops grouping structure
 4. Filters for top 25% of means
-
-Often it is a good idea to ask the AI to **incorporate explanations as comments in the code itself**.
-That way, you have both the code and the explanation together for future reference and rereading.
 
 ## Double-Checking AI Suggestions
 
@@ -431,7 +386,6 @@ result <- parallel::mclapply(data, complex_function)
 ```
 
 **Questions to ask yourself:**
-
 1. Does this actually work with my data?
 2. Is parallel processing appropriate here?
 3. Will this work on all platforms (Windows issues with mclapply)?
@@ -442,7 +396,6 @@ result <- parallel::mclapply(data, complex_function)
 ### Test AI Suggestions
 
 Never blindly accept AI code suggestions:
-
 - Run the code with test data
 - Verify results match expectations
 - Check edge cases
@@ -456,7 +409,6 @@ Never blindly accept AI code suggestions:
 Use AI to help generate tests:
 
 **Prompt:**
-
 > Generate test cases for this function, including edge cases.
 
 ```r
@@ -468,7 +420,6 @@ safe_divide <- function(a, b) {
 ```
 
 **AI-generated tests:**
-
 ```r
 # Test cases
 test_that("safe_divide works correctly", {
@@ -480,15 +431,11 @@ test_that("safe_divide works correctly", {
 })
 ```
 
-While this will provide the needed code for tests, 
-make sure to **review the tested values** and adapt the tests to your specific needs.
-
 ## Advanced Code Review Techniques
 
 ### 1. Security Review
 
 **Prompt:**
-
 > Review this code for security vulnerabilities.
 
 ```r
@@ -501,7 +448,6 @@ query <- paste0("SELECT * FROM users WHERE id = ", user_input)
 ### 2. Style Consistency
 
 **Prompt:**
-
 > Does this code follow tidyverse style guidelines?
 
 ```r
@@ -510,7 +456,6 @@ myFunction<-function(x,y){return(x+y)}
 ```
 
 **AI suggests:**
-
 ```r
 # Consistent style
 my_function <- function(x, y) {
@@ -521,7 +466,6 @@ my_function <- function(x, y) {
 ### 3. Documentation Review
 
 **Prompt:**
-
 > Is this function well-documented? Suggest improvements.
 
 ```r
@@ -531,7 +475,6 @@ calc <- function(x, y) {
 ```
 
 **AI suggests adding:**
-
 ```r
 #' Calculate weighted metric
 #'
@@ -561,7 +504,6 @@ analyze <- function(d) {
 ```
 
 Review for:
-
 1. Correctness
 2. Efficiency
 3. Readability
@@ -616,26 +558,14 @@ analyze_positive_values <- function(data, value_col = "val") {
 ```
 
 Improvements:
-
 - Clear, descriptive name
 - Full documentation
 - Input validation
 - Column name parameter
-- `NA` handling
+- NA handling
 - Edge case handling
 - Uses built-in statistical functions
 - Named list output
-
-What you might have noticed at this point: well documented and robust code often 
-spends more lines on validation and documentation than on the actual logic itself.
-
-**That's fine!!!**
-
-Writing maintainable code is more important than keeping it short.
-
-From this code, you can also automatically generate documentation pages using `roxygen2`,
- which is a great bonus for future users (including yourself).
-Or you can use the documentation to generate vignettes or tutorials.
 
 :::::::::::::::::::::::::::::::::
 ::::::::::::::::::::::::::::::::::::::::::::::::
@@ -644,9 +574,8 @@ Or you can use the documentation to generate vignettes or tutorials.
 
 ### 1. Start with Specific Questions
 
-*Instead of*: "Review this code"
-
-**Try**: "Does this function handle missing data correctly?"
+Instead of: "Review this code"
+Try: "Does this function handle missing data correctly?"
 
 ### 2. Review in Small Chunks
 
@@ -666,34 +595,54 @@ Understanding helps you learn, not just copy.
 
 - AI review
 - Peer review
-- Automated linting (e.g. [`lintr` package](https://lintr.r-lib.org/))
-- Testing (e.g. [`testthat` package](https://testthat.r-lib.org/))
+- Automated linting (`lintr` package)
+- Testing (`testthat` package)
 
 ### 5. Document Changes
 
-Keep track of improvements.
-
+Keep track of improvements:
 ```r
 # Version 1 (original): Simple but no error handling
 # Version 2 (after AI review): Added input validation
 # Version 3 (after testing): Improved edge case handling
 ```
 
-But best not via comments, rather via a proper version control system such as Git.
-The latter is especially important when collaborating in teams and neatly integrated into RStudio.
+## Tools for AI-Assisted Code Review
 
-In combination with GitHub, you can even use AI tools to help you write better commit messages,
-set up automated post-push actions for linting, testing, and documentation generation.
-And the GitHub Copilot can even help you via the GitHub web interface to review pull requests, 
-suggest solutions for issues and improvements, as we will discuss in more detail in later chapters.
+### In RStudio
 
+- **GitHub Copilot Chat**: Integrated chat interface
+- **Code selection review**: Select code and ask for review
+
+### External Tools
+
+- **ChatGPT**: Copy code for detailed analysis
+- **Claude**: Good for explaining complex logic
+- **GitHub Copilot CLI**: Command-line interface for code review
+
+### R Packages
+
+```r
+# Use ellmer for programmatic code review
+library(ellmer)
+
+review_chat <- chat_github("gpt-4o")
+
+# Automated review function
+auto_review <- function(code_file) {
+  code <- readLines(code_file)
+  review_chat$chat(paste(
+    "Review this R code for best practices:",
+    paste(code, collapse = "\n")
+  ))
+}
+```
 
 ::::::::::::::::::::::::::::::::::::: discussion
 
 ### Group Discussion
 
 Discuss with your peers:
-
 - What types of code issues have you discovered using AI review?
 - Have you encountered situations where AI gave incorrect advice?
 - How do you balance AI suggestions with your own judgment?

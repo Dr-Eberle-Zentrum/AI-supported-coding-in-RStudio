@@ -6,8 +6,8 @@ exercises: 20
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- What is `ellmer` and how does it integrate with AI models?
-- How can I set up `ellmer` with GitHub Copilot in RStudio?
+- What is ellmer and how does it integrate with AI models?
+- How can I set up ellmer with GitHub Copilot in RStudio?
 - How can I use AI prompts to process data within my analysis pipelines?
 - What are the best practices for integrating AI into data processing workflows?
 
@@ -15,8 +15,8 @@ exercises: 20
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- Understand the `ellmer` package and its capabilities
-- Install and configure `ellmer` for use with AI models
+- Understand the ellmer package and its capabilities
+- Install and configure ellmer for use with AI models
 - Integrate AI prompts into data processing pipelines
 - Apply AI-powered transformations to datasets
 - Develop reproducible AI-enhanced workflows
@@ -30,7 +30,6 @@ The `ellmer` package provides a powerful interface for integrating large languag
 ## What is ellmer?
 
 `ellmer` is an R package that provides a unified interface to various LLM providers, including:
-
 - GitHub Copilot (via GitHub Models)
 - OpenAI models
 - Anthropic Claude
@@ -38,7 +37,6 @@ The `ellmer` package provides a powerful interface for integrating large languag
 - Local models via Ollama
 
 It allows you to:
-
 - Send prompts to AI models from R code
 - Process text data with AI assistance
 - Generate structured outputs
@@ -57,7 +55,7 @@ It allows you to:
 
 ## Installing ellmer
 
-First, install the `ellmer` package from CRAN or GitHub:
+First, install the ellmer package from CRAN or GitHub:
 
 ```r
 # Install from CRAN
@@ -77,24 +75,17 @@ library(tidyverse)  # For data manipulation
 
 ## Setting Up ellmer with GitHub Copilot
 
-To use `ellmer` with GitHub Copilot (via GitHub Models), you need to set up authentication.
+To use ellmer with GitHub Copilot (via GitHub Models), you need to set up authentication.
 
-
-### Step 1-pat: Getting Access to GitHub Models
-
-Given that we have already registered our GitHub account in RStudio to use the 
-GitHub Copilot features, we can proceed to use the GitHub Models via `ellmer`.
-
-
-### Step 1-explicit: Get a GitHub Token and Store It Securely
-
-**The following steps are only needed, if you have not already set up GitHub authentication in RStudio.**
+### Step 1: Get a GitHub Token
 
 1. Go to [github.com/settings/tokens](https://github.com/settings/tokens)
 2. Click "Generate new token" → "Generate new token (classic)"
 3. Give it a descriptive name (e.g., "ellmer-access")
 4. Select the required scopes (typically `repo` and `user`)
 5. Click "Generate token" and copy it immediately
+
+### Step 2: Configure Your Token
 
 Store your token securely in your R environment:
 
@@ -116,35 +107,44 @@ Never commit tokens or API keys to your code! Always use environment variables a
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-### Step 2: Initialize a Chat Object
+### Step 3: Initialize a Chat Object
 
 ```r
 # Create a chat session with GitHub Copilot
-chat <- chat_github()  # the used default model will be printed
+chat <- chat_github("gpt-4o")  # or other available models
 
 # Test the connection
-chat$chat("Hi, please give me a joke!")
+chat$chat("Hello! Can you help me analyze data in R?")
 ```
 
 ::::::::::::::::::::::::::::::::::::: challenge 
 
-## Challenge 1: Setup and Test `ellmer`
+## Challenge 1: Setup and Test ellmer
 
-1. Install the `ellmer` package
-2. Create a chat object and send a test message
-3. Verify you receive a response and enjoy your joke..
-4. What do you see, when you print your `chat` object?
+1. Install the ellmer package
+2. Set up your GitHub token
+3. Create a chat object and send a test message
+4. Verify you receive a response
 
 :::::::::::::::::::::::: solution 
 
 ## Solution
 
-Printing the `chat` object shows 
+```r
+library(ellmer)
 
-- the model being used
-- the number of tokens sent and received
-- the total cost incurred (if applicable)
-- the history of messages exchanged
+# Set token (use your actual token)
+Sys.setenv(GITHUB_TOKEN = "ghp_your_token_here")
+
+# Create chat object
+chat <- chat_github("gpt-4o")
+
+# Test message
+response <- chat$chat("What are three uses of R in data science?")
+print(response)
+```
+
+You should receive a detailed response about R's applications in data science.
 
 :::::::::::::::::::::::::::::::::
 ::::::::::::::::::::::::::::::::::::::::::::::::
@@ -164,12 +164,10 @@ texts <- c(
 )
 
 # Use AI to classify sentiment
-chat <- chat_github()
-# iterative call of chat interface using sapply() or purrr::map()
-results <- purrr::map_chr(texts, 
-  function(text) {
-    chat$chat(paste("Classify the sentiment (positive/negative/neutral):", text))
-  })
+chat <- chat_github("gpt-4o")
+results <- sapply(texts, function(text) {
+  chat$chat(paste("Classify the sentiment (positive/negative/neutral):", text))
+})
 ```
 
 ### Processing Data in Pipelines
@@ -191,7 +189,7 @@ feedback_data <- tibble(
 
 # Add AI-powered sentiment analysis
 feedback_processed <- feedback_data %>%
-  rowwise() %>% # ensures each row/information is processed individually
+  rowwise() %>%
   mutate(
     sentiment = chat$chat(
       paste("Classify as positive/negative/neutral:", comment)
@@ -207,15 +205,14 @@ feedback_processed <- feedback_data %>%
 ### Rate Limits and Costs
 
 Be aware of:
-
-- API rate limits for your chosen provider (limited number of requests per minute/hour)
+- API rate limits for your chosen provider
 - Potential costs for API calls
 - Processing time for large datasets
-- Consider batching requests when possible (less tokens spent)
+- Consider batching requests when possible
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-### Advanced: Structured Output Generation
+## Advanced: Structured Output Generation
 
 Request structured data from AI models:
 
@@ -243,14 +240,11 @@ feedback_structured <- feedback_data %>%
 
 ## Challenge 2: Build a Data Processing Pipeline
 
-Create a tidyverse pipeline that:
-
-1. creates a `tibble` dataset (columns `review_id` and `text`) with the following product reviews
-  - *The software is intuitive but lacks some features. Rating: 4/5*
-  - *Terrible experience, crashed multiple times. Very disappointed.*
-  - *Perfect for my needs! Easy to use and fast. Highly recommend.*
-2. Uses AI to classify the main topic of each review in up to two words
+Create a pipeline that:
+1. Takes a dataset with product reviews
+2. Uses AI to classify the main topic of each review
 3. Extracts a numerical satisfaction score (1-5) from the text
+4. Summarizes findings
 
 :::::::::::::::::::::::: solution 
 
@@ -271,16 +265,19 @@ reviews <- tibble(
 )
 
 # Initialize chat
-chat <- chat_github()
+chat <- chat_github("gpt-4o")
 
 # Process with AI
-reviews %>%
+results <- reviews %>%
   rowwise() %>%
   mutate(
     topic = chat$chat(paste("Main topic (1-2 words):", text)),
     score = chat$chat(paste("Satisfaction score 1-5:", text)),
+    summary = chat$chat(paste("Summarize in 10 words:", text))
   ) %>%
   ungroup()
+
+print(results)
 ```
 
 :::::::::::::::::::::::::::::::::
@@ -350,12 +347,9 @@ process_in_batches <- function(data, batch_size = 10) {
 Document your AI pipeline for reproducibility:
 
 ```r
-# Initialize chat
-chat <- chat_github()
-
 # Record model and version
 metadata <- list(
-  model = chat$get_model(),
+  model = "gpt-4o",
   provider = "github",
   date = Sys.Date(),
   ellmer_version = packageVersion("ellmer"),
@@ -375,7 +369,6 @@ list(
 ### Group Discussion
 
 Consider the following questions:
-
 - What types of data processing tasks in your work could benefit from AI integration?
 - How would you balance reproducibility with using AI models that may change over time?
 - What ethical considerations arise when using AI to process data?
@@ -431,9 +424,9 @@ content %>%
 
 Choose a scenario and implement a complete AI-enhanced pipeline:
 
-- **Option A**: Analyze a dataset of tweets/social media posts
-- **Option B**: Process customer support tickets
-- **Option C**: Categorize research papers by topic
+**Option A**: Analyze a dataset of tweets/social media posts
+**Option B**: Process customer support tickets
+**Option C**: Categorize research papers by topic
 
 Include error handling, caching, and metadata tracking.
 
@@ -446,7 +439,7 @@ library(ellmer)
 library(tidyverse)
 
 # Initialize
-chat <- chat_github()
+chat <- chat_github("gpt-4o")
 
 # Process tickets
 process_ticket <- function(ticket_text) {
@@ -471,7 +464,7 @@ output <- list(
   data = tickets_processed,
   metadata = list(
     processed = Sys.time(),
-    model = chat$get_model(),
+    model = "gpt-4o",
     n_tickets = nrow(tickets)
   )
 )
@@ -486,9 +479,7 @@ write_rds(output, "processed_tickets.rds")
 
 ### Authentication Errors
 
-- Verify your token is set correctly: 
-  - `Sys.getenv("GITHUB_PAT_GITHUB_COM")` for RStudio setup
-  - `Sys.getenv("GITHUB_TOKEN")` for explicit token setup from above
+- Verify your token is set correctly: `Sys.getenv("GITHUB_TOKEN")`
 - Ensure token has required permissions
 - Check token hasn't expired
 
@@ -508,8 +499,7 @@ write_rds(output, "processed_tickets.rds")
 
 ## Future Developments
 
-Stay updated with `ellmer` developments:
-
+Stay updated with ellmer developments:
 - New model integrations
 - Enhanced streaming capabilities
 - Better error handling
@@ -519,7 +509,7 @@ Check the [ellmer documentation](https://ellmer.tidyverse.org) regularly for upd
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
-- `ellmer` provides a unified interface for integrating LLMs into R workflows
+- ellmer provides a unified interface for integrating LLMs into R workflows
 - Set up authentication using environment variables for security
 - Integrate AI prompts seamlessly into tidyverse pipelines
 - Design clear, constrained prompts for consistent results
