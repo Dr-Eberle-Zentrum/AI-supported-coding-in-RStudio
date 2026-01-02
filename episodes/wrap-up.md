@@ -47,7 +47,7 @@ Throughout this workshop, you've explored essential practices for AI-supported c
 
 - **Use AI for:** Boilerplate code, documentation, learning new libraries, repetitive patterns
 - **Avoid AI for:** Critical algorithms, novel implementations, security-sensitive code, learning fundamentals
-- Always apply human judgment—AI is a tool, not a replacement for expertise
+- Always apply human judgment .. AI is a tool, not a replacement for expertise
 
 ### Always Verify and Take Responsibility
 
@@ -56,7 +56,7 @@ Throughout this workshop, you've explored essential practices for AI-supported c
 - You are fully responsible for all code you commit, regardless of its source
 - Test AI-generated code thoroughly, especially for edge cases and error handling
 - Review for security vulnerabilities, performance issues, and correctness
-- Maintain your programming skills—don't become overly dependent on AI
+- Maintain your programming skills, don't become overly dependent on AI!
 
 ### Write Clear Prompts for Better Results
 
@@ -71,7 +71,7 @@ Throughout this workshop, you've explored essential practices for AI-supported c
 
 **Best Practice:** Help AI understand your project conventions.
 
-- Use AGENTS.md files to define project-specific guidelines and patterns
+- Use `AGENTS.md` files to define project-specific guidelines and patterns
 - Structure your code clearly so AI can better understand your codebase
 - Keep related code visible in your editor to provide context
 - Define naming conventions and coding standards
@@ -80,7 +80,8 @@ Throughout this workshop, you've explored essential practices for AI-supported c
 
 **Best Practice:** Use AI systematically, not sporadically.
 
-- Incorporate AI into data pipelines using tools like ellmer for consistent results
+- Incorporate AI into data pipelines using tools like `ellmer` for consistent results
+  - BUT: document the used model etc. to stay (as far as possible) reproducable!
 - Use AI to refactor and modernize legacy code systematically
 - Leverage AI for comprehensive documentation generation
 - Apply AI assistance to test generation and validation
@@ -91,7 +92,7 @@ Throughout this workshop, you've explored essential practices for AI-supported c
 
 - Create detailed GitHub issues with clear requirements and acceptance criteria
 - Reference issues in your code to provide context for AI suggestions
-- Use AI as a collaborative team member on well-defined tasks
+- Use AI as a collaborative team member on well-defined tasks by assigning it in the issue
 - Track progress and maintain traceability through issue links
 
 ## Beyond This Workshop: Further AI Applications
@@ -161,29 +162,20 @@ The AI tools and techniques we've covered are just the beginning. The field is e
 
 ## The Rapidly Evolving AI Landscape
 
-**AI capabilities are evolving at an unprecedented pace.** The tools and techniques you've learned today are just the beginning—new models, features, and applications emerge constantly.
+**AI capabilities are evolving at an unprecedented pace.** 
+
+The tools and techniques you've learned here are just the beginning! New models, features, and applications emerge constantly.
 
 **What this means for you:**
 
-- Tools will become more capable—stay informed about updates to Copilot and RStudio's AI features
-- Best practices will evolve—engage with developer communities to learn from shared experiences
-- New paradigms will emerge—remain flexible and open to new approaches
-- Continuous learning is essential—the field moves fast, and staying current requires active effort
-
-::::::::::::::::::::::::::::::::::::: callout
-
-### Staying Current with AI Developments
-
-- Follow the **GitHub Copilot Blog** and **RStudio/Posit Blog** for official updates
-- Join **developer communities** (Reddit, Stack Overflow, GitHub Discussions) to share experiences
-- **Experiment** with new features as they're released
-- Attend **workshops and webinars** on AI-assisted development
-
-::::::::::::::::::::::::::::::::::::::::::::::::
+- Tools will become more capable, i.e. stay informed about updates to Copilot and RStudio's AI features
+- Best practices will evolve, i.e. engage with developer communities to learn from shared experiences
+- New paradigms will emerge, i.e. remain flexible and open to new approaches
+- Continuous learning is essential, i.e. the field moves fast, and staying current requires active effort
 
 ## Looking to the Future
 
-The integration of AI into programming is not a temporary trend—it represents a fundamental shift in how we develop software.
+The integration of AI into programming is not a temporary trend—it represents a fundamental shift in how we develop software and data processing pipelines.
 
 ### Embrace the Change
 
