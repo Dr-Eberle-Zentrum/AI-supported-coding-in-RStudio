@@ -4,8 +4,9 @@
 
 ## Required Self-Study
 
-- [Risks, Drawbacks and Responsibilities with AI Usage](../../episodes/ai-risks-responsibilities.html)
-- [RStudio Autocompletion with Copilot](../../episodes/rstudio-autocompletion.html)
+- [Risks, Drawbacks and Responsibilities with AI Usage](../../episodes/ai-risks-responsibilities.md)
+- [RStudio Autocompletion with Copilot](../../episodes/rstudio-autocompletion.md)
+- [Context Definition and the AGENTS.md Concept](../../episodes/context-definition-agents.md)
 
 
 
@@ -65,3 +66,7 @@ data("storms")
   - `Tools` > `Global Options`
   - "Copilot" menu on the left
     - for most use cases: sufficient to disable indexing of whole project!
+
+
+
+[TODO] AGENTS.md
