@@ -418,10 +418,4 @@ Remember to test the function with sample data!
 
 
 
-::::::: instructor
-
-[Plan for Session 2](../instructors/session-2.md)
-
-::::::::::::::::::
-
 
