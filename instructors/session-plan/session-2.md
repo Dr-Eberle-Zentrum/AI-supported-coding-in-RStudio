@@ -4,8 +4,8 @@
 
 ## Required Self-Study
 
-- [Risks, Drawbacks and Responsibilities with AI Usage](https://dr-eberle-zentrum.github.io/AI-supported-coding-in-RStudio/ai-risks-responsibilities.html)
-- [RStudio Autocompletion with Copilot](https://dr-eberle-zentrum.github.io/AI-supported-coding-in-RStudio/rstudio-autocompletion.html)
+- [Risks, Drawbacks and Responsibilities with AI Usage](../../episodes/ai-risks-responsibilities.html)
+- [RStudio Autocompletion with Copilot](../../episodes/rstudio-autocompletion.html)
 
 
 

@@ -4,9 +4,9 @@
 
 ## Required Self-Study
 
-- [Summary and Setup](https://dr-eberle-zentrum.github.io/AI-supported-coding-in-RStudio/index.html)
-- [Getting Started with GitHub Copilot](https://dr-eberle-zentrum.github.io/AI-supported-coding-in-RStudio/getting-started-with-copilot.html)
-- [Where Do We Need AI Support?](https://dr-eberle-zentrum.github.io/AI-supported-coding-in-RStudio/where-ai-support.html)
+- Summary and Setup
+- [Getting Started with GitHub Copilot](../../episodes/getting-started-with-copilot.md)
+- [Where Do We Need AI Support?](../../episodes/where-ai-support.html)
 
 
 
