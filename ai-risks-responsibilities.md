@@ -519,17 +519,18 @@ AI capabilities and limitations change rapidly:
 
 ### Group Discussion
 
-Discuss with your peers:
+Within the session we want to discuss some of the following questions:
 
-1. Have you encountered situations where AI-generated code was wrong? What happened?
+1. What are your "tricks" to check for and deal with wrong answers of the AI?
 
-2. How do you balance productivity gains from AI with the need to maintain your coding skills?
+2. How do you know/decide whether AI usage is allowed/ok and when not?
 
-3. What policies should organizations have regarding AI coding assistant use?
+3. Are policies (of organizations, employers, ...) a sufficient guide regarding AI use?
 
-4. How might AI tools change the role of programmers in the future?
+4. Honestly, do you think AI usage helps to increase your skills or is a tempting way to reduce your learning/understanding efforts?
+   Or do you have examples for both? If so, what makes the difference?
 
-5. What ethical considerations should guide AI use in software development?
+**So think about them and make some notes of your thoughts and ideas!**
 
 :::::::::::::::::::::::::::::::::::::::::::::::::::
 
