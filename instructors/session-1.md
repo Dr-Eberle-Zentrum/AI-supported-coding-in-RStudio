@@ -5,8 +5,8 @@
 ## Required Self-Study
 
 - Summary and Setup
-- [Getting Started with GitHub Copilot](../../episodes/getting-started-with-copilot.md)
-- [Where Do We Need AI Support?](../../episodes/where-ai-support.html)
+- [Getting Started with GitHub Copilot](../episodes/getting-started-with-copilot.md)
+- [Where Do We Need AI Support?](../episodes/where-ai-support.html)
 
 
 

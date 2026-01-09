@@ -4,9 +4,9 @@
 
 ## Required Self-Study
 
-- [Risks, Drawbacks and Responsibilities with AI Usage](../../episodes/ai-risks-responsibilities.md)
-- [RStudio Autocompletion with Copilot](../../episodes/rstudio-autocompletion.md)
-- [Context Definition and the AGENTS.md Concept](../../episodes/context-definition-agents.md)
+- [Risks, Drawbacks and Responsibilities with AI Usage](../episodes/ai-risks-responsibilities.md)
+- [RStudio Autocompletion with Copilot](../episodes/rstudio-autocompletion.md)
+- [Context Definition and the AGENTS.md Concept](../episodes/context-definition-agents.md)
 
 
 
