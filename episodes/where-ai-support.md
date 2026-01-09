@@ -300,10 +300,3 @@ AI assistants are rapidly evolving. As they improve, we should:
 
 
 
-::::::: instructor
-
-[Plan for Session 1](../instructors/session-1.md)
-
-::::::::::::::::::
-
-

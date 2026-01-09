@@ -67,6 +67,42 @@ data("storms")
   - "Copilot" menu on the left
     - for most use cases: sufficient to disable indexing of whole project!
 
+### Context Definition
 
+- so far: **context via comments**
+  - PRO: simple and quick to use
+  - CON: general requirements and coding constraints need to be defined in each document
+- alternative: **context via `AGENTS.md` files**
+  - PRO: central definition of requirements and constraints for the whole project
+  - CON: requires some setup and maintenance = additional work but WORTH IT!
+  - typically requires code organisation in terms of **projects** (RStudio Projects)
 
-[TODO] AGENTS.md
+- ? Who is familiar with **RStudio Projects**?
+  - idea and setup
+    - relation of project and working directory
+    - relation of project and git repository
+  - switching projects
+  - `AGENTS.md` file
+    - project root directory vs. subdirectory
+    - verbose description of coding requirements and constraints
+      - even more detailed than comments in code files
+      - use examples
+      - update regularly while working on the project
+
+- **Exercise: Setup of RStudio Project with `AGENTS.md` file**
+  - create a new RStudio Project in a new directory
+  - add a new R script with the short description from above
+  - create an `AGENTS.md` file in the project root directory
+    - provide detailed instructions for AI on general details on
+      - coding style (e.g. where to put documenting comments)
+      - visualization style (colors, fonts, themes, ...)
+      - image generation (output file format, sizes, resolution, ...)
+      - any other requirements or constraints you find important
+  - reopen the created R script with the incomplete code
+    - try to complete the code by accepting Copilot suggestions
+  - compare the results with those from the previous exercise
+  - double check your `AGENTS.md` file
+    - ? did Copilot follow your instructions?
+    - ? what could be improved in your `AGENTS.md` file?
+      - too specific vs. too general?
+
