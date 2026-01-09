@@ -415,3 +415,13 @@ Remember to test the function with sample data!
 - Combine Copilot assistance with your own coding expertise for best results
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+
+::::::: instructor
+
+[Plan for Session 2](../instructors/session-plan/session-2.md)
+
+::::::::::::::::::
+
+
