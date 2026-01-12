@@ -90,7 +90,7 @@ data("storms")
       - update regularly while working on the project
 
 - **Exercise: Setup of RStudio Project with `AGENTS.md` file**
-  - create a new RStudio Project in a new directory
+  - create a new RStudio Project
   - add a new R script with the short description from above
   - create an `AGENTS.md` file in the project root directory
     - provide detailed instructions for AI on general details on
@@ -98,6 +98,7 @@ data("storms")
       - visualization style (colors, fonts, themes, ...)
       - image generation (output file format, sizes, resolution, ...)
       - any other requirements or constraints you find important
+    - ! *you might want to use AI-supported autocompletion for this...!*
   - reopen the created R script with the incomplete code
     - try to complete the code by accepting Copilot suggestions
   - compare the results with those from the previous exercise
