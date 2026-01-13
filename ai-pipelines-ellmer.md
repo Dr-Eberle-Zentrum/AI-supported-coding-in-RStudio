@@ -82,8 +82,9 @@ To use `ellmer` with GitHub Copilot (via GitHub Models), you need to set up auth
 
 ### Step 1-pat: Getting Access to GitHub Models
 
-Given that we have already registered our GitHub account in RStudio to use the 
-GitHub Copilot features, we can proceed to use the GitHub Models via `ellmer`.
+Given that we have already *registered our GitHub account in RStudio*, to use the 
+GitHub Copilot features, we can **proceed to use the GitHub Models via `ellmer` without further actions**.
+
 
 
 ### Step 1-explicit: Get a GitHub Token and Store It Securely
@@ -374,7 +375,7 @@ list(
 
 ### Group Discussion
 
-Consider the following questions:
+Consider the following questions for discussion within the class:
 
 - What types of data processing tasks in your work could benefit from AI integration?
 - How would you balance reproducibility with using AI models that may change over time?
@@ -503,7 +504,7 @@ write_rds(output, "processed_tickets.rds")
 
 - Make prompts more specific
 - Add constraints to expected outputs
-- Use temperature parameter (if supported)
+- Use [temperature parameter](https://www.vellum.ai/llm-parameters/temperature) (if supported)
 - Validate and clean AI outputs
 
 ## Future Developments
