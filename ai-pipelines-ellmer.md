@@ -239,6 +239,7 @@ Be aware of:
 - Processing time for large datasets
 - Consider batching requests when possible (less tokens spent)
 
+
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ### Advanced: Structured Output Generation
@@ -311,6 +312,29 @@ reviews %>%
 
 :::::::::::::::::::::::::::::::::
 ::::::::::::::::::::::::::::::::::::::::::::::::
+
+## Local LLMs
+
+So far, we have focused on cloud-based AI models like GitHub Copilot.
+Thus, our setup required internet access and API tokens.
+Since the latter may incur costs and have rate limits, local models can be a viable alternative for some use cases.
+This is especially true for high-volume applications or sensitive data.
+Furthermore, this reduces dependency on external services and the costs associated with them.
+
+To use local models with `ellmer`, you can leverage [Ollama](https://ollama.com/), which allows you to run LLMs on your local machine.
+
+The general steps are:
+
+1. Install Ollama and set up a local model that fits both your **computational resources and needs**
+2. Install the `ellmer` package
+3. Initialize a chat object for the local model
+
+A detailed guide for setting up Ollama with `ellmer` can be found in the 
+
+- [POSIT Blog post on "Setting up local LLMs for R and Python"](https://posit.co/blog/setting-up-local-llms-for-r-and-python/) and the 
+- [ellmer `chat_ollama` documentation](https://ellmer.tidyverse.org/reference/chat_ollama.html).
+
+
 
 ## Best Practices for AI in Pipelines
 
@@ -529,6 +553,7 @@ write_rds(output, "processed_tickets.rds")
 - Use batch processing
 - Consider caching results
 - Monitor API usage
+- Consider installation of [local models via Ollama](https://posit.co/blog/setting-up-local-llms-for-r-and-python/) for heavy workloads
 
 ### Inconsistent Results
 
@@ -557,5 +582,6 @@ Check the [ellmer documentation](https://ellmer.tidyverse.org) regularly for upd
 - Implement error handling and caching for robust pipelines
 - Document models and prompts for reproducibility
 - Consider rate limits, costs, and ethical implications when using AI in data processing
+- Local model options are available for high-volume use cases
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
