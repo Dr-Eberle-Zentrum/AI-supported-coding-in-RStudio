@@ -72,6 +72,7 @@ episodes:
 - rstudio-autocompletion.md
 - context-and-agents.md
 - ai-pipelines-ellmer.md
+- llm-parameters.md
 - revise-code-with-ai.md
 - github-issue-driven-coding.md
 - wrap-up.md
