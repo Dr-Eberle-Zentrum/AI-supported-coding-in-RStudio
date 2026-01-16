@@ -363,7 +363,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Using AI within Pipelines via ellmer</h1>
-        <p>Last updated on 2026-01-13 |
+        <p>Last updated on 2026-01-16 |
 
         <a href="https://github.com/Dr-Eberle-Zentrum/AI-supported-coding-in-RStudio/edit/main/episodes/ai-pipelines-ellmer.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -624,6 +624,29 @@ file.</p>
 <span>    <span class="op">)</span></span>
 <span>  <span class="op">)</span></span></code></pre>
 </div>
+</div>
+<div class="section level3">
+<h3 id="aggregated-calls-to-reduce-io-and-number-of-prompts">Aggregated calls to reduce IO and number of prompts<a class="anchor" aria-label="anchor" href="#aggregated-calls-to-reduce-io-and-number-of-prompts"></a></h3>
+<p>So far, one <code>chat()</code> call (prompt) was made per row.</p>
+<p>An alternative is to aggregate multiple inputs into a single prompt,
+reducing the number of API calls:</p>
+<div class="codewrapper sourceCode" id="cb7">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">feedback_data</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">mutate</span><span class="op">(</span></span>
+<span>    mood <span class="op">=</span> </span>
+<span>      <span class="va">comment</span> <span class="op">|&gt;</span> </span>
+<span>      <span class="fu">str_c</span><span class="op">(</span>collapse<span class="op">=</span><span class="st">"#"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>      <span class="va">chat_high</span><span class="op">$</span><span class="fu">chat</span><span class="op">(</span> <span class="st">"Assign to each product feedback answer (provided as #-separated list) a respective category from (happy,unhappy) in a #-separated aggregated text output"</span>,</span>
+<span>                      echo <span class="op">=</span> <span class="st">"none"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>      <span class="fu">str_split_1</span><span class="op">(</span><span class="st">"#"</span><span class="op">)</span></span>
+<span>  <span class="op">)</span></span></code></pre>
+</div>
+<p>That way, only one API call is made for the entire dataset.</p>
+<p>But when working on larger datasets, be aware of token limits per
+prompt (both input and output tokens).</p>
 <div id="rate-limits-and-costs" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
@@ -635,6 +658,7 @@ file.</p>
 <p>Be aware of:</p>
 <ul><li>API rate limits for your chosen provider (limited number of requests
 per minute/hour)</li>
+<li>Limited token quotas and prompt sizes</li>
 <li>Potential costs for API calls</li>
 <li>Processing time for large datasets</li>
 <li>Consider batching requests when possible (less tokens spent)</li>
@@ -645,7 +669,7 @@ per minute/hour)</li>
 <div class="section level3">
 <h3 id="advanced-structured-output-generation">Advanced: Structured Output Generation<a class="anchor" aria-label="anchor" href="#advanced-structured-output-generation"></a></h3>
 <p>Request structured data from AI models:</p>
-<div class="codewrapper sourceCode" id="cb7">
+<div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -699,7 +723,7 @@ words</li>
 </button>
 <div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
-<div class="codewrapper sourceCode" id="cb8">
+<div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -736,7 +760,7 @@ words</li>
 </section><section><h2 class="section-heading" id="best-practices-for-ai-in-pipelines">Best Practices for AI in Pipelines<a class="anchor" aria-label="anchor" href="#best-practices-for-ai-in-pipelines"></a></h2>
 <hr class="half-width"><div class="section level3">
 <h3 id="design-clear-prompts">1. Design Clear Prompts<a class="anchor" aria-label="anchor" href="#design-clear-prompts"></a></h3>
-<div class="codewrapper sourceCode" id="cb9">
+<div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -750,7 +774,7 @@ words</li>
 </div>
 <div class="section level3">
 <h3 id="handle-errors-gracefully">2. Handle Errors Gracefully<a class="anchor" aria-label="anchor" href="#handle-errors-gracefully"></a></h3>
-<div class="codewrapper sourceCode" id="cb10">
+<div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -771,7 +795,7 @@ words</li>
 </div>
 <div class="section level3">
 <h3 id="cache-results">3. Cache Results<a class="anchor" aria-label="anchor" href="#cache-results"></a></h3>
-<div class="codewrapper sourceCode" id="cb11">
+<div class="codewrapper sourceCode" id="cb12">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -788,7 +812,7 @@ words</li>
 </div>
 <div class="section level3">
 <h3 id="use-batch-processing-for-large-datasets">4. Use Batch Processing for Large Datasets<a class="anchor" aria-label="anchor" href="#use-batch-processing-for-large-datasets"></a></h3>
-<div class="codewrapper sourceCode" id="cb12">
+<div class="codewrapper sourceCode" id="cb13">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -802,10 +826,14 @@ words</li>
 <span>    <span class="fu">select</span><span class="op">(</span><span class="op">-</span><span class="va">batch</span><span class="op">)</span></span>
 <span><span class="op">}</span></span></code></pre>
 </div>
+<p>This approach is especially useful for large datasets to avoid
+hitting API rate limits.</p>
+<p>Furthermore, it can be nicely combined with the “aggregated calls”
+approach shown earlier.</p>
 </div>
 </section><section><h2 class="section-heading" id="reproducibility-considerations">Reproducibility Considerations<a class="anchor" aria-label="anchor" href="#reproducibility-considerations"></a></h2>
 <hr class="half-width"><p>Document your AI pipeline for reproducibility:</p>
-<div class="codewrapper sourceCode" id="cb13">
+<div class="codewrapper sourceCode" id="cb14">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -851,7 +879,7 @@ summaries?</li>
 </section><section><h2 class="section-heading" id="real-world-use-cases">Real-World Use Cases<a class="anchor" aria-label="anchor" href="#real-world-use-cases"></a></h2>
 <hr class="half-width"><div class="section level3">
 <h3 id="text-classification">Text Classification<a class="anchor" aria-label="anchor" href="#text-classification"></a></h3>
-<div class="codewrapper sourceCode" id="cb14">
+<div class="codewrapper sourceCode" id="cb15">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -864,7 +892,7 @@ summaries?</li>
 </div>
 <div class="section level3">
 <h3 id="data-cleaning">Data Cleaning<a class="anchor" aria-label="anchor" href="#data-cleaning"></a></h3>
-<div class="codewrapper sourceCode" id="cb15">
+<div class="codewrapper sourceCode" id="cb16">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -877,7 +905,7 @@ summaries?</li>
 </div>
 <div class="section level3">
 <h3 id="content-generation">Content Generation<a class="anchor" aria-label="anchor" href="#content-generation"></a></h3>
-<div class="codewrapper sourceCode" id="cb16">
+<div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -890,7 +918,7 @@ summaries?</li>
 </div>
 <div class="section level3">
 <h3 id="translation-and-localization">Translation and Localization<a class="anchor" aria-label="anchor" href="#translation-and-localization"></a></h3>
-<div class="codewrapper sourceCode" id="cb17">
+<div class="codewrapper sourceCode" id="cb18">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -928,7 +956,7 @@ posts</li>
 </button>
 <div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
-<div class="codewrapper sourceCode" id="cb18">
+<div class="codewrapper sourceCode" id="cb19">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1095,8 +1123,8 @@ any links that you are not going to use.
   "url": "https://Dr-Eberle-Zentrum.github.io/AI-supported-coding-in-RStudio/instructor/ai-pipelines-ellmer.html",
   "identifier": "https://Dr-Eberle-Zentrum.github.io/AI-supported-coding-in-RStudio/instructor/ai-pipelines-ellmer.html",
   "dateCreated": "2024-11-10",
-  "dateModified": "2026-01-13",
-  "datePublished": "2026-01-13"
+  "dateModified": "2026-01-16",
+  "datePublished": "2026-01-16"
 }
 
   </script><script>
