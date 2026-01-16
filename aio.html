@@ -3861,7 +3861,8 @@ be found in the</p>
 <ul>
 <li>
 <a href="https://posit.co/blog/setting-up-local-llms-for-r-and-python/" class="external-link">POSIT
-Blog post on “Setting up local LLMs for R and Python”</a> and the</li>
+Blog post on “Setting up local LLMs for R and Python”</a> (<em>Jan
+2026</em>) and the</li>
 <li>
 <a href="https://ellmer.tidyverse.org/reference/chat_ollama.html" class="external-link">ellmer
 <code>chat_ollama</code> documentation</a>.</li>
@@ -3904,10 +3905,13 @@ Blog post on “Setting up local LLMs for R and Python”</a> and the</li>
 <span><span class="va">data</span> <span class="op">%&gt;%</span></span>
 <span>  <span class="fu">mutate</span><span class="op">(</span>ai_result <span class="op">=</span> <span class="fu">safe_chat</span><span class="op">(</span><span class="va">chat</span>, <span class="va">prompt</span><span class="op">)</span><span class="op">)</span></span></code></pre>
 </div>
+<p>This is especially important when working with large datasets or
+unreliable network connections.</p>
 </div>
 <div class="section level3">
 <h3 id="cache-results">3. Cache Results<a class="anchor" aria-label="anchor" href="#cache-results"></a>
 </h3>
+<p>Write your AI-generated data to file to avoid redundant calls:</p>
 <div class="codewrapper sourceCode" id="cb12">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -3922,6 +3926,11 @@ Blog post on “Setting up local LLMs for R and Python”</a> and the</li>
 <span><span class="co"># Load cached version later</span></span>
 <span><span class="va">processed_data</span> <span class="op">&lt;-</span> <span class="fu">read_rds</span><span class="op">(</span><span class="st">"cache/processed_data.rds"</span><span class="op">)</span></span></code></pre>
 </div>
+<p>This reduces redundant API calls and speeds up data processing.</p>
+<p>You might even want to write your script in a way, that it first
+checks, whether a cached version exists, and only processes the data if
+not. That way, you can easily re-run your whole analysis without
+incurring additional costs or delays.</p>
 </div>
 <div class="section level3">
 <h3 id="use-batch-processing-for-large-datasets">4. Use Batch Processing for Large Datasets<a class="anchor" aria-label="anchor" href="#use-batch-processing-for-large-datasets"></a>
@@ -4981,7 +4990,7 @@ identify?</p>
   Issues AI Might Identify
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li>
@@ -5261,7 +5270,7 @@ assistance:</p>
   Improved Version After Iterations
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -5522,7 +5531,7 @@ specific needs.</p>
   Comprehensive Improved Version
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb28">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -5994,7 +6003,7 @@ appropriate code.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Example Solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">MARKDOWN<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -6319,7 +6328,7 @@ needed</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p><strong>GitHub Issue</strong>:</p>
 <div class="codewrapper sourceCode" id="cb16">
@@ -6520,7 +6529,7 @@ needed:</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <p><strong>Parent Issue #80</strong>:</p>
 <div class="codewrapper sourceCode" id="cb23">
