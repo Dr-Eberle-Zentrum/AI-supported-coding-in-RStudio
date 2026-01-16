@@ -1,0 +1,528 @@
+---
+title: "Understanding and Setting LLM Parameters"
+teaching: 25
+exercises: 15
+---
+
+:::::::::::::::::::::::::::::::::::::: questions 
+
+- How do large language models generate responses?
+- What parameters control LLM behavior?
+- How can I adjust LLM parameters to improve result quality?
+- How do I set parameters when using `ellmer`?
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::: objectives
+
+- Understand how LLMs generate text through token probability
+- Learn the difference between deterministic and random outputs
+- Configure temperature, top_k, top_p, and seed parameters
+- Apply parameter settings in `ellmer` for better results
+- Follow best practices for AI-driven data processing
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+## Introduction
+
+When working with large language models (LLMs) like GitHub Copilot, understanding how these models generate responses and how to control their behavior is essential for getting consistent, high-quality results. This episode explores the inner workings of LLMs and the parameters you can adjust to guide their output.
+
+## How LLMs Generate Responses
+
+Large language models generate text through a process called **autoregressive token generation**. Let's break down what this means:
+
+### Token-by-Token Generation
+
+1. **Input Processing**: The model receives your prompt and converts it into tokens (words or word pieces)
+2. **Probability Calculation**: For each position, the model calculates probability scores for all possible next tokens
+3. **Token Selection**: A token is selected based on these probabilities
+4. **Iteration**: The selected token is added to the sequence, and the process repeats
+
+This means that each word (or token) in the response is chosen based on:
+
+- The original prompt
+- All previously generated tokens
+- A probability distribution over the vocabulary
+
+### Example
+
+Given the prompt: "The capital of France is"
+
+The model might calculate probabilities like:
+
+- "Paris" → 85%
+- "Lyon" → 3%
+- "located" → 2%
+- ... (thousands of other tokens with lower probabilities)
+
+## Deterministic vs. Random Generation
+
+The way a model selects tokens has a significant impact on the quality and consistency of results.
+
+### Deterministic Generation
+
+- **Always selects the highest probability token**
+- Produces **consistent, reproducible results**
+- Useful for tasks requiring reliability (e.g., code generation, data extraction)
+- Can be repetitive or lack creativity
+
+### Random (Stochastic) Generation
+
+- **Samples from the probability distribution**
+- Produces **varied, creative results**
+- Useful for content generation, brainstorming
+- Results may be inconsistent across runs
+- Can occasionally produce unexpected or incorrect outputs
+
+The parameters we'll discuss control this balance between deterministic and random behavior.
+
+## Key LLM Parameters
+
+### Temperature
+
+**Temperature** controls the randomness of token selection by adjusting the probability distribution.
+
+- **Low temperature (e.g., 0.0-0.5)**:
+  - Sharpens the distribution (high-probability tokens become even more likely)
+  - More deterministic and focused outputs
+  - Better for factual tasks, code generation, data processing
+  
+- **High temperature (e.g., 0.8-1.5)**:
+  - Flattens the distribution (gives lower-probability tokens more chance)
+  - More creative and diverse outputs
+  - Better for creative writing, brainstorming
+
+![Visualization of temperature effects on token probability distribution. Lower temperatures concentrate probability on the most likely tokens, while higher temperatures distribute probability more evenly. (Source: Soso Sukhitashvili, [GenAI_parameters_temperature_topK_topP](https://github.com/sukhitashvili/GenAI_parameters_temperature_topK_topP))](temperature.png)
+
+### Top-K Sampling
+
+**Top-K** limits the selection to the K most probable tokens.
+
+- Only the top K tokens with highest probability are considered
+- All other tokens are given zero probability
+- Reduces the chance of selecting very unlikely tokens
+- Helps prevent nonsensical outputs
+
+For example, with `top_k = 50`:
+
+- Only the 50 most likely tokens can be selected
+- The other thousands of tokens are excluded
+- The model samples randomly among these 50 tokens (influenced by temperature)
+
+![Visualization of top-K sampling. Only the K most probable tokens are retained for sampling, while all others are eliminated. (Source: Soso Sukhitashvili, [GenAI_parameters_temperature_topK_topP](https://github.com/sukhitashvili/GenAI_parameters_temperature_topK_topP))](topK.png)
+
+### Top-P Sampling (Nucleus Sampling)
+
+**Top-P** (also called nucleus sampling) selects from the smallest set of tokens whose cumulative probability exceeds P.
+
+- Dynamically adjusts the number of tokens considered
+- More adaptive than top-K
+- With `top_p = 0.9`, tokens are selected until their cumulative probability reaches 90%
+
+The advantage of top-P over top-K:
+
+- When the model is confident (one token has high probability), fewer tokens are considered
+- When the model is uncertain (probabilities are spread out), more tokens are considered
+- This adapts better to different contexts
+
+![Visualization of top-P (nucleus) sampling. Tokens are selected until their cumulative probability reaches the threshold P. (Source: Soso Sukhitashvili, [GenAI_parameters_temperature_topK_topP](https://github.com/sukhitashvili/GenAI_parameters_temperature_topK_topP))](topP.png)
+
+### Seed
+
+**Seed** controls the random number generator for reproducible results.
+
+- Setting the same seed with the same prompt produces identical outputs
+- Useful for debugging and testing
+- Enables reproducible research
+- Note: Different model versions may still produce different results even with the same seed
+
+## Setting Parameters in ellmer
+
+The `ellmer` package provides the `params()` function to configure LLM parameters. Here's how to use it:
+
+### Basic Usage
+
+```r
+library(ellmer)
+
+# Create a chat session with custom parameters
+chat <- chat_github(
+  params = params(
+    temperature = 0.3,  # Lower temperature for more focused outputs
+    top_p = 0.8,       # Nucleus sampling
+    seed = 42          # For reproducibility
+  )
+)
+
+# Use the chat as normal
+response <- chat$chat("Explain the concept of loops in R")
+```
+
+### Parameter Settings for Different Tasks
+
+#### For Code Generation and Data Processing
+
+```r
+# Deterministic, reliable outputs
+chat_code <- chat_github(
+  params = params(
+    temperature = 0.2,  # Very focused
+    top_p = 0.8,
+    seed = 123          # Reproducible
+  )
+)
+```
+
+#### For Creative Content
+
+```r
+# More varied, creative outputs
+chat_creative <- chat_github(
+  params = params(
+    temperature = 0.9,  # More randomness
+    top_p = 0.95
+  )
+)
+```
+
+#### For Balanced General Use
+
+```r
+# Balanced approach
+chat_balanced <- chat_github(
+  params = params(
+    temperature = 0.5,  # Moderate randomness
+    top_p = 0.9,
+    seed = 456          # Optional: for reproducibility
+  )
+)
+```
+
+### Viewing Current Parameters
+
+You can check the parameters being used by a chat object:
+
+```r
+# Create chat with parameters
+chat <- chat_github(params = params(temperature = 0.3))
+
+# The chat object will show the configured parameters when printed
+print(chat)
+```
+
+::::::::::::::::::::::::::::::::::::: callout
+
+### Parameter Availability
+
+Not all LLM providers support all parameters. GitHub Copilot models typically support:
+
+- `temperature`
+- `top_p`
+- `seed` (may vary by model)
+
+Check the [ellmer documentation](https://ellmer.tidyverse.org/reference/params.html) for the most up-to-date information on parameter support.
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::: challenge 
+
+## Challenge 1: Experiment with Temperature
+
+Create two chat sessions with different temperature settings and compare their outputs:
+
+1. Create a chat with `temperature = 0.1`
+2. Create another chat with `temperature = 1.0`
+3. Ask both the same question: "Generate three alternative names for a data analysis R package"
+4. Compare the creativity and variety of responses
+
+Which temperature setting would you use for naming a package in a production environment?
+
+:::::::::::::::::::::::: solution 
+
+## Solution
+
+```r
+library(ellmer)
+
+# Low temperature - deterministic
+chat_low <- chat_github(params = params(temperature = 0.1))
+response_low <- chat_low$chat(
+  "Generate three alternative names for a data analysis R package"
+)
+
+# High temperature - creative
+chat_high <- chat_github(params = params(temperature = 1.0))
+response_high <- chat_high$chat(
+  "Generate three alternative names for a data analysis R package"
+)
+
+# Compare results
+cat("Low temperature response:\n", response_low, "\n\n")
+cat("High temperature response:\n", response_high, "\n")
+```
+
+**Discussion**: 
+
+- The low temperature setting will likely produce more conventional, safe suggestions
+- The high temperature setting may produce more creative but potentially less practical names
+- For production, you might start with high temperature for brainstorming, then use low temperature for refinement
+
+:::::::::::::::::::::::::::::::::
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+## Best Practices for AI-Driven Data Processing with ellmer
+
+When using LLMs for data processing tasks, follow these guidelines to ensure reliable and reproducible results:
+
+### 1. Use Low Temperature for Consistency
+
+```r
+# For data classification, extraction, or transformation
+chat <- chat_github(
+  params = params(
+    temperature = 0.2,  # Consistent outputs
+    seed = 123          # Reproducibility
+  )
+)
+
+# Process data
+data %>%
+  rowwise() %>%
+  mutate(category = chat$chat(paste("Classify:", text)))
+```
+
+### 2. Set Seeds for Reproducible Research
+
+```r
+# Document your parameters in your analysis script
+ANALYSIS_PARAMS <- params(
+  temperature = 0.3,
+  top_p = 0.85,
+  seed = 42  # Document this in your README
+)
+
+chat <- chat_github(params = ANALYSIS_PARAMS)
+```
+
+### 3. Test Parameter Settings on Sample Data
+
+```r
+# Test on a small sample first
+sample_data <- data %>% slice_sample(n = 10)
+
+# Try different parameter settings
+params_conservative <- params(temperature = 0.1, seed = 1)
+params_balanced <- params(temperature = 0.5, seed = 1)
+
+# Compare results before processing full dataset
+```
+
+### 4. Document Parameter Choices
+
+```r
+# Save metadata with your processed data
+processing_metadata <- list(
+  date = Sys.Date(),
+  model = chat$get_model(),
+  parameters = list(
+    temperature = 0.3,
+    top_p = 0.9,
+    seed = 123
+  ),
+  ellmer_version = as.character(packageVersion("ellmer"))
+)
+
+# Save with your results
+output <- list(
+  data = processed_data,
+  metadata = processing_metadata
+)
+write_rds(output, "processed_data_with_metadata.rds")
+```
+
+### 5. Handle Parameter Limitations Gracefully
+
+```r
+# Not all models support all parameters
+safe_params <- function(...) {
+  tryCatch(
+    params(...),
+    error = function(e) {
+      warning("Some parameters not supported: ", e$message)
+      params(temperature = 0.5)  # Fallback to basic settings
+    }
+  )
+}
+
+chat <- chat_github(params = safe_params(
+  temperature = 0.3,
+  top_p = 0.9,
+  seed = 123
+))
+```
+
+### 6. Validate AI Outputs
+
+```r
+# Always validate critical results
+process_with_validation <- function(text, chat) {
+  result <- chat$chat(paste("Classify sentiment:", text))
+  
+  # Validate output format
+  if (!result %in% c("positive", "negative", "neutral")) {
+    warning("Unexpected classification: ", result)
+    return(NA)
+  }
+  
+  return(result)
+}
+```
+
+::::::::::::::::::::::::::::::::::::: challenge 
+
+## Challenge 2: Optimize Parameters for Data Processing
+
+You have a dataset of 100 customer reviews that need sentiment classification. Design a parameter configuration that balances:
+
+- Consistency (reproducible results)
+- Accuracy (correct classifications)
+- Efficiency (reasonable processing time)
+
+Test your configuration on 5 sample reviews and document your reasoning.
+
+:::::::::::::::::::::::: solution 
+
+## Example Solution
+
+```r
+library(ellmer)
+library(tidyverse)
+
+# Sample reviews for testing
+sample_reviews <- tibble(
+  id = 1:5,
+  review = c(
+    "Excellent product, very satisfied!",
+    "Terrible quality, broke after one day",
+    "It's okay, nothing special",
+    "Amazing! Exceeded expectations",
+    "Disappointed with the service"
+  )
+)
+
+# Optimized parameters for classification task
+CLASSIFICATION_PARAMS <- params(
+  temperature = 0.1,  # Very low for consistency
+  top_p = 0.8,        # Focus on most likely tokens
+  seed = 2024         # For reproducibility
+)
+
+# Create chat with optimized parameters
+chat <- chat_github(params = CLASSIFICATION_PARAMS)
+
+# Test on sample
+results <- sample_reviews %>%
+  rowwise() %>%
+  mutate(
+    sentiment = chat$chat(
+      paste("Classify sentiment as positive/negative/neutral:", review)
+    )
+  )
+
+print(results)
+
+# Reasoning:
+# - temperature = 0.1: Ensures consistent classification across runs
+# - top_p = 0.8: Focuses on most probable classifications
+# - seed = 2024: Makes results reproducible for verification
+# - These settings prioritize reliability over creativity, which is
+#   appropriate for a classification task
+```
+
+:::::::::::::::::::::::::::::::::
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::: discussion
+
+### Reflection: Parameter Trade-offs
+
+Consider these questions:
+
+- When might you want to prioritize creativity over consistency?
+- How do parameter settings affect the interpretability of AI-processed data?
+- What are the implications of using low vs. high temperature for scientific reproducibility?
+- How should parameter choices be documented in published research?
+
+:::::::::::::::::::::::::::::::::::::::::::::::::::
+
+## Parameter Selection Guidelines
+
+Here's a quick reference for choosing parameter values:
+
+| Task Type | Temperature | Top-P | Seed | Reasoning |
+|-----------|-------------|-------|------|-----------|
+| Code generation | 0.1-0.3 | 0.8-0.9 | Yes | Need deterministic, correct syntax |
+| Data classification | 0.1-0.2 | 0.8 | Yes | Consistency is critical |
+| Text extraction | 0.2-0.4 | 0.85 | Yes | Balance accuracy and flexibility |
+| Content summarization | 0.3-0.5 | 0.9 | Optional | Some creativity helps |
+| Creative writing | 0.7-1.0 | 0.95 | No | Maximize diversity |
+| Brainstorming | 0.8-1.2 | 0.95 | No | Want unexpected ideas |
+
+::::::::::::::::::::::::::::::::::::: callout
+
+### Iterative Parameter Tuning
+
+Finding the right parameters often requires experimentation:
+
+1. Start with conservative settings (low temperature, seed set)
+2. Test on a small sample of your data
+3. Evaluate quality of results
+4. Adjust parameters incrementally
+5. Re-test and iterate
+
+Keep a log of parameter experiments to inform future projects.
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+## Advanced: Combining Parameters with Prompt Engineering
+
+Parameters work together with prompt design:
+
+```r
+chat <- chat_github(params = params(temperature = 0.2, seed = 123))
+
+# Clear, structured prompt + low temperature = highly consistent results
+prompt <- "
+Analyze the following text and return ONLY one word: positive, negative, or neutral.
+
+Text: {text}
+
+Classification:"
+
+# Use in pipeline
+data %>%
+  rowwise() %>%
+  mutate(sentiment = chat$chat(glue::glue(prompt, text = review)))
+```
+
+The combination of:
+
+- **Well-designed prompts** (clear, specific instructions)
+- **Appropriate parameters** (temperature, top_p, seed)
+- **Robust error handling** (validation, fallbacks)
+
+...creates reliable AI-powered data processing workflows.
+
+::::::::::::::::::::::::::::::::::::: keypoints 
+
+- LLMs generate text through repeated token probability calculations and random selection
+- Temperature controls the randomness of outputs: low values are more deterministic, high values are more creative
+- Top-K and top-P sampling limit token selection to reduce nonsensical outputs
+- Seeds enable reproducible results when using the same prompt and parameters
+- Use `params()` in ellmer to configure temperature, top_p, seed, and other parameters
+- For data processing, use low temperature (0.1-0.3) and set seed for reproducibility
+- Document parameter choices and model versions for transparent, reproducible research
+- Test parameter settings on sample data before processing full datasets
+- Combine appropriate parameters with clear prompts for best results
+
+::::::::::::::::::::::::::::::::::::::::::::::::
