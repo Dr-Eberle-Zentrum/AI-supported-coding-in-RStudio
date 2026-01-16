@@ -331,7 +331,7 @@ The general steps are:
 
 A detailed guide for setting up Ollama with `ellmer` can be found in the 
 
-- [POSIT Blog post on "Setting up local LLMs for R and Python"](https://posit.co/blog/setting-up-local-llms-for-r-and-python/) and the 
+- [POSIT Blog post on "Setting up local LLMs for R and Python"](https://posit.co/blog/setting-up-local-llms-for-r-and-python/) (*Jan 2026*) and the 
 - [ellmer `chat_ollama` documentation](https://ellmer.tidyverse.org/reference/chat_ollama.html).
 
 
@@ -367,7 +367,11 @@ data %>%
   mutate(ai_result = safe_chat(chat, prompt))
 ```
 
+This is especially important when working with large datasets or unreliable network connections.
+
 ### 3. Cache Results
+
+Write your AI-generated data to file to avoid redundant calls:
 
 ```r
 # Save processed results to avoid reprocessing
@@ -380,6 +384,11 @@ write_rds(processed_data, "cache/processed_data.rds")
 # Load cached version later
 processed_data <- read_rds("cache/processed_data.rds")
 ```
+
+This reduces redundant API calls and speeds up data processing.
+
+You might even want to write your script in a way, that it first checks, whether a cached version exists, and only processes the data if not.
+That way, you can easily re-run your whole analysis without incurring additional costs or delays.
 
 ### 4. Use Batch Processing for Large Datasets
 

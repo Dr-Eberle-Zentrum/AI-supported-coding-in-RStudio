@@ -6,7 +6,7 @@
 ## Required Self-Study
 
 - [Using AI within Pipelines via `ellmer`](../episodes/ai-pipelines-ellmer.md)
-- [Revise Your Code with AI](../episodes/revise-code-with-ai.md)
+- [Understanding and Setting LLM parameters](../episodes/llm-parameters.md)
 
 
 
@@ -16,9 +16,10 @@
 ### AI-usage via ellmer
 
 - ? `ellmer` installed and working? chat-check, see material !
-- ? What is a major problem, when using `ellmer` via map?
-  - Advantages of "aggregated calls" and "structured output"
 
+- ? What is a major problem, when using `ellmer` via map?
+  - Advantages of "aggregated calls"
+  - idea of batch processing
 
 - GROUP: 
   * ! identify at least 4 reasonable use cases for AI-calls via `ellmer`!
@@ -39,7 +40,28 @@
 - Best practice discussion/summary
 
 
-### Revising code with AI
+### Reproducability
 
+- ? why care about reproducability?
+
+- discussion of pseudo randomness and seeding in computers
+  - general problem of randomness in data processing
+
+- GROUP: local LLMs vs. API-based LLMs
+  - ? what are pros and cons of local vs. API-based LLMs?
+  - ? how to control reproducability in both cases?
+  - ? what seems most appropriate for research?
+
+- ? How to document LLM usage in data processing?
+- Best practice discussion/summary
+
+
+
+### Closing Discussion
+
+- ? What are your major take-aways from this session?
+- ? What topics would you like to explore further?
+- ? Any open questions?
+- Feedback collection
 
 
