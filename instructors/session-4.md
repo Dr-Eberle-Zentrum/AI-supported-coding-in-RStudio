@@ -7,6 +7,7 @@
 
 - [Revise Your Code with AI](../episodes/revise-code-with-ai.md)
 - [GitHub Issue-Driven Coding with Copilot](../episodes/github-issue-driven-coding.md)
+- [Wrap-Up and Next Steps](../episodes/wrap-up.md)
 
 
 
