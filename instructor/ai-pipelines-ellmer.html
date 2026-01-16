@@ -119,11 +119,11 @@
   AI-supported Coding with GitHub Copilot in RStudio
 </div>
 
-<aside class="col-md-12 lesson-progress"><div style="width: 54%" class="percentage">
-    54%
+<aside class="col-md-12 lesson-progress"><div style="width: 48%" class="percentage">
+    48%
   </div>
   <div class="progress UT">
-    <div class="progress-bar UT" role="progressbar" style="width: 54%" aria-valuenow="54" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100">
+    <div class="progress-bar UT" role="progressbar" style="width: 48%" aria-valuenow="48" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100">
     </div>
   </div>
 </aside><div class="container">
@@ -267,6 +267,7 @@
 <li><a href="#installing-ellmer">Installing ellmer</a></li>
 <li><a href="#setting-up-ellmer-with-github-copilot">Setting Up ellmer with GitHub Copilot</a></li>
 <li><a href="#using-ai-for-data-processing">Using AI for Data Processing</a></li>
+<li><a href="#local-llms">Local LLMs</a></li>
 <li><a href="#best-practices-for-ai-in-pipelines">Best Practices for AI in Pipelines</a></li>
 <li><a href="#reproducibility-considerations">Reproducibility Considerations</a></li>
 <li><a href="#real-world-use-cases">Real-World Use Cases</a></li>
@@ -281,7 +282,7 @@
 <div class="accordion accordion-flush" id="accordionFlush8">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading8">
-        <a href="revise-code-with-ai.html">7. Revise Your Code with AI</a>
+        <a href="llm-parameters.html">7. Understanding and Setting LLM Parameters</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -290,7 +291,7 @@
 <div class="accordion accordion-flush" id="accordionFlush9">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading9">
-        <a href="github-issue-driven-coding.html">8. GitHub Issue-Driven Coding with Copilot</a>
+        <a href="revise-code-with-ai.html">8. Revise Your Code with AI</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -299,7 +300,16 @@
 <div class="accordion accordion-flush" id="accordionFlush10">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading10">
-        <a href="wrap-up.html">9. Wrap-Up and Next Steps</a>
+        <a href="github-issue-driven-coding.html">9. GitHub Issue-Driven Coding with Copilot</a>
+    </div><!--/div.accordion-header-->
+
+  </div><!--/div.accordion-item-->
+</div><!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush11">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading11">
+        <a href="wrap-up.html">10. Wrap-Up and Next Steps</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -348,7 +358,7 @@
   <div class="col-xl-8 col-lg-12 primary-content">
     <nav class="lesson-content mx-md-4" aria-label="Previous and Next Chapter"><!-- content for small screens --><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="../instructor/context-and-agents.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
-        <a class="chapter-link float-end" href="../instructor/revise-code-with-ai.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
+        <a class="chapter-link float-end" href="../instructor/llm-parameters.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
       </div>
       <!-- content for large screens -->
       <div class="d-none d-sm-none d-md-block">
@@ -356,8 +366,8 @@
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>
           Previous: Context Definition
         </a>
-        <a class="chapter-link float-end" href="../instructor/revise-code-with-ai.html" rel="next">
-          Next: Revise Your Code...
+        <a class="chapter-link float-end" href="../instructor/llm-parameters.html" rel="next">
+          Next: Understanding and...
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i>
         </a>
       </div>
@@ -757,7 +767,30 @@ words</li>
 </div>
 </div>
 </div>
-</section><section><h2 class="section-heading" id="best-practices-for-ai-in-pipelines">Best Practices for AI in Pipelines<a class="anchor" aria-label="anchor" href="#best-practices-for-ai-in-pipelines"></a></h2>
+</section><section><h2 class="section-heading" id="local-llms">Local LLMs<a class="anchor" aria-label="anchor" href="#local-llms"></a></h2>
+<hr class="half-width"><p>So far, we have focused on cloud-based AI models like GitHub Copilot.
+Thus, our setup required internet access and API tokens. Since the
+latter may incur costs and have rate limits, local models can be a
+viable alternative for some use cases. This is especially true for
+high-volume applications or sensitive data. Furthermore, this reduces
+dependency on external services and the costs associated with them.</p>
+<p>To use local models with <code>ellmer</code>, you can leverage <a href="https://ollama.com/" class="external-link">Ollama</a>, which allows you to run LLMs on
+your local machine.</p>
+<p>The general steps are:</p>
+<ol style="list-style-type: decimal"><li>Install Ollama and set up a local model that fits both your
+<strong>computational resources and needs</strong>
+</li>
+<li>Install the <code>ellmer</code> package</li>
+<li>Initialize a chat object for the local model</li>
+</ol><p>A detailed guide for setting up Ollama with <code>ellmer</code> can
+be found in the</p>
+<ul><li>
+<a href="https://posit.co/blog/setting-up-local-llms-for-r-and-python/" class="external-link">POSIT
+Blog post on “Setting up local LLMs for R and Python”</a> and the</li>
+<li>
+<a href="https://ellmer.tidyverse.org/reference/chat_ollama.html" class="external-link">ellmer
+<code>chat_ollama</code> documentation</a>.</li>
+</ul></section><section><h2 class="section-heading" id="best-practices-for-ai-in-pipelines">Best Practices for AI in Pipelines<a class="anchor" aria-label="anchor" href="#best-practices-for-ai-in-pipelines"></a></h2>
 <hr class="half-width"><div class="section level3">
 <h3 id="design-clear-prompts">1. Design Clear Prompts<a class="anchor" aria-label="anchor" href="#design-clear-prompts"></a></h3>
 <div class="codewrapper sourceCode" id="cb10">
@@ -1022,6 +1055,8 @@ from above</li>
 <li>Use batch processing</li>
 <li>Consider caching results</li>
 <li>Monitor API usage</li>
+<li>Consider installation of <a href="https://posit.co/blog/setting-up-local-llms-for-r-and-python/" class="external-link">local
+models via Ollama</a> for heavy workloads</li>
 </ul></div>
 <div class="section level3">
 <h3 id="inconsistent-results">Inconsistent Results<a class="anchor" aria-label="anchor" href="#inconsistent-results"></a></h3>
@@ -1056,6 +1091,7 @@ LLMs into R workflows</li>
 <li>Document models and prompts for reproducibility</li>
 <li>Consider rate limits, costs, and ethical implications when using AI
 in data processing</li>
+<li>Local model options are available for high-volume use cases</li>
 </ul></div>
 </div>
 </div>
@@ -1066,7 +1102,7 @@ any links that you are not going to use.
 </section></div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Previous and Next Chapter"><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="../instructor/context-and-agents.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
-        <a class="chapter-link float-end" href="../instructor/revise-code-with-ai.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
+        <a class="chapter-link float-end" href="../instructor/llm-parameters.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
       </div>
       <!-- content for large screens -->
       <div class="d-none d-sm-none d-md-block">
@@ -1074,8 +1110,8 @@ any links that you are not going to use.
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>
           Previous: Context Definition
         </a>
-        <a class="chapter-link float-end" href="../instructor/revise-code-with-ai.html" rel="next">
-          Next: Revise Your Code...
+        <a class="chapter-link float-end" href="../instructor/llm-parameters.html" rel="next">
+          Next: Understanding and...
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i>
         </a>
       </div>
