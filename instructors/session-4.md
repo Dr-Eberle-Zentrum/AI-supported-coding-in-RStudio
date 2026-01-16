@@ -84,7 +84,7 @@
 - ? what's a GitHub issue?
   - issue as "to-do" item
   - issue description as prompt for code generation
-  - >> ! can be used to trigger autonomous code generation by Copilot !
+  - ! can be used to trigger autonomous code generation by Copilot !
 
 - DEMO: based on an existing GitHub repository with issues defined
 
