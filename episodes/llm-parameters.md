@@ -92,13 +92,13 @@ The parameters we'll discuss control this balance between deterministic and rand
   - More creative and diverse outputs
   - Better for creative writing, brainstorming
 
-![A graph showing three probability distributions for token selection with different temperature values. The left bar chart shows temperature 0.5 with a sharp peak on the highest probability token. The middle chart shows temperature 1.0 with a moderate distribution. The right chart shows temperature 2.0 with probabilities more evenly spread across tokens. This demonstrates how lower temperatures concentrate probability on likely tokens while higher temperatures distribute probability more evenly. (Source: Soso Sukhitashvili, [GenAI_parameters_temperature_topK_topP](https://github.com/sukhitashvili/GenAI_parameters_temperature_topK_topP))](temperature.png)
+![A graph showing probability distributions for token selection with different temperature values. The left bar chart shows low temperature, which causes a sharp peak on the highest probability token. The middle chart shows temperature 1.0 with a moderate distribution close to the values of the underlying probabilities. The right chart shows high temperature usage, which results in probabilities more evenly spread across tokens. This demonstrates how lower temperatures concentrate probability on likely tokens while higher temperatures distribute probability more evenly. (Source: Soso Sukhitashvili, [GenAI_parameters_temperature_topK_topP](https://github.com/sukhitashvili/GenAI_parameters_temperature_topK_topP))](temperature.png)
 
 ### Top-K Sampling
 
-**Top-K** limits the selection to the K most probable tokens.
+**Top-K** limits the selection to the *K* most probable tokens.
 
-- Only the top K tokens with highest probability are considered
+- Only the top *K* tokens with highest probability are considered
 - All other tokens are given zero probability
 - Reduces the chance of selecting very unlikely tokens
 - Helps prevent nonsensical outputs
@@ -109,7 +109,7 @@ For example, with `top_k = 50`:
 - The other thousands of tokens are excluded
 - The model samples randomly among these 50 tokens (influenced by temperature)
 
-![A diagram showing how top-K sampling works with three scenarios. Each scenario displays a bar chart of token probabilities. The top chart shows all tokens, the middle chart shows top-5 selection where only the 5 highest probability tokens are retained and others are zeroed out, and the bottom chart shows top-10 selection with 10 tokens retained. This illustrates how top-K limits the selection pool by keeping only the K most probable tokens. (Source: Soso Sukhitashvili, [GenAI_parameters_temperature_topK_topP](https://github.com/sukhitashvili/GenAI_parameters_temperature_topK_topP))](topK.png)
+![A diagram showing how top-K sampling works, i.e. how top-K limits the selection pool by keeping only the *K* most probable tokens. (Source: Soso Sukhitashvili, [GenAI_parameters_temperature_topK_topP](https://github.com/sukhitashvili/GenAI_parameters_temperature_topK_topP))](topK.png)
 
 ### Top-P Sampling (Nucleus Sampling)
 
@@ -125,7 +125,7 @@ The advantage of top-P over top-K:
 - When the model is uncertain (probabilities are spread out), more tokens are considered
 - This adapts better to different contexts
 
-![A diagram illustrating top-P (nucleus) sampling with three scenarios. Each shows a bar chart of token probabilities with a cumulative probability line. The top chart shows top-P at 0.5, retaining only tokens needed to reach 50% cumulative probability. The middle shows top-P at 0.8 retaining more tokens to reach 80%, and the bottom shows top-P at 0.95 retaining even more tokens. This demonstrates how top-P dynamically adjusts the number of candidate tokens based on the cumulative probability threshold. (Source: Soso Sukhitashvili, [GenAI_parameters_temperature_topK_topP](https://github.com/sukhitashvili/GenAI_parameters_temperature_topK_topP))](topP.png)
+![A diagram illustrating top-P (nucleus) sampling where the parameter is used to dynamically adjust the number of candidate tokens based on the cumulative probability threshold. (Source: Soso Sukhitashvili, [GenAI_parameters_temperature_topK_topP](https://github.com/sukhitashvili/GenAI_parameters_temperature_topK_topP))](topP.png)
 
 ### Seed
 
@@ -134,29 +134,11 @@ The advantage of top-P over top-K:
 - Setting the same seed with the same prompt produces identical outputs
 - Useful for debugging and testing
 - Enables reproducible research
-- Note: Different model versions may still produce different results even with the same seed
+- Note: Different model versions may still produce different results even with the same seed. Furthermore, model internal effects due to parallelization etc. might also cause minor differences.
 
 ## Setting Parameters in ellmer
 
 The `ellmer` package provides the `params()` function to configure LLM parameters. Here's how to use it:
-
-### Basic Usage
-
-```r
-library(ellmer)
-
-# Create a chat session with custom parameters
-chat <- chat_github(
-  params = params(
-    temperature = 0.3,  # Lower temperature for more focused outputs
-    top_p = 0.8,       # Nucleus sampling
-    seed = 42          # For reproducibility
-  )
-)
-
-# Use the chat as normal
-response <- chat$chat("Explain the concept of loops in R")
-```
 
 ### Parameter Settings for Different Tasks
 
@@ -171,6 +153,9 @@ chat_code <- chat_github(
     seed = 123          # Reproducible
   )
 )
+
+# Use the chat as normal
+response <- chat$chat("Explain the concept of loops in R")
 ```
 
 #### For Creative Content
@@ -220,7 +205,8 @@ Not all LLM providers support all parameters. GitHub Copilot models typically su
 - `top_p`
 - `seed` (may vary by model)
 
-Parameter support may vary depending on your ellmer version and the specific model provider. Check the [ellmer documentation](https://ellmer.tidyverse.org/reference/params.html) for the most up-to-date information on parameter support for your version.
+Parameter support may vary depending on your ellmer version and the specific model provider. 
+Check the [ellmer documentation](https://ellmer.tidyverse.org/reference/params.html) for the most up-to-date information on parameter support for your version.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
