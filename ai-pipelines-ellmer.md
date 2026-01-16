@@ -203,6 +203,30 @@ feedback_processed <- feedback_data %>%
   )
 ```
 
+### Aggregated calls to reduce IO and number of prompts
+
+So far, one `chat()` call (prompt) was made per row.
+
+An alternative is to aggregate multiple inputs into a single prompt, reducing the number of API calls:
+
+```r
+feedback_data |> 
+  mutate(
+    mood = 
+      comment |> 
+      str_c(collapse="#") |> 
+      chat_high$chat( "Assign to each product feedback answer (provided as #-separated list) a respective category from (happy,unhappy) in a #-separated aggregated text output",
+                      echo = "none") |> 
+      str_split_1("#")
+  )
+```
+
+That way, only one API call is made for the entire dataset.
+
+But when working on larger datasets, be aware of token limits per prompt (both input and output tokens).
+
+
+
 ::::::::::::::::::::::::::::::::::::: callout
 
 ### Rate Limits and Costs
@@ -210,6 +234,7 @@ feedback_processed <- feedback_data %>%
 Be aware of:
 
 - API rate limits for your chosen provider (limited number of requests per minute/hour)
+- Limited token quotas and prompt sizes
 - Potential costs for API calls
 - Processing time for large datasets
 - Consider batching requests when possible (less tokens spent)
@@ -345,6 +370,11 @@ process_in_batches <- function(data, batch_size = 10) {
     select(-batch)
 }
 ```
+
+This approach is especially useful for large datasets to avoid hitting API rate limits.
+
+Furthermore, it can be nicely combined with the "aggregated calls" approach shown earlier.
+
 
 ## Reproducibility Considerations
 
