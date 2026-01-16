@@ -164,21 +164,8 @@ response <- chat$chat("Explain the concept of loops in R")
 # More varied, creative outputs
 chat_creative <- chat_github(
   params = params(
-    temperature = 0.9,  # More randomness
-    top_p = 0.95
-  )
-)
-```
-
-#### For Balanced General Use
-
-```r
-# Balanced approach
-chat_balanced <- chat_github(
-  params = params(
-    temperature = 0.5,  # Moderate randomness
-    top_p = 0.9,
-    seed = 456          # Optional: for reproducibility
+    temperature = 1.5,  # More randomness
+    top_p = 0.95  # More tokens
   )
 )
 ```
@@ -214,14 +201,15 @@ Check the [ellmer documentation](https://ellmer.tidyverse.org/reference/params.h
 
 ## Challenge 1: Experiment with Temperature
 
-Create two chat sessions with different temperature settings and compare their outputs:
+Create two chat sessions with different temperature settings and compare their outputs for repeated calls:
 
-1. Create a chat with `temperature = 0.1`
-2. Create another chat with `temperature = 1.0`
-3. Ask both the same question: "Generate three alternative names for a data analysis R package"
-4. Compare the creativity and variety of responses
 
-Which temperature setting would you use for naming a package in a production environment?
+1. For the following prompt: "Name with one word an animal that fits the following description 'It has sharp teeth and a long tail'"
+   - do the prompt individually for temperature 0.1 and 2.0
+   - repeat the model creation and prompting 3 times each
+2. Compare the creativity and variety of responses
+
+Which temperature setting would you use for your research and in which context?
 
 :::::::::::::::::::::::: solution 
 
@@ -230,28 +218,22 @@ Which temperature setting would you use for naming a package in a production env
 ```r
 library(ellmer)
 
-# Low temperature - deterministic
-chat_low <- chat_github(params = params(temperature = 0.1))
-response_low <- chat_low$chat(
-  "Generate three alternative names for a data analysis R package"
-)
+for ( i in 1:3) {
+  # Low temperature - deterministic
+  llm <- chat_github(params = params(temperature = 0.1))
+  llm$chat("Name with one word an animal that fits the following description 'It has sharp teeth and a long tail'")
+  # High temperature - creative
+  llm <- chat_github(params = params(temperature = 2.0))
+  llm$chat("Name with one word an animal that fits the following description 'It has sharp teeth and a long tail'")
+}
 
-# High temperature - creative
-chat_high <- chat_github(params = params(temperature = 1.0))
-response_high <- chat_high$chat(
-  "Generate three alternative names for a data analysis R package"
-)
-
-# Compare results
-cat("Low temperature response:\n", response_low, "\n\n")
-cat("High temperature response:\n", response_high, "\n")
 ```
 
 **Discussion**: 
 
-- The low temperature setting will likely produce more conventional, safe suggestions
+- The low temperature setting will likely produce more conventional, safe suggestions and repetition (reproducability) is higher
 - The high temperature setting may produce more creative but potentially less practical names
-- For production, you might start with high temperature for brainstorming, then use low temperature for refinement
+- For research, you might want to stick with deterministic model setups in order to keep your results reproducible and sound
 
 :::::::::::::::::::::::::::::::::
 ::::::::::::::::::::::::::::::::::::::::::::::::
@@ -326,108 +308,6 @@ output <- list(
 write_rds(output, "processed_data_with_metadata.rds")
 ```
 
-### 5. Handle Parameter Limitations Gracefully
-
-```r
-# Not all models support all parameters
-safe_params <- function(...) {
-  tryCatch(
-    params(...),
-    error = function(e) {
-      warning("Some parameters not supported: ", e$message)
-      params(temperature = 0.5)  # Fallback to basic settings
-    }
-  )
-}
-
-chat <- chat_github(params = safe_params(
-  temperature = 0.3,
-  top_p = 0.9,
-  seed = 123
-))
-```
-
-### 6. Validate AI Outputs
-
-```r
-# Always validate critical results
-process_with_validation <- function(text, chat) {
-  result <- chat$chat(paste("Classify sentiment:", text))
-  
-  # Validate output format
-  if (!result %in% c("positive", "negative", "neutral")) {
-    warning("Unexpected classification: ", result)
-    return(NA)
-  }
-  
-  return(result)
-}
-```
-
-::::::::::::::::::::::::::::::::::::: challenge 
-
-## Challenge 2: Optimize Parameters for Data Processing
-
-You have a dataset of 100 customer reviews that need sentiment classification. Design a parameter configuration that balances:
-
-- Consistency (reproducible results)
-- Accuracy (correct classifications)
-- Efficiency (reasonable processing time)
-
-Test your configuration on 5 sample reviews and document your reasoning.
-
-:::::::::::::::::::::::: solution 
-
-## Example Solution
-
-```r
-library(ellmer)
-library(tidyverse)
-
-# Sample reviews for testing
-sample_reviews <- tibble(
-  id = 1:5,
-  review = c(
-    "Excellent product, very satisfied!",
-    "Terrible quality, broke after one day",
-    "It's okay, nothing special",
-    "Amazing! Exceeded expectations",
-    "Disappointed with the service"
-  )
-)
-
-# Optimized parameters for classification task
-CLASSIFICATION_PARAMS <- params(
-  temperature = 0.1,  # Very low for consistency
-  top_p = 0.8,        # Focus on most likely tokens
-  seed = 2024         # For reproducibility
-)
-
-# Create chat with optimized parameters
-chat <- chat_github(params = CLASSIFICATION_PARAMS)
-
-# Test on sample
-results <- sample_reviews %>%
-  rowwise() %>%
-  mutate(
-    sentiment = chat$chat(
-      paste("Classify sentiment as positive/negative/neutral:", review)
-    )
-  )
-
-print(results)
-
-# Reasoning:
-# - temperature = 0.1: Ensures consistent classification across runs
-# - top_p = 0.8: Focuses on most probable classifications
-# - seed = 2024: Makes results reproducible for verification
-# - These settings prioritize reliability over creativity, which is
-#   appropriate for a classification task
-```
-
-:::::::::::::::::::::::::::::::::
-::::::::::::::::::::::::::::::::::::::::::::::::
-
 ::::::::::::::::::::::::::::::::::::: discussion
 
 ### Reflection: Parameter Trade-offs
@@ -454,50 +334,6 @@ Here's a quick reference for choosing parameter values:
 | Creative writing | 0.7-1.0 | 0.95 | No | Maximize diversity |
 | Brainstorming | 0.8-1.2 | 0.95 | No | Want unexpected ideas |
 
-::::::::::::::::::::::::::::::::::::: callout
-
-### Iterative Parameter Tuning
-
-Finding the right parameters often requires experimentation:
-
-1. Start with conservative settings (low temperature, seed set)
-2. Test on a small sample of your data
-3. Evaluate quality of results
-4. Adjust parameters incrementally
-5. Re-test and iterate
-
-Keep a log of parameter experiments to inform future projects.
-
-::::::::::::::::::::::::::::::::::::::::::::::::
-
-## Advanced: Combining Parameters with Prompt Engineering
-
-Parameters work together with prompt design:
-
-```r
-chat <- chat_github(params = params(temperature = 0.2, seed = 123))
-
-# Clear, structured prompt + low temperature = highly consistent results
-prompt <- "
-Analyze the following text and return ONLY one word: positive, negative, or neutral.
-
-Text: {text}
-
-Classification:"
-
-# Use in pipeline
-data %>%
-  rowwise() %>%
-  mutate(sentiment = chat$chat(glue::glue(prompt, text = review)))
-```
-
-The combination of:
-
-- **Well-designed prompts** (clear, specific instructions)
-- **Appropriate parameters** (temperature, top_p, seed)
-- **Robust error handling** (validation, fallbacks)
-
-...creates reliable AI-powered data processing workflows.
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
