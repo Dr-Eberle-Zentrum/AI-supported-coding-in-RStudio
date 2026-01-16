@@ -203,9 +203,10 @@ feedback_processed <- feedback_data %>%
   )
 ```
 
-### Aggregated calls to reduce IO
+### Aggregated calls to reduce IO and number of prompts
 
-So far, one chat call was made per row.
+So far, one `chat()` call (prompt) was made per row.
+
 An alternative is to aggregate multiple inputs into a single prompt, reducing the number of API calls:
 
 ```r
@@ -221,6 +222,8 @@ feedback_data |>
 ```
 
 That way, only one API call is made for the entire dataset.
+
+But when working on larger datasets, be aware of token limits per prompt (both input and output tokens).
 
 
 
