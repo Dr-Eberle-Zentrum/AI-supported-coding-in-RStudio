@@ -51,13 +51,25 @@
     - potential for misinterpretation
     - lack of integration with development environment to compare changes
 
+- **NOTE**: revision is typically a multi-step process
+  - initial revision
+  - review of revised code
+  - further refinement requests
+- can also be applied to revise code snippets to see alternative implementations
+
+- **Do not settle for code you don't understand!** 
+  - in that case ask to alternatives you are familiar with!
+  - the final code is YOUR responsibility!
+
 ### OPTION 2: IDE-integrated revision
 
 - use IDE AI plugin to revise code directly in the coding environment
   - either for full file
   - or for selected code blocks
 - **PROBLEM**: RStudio does not yet have AI-integration... 😢
-  - possible workaround: use VSCode or Positron
+  - possible workaround: `chattr` package to connect to chat-based LLMs from RStudio
+    - but no direct code revision support yet
+    - personally: so far, I found it currently not very useful for code revision tasks
 
 ### OPTION 3: Issue-driven coding with Copilot
 
@@ -91,10 +103,13 @@
 
 - TASK: 
   - ! create a GitHub repository for a small project (or use an existing one)!
-  - ! create an R script file or similiar for your project!
-    - e.g. copying the code from my [visualization example](https://dr-eberle-zentrum.github.io/R-tidyverse-compact/Visualisierung.html)
-      - or ask the AI to do so using a respective issue (see next task)
-  - ! define at least 3 issues for the project, describing tasks to be done!
+  - ! use the example solution of ["Challenge 1" from the material](https://dr-eberle-zentrum.github.io/AI-supported-coding-in-RStudio/github-issue-driven-coding.html)
+      as an initial issue to create the first R code file for your project
+    - assign the issue to GitHub Copilot
+    - review the generated code carefully!
+    - if necessary, refine the issue description and try again!
+    - merge/integrate the generated code into your project (closing the completed pull request)!
+  - ! define at least 2 additional issues for the project, describing further tasks to be done!
     - coding (e.g. implementing a function, visualization, ... or writing equivalent code in another language))
     - revision (e.g. improving existing code, suggesting tests, ...)
     - documentation (e.g. updating/extending README.md or code commenting)
