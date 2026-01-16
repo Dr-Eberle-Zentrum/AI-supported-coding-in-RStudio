@@ -424,6 +424,20 @@ revision?</p>
 changes</li>
 </ul></li>
 </ul></li>
+<li>
+<p><strong>NOTE</strong>: revision is typically a multi-step
+process</p>
+<ul><li>initial revision</li>
+<li>review of revised code</li>
+<li>further refinement requests</li>
+</ul></li>
+<li><p>can also be applied to revise code snippets to see alternative
+implementations</p></li>
+<li>
+<p><strong>Do not settle for code you don’t understand!</strong></p>
+<ul><li>in that case ask to alternatives you are familiar with!</li>
+<li>the final code is YOUR responsibility!</li>
+</ul></li>
 </ul></div>
 <div class="section level3">
 <h3 id="option-2-ide-integrated-revision">OPTION 2: IDE-integrated revision<a class="anchor" aria-label="anchor" href="#option-2-ide-integrated-revision"></a></h3>
@@ -434,7 +448,12 @@ changes</li>
 <li>
 <strong>PROBLEM</strong>: RStudio does not yet have AI-integration…
 😢
-<ul><li>possible workaround: use VSCode or Positron</li>
+<ul><li>possible workaround: <code>chattr</code> package to connect to
+chat-based LLMs from RStudio
+<ul><li>but no direct code revision support yet</li>
+<li>personally: so far, I found it currently not very useful for code
+revision tasks</li>
+</ul></li>
 </ul></li>
 </ul></div>
 <div class="section level3">
@@ -484,14 +503,17 @@ beneficial?</p></li>
 <p>TASK:</p>
 <ul><li>! create a GitHub repository for a small project (or use an existing
 one)!</li>
-<li>! create an R script file or similiar for your project!
-<ul><li>e.g. copying the code from my <a href="https://dr-eberle-zentrum.github.io/R-tidyverse-compact/Visualisierung.html" class="external-link">visualization
-example</a>
-<ul><li>or ask the AI to do so using a respective issue (see next task)</li>
+<li>! use the example solution of <a href="https://dr-eberle-zentrum.github.io/AI-supported-coding-in-RStudio/github-issue-driven-coding.html" class="external-link">“Challenge
+1” from the material</a> as an initial issue to create the first R code
+file for your project
+<ul><li>assign the issue to GitHub Copilot</li>
+<li>review the generated code carefully!</li>
+<li>if necessary, refine the issue description and try again!</li>
+<li>merge/integrate the generated code into your project (closing the
+completed pull request)!</li>
 </ul></li>
-</ul></li>
-<li>! define at least 3 issues for the project, describing tasks to be
-done!
+<li>! define at least 2 additional issues for the project, describing
+further tasks to be done!
 <ul><li>coding (e.g. implementing a function, visualization, … or writing
 equivalent code in another language))</li>
 <li>revision (e.g. improving existing code, suggesting tests, …)</li>
