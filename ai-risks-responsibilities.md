@@ -133,6 +133,13 @@ AI models are trained on public code repositories, which may include:
 
 ## Your Responsibilities as an AI User
 
+When using AI coding assistants, it is your responsibility to ensure code quality, security, and legality.
+It is important to remember that **AI is a tool to assist you**, not a substitute for your expertise and judgment.
+Thus, you have to regard AI suggestions with the same scrutiny as code from any other source.
+
+With AI usage, **your role** changes from sole author to **supervisor and validator** of AI-generated code!
+
+
 ### 1. Code Ownership and Accountability
 
 **You are ultimately responsible for all code in your project**, 
@@ -219,6 +226,19 @@ Be transparent about AI usage:
 - Be honest in academic and professional contexts
 
 ## When AI Usage Is a No-Go
+
+The easiness of using AI coding assistants can tempt developers to use them inappropriately.
+Especially if you are new to programming or a specific domain, it can be hard to judge when AI usage is acceptable and when not.
+
+Thus, beginners should use AI tools as a personal learning assistant to get hints and explanations,
+but avoid using them to generate complete solutions for critical tasks you cannot yet judge properly yourself.
+That way, you can build up your own expertise boosted by AI help without becoming overly dependent on it.
+
+Once you mastered the basics and can read and understand code well, you can start using AI more freely to broaden your productivity and understanding.
+Still, always be cautious when using AI for critical tasks beyond your expertise.
+
+![The image depicts the different tasks when solving problems yourself or with the help of an AI assistant.](beginner-vs-advanced-student.png)
+
 
 ### 1. Specialized or Novel Algorithms
 
@@ -514,6 +534,11 @@ AI capabilities and limitations change rapidly:
 - Learn about new AI capabilities
 - Understand evolving best practices
 - Participate in communities discussing AI use
+
+
+![Education is what remains when you have no tool at hand...](Education-is...jpg)
+
+
 
 ::::::::::::::::::::::::::::::::::::: discussion
 
