@@ -92,7 +92,7 @@ The parameters we'll discuss control this balance between deterministic and rand
   - More creative and diverse outputs
   - Better for creative writing, brainstorming
 
-![A graph showing probability distributions for token selection with different temperature values. The left bar chart shows low temperature, which causes a sharp peak on the highest probability token. The middle chart shows temperature 1.0 with a moderate distribution close to the values of the underlying probabilities. The right chart shows high temperature usage, which results in probabilities more evenly spread across tokens. This demonstrates how lower temperatures concentrate probability on likely tokens while higher temperatures distribute probability more evenly. (Source: Soso Sukhitashvili, [GenAI_parameters_temperature_topK_topP](https://github.com/sukhitashvili/GenAI_parameters_temperature_topK_topP))](temperature.png)
+![A graph showing probability distributions for token selection with different temperature values. The left bar chart shows low temperature, which causes a sharp peak on the highest probability token. The middle chart shows temperature 1.0 with a moderate distribution close to the values of the underlying probabilities. The right chart shows high temperature usage, which results in probabilities more evenly spread across tokens. This demonstrates how lower temperatures concentrate probability on likely tokens while higher temperatures distribute probability more evenly. (Source: Soso Sukhitashvili, [GenAI_parameters_temperature_topK_topP](https://github.com/sukhitashvili/GenAI_parameters_temperature_topK_topP))](sukhitashvili_temperature.png)
 
 ### Top-K Sampling
 
@@ -109,7 +109,7 @@ For example, with `top_k = 50`:
 - The other thousands of tokens are excluded
 - The model samples randomly among these 50 tokens (influenced by temperature)
 
-![A diagram showing how top-K sampling works, i.e. how top-K limits the selection pool by keeping only the *K* most probable tokens. (Source: Soso Sukhitashvili, [GenAI_parameters_temperature_topK_topP](https://github.com/sukhitashvili/GenAI_parameters_temperature_topK_topP))](topK.png)
+![A diagram showing how top-K sampling works, i.e. how top-K limits the selection pool by keeping only the *K* most probable tokens. (Source: Soso Sukhitashvili, [GenAI_parameters_temperature_topK_topP](https://github.com/sukhitashvili/GenAI_parameters_temperature_topK_topP))](sukhitashvili_topK.png)
 
 ### Top-P Sampling (Nucleus Sampling)
 
@@ -125,7 +125,7 @@ The advantage of top-P over top-K:
 - When the model is uncertain (probabilities are spread out), more tokens are considered
 - This adapts better to different contexts
 
-![A diagram illustrating top-P (nucleus) sampling where the parameter is used to dynamically adjust the number of candidate tokens based on the cumulative probability threshold. (Source: Soso Sukhitashvili, [GenAI_parameters_temperature_topK_topP](https://github.com/sukhitashvili/GenAI_parameters_temperature_topK_topP))](topP.png)
+![A diagram illustrating top-P (nucleus) sampling where the parameter is used to dynamically adjust the number of candidate tokens based on the cumulative probability threshold. (Source: Soso Sukhitashvili, [GenAI_parameters_temperature_topK_topP](https://github.com/sukhitashvili/GenAI_parameters_temperature_topK_topP))](sukhitashvili_topP.png)
 
 ### Seed
 
