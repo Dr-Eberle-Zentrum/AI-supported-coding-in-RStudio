@@ -237,7 +237,7 @@ That way, you can build up your own expertise boosted by AI help without becomin
 Once you mastered the basics and can read and understand code well, you can start using AI more freely to broaden your productivity and understanding.
 Still, always be cautious when using AI for critical tasks beyond your expertise.
 
-![The image depicts the different tasks when solving problems yourself or with the help of an AI assistant.](beginner-vs-advanced-student.png){alt='beginner vs. advanced user' width='70%'}
+![The image depicts the different tasks when solving problems yourself or with the help of an AI assistant.](beginner-vs-advanced-student.png){alt='beginner vs. advanced user' width='60%'}
 
 
 ### 1. Specialized or Novel Algorithms
@@ -536,8 +536,6 @@ AI capabilities and limitations change rapidly:
 - Participate in communities discussing AI use
 
 
-![Education is what remains when you have no tool at hand...](Education-is...jpg){alt='Education is what remains when you have no tool at hand...' width='70%'}
-
 
 
 ::::::::::::::::::::::::::::::::::::: discussion
@@ -621,6 +619,10 @@ Success requires:
 AI is a tool, not a replacement for human expertise, judgment, and responsibility. Use it wisely, verify everything, and never stop learning.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+![Education is what remains when you have no tool at hand...](Education-is...jpg){alt='Education is what remains when you have no tool at hand...' width='60%'}
+
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
