@@ -536,8 +536,6 @@ AI capabilities and limitations change rapidly:
 - Participate in communities discussing AI use
 
 
-![Education is what remains when you have no tool at hand...](Education-is...jpg){alt='Education is what remains when you have no tool at hand...' width='60%'}
-
 
 
 ::::::::::::::::::::::::::::::::::::: discussion
@@ -621,6 +619,10 @@ Success requires:
 AI is a tool, not a replacement for human expertise, judgment, and responsibility. Use it wisely, verify everything, and never stop learning.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+![Education is what remains when you have no tool at hand...](Education-is...jpg){alt='Education is what remains when you have no tool at hand...' width='60%'}
+
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
