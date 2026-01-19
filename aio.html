@@ -593,7 +593,7 @@ function, such as:</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>GitHub Copilot should suggest a function implementation below your
 comment. The suggestion might look something like:</p>
@@ -1245,7 +1245,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-ai-risks-responsibilities"><p>Content from <a href="ai-risks-responsibilities.html">Risks, Drawbacks and Responsibilities with AI Usage</a></p>
 <hr>
-<p>Last updated on 2026-01-09 |
+<p>Last updated on 2026-01-19 |
 
         <a href="https://github.com/Dr-Eberle-Zentrum/AI-supported-coding-in-RStudio/edit/main/episodes/ai-risks-responsibilities.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -1421,6 +1421,13 @@ licenses (e.g. GPL)</a>
 </section><section><h2 class="section-heading" id="your-responsibilities-as-an-ai-user">Your Responsibilities as an AI User<a class="anchor" aria-label="anchor" href="#your-responsibilities-as-an-ai-user"></a>
 </h2>
 <hr class="half-width">
+<p>When using AI coding assistants, it is your responsibility to ensure
+code quality, security, and legality. It is important to remember that
+<strong>AI is a tool to assist you</strong>, not a substitute for your
+expertise and judgment. Thus, you have to regard AI suggestions with the
+same scrutiny as code from any other source.</p>
+<p>With AI usage, <strong>your role</strong> changes from sole author to
+<strong>supervisor and validator</strong> of AI-generated code!</p>
 <div class="section level3">
 <h3 id="code-ownership-and-accountability">1. Code Ownership and Accountability<a class="anchor" aria-label="anchor" href="#code-ownership-and-accountability"></a>
 </h3>
@@ -1526,7 +1533,22 @@ for subsequent training and answering</li>
 </section><section><h2 class="section-heading" id="when-ai-usage-is-a-no-go">When AI Usage Is a No-Go<a class="anchor" aria-label="anchor" href="#when-ai-usage-is-a-no-go"></a>
 </h2>
 <hr class="half-width">
-<div class="section level3">
+<p>The easiness of using AI coding assistants can tempt developers to
+use them inappropriately. Especially if you are new to programming or a
+specific domain, it can be hard to judge when AI usage is acceptable and
+when not.</p>
+<p>Thus, beginners should use AI tools as a personal learning assistant
+to get hints and explanations, but avoid using them to generate complete
+solutions for critical tasks you cannot yet judge properly yourself.
+That way, you can build up your own expertise boosted by AI help without
+becoming overly dependent on it.</p>
+<p>Once you mastered the basics and can read and understand code well,
+you can start using AI more freely to broaden your productivity and
+understanding. Still, always be cautious when using AI for critical
+tasks beyond your expertise.</p>
+<figure><img src="beginner-vs-advanced-student.png" alt="The image depicts the different tasks when solving problems yourself or with the help of an AI assistant." class="figure mx-auto d-block"><div class="figcaption">The image depicts the different tasks when
+solving problems yourself or with the help of an AI assistant.</div>
+</figure><div class="section level3">
 <h3 id="specialized-or-novel-algorithms">1. Specialized or Novel Algorithms<a class="anchor" aria-label="anchor" href="#specialized-or-novel-algorithms"></a>
 </h3>
 <p><strong>Be cautious with:</strong></p>
@@ -1891,7 +1913,9 @@ human expertise for the critical 20% involving:</p>
 <li>Understand evolving best practices</li>
 <li>Participate in communities discussing AI use</li>
 </ul>
-<div id="group-discussion" class="callout discussion">
+<figure><img src="Education-is...jpg" alt="Education is what remains when you have no tool at hand…" class="figure mx-auto d-block"><div class="figcaption">Education is what remains when you have no tool
+at hand…</div>
+</figure><div id="group-discussion" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>
@@ -2166,7 +2190,7 @@ students with an average above 70.</p>
   Example Solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2309,7 +2333,7 @@ context:</p>
   Observation
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>You should notice that:</p>
 <ul>
@@ -2530,7 +2554,7 @@ Copilot</h3>
   Example Approach
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb15">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -3096,7 +3120,7 @@ Consider:</p>
   Example Solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>Your <code>AGENTS.md</code> should include:</p>
 <ul>
@@ -3341,7 +3365,7 @@ includes:</p>
   Example Strategy
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li>
@@ -6005,7 +6029,7 @@ appropriate code.</p>
   Example Solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">MARKDOWN<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
