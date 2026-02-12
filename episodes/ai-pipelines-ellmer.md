@@ -215,7 +215,7 @@ feedback_data |>
     mood = 
       comment |> 
       str_c(collapse="#") |> 
-      chat_high$chat( "Assign to each product feedback answer (provided as #-separated list) a respective category from (happy,unhappy) in a #-separated aggregated text output",
+      chat$chat( "Assign to each product feedback answer (provided as #-separated list) a respective category from (happy,unhappy) in a #-separated aggregated text output",
                       echo = "none") |> 
       str_split_1("#")
   )
