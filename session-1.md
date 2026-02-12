@@ -50,6 +50,26 @@ As a follow-up to the task in "Where Do We Need AI Support?"
   - Can you share an example where AI suggestions were incorrect or unhelpful?
   - How do you decide when to use AI assistance versus figuring things out yourself?
 
+### Getting Started with GitHub Copilot
+
+- **TASK**: Write a short description of your field of interest and what data sets are typically used in your field. 
+  Use GitHub Copilot to help you write this description.
+  - Start with creating a new Markdown file
+  - Set a descriptive header prefixed with an `#` to mark it as a title (e.g., `# My Field of Interest`)
+  - Write a few sentences describing your field and the data sets you work with.
+  - Use GitHub Copilot to generate suggestions for your description. 
+    You can trigger suggestions by typing and accepting them with `Tab` or `Enter`.
+    You can also ask Copilot specific questions or for help with phrasing by typing prompts like "Write a sentence about..." or "What are common data sets in...?"
+  - What suggestions does Copilot give you?
+  - How do you evaluate the quality of these suggestions?
+  - Do you find the suggestions helpful? Why or why not?
+
+### Discussion of secrets and sensitive information
+
+- [Passwords and Tokens via System Variables](private-tokens.md)
+  - Why is it important to keep secrets out of your code?
+  - How can you manage secrets securely in RStudio?
+  - What are the best practices for using environment variables to store sensitive information?
 
 
 
