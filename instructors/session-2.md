@@ -76,6 +76,7 @@ data("storms")
   - PRO: central definition of requirements and constraints for the whole project
   - CON: requires some setup and maintenance = additional work but WORTH IT!
   - typically requires code organisation in terms of **projects** (RStudio Projects)
+  - **IMPORTANT: need to activate “Index project files with GitHub Copilot” in RStudio > Copilot options!**
 
 - ? Who is familiar with **RStudio Projects**?
   - idea and setup
