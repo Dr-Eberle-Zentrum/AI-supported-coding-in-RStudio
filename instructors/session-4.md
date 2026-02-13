@@ -21,6 +21,45 @@
   - integration challenges
   - consistency issues
 
+```R
+url_part1 <- "https://raw.githubusercontent.com/"
+url_part2 <- "dataprofessor/data/master/iris.csv"
+the_url_for_the_data <- paste0(url_part1, url_part2)
+data <- read.csv(the_url_for_the_data)
+
+df2 <- data
+
+df2 <- df2[df2$Species != "setosa", ]
+
+df2$Sepal.Area <- df2$Sepal.Length * df2$Sepal.Width
+
+library(dplyr)
+df3 <- df2 %>%
+  group_by(Species) %>%
+  summarise(mean_area = mean(Sepal.Area))
+
+df3 <- df3[order(df3$mean_area, decreasing = TRUE), ]
+
+library(ggplot2)
+ggplot(data = df3, 
+       aes(x = Species, y = mean_area, fill = Species)) +
+  geom_bar(stat = "identity") +
+  theme(plot.title = element_text(size = 10, face = "bold")) +
+  labs(title = "Mean Sepal Area by Species (Excluding Setosa)") +
+  theme_minimal() +
+  theme(legend.position = "none")
+```
+
+- TASK:
+  - test the code above
+  - try to understand what it does
+  - ! ask for a code documentation
+  - check again if you can follow the code
+  - ! ask for a code revision and define goals for the revision 
+    - repeat the process of revision and review until you are satisfied with the code and understand it!
+    - ! keep your final goals for discussion
+
+
 - code revision ... ? what are goals for code revision?
   - improve code quality
     - reduce redundancy (and number of temporary variables)
