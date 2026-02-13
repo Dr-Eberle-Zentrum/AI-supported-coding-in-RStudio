@@ -64,7 +64,7 @@ However, you can use GitHub Copilot Chat within your browser.
 
 To this end:
 
-- Navigate to [https::github.com/copilot]
+- Navigate to [https://github.com/copilot](https://github.com/copilot)
 - For an extended list of models:
   - Ensure you have a GitHub Copilot subscription
   - Sign in
