@@ -17,14 +17,22 @@
 
 - ? `ellmer` installed and working? chat-check, see material !
 
-- ? What is a major problem, when using `ellmer` via map?
+- `ellmer` in action:
+  - create chat, put a prompt
+  - inspect the chat object
+    - discussion of tokens, cost, response time, etc.
+
+- ? What is a major problem, when using `ellmer`?
   - Advantages of "aggregated calls"
+  - Problem of token limit for large datasets .. doesnt fit into one prompt!
   - idea of batch processing
 
 - GROUP: 
   * ! identify at least 4 reasonable use cases for AI-calls via `ellmer`!
   * ? what kind of tasks are not suited for AI-calls or can be done otherwise?
   * ? what are drawbacks/cons of AI-usage in data processing?
+  
+- EXERCISE: pick one use case and set as a task
 
 - ? Thoughts about reproducability and reliability?
 - ? How to guide the reliability of an LLM?

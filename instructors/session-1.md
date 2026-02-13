@@ -50,6 +50,12 @@ As a follow-up to the task in "Where Do We Need AI Support?"
   - Can you share an example where AI suggestions were incorrect or unhelpful?
   - How do you decide when to use AI assistance versus figuring things out yourself?
 
+### AI for self-study
+
+- AI-bots for self-assessment = example for tailored AI-supported learning
+- ? experiences? useful? annoying? alternatives? hacks?
+
+
 ### Getting Started with GitHub Copilot
 
 - **TASK**: Write a short description of your field of interest and what data sets are typically used in your field. 
