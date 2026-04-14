@@ -653,7 +653,7 @@ which context?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -784,37 +784,37 @@ research?</li>
 </div>
 </section><section><h2 class="section-heading" id="parameter-selection-guidelines">Parameter Selection Guidelines<a class="anchor" aria-label="anchor" href="#parameter-selection-guidelines"></a></h2>
 <hr class="half-width"><p>Here’s a quick reference for choosing parameter values:</p>
-<table class="table"><colgroup><col width="22%"><col width="27%"><col width="14%"><col width="12%"><col width="22%"></colgroup><thead><tr><th>Task Type</th>
+<table class="table"><colgroup><col width="22%"><col width="27%"><col width="14%"><col width="12%"><col width="22%"></colgroup><thead><tr class="header"><th>Task Type</th>
 <th>Temperature</th>
 <th>Top-P</th>
 <th>Seed</th>
 <th>Reasoning</th>
-</tr></thead><tbody><tr><td>Code generation</td>
+</tr></thead><tbody><tr class="odd"><td>Code generation</td>
 <td>0.1-0.3</td>
 <td>0.8-0.9</td>
 <td>Yes</td>
 <td>Need deterministic, correct syntax</td>
-</tr><tr><td>Data classification</td>
+</tr><tr class="even"><td>Data classification</td>
 <td>0.1-0.2</td>
 <td>0.8</td>
 <td>Yes</td>
 <td>Consistency is critical</td>
-</tr><tr><td>Text extraction</td>
+</tr><tr class="odd"><td>Text extraction</td>
 <td>0.2-0.4</td>
 <td>0.85</td>
 <td>Yes</td>
 <td>Balance accuracy and flexibility</td>
-</tr><tr><td>Content summarization</td>
+</tr><tr class="even"><td>Content summarization</td>
 <td>0.3-0.5</td>
 <td>0.9</td>
 <td>Optional</td>
 <td>Some creativity helps</td>
-</tr><tr><td>Creative writing</td>
+</tr><tr class="odd"><td>Creative writing</td>
 <td>0.7-1.0</td>
 <td>0.95</td>
 <td>No</td>
 <td>Maximize diversity</td>
-</tr><tr><td>Brainstorming</td>
+</tr><tr class="even"><td>Brainstorming</td>
 <td>0.8-1.2</td>
 <td>0.95</td>
 <td>No</td>
@@ -889,7 +889,7 @@ any links that you are not going to use.
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
 
         <p>Template licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">CC-BY 4.0</a> by <a href="https://carpentries.org/" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/" class="external-link">sandpaper (0.20.0)</a>, <a href="https://github.com/carpentries/pegboard/tree/" class="external-link">pegboard (0.7.9)</a>, and <a href="https://github.com/Dr-Eberle-Zentrum/varnish/tree/e83e91d2c5ad53b329070b9741d678731ea434ae" class="external-link">varnish (1.0.9)</a></p>
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.20.0" class="external-link">sandpaper (0.20.0)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.9" class="external-link">pegboard (0.7.9)</a>, and <a href="https://github.com/Dr-Eberle-Zentrum/varnish/tree/e83e91d2c5ad53b329070b9741d678731ea434ae" class="external-link">varnish (1.0.9)</a></p>
 		</div>
 		</footer></div> <!-- / div.container -->
 	<div id="to-top">
