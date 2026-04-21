@@ -251,7 +251,7 @@
       </button>
     </div><!--/div.accordion-header-->
 
-    <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
+    <div id="flush-collapsecurrent" class="accordion-collapse collapse show" data-bs-parent="#accordionFlushcurrent">
       <div class="accordion-body">
         <ul><li><a href="#introduction">Introduction</a></li>
 <li><a href="#the-need-for-general-context-definitions">The Need for General Context Definitions</a></li>
@@ -563,213 +563,213 @@ principles and functional programming patterns:</p>
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">MARKDOWN<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode markdown" tabindex="0"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="fu"># AGENTS.md - R Project Coding Guidelines</span></span>
-<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="fu">## Overview</span></span>
-<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a>This R project follows tidyverse conventions and functional programming principles. </span>
-<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a>AI assistants should generate code that adheres to these guidelines.</span>
-<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a></span>
-<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a><span class="fu">## Language and Framework</span></span>
-<span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a></span>
-<span id="cb2-10"><a href="#cb2-10" tabindex="-1"></a><span class="ss">- </span>**Primary Language**: R (version 4.1 or higher)</span>
-<span id="cb2-11"><a href="#cb2-11" tabindex="-1"></a><span class="ss">- </span>**Core Framework**: tidyverse</span>
-<span id="cb2-12"><a href="#cb2-12" tabindex="-1"></a><span class="ss">- </span>**Required Packages**: dplyr, tidyr, ggplot2, purrr, readr</span>
-<span id="cb2-13"><a href="#cb2-13" tabindex="-1"></a></span>
-<span id="cb2-14"><a href="#cb2-14" tabindex="-1"></a><span class="fu">## Code Style Principles</span></span>
-<span id="cb2-15"><a href="#cb2-15" tabindex="-1"></a></span>
-<span id="cb2-16"><a href="#cb2-16" tabindex="-1"></a><span class="fu">### 1. Mandatory Tidyverse Usage</span></span>
-<span id="cb2-17"><a href="#cb2-17" tabindex="-1"></a></span>
-<span id="cb2-18"><a href="#cb2-18" tabindex="-1"></a>All data manipulation and analysis code MUST use tidyverse packages and functions.</span>
-<span id="cb2-19"><a href="#cb2-19" tabindex="-1"></a></span>
-<span id="cb2-20"><a href="#cb2-20" tabindex="-1"></a>**Prefer:**</span>
-<span id="cb2-21"><a href="#cb2-21" tabindex="-1"></a><span class="in">```r</span></span>
-<span id="cb2-22"><a href="#cb2-22" tabindex="-1"></a>mtcars <span class="sc">%&gt;%</span></span>
-<span id="cb2-23"><a href="#cb2-23" tabindex="-1"></a>  <span class="fu">filter</span>(mpg <span class="sc">&gt;</span> <span class="dv">20</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb2-24"><a href="#cb2-24" tabindex="-1"></a>  <span class="fu">select</span>(mpg, cyl, hp)</span>
-<span id="cb2-25"><a href="#cb2-25" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-26"><a href="#cb2-26" tabindex="-1"></a></span>
-<span id="cb2-27"><a href="#cb2-27" tabindex="-1"></a>**Avoid:**</span>
-<span id="cb2-28"><a href="#cb2-28" tabindex="-1"></a><span class="in">```r</span></span>
-<span id="cb2-29"><a href="#cb2-29" tabindex="-1"></a>mtcars[mtcars<span class="sc">$</span>mpg <span class="sc">&gt;</span> <span class="dv">20</span>, <span class="fu">c</span>(<span class="st">"mpg"</span>, <span class="st">"cyl"</span>, <span class="st">"hp"</span>)]</span>
-<span id="cb2-30"><a href="#cb2-30" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-31"><a href="#cb2-31" tabindex="-1"></a></span>
-<span id="cb2-32"><a href="#cb2-32" tabindex="-1"></a><span class="fu">### 2. Piping Over Local Variables</span></span>
-<span id="cb2-33"><a href="#cb2-33" tabindex="-1"></a></span>
-<span id="cb2-34"><a href="#cb2-34" tabindex="-1"></a>ALWAYS favor piping operations over creating intermediate local variables.</span>
-<span id="cb2-35"><a href="#cb2-35" tabindex="-1"></a></span>
-<span id="cb2-36"><a href="#cb2-36" tabindex="-1"></a>**Prefer:**</span>
-<span id="cb2-37"><a href="#cb2-37" tabindex="-1"></a><span class="in">```r</span></span>
-<span id="cb2-38"><a href="#cb2-38" tabindex="-1"></a>mtcars <span class="sc">%&gt;%</span></span>
-<span id="cb2-39"><a href="#cb2-39" tabindex="-1"></a>  <span class="fu">filter</span>(cyl <span class="sc">==</span> <span class="dv">6</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb2-40"><a href="#cb2-40" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">efficiency =</span> mpg <span class="sc">/</span> hp) <span class="sc">%&gt;%</span></span>
-<span id="cb2-41"><a href="#cb2-41" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(efficiency)) <span class="sc">%&gt;%</span></span>
-<span id="cb2-42"><a href="#cb2-42" tabindex="-1"></a>  <span class="fu">head</span>(<span class="dv">10</span>)</span>
-<span id="cb2-43"><a href="#cb2-43" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-44"><a href="#cb2-44" tabindex="-1"></a></span>
-<span id="cb2-45"><a href="#cb2-45" tabindex="-1"></a>**Avoid:**</span>
-<span id="cb2-46"><a href="#cb2-46" tabindex="-1"></a><span class="in">```r</span></span>
-<span id="cb2-47"><a href="#cb2-47" tabindex="-1"></a>cars_filtered <span class="ot">&lt;-</span> <span class="fu">filter</span>(mtcars, cyl <span class="sc">==</span> <span class="dv">6</span>)</span>
-<span id="cb2-48"><a href="#cb2-48" tabindex="-1"></a>cars_mutated <span class="ot">&lt;-</span> <span class="fu">mutate</span>(cars_filtered, <span class="at">efficiency =</span> mpg <span class="sc">/</span> hp)</span>
-<span id="cb2-49"><a href="#cb2-49" tabindex="-1"></a>cars_sorted <span class="ot">&lt;-</span> <span class="fu">arrange</span>(cars_mutated, <span class="fu">desc</span>(efficiency))</span>
-<span id="cb2-50"><a href="#cb2-50" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">head</span>(cars_sorted, <span class="dv">10</span>)</span>
-<span id="cb2-51"><a href="#cb2-51" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-52"><a href="#cb2-52" tabindex="-1"></a></span>
-<span id="cb2-53"><a href="#cb2-53" tabindex="-1"></a><span class="fu">### 3. Prohibition of Variable Overwriting</span></span>
-<span id="cb2-54"><a href="#cb2-54" tabindex="-1"></a></span>
-<span id="cb2-55"><a href="#cb2-55" tabindex="-1"></a>NEVER overwrite existing variables. Use piping to transform data in a single flow.</span>
-<span id="cb2-56"><a href="#cb2-56" tabindex="-1"></a></span>
-<span id="cb2-57"><a href="#cb2-57" tabindex="-1"></a>**Forbidden:**</span>
-<span id="cb2-58"><a href="#cb2-58" tabindex="-1"></a><span class="in">```r</span></span>
-<span id="cb2-59"><a href="#cb2-59" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"input.csv"</span>)</span>
-<span id="cb2-60"><a href="#cb2-60" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">filter</span>(data, value <span class="sc">&gt;</span> <span class="dv">0</span>)</span>
-<span id="cb2-61"><a href="#cb2-61" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">mutate</span>(data, <span class="at">log_value =</span> <span class="fu">log</span>(value))</span>
-<span id="cb2-62"><a href="#cb2-62" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">arrange</span>(data, date)</span>
-<span id="cb2-63"><a href="#cb2-63" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-64"><a href="#cb2-64" tabindex="-1"></a></span>
-<span id="cb2-65"><a href="#cb2-65" tabindex="-1"></a>**Required:**</span>
-<span id="cb2-66"><a href="#cb2-66" tabindex="-1"></a><span class="in">```r</span></span>
-<span id="cb2-67"><a href="#cb2-67" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"input.csv"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb2-68"><a href="#cb2-68" tabindex="-1"></a>  <span class="fu">filter</span>(value <span class="sc">&gt;</span> <span class="dv">0</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb2-69"><a href="#cb2-69" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">log_value =</span> <span class="fu">log</span>(value)) <span class="sc">%&gt;%</span></span>
-<span id="cb2-70"><a href="#cb2-70" tabindex="-1"></a>  <span class="fu">arrange</span>(date)</span>
-<span id="cb2-71"><a href="#cb2-71" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-72"><a href="#cb2-72" tabindex="-1"></a></span>
-<span id="cb2-73"><a href="#cb2-73" tabindex="-1"></a><span class="fu">### 4. Sparse Use of Local Variables</span></span>
-<span id="cb2-74"><a href="#cb2-74" tabindex="-1"></a></span>
-<span id="cb2-75"><a href="#cb2-75" tabindex="-1"></a>Minimize the creation of intermediate variables. Only create local variables when:</span>
-<span id="cb2-76"><a href="#cb2-76" tabindex="-1"></a><span class="ss">- </span>The result will be used multiple times in different contexts</span>
-<span id="cb2-77"><a href="#cb2-77" tabindex="-1"></a><span class="ss">- </span>The variable name significantly improves code readability</span>
-<span id="cb2-78"><a href="#cb2-78" tabindex="-1"></a><span class="ss">- </span>The computation is expensive and should not be repeated</span>
-<span id="cb2-79"><a href="#cb2-79" tabindex="-1"></a></span>
-<span id="cb2-80"><a href="#cb2-80" tabindex="-1"></a>**Acceptable local variable usage:**</span>
-<span id="cb2-81"><a href="#cb2-81" tabindex="-1"></a><span class="in">```r</span></span>
-<span id="cb2-82"><a href="#cb2-82" tabindex="-1"></a><span class="co"># Used in multiple independent operations</span></span>
-<span id="cb2-83"><a href="#cb2-83" tabindex="-1"></a>base_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data.csv"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb2-84"><a href="#cb2-84" tabindex="-1"></a>  <span class="fu">filter</span>(status <span class="sc">==</span> <span class="st">"active"</span>)</span>
-<span id="cb2-85"><a href="#cb2-85" tabindex="-1"></a></span>
-<span id="cb2-86"><a href="#cb2-86" tabindex="-1"></a>summary_stats <span class="ot">&lt;-</span> base_data <span class="sc">%&gt;%</span></span>
-<span id="cb2-87"><a href="#cb2-87" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_value =</span> <span class="fu">mean</span>(value), <span class="at">sd_value =</span> <span class="fu">sd</span>(value))</span>
-<span id="cb2-88"><a href="#cb2-88" tabindex="-1"></a></span>
-<span id="cb2-89"><a href="#cb2-89" tabindex="-1"></a>detailed_analysis <span class="ot">&lt;-</span> base_data <span class="sc">%&gt;%</span></span>
-<span id="cb2-90"><a href="#cb2-90" tabindex="-1"></a>  <span class="fu">group_by</span>(category) <span class="sc">%&gt;%</span></span>
-<span id="cb2-91"><a href="#cb2-91" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="fu">across</span>(<span class="fu">where</span>(is.numeric), <span class="fu">list</span>(<span class="at">mean =</span> mean, <span class="at">sd =</span> sd)))</span>
-<span id="cb2-92"><a href="#cb2-92" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-93"><a href="#cb2-93" tabindex="-1"></a></span>
-<span id="cb2-94"><a href="#cb2-94" tabindex="-1"></a><span class="fu">### 5. Multiline Pipes with Documentation</span></span>
-<span id="cb2-95"><a href="#cb2-95" tabindex="-1"></a></span>
-<span id="cb2-96"><a href="#cb2-96" tabindex="-1"></a>Pipelines MUST be formatted across multiple lines with inline documentation.</span>
-<span id="cb2-97"><a href="#cb2-97" tabindex="-1"></a></span>
-<span id="cb2-98"><a href="#cb2-98" tabindex="-1"></a>**Required format:**</span>
-<span id="cb2-99"><a href="#cb2-99" tabindex="-1"></a><span class="in">```r</span></span>
-<span id="cb2-100"><a href="#cb2-100" tabindex="-1"></a>analysis_results <span class="ot">&lt;-</span> raw_data <span class="sc">%&gt;%</span></span>
-<span id="cb2-101"><a href="#cb2-101" tabindex="-1"></a>  <span class="co"># Remove incomplete cases and outliers</span></span>
-<span id="cb2-102"><a href="#cb2-102" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">complete.cases</span>(.), <span class="fu">between</span>(value, <span class="dv">0</span>, <span class="dv">100</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb2-103"><a href="#cb2-103" tabindex="-1"></a>  <span class="co"># Normalize values by group</span></span>
-<span id="cb2-104"><a href="#cb2-104" tabindex="-1"></a>  <span class="fu">group_by</span>(category) <span class="sc">%&gt;%</span></span>
-<span id="cb2-105"><a href="#cb2-105" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">normalized =</span> (value <span class="sc">-</span> <span class="fu">mean</span>(value)) <span class="sc">/</span> <span class="fu">sd</span>(value)) <span class="sc">%&gt;%</span></span>
-<span id="cb2-106"><a href="#cb2-106" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb2-107"><a href="#cb2-107" tabindex="-1"></a>  <span class="co"># Calculate derived metrics</span></span>
-<span id="cb2-108"><a href="#cb2-108" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb2-109"><a href="#cb2-109" tabindex="-1"></a>    <span class="at">log_value =</span> <span class="fu">log1p</span>(value),</span>
-<span id="cb2-110"><a href="#cb2-110" tabindex="-1"></a>    <span class="at">squared_value =</span> value<span class="sc">^</span><span class="dv">2</span>,</span>
-<span id="cb2-111"><a href="#cb2-111" tabindex="-1"></a>    <span class="at">interaction =</span> value <span class="sc">*</span> normalized</span>
-<span id="cb2-112"><a href="#cb2-112" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb2-113"><a href="#cb2-113" tabindex="-1"></a>  <span class="co"># Sort by importance</span></span>
-<span id="cb2-114"><a href="#cb2-114" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(<span class="fu">abs</span>(normalized)))</span>
-<span id="cb2-115"><a href="#cb2-115" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-116"><a href="#cb2-116" tabindex="-1"></a></span>
-<span id="cb2-117"><a href="#cb2-117" tabindex="-1"></a>Each step in a pipeline should:</span>
-<span id="cb2-118"><a href="#cb2-118" tabindex="-1"></a><span class="ss">- </span>Be on its own line</span>
-<span id="cb2-119"><a href="#cb2-119" tabindex="-1"></a><span class="ss">- </span>Have a preceding comment explaining its purpose</span>
-<span id="cb2-120"><a href="#cb2-120" tabindex="-1"></a><span class="ss">- </span>Use meaningful intermediate calculations when needed</span>
-<span id="cb2-121"><a href="#cb2-121" tabindex="-1"></a></span>
-<span id="cb2-122"><a href="#cb2-122" tabindex="-1"></a><span class="fu">### 6. Function Definitions</span></span>
-<span id="cb2-123"><a href="#cb2-123" tabindex="-1"></a></span>
-<span id="cb2-124"><a href="#cb2-124" tabindex="-1"></a>Functions should also follow piping principles when applicable:</span>
-<span id="cb2-125"><a href="#cb2-125" tabindex="-1"></a></span>
-<span id="cb2-126"><a href="#cb2-126" tabindex="-1"></a><span class="in">```r</span></span>
-<span id="cb2-127"><a href="#cb2-127" tabindex="-1"></a>process_dataset <span class="ot">&lt;-</span> <span class="cf">function</span>(data, <span class="at">threshold =</span> <span class="fl">0.05</span>) {</span>
-<span id="cb2-128"><a href="#cb2-128" tabindex="-1"></a>  data <span class="sc">%&gt;%</span></span>
-<span id="cb2-129"><a href="#cb2-129" tabindex="-1"></a>    <span class="co"># Filter based on significance threshold</span></span>
-<span id="cb2-130"><a href="#cb2-130" tabindex="-1"></a>    <span class="fu">filter</span>(p_value <span class="sc">&lt;</span> threshold) <span class="sc">%&gt;%</span></span>
-<span id="cb2-131"><a href="#cb2-131" tabindex="-1"></a>    <span class="co"># Calculate effect sizes</span></span>
-<span id="cb2-132"><a href="#cb2-132" tabindex="-1"></a>    <span class="fu">mutate</span>(</span>
-<span id="cb2-133"><a href="#cb2-133" tabindex="-1"></a>      <span class="at">effect_size =</span> (mean_treatment <span class="sc">-</span> mean_control) <span class="sc">/</span> pooled_sd,</span>
-<span id="cb2-134"><a href="#cb2-134" tabindex="-1"></a>      <span class="at">ci_lower =</span> effect_size <span class="sc">-</span> <span class="fl">1.96</span> <span class="sc">*</span> se,</span>
-<span id="cb2-135"><a href="#cb2-135" tabindex="-1"></a>      <span class="at">ci_upper =</span> effect_size <span class="sc">+</span> <span class="fl">1.96</span> <span class="sc">*</span> se</span>
-<span id="cb2-136"><a href="#cb2-136" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span></span>
-<span id="cb2-137"><a href="#cb2-137" tabindex="-1"></a>    <span class="co"># Add interpretation</span></span>
-<span id="cb2-138"><a href="#cb2-138" tabindex="-1"></a>    <span class="fu">mutate</span>(</span>
-<span id="cb2-139"><a href="#cb2-139" tabindex="-1"></a>      <span class="at">significant =</span> p_value <span class="sc">&lt;</span> threshold,</span>
-<span id="cb2-140"><a href="#cb2-140" tabindex="-1"></a>      <span class="at">effect_magnitude =</span> <span class="fu">case_when</span>(</span>
-<span id="cb2-141"><a href="#cb2-141" tabindex="-1"></a>        <span class="fu">abs</span>(effect_size) <span class="sc">&lt;</span> <span class="fl">0.2</span> <span class="sc">~</span> <span class="st">"small"</span>,</span>
-<span id="cb2-142"><a href="#cb2-142" tabindex="-1"></a>        <span class="fu">abs</span>(effect_size) <span class="sc">&lt;</span> <span class="fl">0.8</span> <span class="sc">~</span> <span class="st">"medium"</span>,</span>
-<span id="cb2-143"><a href="#cb2-143" tabindex="-1"></a>        <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"large"</span></span>
-<span id="cb2-144"><a href="#cb2-144" tabindex="-1"></a>      )</span>
-<span id="cb2-145"><a href="#cb2-145" tabindex="-1"></a>    )</span>
-<span id="cb2-146"><a href="#cb2-146" tabindex="-1"></a>}</span>
-<span id="cb2-147"><a href="#cb2-147" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-148"><a href="#cb2-148" tabindex="-1"></a></span>
-<span id="cb2-149"><a href="#cb2-149" tabindex="-1"></a><span class="fu">## Forbidden Patterns</span></span>
-<span id="cb2-150"><a href="#cb2-150" tabindex="-1"></a></span>
-<span id="cb2-151"><a href="#cb2-151" tabindex="-1"></a><span class="ss">1. </span>**Loop-based operations** when vectorized or tidyverse alternatives exist</span>
-<span id="cb2-152"><a href="#cb2-152" tabindex="-1"></a><span class="ss">2. </span>**Direct variable assignment in loops** - use <span class="in">`purrr::map()`</span> family instead</span>
-<span id="cb2-153"><a href="#cb2-153" tabindex="-1"></a><span class="ss">3. </span>**Base R subsetting syntax** - use <span class="in">`dplyr::filter()`</span> and <span class="in">`dplyr::select()`</span></span>
-<span id="cb2-154"><a href="#cb2-154" tabindex="-1"></a><span class="ss">4. </span>**Nested function calls** without pipes when multiple operations are chained</span>
-<span id="cb2-155"><a href="#cb2-155" tabindex="-1"></a><span class="ss">5. </span>**`attach()` function** - always use explicit data references</span>
-<span id="cb2-156"><a href="#cb2-156" tabindex="-1"></a></span>
-<span id="cb2-157"><a href="#cb2-157" tabindex="-1"></a><span class="fu">## Documentation Standards</span></span>
-<span id="cb2-158"><a href="#cb2-158" tabindex="-1"></a></span>
-<span id="cb2-159"><a href="#cb2-159" tabindex="-1"></a><span class="ss">- </span>Use roxygen2-style comments for all functions</span>
-<span id="cb2-160"><a href="#cb2-160" tabindex="-1"></a><span class="ss">- </span>Include inline comments for complex pipeline steps</span>
-<span id="cb2-161"><a href="#cb2-161" tabindex="-1"></a><span class="ss">- </span>Document assumptions and data requirements</span>
-<span id="cb2-162"><a href="#cb2-162" tabindex="-1"></a><span class="ss">- </span>Explain any deviations from these guidelines (rare cases only)</span>
-<span id="cb2-163"><a href="#cb2-163" tabindex="-1"></a></span>
-<span id="cb2-164"><a href="#cb2-164" tabindex="-1"></a><span class="fu">## Examples of Complete Workflows</span></span>
-<span id="cb2-165"><a href="#cb2-165" tabindex="-1"></a></span>
-<span id="cb2-166"><a href="#cb2-166" tabindex="-1"></a><span class="fu">### Data Import and Cleaning</span></span>
-<span id="cb2-167"><a href="#cb2-167" tabindex="-1"></a><span class="in">```r</span></span>
-<span id="cb2-168"><a href="#cb2-168" tabindex="-1"></a>cleaned_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"raw_data.csv"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb2-169"><a href="#cb2-169" tabindex="-1"></a>  <span class="co"># Handle missing values</span></span>
-<span id="cb2-170"><a href="#cb2-170" tabindex="-1"></a>  <span class="fu">drop_na</span>(key_columns) <span class="sc">%&gt;%</span></span>
-<span id="cb2-171"><a href="#cb2-171" tabindex="-1"></a>  <span class="co"># Standardize column names</span></span>
-<span id="cb2-172"><a href="#cb2-172" tabindex="-1"></a>  <span class="fu">rename_with</span>(tolower) <span class="sc">%&gt;%</span></span>
-<span id="cb2-173"><a href="#cb2-173" tabindex="-1"></a>  <span class="co"># Type conversion</span></span>
-<span id="cb2-174"><a href="#cb2-174" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">ends_with</span>(<span class="st">"_date"</span>), ymd)) <span class="sc">%&gt;%</span></span>
-<span id="cb2-175"><a href="#cb2-175" tabindex="-1"></a>  <span class="co"># Remove duplicates</span></span>
-<span id="cb2-176"><a href="#cb2-176" tabindex="-1"></a>  <span class="fu">distinct</span>()</span>
-<span id="cb2-177"><a href="#cb2-177" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-178"><a href="#cb2-178" tabindex="-1"></a></span>
-<span id="cb2-179"><a href="#cb2-179" tabindex="-1"></a><span class="fu">### Analysis Pipeline</span></span>
-<span id="cb2-180"><a href="#cb2-180" tabindex="-1"></a><span class="in">```r</span></span>
-<span id="cb2-181"><a href="#cb2-181" tabindex="-1"></a>analysis <span class="ot">&lt;-</span> cleaned_data <span class="sc">%&gt;%</span></span>
-<span id="cb2-182"><a href="#cb2-182" tabindex="-1"></a>  <span class="co"># Subset to relevant period</span></span>
-<span id="cb2-183"><a href="#cb2-183" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">between</span>(date, start_date, end_date)) <span class="sc">%&gt;%</span></span>
-<span id="cb2-184"><a href="#cb2-184" tabindex="-1"></a>  <span class="co"># Group-level transformations</span></span>
-<span id="cb2-185"><a href="#cb2-185" tabindex="-1"></a>  <span class="fu">group_by</span>(category, region) <span class="sc">%&gt;%</span></span>
-<span id="cb2-186"><a href="#cb2-186" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
-<span id="cb2-187"><a href="#cb2-187" tabindex="-1"></a>    <span class="at">n_obs =</span> <span class="fu">n</span>(),</span>
-<span id="cb2-188"><a href="#cb2-188" tabindex="-1"></a>    <span class="at">mean_value =</span> <span class="fu">mean</span>(value, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb2-189"><a href="#cb2-189" tabindex="-1"></a>    <span class="at">median_value =</span> <span class="fu">median</span>(value, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb2-190"><a href="#cb2-190" tabindex="-1"></a>    <span class="at">.groups =</span> <span class="st">"drop"</span></span>
-<span id="cb2-191"><a href="#cb2-191" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb2-192"><a href="#cb2-192" tabindex="-1"></a>  <span class="co"># Calculate derived metrics</span></span>
-<span id="cb2-193"><a href="#cb2-193" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb2-194"><a href="#cb2-194" tabindex="-1"></a>    <span class="at">relative_value =</span> mean_value <span class="sc">/</span> median_value,</span>
-<span id="cb2-195"><a href="#cb2-195" tabindex="-1"></a>    <span class="at">weight =</span> n_obs <span class="sc">/</span> <span class="fu">sum</span>(n_obs)</span>
-<span id="cb2-196"><a href="#cb2-196" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb2-197"><a href="#cb2-197" tabindex="-1"></a>  <span class="co"># Final filtering</span></span>
-<span id="cb2-198"><a href="#cb2-198" tabindex="-1"></a>  <span class="fu">filter</span>(n_obs <span class="sc">&gt;=</span> min_sample_size)</span>
-<span id="cb2-199"><a href="#cb2-199" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-200"><a href="#cb2-200" tabindex="-1"></a></span>
-<span id="cb2-201"><a href="#cb2-201" tabindex="-1"></a><span class="fu">## Additional Guidelines</span></span>
-<span id="cb2-202"><a href="#cb2-202" tabindex="-1"></a></span>
-<span id="cb2-203"><a href="#cb2-203" tabindex="-1"></a><span class="ss">- </span>Prefer <span class="in">`tibble`</span> over <span class="in">`data.frame`</span></span>
-<span id="cb2-204"><a href="#cb2-204" tabindex="-1"></a><span class="ss">- </span>Use <span class="in">`readr::read_*()`</span> over base R <span class="in">`read.*()`</span> functions</span>
-<span id="cb2-205"><a href="#cb2-205" tabindex="-1"></a><span class="ss">- </span>Always specify <span class="in">`.groups`</span> argument when using <span class="in">`summarize()`</span> with <span class="in">`group_by()`</span></span>
-<span id="cb2-206"><a href="#cb2-206" tabindex="-1"></a><span class="ss">- </span>Use <span class="in">`across()`</span> for operations on multiple columns</span>
-<span id="cb2-207"><a href="#cb2-207" tabindex="-1"></a><span class="ss">- </span>Leverage <span class="in">`case_when()`</span> for complex conditional logic</span></code></pre>
+<pre class="sourceCode markdown" tabindex="0"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" tabindex="-1" aria-label="code-block-2-1"></a><span class="fu"># AGENTS.md - R Project Coding Guidelines</span></span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1" aria-label="code-block-2-2"></a></span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1" aria-label="code-block-2-3"></a><span class="fu">## Overview</span></span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1" aria-label="code-block-2-4"></a></span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1" aria-label="code-block-2-5"></a>This R project follows tidyverse conventions and functional programming principles. </span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1" aria-label="code-block-2-6"></a>AI assistants should generate code that adheres to these guidelines.</span>
+<span id="cb2-7"><a href="#cb2-7" tabindex="-1" aria-label="code-block-2-7"></a></span>
+<span id="cb2-8"><a href="#cb2-8" tabindex="-1" aria-label="code-block-2-8"></a><span class="fu">## Language and Framework</span></span>
+<span id="cb2-9"><a href="#cb2-9" tabindex="-1" aria-label="code-block-2-9"></a></span>
+<span id="cb2-10"><a href="#cb2-10" tabindex="-1" aria-label="code-block-2-10"></a><span class="ss">- </span>**Primary Language**: R (version 4.1 or higher)</span>
+<span id="cb2-11"><a href="#cb2-11" tabindex="-1" aria-label="code-block-2-11"></a><span class="ss">- </span>**Core Framework**: tidyverse</span>
+<span id="cb2-12"><a href="#cb2-12" tabindex="-1" aria-label="code-block-2-12"></a><span class="ss">- </span>**Required Packages**: dplyr, tidyr, ggplot2, purrr, readr</span>
+<span id="cb2-13"><a href="#cb2-13" tabindex="-1" aria-label="code-block-2-13"></a></span>
+<span id="cb2-14"><a href="#cb2-14" tabindex="-1" aria-label="code-block-2-14"></a><span class="fu">## Code Style Principles</span></span>
+<span id="cb2-15"><a href="#cb2-15" tabindex="-1" aria-label="code-block-2-15"></a></span>
+<span id="cb2-16"><a href="#cb2-16" tabindex="-1" aria-label="code-block-2-16"></a><span class="fu">### 1. Mandatory Tidyverse Usage</span></span>
+<span id="cb2-17"><a href="#cb2-17" tabindex="-1" aria-label="code-block-2-17"></a></span>
+<span id="cb2-18"><a href="#cb2-18" tabindex="-1" aria-label="code-block-2-18"></a>All data manipulation and analysis code MUST use tidyverse packages and functions.</span>
+<span id="cb2-19"><a href="#cb2-19" tabindex="-1" aria-label="code-block-2-19"></a></span>
+<span id="cb2-20"><a href="#cb2-20" tabindex="-1" aria-label="code-block-2-20"></a>**Prefer:**</span>
+<span id="cb2-21"><a href="#cb2-21" tabindex="-1" aria-label="code-block-2-21"></a><span class="in">```r</span></span>
+<span id="cb2-22"><a href="#cb2-22" tabindex="-1" aria-label="code-block-2-22"></a>mtcars <span class="sc">%&gt;%</span></span>
+<span id="cb2-23"><a href="#cb2-23" tabindex="-1" aria-label="code-block-2-23"></a>  <span class="fu">filter</span>(mpg <span class="sc">&gt;</span> <span class="dv">20</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb2-24"><a href="#cb2-24" tabindex="-1" aria-label="code-block-2-24"></a>  <span class="fu">select</span>(mpg, cyl, hp)</span>
+<span id="cb2-25"><a href="#cb2-25" tabindex="-1" aria-label="code-block-2-25"></a><span class="in">```</span></span>
+<span id="cb2-26"><a href="#cb2-26" tabindex="-1" aria-label="code-block-2-26"></a></span>
+<span id="cb2-27"><a href="#cb2-27" tabindex="-1" aria-label="code-block-2-27"></a>**Avoid:**</span>
+<span id="cb2-28"><a href="#cb2-28" tabindex="-1" aria-label="code-block-2-28"></a><span class="in">```r</span></span>
+<span id="cb2-29"><a href="#cb2-29" tabindex="-1" aria-label="code-block-2-29"></a>mtcars[mtcars<span class="sc">$</span>mpg <span class="sc">&gt;</span> <span class="dv">20</span>, <span class="fu">c</span>(<span class="st">"mpg"</span>, <span class="st">"cyl"</span>, <span class="st">"hp"</span>)]</span>
+<span id="cb2-30"><a href="#cb2-30" tabindex="-1" aria-label="code-block-2-30"></a><span class="in">```</span></span>
+<span id="cb2-31"><a href="#cb2-31" tabindex="-1" aria-label="code-block-2-31"></a></span>
+<span id="cb2-32"><a href="#cb2-32" tabindex="-1" aria-label="code-block-2-32"></a><span class="fu">### 2. Piping Over Local Variables</span></span>
+<span id="cb2-33"><a href="#cb2-33" tabindex="-1" aria-label="code-block-2-33"></a></span>
+<span id="cb2-34"><a href="#cb2-34" tabindex="-1" aria-label="code-block-2-34"></a>ALWAYS favor piping operations over creating intermediate local variables.</span>
+<span id="cb2-35"><a href="#cb2-35" tabindex="-1" aria-label="code-block-2-35"></a></span>
+<span id="cb2-36"><a href="#cb2-36" tabindex="-1" aria-label="code-block-2-36"></a>**Prefer:**</span>
+<span id="cb2-37"><a href="#cb2-37" tabindex="-1" aria-label="code-block-2-37"></a><span class="in">```r</span></span>
+<span id="cb2-38"><a href="#cb2-38" tabindex="-1" aria-label="code-block-2-38"></a>mtcars <span class="sc">%&gt;%</span></span>
+<span id="cb2-39"><a href="#cb2-39" tabindex="-1" aria-label="code-block-2-39"></a>  <span class="fu">filter</span>(cyl <span class="sc">==</span> <span class="dv">6</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb2-40"><a href="#cb2-40" tabindex="-1" aria-label="code-block-2-40"></a>  <span class="fu">mutate</span>(<span class="at">efficiency =</span> mpg <span class="sc">/</span> hp) <span class="sc">%&gt;%</span></span>
+<span id="cb2-41"><a href="#cb2-41" tabindex="-1" aria-label="code-block-2-41"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(efficiency)) <span class="sc">%&gt;%</span></span>
+<span id="cb2-42"><a href="#cb2-42" tabindex="-1" aria-label="code-block-2-42"></a>  <span class="fu">head</span>(<span class="dv">10</span>)</span>
+<span id="cb2-43"><a href="#cb2-43" tabindex="-1" aria-label="code-block-2-43"></a><span class="in">```</span></span>
+<span id="cb2-44"><a href="#cb2-44" tabindex="-1" aria-label="code-block-2-44"></a></span>
+<span id="cb2-45"><a href="#cb2-45" tabindex="-1" aria-label="code-block-2-45"></a>**Avoid:**</span>
+<span id="cb2-46"><a href="#cb2-46" tabindex="-1" aria-label="code-block-2-46"></a><span class="in">```r</span></span>
+<span id="cb2-47"><a href="#cb2-47" tabindex="-1" aria-label="code-block-2-47"></a>cars_filtered <span class="ot">&lt;-</span> <span class="fu">filter</span>(mtcars, cyl <span class="sc">==</span> <span class="dv">6</span>)</span>
+<span id="cb2-48"><a href="#cb2-48" tabindex="-1" aria-label="code-block-2-48"></a>cars_mutated <span class="ot">&lt;-</span> <span class="fu">mutate</span>(cars_filtered, <span class="at">efficiency =</span> mpg <span class="sc">/</span> hp)</span>
+<span id="cb2-49"><a href="#cb2-49" tabindex="-1" aria-label="code-block-2-49"></a>cars_sorted <span class="ot">&lt;-</span> <span class="fu">arrange</span>(cars_mutated, <span class="fu">desc</span>(efficiency))</span>
+<span id="cb2-50"><a href="#cb2-50" tabindex="-1" aria-label="code-block-2-50"></a>result <span class="ot">&lt;-</span> <span class="fu">head</span>(cars_sorted, <span class="dv">10</span>)</span>
+<span id="cb2-51"><a href="#cb2-51" tabindex="-1" aria-label="code-block-2-51"></a><span class="in">```</span></span>
+<span id="cb2-52"><a href="#cb2-52" tabindex="-1" aria-label="code-block-2-52"></a></span>
+<span id="cb2-53"><a href="#cb2-53" tabindex="-1" aria-label="code-block-2-53"></a><span class="fu">### 3. Prohibition of Variable Overwriting</span></span>
+<span id="cb2-54"><a href="#cb2-54" tabindex="-1" aria-label="code-block-2-54"></a></span>
+<span id="cb2-55"><a href="#cb2-55" tabindex="-1" aria-label="code-block-2-55"></a>NEVER overwrite existing variables. Use piping to transform data in a single flow.</span>
+<span id="cb2-56"><a href="#cb2-56" tabindex="-1" aria-label="code-block-2-56"></a></span>
+<span id="cb2-57"><a href="#cb2-57" tabindex="-1" aria-label="code-block-2-57"></a>**Forbidden:**</span>
+<span id="cb2-58"><a href="#cb2-58" tabindex="-1" aria-label="code-block-2-58"></a><span class="in">```r</span></span>
+<span id="cb2-59"><a href="#cb2-59" tabindex="-1" aria-label="code-block-2-59"></a>data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"input.csv"</span>)</span>
+<span id="cb2-60"><a href="#cb2-60" tabindex="-1" aria-label="code-block-2-60"></a>data <span class="ot">&lt;-</span> <span class="fu">filter</span>(data, value <span class="sc">&gt;</span> <span class="dv">0</span>)</span>
+<span id="cb2-61"><a href="#cb2-61" tabindex="-1" aria-label="code-block-2-61"></a>data <span class="ot">&lt;-</span> <span class="fu">mutate</span>(data, <span class="at">log_value =</span> <span class="fu">log</span>(value))</span>
+<span id="cb2-62"><a href="#cb2-62" tabindex="-1" aria-label="code-block-2-62"></a>data <span class="ot">&lt;-</span> <span class="fu">arrange</span>(data, date)</span>
+<span id="cb2-63"><a href="#cb2-63" tabindex="-1" aria-label="code-block-2-63"></a><span class="in">```</span></span>
+<span id="cb2-64"><a href="#cb2-64" tabindex="-1" aria-label="code-block-2-64"></a></span>
+<span id="cb2-65"><a href="#cb2-65" tabindex="-1" aria-label="code-block-2-65"></a>**Required:**</span>
+<span id="cb2-66"><a href="#cb2-66" tabindex="-1" aria-label="code-block-2-66"></a><span class="in">```r</span></span>
+<span id="cb2-67"><a href="#cb2-67" tabindex="-1" aria-label="code-block-2-67"></a>data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"input.csv"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb2-68"><a href="#cb2-68" tabindex="-1" aria-label="code-block-2-68"></a>  <span class="fu">filter</span>(value <span class="sc">&gt;</span> <span class="dv">0</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb2-69"><a href="#cb2-69" tabindex="-1" aria-label="code-block-2-69"></a>  <span class="fu">mutate</span>(<span class="at">log_value =</span> <span class="fu">log</span>(value)) <span class="sc">%&gt;%</span></span>
+<span id="cb2-70"><a href="#cb2-70" tabindex="-1" aria-label="code-block-2-70"></a>  <span class="fu">arrange</span>(date)</span>
+<span id="cb2-71"><a href="#cb2-71" tabindex="-1" aria-label="code-block-2-71"></a><span class="in">```</span></span>
+<span id="cb2-72"><a href="#cb2-72" tabindex="-1" aria-label="code-block-2-72"></a></span>
+<span id="cb2-73"><a href="#cb2-73" tabindex="-1" aria-label="code-block-2-73"></a><span class="fu">### 4. Sparse Use of Local Variables</span></span>
+<span id="cb2-74"><a href="#cb2-74" tabindex="-1" aria-label="code-block-2-74"></a></span>
+<span id="cb2-75"><a href="#cb2-75" tabindex="-1" aria-label="code-block-2-75"></a>Minimize the creation of intermediate variables. Only create local variables when:</span>
+<span id="cb2-76"><a href="#cb2-76" tabindex="-1" aria-label="code-block-2-76"></a><span class="ss">- </span>The result will be used multiple times in different contexts</span>
+<span id="cb2-77"><a href="#cb2-77" tabindex="-1" aria-label="code-block-2-77"></a><span class="ss">- </span>The variable name significantly improves code readability</span>
+<span id="cb2-78"><a href="#cb2-78" tabindex="-1" aria-label="code-block-2-78"></a><span class="ss">- </span>The computation is expensive and should not be repeated</span>
+<span id="cb2-79"><a href="#cb2-79" tabindex="-1" aria-label="code-block-2-79"></a></span>
+<span id="cb2-80"><a href="#cb2-80" tabindex="-1" aria-label="code-block-2-80"></a>**Acceptable local variable usage:**</span>
+<span id="cb2-81"><a href="#cb2-81" tabindex="-1" aria-label="code-block-2-81"></a><span class="in">```r</span></span>
+<span id="cb2-82"><a href="#cb2-82" tabindex="-1" aria-label="code-block-2-82"></a><span class="co"># Used in multiple independent operations</span></span>
+<span id="cb2-83"><a href="#cb2-83" tabindex="-1" aria-label="code-block-2-83"></a>base_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data.csv"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb2-84"><a href="#cb2-84" tabindex="-1" aria-label="code-block-2-84"></a>  <span class="fu">filter</span>(status <span class="sc">==</span> <span class="st">"active"</span>)</span>
+<span id="cb2-85"><a href="#cb2-85" tabindex="-1" aria-label="code-block-2-85"></a></span>
+<span id="cb2-86"><a href="#cb2-86" tabindex="-1" aria-label="code-block-2-86"></a>summary_stats <span class="ot">&lt;-</span> base_data <span class="sc">%&gt;%</span></span>
+<span id="cb2-87"><a href="#cb2-87" tabindex="-1" aria-label="code-block-2-87"></a>  <span class="fu">summarize</span>(<span class="at">mean_value =</span> <span class="fu">mean</span>(value), <span class="at">sd_value =</span> <span class="fu">sd</span>(value))</span>
+<span id="cb2-88"><a href="#cb2-88" tabindex="-1" aria-label="code-block-2-88"></a></span>
+<span id="cb2-89"><a href="#cb2-89" tabindex="-1" aria-label="code-block-2-89"></a>detailed_analysis <span class="ot">&lt;-</span> base_data <span class="sc">%&gt;%</span></span>
+<span id="cb2-90"><a href="#cb2-90" tabindex="-1" aria-label="code-block-2-90"></a>  <span class="fu">group_by</span>(category) <span class="sc">%&gt;%</span></span>
+<span id="cb2-91"><a href="#cb2-91" tabindex="-1" aria-label="code-block-2-91"></a>  <span class="fu">summarize</span>(<span class="fu">across</span>(<span class="fu">where</span>(is.numeric), <span class="fu">list</span>(<span class="at">mean =</span> mean, <span class="at">sd =</span> sd)))</span>
+<span id="cb2-92"><a href="#cb2-92" tabindex="-1" aria-label="code-block-2-92"></a><span class="in">```</span></span>
+<span id="cb2-93"><a href="#cb2-93" tabindex="-1" aria-label="code-block-2-93"></a></span>
+<span id="cb2-94"><a href="#cb2-94" tabindex="-1" aria-label="code-block-2-94"></a><span class="fu">### 5. Multiline Pipes with Documentation</span></span>
+<span id="cb2-95"><a href="#cb2-95" tabindex="-1" aria-label="code-block-2-95"></a></span>
+<span id="cb2-96"><a href="#cb2-96" tabindex="-1" aria-label="code-block-2-96"></a>Pipelines MUST be formatted across multiple lines with inline documentation.</span>
+<span id="cb2-97"><a href="#cb2-97" tabindex="-1" aria-label="code-block-2-97"></a></span>
+<span id="cb2-98"><a href="#cb2-98" tabindex="-1" aria-label="code-block-2-98"></a>**Required format:**</span>
+<span id="cb2-99"><a href="#cb2-99" tabindex="-1" aria-label="code-block-2-99"></a><span class="in">```r</span></span>
+<span id="cb2-100"><a href="#cb2-100" tabindex="-1" aria-label="code-block-2-100"></a>analysis_results <span class="ot">&lt;-</span> raw_data <span class="sc">%&gt;%</span></span>
+<span id="cb2-101"><a href="#cb2-101" tabindex="-1" aria-label="code-block-2-101"></a>  <span class="co"># Remove incomplete cases and outliers</span></span>
+<span id="cb2-102"><a href="#cb2-102" tabindex="-1" aria-label="code-block-2-102"></a>  <span class="fu">filter</span>(<span class="fu">complete.cases</span>(.), <span class="fu">between</span>(value, <span class="dv">0</span>, <span class="dv">100</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb2-103"><a href="#cb2-103" tabindex="-1" aria-label="code-block-2-103"></a>  <span class="co"># Normalize values by group</span></span>
+<span id="cb2-104"><a href="#cb2-104" tabindex="-1" aria-label="code-block-2-104"></a>  <span class="fu">group_by</span>(category) <span class="sc">%&gt;%</span></span>
+<span id="cb2-105"><a href="#cb2-105" tabindex="-1" aria-label="code-block-2-105"></a>  <span class="fu">mutate</span>(<span class="at">normalized =</span> (value <span class="sc">-</span> <span class="fu">mean</span>(value)) <span class="sc">/</span> <span class="fu">sd</span>(value)) <span class="sc">%&gt;%</span></span>
+<span id="cb2-106"><a href="#cb2-106" tabindex="-1" aria-label="code-block-2-106"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb2-107"><a href="#cb2-107" tabindex="-1" aria-label="code-block-2-107"></a>  <span class="co"># Calculate derived metrics</span></span>
+<span id="cb2-108"><a href="#cb2-108" tabindex="-1" aria-label="code-block-2-108"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb2-109"><a href="#cb2-109" tabindex="-1" aria-label="code-block-2-109"></a>    <span class="at">log_value =</span> <span class="fu">log1p</span>(value),</span>
+<span id="cb2-110"><a href="#cb2-110" tabindex="-1" aria-label="code-block-2-110"></a>    <span class="at">squared_value =</span> value<span class="sc">^</span><span class="dv">2</span>,</span>
+<span id="cb2-111"><a href="#cb2-111" tabindex="-1" aria-label="code-block-2-111"></a>    <span class="at">interaction =</span> value <span class="sc">*</span> normalized</span>
+<span id="cb2-112"><a href="#cb2-112" tabindex="-1" aria-label="code-block-2-112"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb2-113"><a href="#cb2-113" tabindex="-1" aria-label="code-block-2-113"></a>  <span class="co"># Sort by importance</span></span>
+<span id="cb2-114"><a href="#cb2-114" tabindex="-1" aria-label="code-block-2-114"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(<span class="fu">abs</span>(normalized)))</span>
+<span id="cb2-115"><a href="#cb2-115" tabindex="-1" aria-label="code-block-2-115"></a><span class="in">```</span></span>
+<span id="cb2-116"><a href="#cb2-116" tabindex="-1" aria-label="code-block-2-116"></a></span>
+<span id="cb2-117"><a href="#cb2-117" tabindex="-1" aria-label="code-block-2-117"></a>Each step in a pipeline should:</span>
+<span id="cb2-118"><a href="#cb2-118" tabindex="-1" aria-label="code-block-2-118"></a><span class="ss">- </span>Be on its own line</span>
+<span id="cb2-119"><a href="#cb2-119" tabindex="-1" aria-label="code-block-2-119"></a><span class="ss">- </span>Have a preceding comment explaining its purpose</span>
+<span id="cb2-120"><a href="#cb2-120" tabindex="-1" aria-label="code-block-2-120"></a><span class="ss">- </span>Use meaningful intermediate calculations when needed</span>
+<span id="cb2-121"><a href="#cb2-121" tabindex="-1" aria-label="code-block-2-121"></a></span>
+<span id="cb2-122"><a href="#cb2-122" tabindex="-1" aria-label="code-block-2-122"></a><span class="fu">### 6. Function Definitions</span></span>
+<span id="cb2-123"><a href="#cb2-123" tabindex="-1" aria-label="code-block-2-123"></a></span>
+<span id="cb2-124"><a href="#cb2-124" tabindex="-1" aria-label="code-block-2-124"></a>Functions should also follow piping principles when applicable:</span>
+<span id="cb2-125"><a href="#cb2-125" tabindex="-1" aria-label="code-block-2-125"></a></span>
+<span id="cb2-126"><a href="#cb2-126" tabindex="-1" aria-label="code-block-2-126"></a><span class="in">```r</span></span>
+<span id="cb2-127"><a href="#cb2-127" tabindex="-1" aria-label="code-block-2-127"></a>process_dataset <span class="ot">&lt;-</span> <span class="cf">function</span>(data, <span class="at">threshold =</span> <span class="fl">0.05</span>) {</span>
+<span id="cb2-128"><a href="#cb2-128" tabindex="-1" aria-label="code-block-2-128"></a>  data <span class="sc">%&gt;%</span></span>
+<span id="cb2-129"><a href="#cb2-129" tabindex="-1" aria-label="code-block-2-129"></a>    <span class="co"># Filter based on significance threshold</span></span>
+<span id="cb2-130"><a href="#cb2-130" tabindex="-1" aria-label="code-block-2-130"></a>    <span class="fu">filter</span>(p_value <span class="sc">&lt;</span> threshold) <span class="sc">%&gt;%</span></span>
+<span id="cb2-131"><a href="#cb2-131" tabindex="-1" aria-label="code-block-2-131"></a>    <span class="co"># Calculate effect sizes</span></span>
+<span id="cb2-132"><a href="#cb2-132" tabindex="-1" aria-label="code-block-2-132"></a>    <span class="fu">mutate</span>(</span>
+<span id="cb2-133"><a href="#cb2-133" tabindex="-1" aria-label="code-block-2-133"></a>      <span class="at">effect_size =</span> (mean_treatment <span class="sc">-</span> mean_control) <span class="sc">/</span> pooled_sd,</span>
+<span id="cb2-134"><a href="#cb2-134" tabindex="-1" aria-label="code-block-2-134"></a>      <span class="at">ci_lower =</span> effect_size <span class="sc">-</span> <span class="fl">1.96</span> <span class="sc">*</span> se,</span>
+<span id="cb2-135"><a href="#cb2-135" tabindex="-1" aria-label="code-block-2-135"></a>      <span class="at">ci_upper =</span> effect_size <span class="sc">+</span> <span class="fl">1.96</span> <span class="sc">*</span> se</span>
+<span id="cb2-136"><a href="#cb2-136" tabindex="-1" aria-label="code-block-2-136"></a>    ) <span class="sc">%&gt;%</span></span>
+<span id="cb2-137"><a href="#cb2-137" tabindex="-1" aria-label="code-block-2-137"></a>    <span class="co"># Add interpretation</span></span>
+<span id="cb2-138"><a href="#cb2-138" tabindex="-1" aria-label="code-block-2-138"></a>    <span class="fu">mutate</span>(</span>
+<span id="cb2-139"><a href="#cb2-139" tabindex="-1" aria-label="code-block-2-139"></a>      <span class="at">significant =</span> p_value <span class="sc">&lt;</span> threshold,</span>
+<span id="cb2-140"><a href="#cb2-140" tabindex="-1" aria-label="code-block-2-140"></a>      <span class="at">effect_magnitude =</span> <span class="fu">case_when</span>(</span>
+<span id="cb2-141"><a href="#cb2-141" tabindex="-1" aria-label="code-block-2-141"></a>        <span class="fu">abs</span>(effect_size) <span class="sc">&lt;</span> <span class="fl">0.2</span> <span class="sc">~</span> <span class="st">"small"</span>,</span>
+<span id="cb2-142"><a href="#cb2-142" tabindex="-1" aria-label="code-block-2-142"></a>        <span class="fu">abs</span>(effect_size) <span class="sc">&lt;</span> <span class="fl">0.8</span> <span class="sc">~</span> <span class="st">"medium"</span>,</span>
+<span id="cb2-143"><a href="#cb2-143" tabindex="-1" aria-label="code-block-2-143"></a>        <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"large"</span></span>
+<span id="cb2-144"><a href="#cb2-144" tabindex="-1" aria-label="code-block-2-144"></a>      )</span>
+<span id="cb2-145"><a href="#cb2-145" tabindex="-1" aria-label="code-block-2-145"></a>    )</span>
+<span id="cb2-146"><a href="#cb2-146" tabindex="-1" aria-label="code-block-2-146"></a>}</span>
+<span id="cb2-147"><a href="#cb2-147" tabindex="-1" aria-label="code-block-2-147"></a><span class="in">```</span></span>
+<span id="cb2-148"><a href="#cb2-148" tabindex="-1" aria-label="code-block-2-148"></a></span>
+<span id="cb2-149"><a href="#cb2-149" tabindex="-1" aria-label="code-block-2-149"></a><span class="fu">## Forbidden Patterns</span></span>
+<span id="cb2-150"><a href="#cb2-150" tabindex="-1" aria-label="code-block-2-150"></a></span>
+<span id="cb2-151"><a href="#cb2-151" tabindex="-1" aria-label="code-block-2-151"></a><span class="ss">1. </span>**Loop-based operations** when vectorized or tidyverse alternatives exist</span>
+<span id="cb2-152"><a href="#cb2-152" tabindex="-1" aria-label="code-block-2-152"></a><span class="ss">2. </span>**Direct variable assignment in loops** - use <span class="in">`purrr::map()`</span> family instead</span>
+<span id="cb2-153"><a href="#cb2-153" tabindex="-1" aria-label="code-block-2-153"></a><span class="ss">3. </span>**Base R subsetting syntax** - use <span class="in">`dplyr::filter()`</span> and <span class="in">`dplyr::select()`</span></span>
+<span id="cb2-154"><a href="#cb2-154" tabindex="-1" aria-label="code-block-2-154"></a><span class="ss">4. </span>**Nested function calls** without pipes when multiple operations are chained</span>
+<span id="cb2-155"><a href="#cb2-155" tabindex="-1" aria-label="code-block-2-155"></a><span class="ss">5. </span>**`attach()` function** - always use explicit data references</span>
+<span id="cb2-156"><a href="#cb2-156" tabindex="-1" aria-label="code-block-2-156"></a></span>
+<span id="cb2-157"><a href="#cb2-157" tabindex="-1" aria-label="code-block-2-157"></a><span class="fu">## Documentation Standards</span></span>
+<span id="cb2-158"><a href="#cb2-158" tabindex="-1" aria-label="code-block-2-158"></a></span>
+<span id="cb2-159"><a href="#cb2-159" tabindex="-1" aria-label="code-block-2-159"></a><span class="ss">- </span>Use roxygen2-style comments for all functions</span>
+<span id="cb2-160"><a href="#cb2-160" tabindex="-1" aria-label="code-block-2-160"></a><span class="ss">- </span>Include inline comments for complex pipeline steps</span>
+<span id="cb2-161"><a href="#cb2-161" tabindex="-1" aria-label="code-block-2-161"></a><span class="ss">- </span>Document assumptions and data requirements</span>
+<span id="cb2-162"><a href="#cb2-162" tabindex="-1" aria-label="code-block-2-162"></a><span class="ss">- </span>Explain any deviations from these guidelines (rare cases only)</span>
+<span id="cb2-163"><a href="#cb2-163" tabindex="-1" aria-label="code-block-2-163"></a></span>
+<span id="cb2-164"><a href="#cb2-164" tabindex="-1" aria-label="code-block-2-164"></a><span class="fu">## Examples of Complete Workflows</span></span>
+<span id="cb2-165"><a href="#cb2-165" tabindex="-1" aria-label="code-block-2-165"></a></span>
+<span id="cb2-166"><a href="#cb2-166" tabindex="-1" aria-label="code-block-2-166"></a><span class="fu">### Data Import and Cleaning</span></span>
+<span id="cb2-167"><a href="#cb2-167" tabindex="-1" aria-label="code-block-2-167"></a><span class="in">```r</span></span>
+<span id="cb2-168"><a href="#cb2-168" tabindex="-1" aria-label="code-block-2-168"></a>cleaned_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"raw_data.csv"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb2-169"><a href="#cb2-169" tabindex="-1" aria-label="code-block-2-169"></a>  <span class="co"># Handle missing values</span></span>
+<span id="cb2-170"><a href="#cb2-170" tabindex="-1" aria-label="code-block-2-170"></a>  <span class="fu">drop_na</span>(key_columns) <span class="sc">%&gt;%</span></span>
+<span id="cb2-171"><a href="#cb2-171" tabindex="-1" aria-label="code-block-2-171"></a>  <span class="co"># Standardize column names</span></span>
+<span id="cb2-172"><a href="#cb2-172" tabindex="-1" aria-label="code-block-2-172"></a>  <span class="fu">rename_with</span>(tolower) <span class="sc">%&gt;%</span></span>
+<span id="cb2-173"><a href="#cb2-173" tabindex="-1" aria-label="code-block-2-173"></a>  <span class="co"># Type conversion</span></span>
+<span id="cb2-174"><a href="#cb2-174" tabindex="-1" aria-label="code-block-2-174"></a>  <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">ends_with</span>(<span class="st">"_date"</span>), ymd)) <span class="sc">%&gt;%</span></span>
+<span id="cb2-175"><a href="#cb2-175" tabindex="-1" aria-label="code-block-2-175"></a>  <span class="co"># Remove duplicates</span></span>
+<span id="cb2-176"><a href="#cb2-176" tabindex="-1" aria-label="code-block-2-176"></a>  <span class="fu">distinct</span>()</span>
+<span id="cb2-177"><a href="#cb2-177" tabindex="-1" aria-label="code-block-2-177"></a><span class="in">```</span></span>
+<span id="cb2-178"><a href="#cb2-178" tabindex="-1" aria-label="code-block-2-178"></a></span>
+<span id="cb2-179"><a href="#cb2-179" tabindex="-1" aria-label="code-block-2-179"></a><span class="fu">### Analysis Pipeline</span></span>
+<span id="cb2-180"><a href="#cb2-180" tabindex="-1" aria-label="code-block-2-180"></a><span class="in">```r</span></span>
+<span id="cb2-181"><a href="#cb2-181" tabindex="-1" aria-label="code-block-2-181"></a>analysis <span class="ot">&lt;-</span> cleaned_data <span class="sc">%&gt;%</span></span>
+<span id="cb2-182"><a href="#cb2-182" tabindex="-1" aria-label="code-block-2-182"></a>  <span class="co"># Subset to relevant period</span></span>
+<span id="cb2-183"><a href="#cb2-183" tabindex="-1" aria-label="code-block-2-183"></a>  <span class="fu">filter</span>(<span class="fu">between</span>(date, start_date, end_date)) <span class="sc">%&gt;%</span></span>
+<span id="cb2-184"><a href="#cb2-184" tabindex="-1" aria-label="code-block-2-184"></a>  <span class="co"># Group-level transformations</span></span>
+<span id="cb2-185"><a href="#cb2-185" tabindex="-1" aria-label="code-block-2-185"></a>  <span class="fu">group_by</span>(category, region) <span class="sc">%&gt;%</span></span>
+<span id="cb2-186"><a href="#cb2-186" tabindex="-1" aria-label="code-block-2-186"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb2-187"><a href="#cb2-187" tabindex="-1" aria-label="code-block-2-187"></a>    <span class="at">n_obs =</span> <span class="fu">n</span>(),</span>
+<span id="cb2-188"><a href="#cb2-188" tabindex="-1" aria-label="code-block-2-188"></a>    <span class="at">mean_value =</span> <span class="fu">mean</span>(value, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb2-189"><a href="#cb2-189" tabindex="-1" aria-label="code-block-2-189"></a>    <span class="at">median_value =</span> <span class="fu">median</span>(value, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb2-190"><a href="#cb2-190" tabindex="-1" aria-label="code-block-2-190"></a>    <span class="at">.groups =</span> <span class="st">"drop"</span></span>
+<span id="cb2-191"><a href="#cb2-191" tabindex="-1" aria-label="code-block-2-191"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb2-192"><a href="#cb2-192" tabindex="-1" aria-label="code-block-2-192"></a>  <span class="co"># Calculate derived metrics</span></span>
+<span id="cb2-193"><a href="#cb2-193" tabindex="-1" aria-label="code-block-2-193"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb2-194"><a href="#cb2-194" tabindex="-1" aria-label="code-block-2-194"></a>    <span class="at">relative_value =</span> mean_value <span class="sc">/</span> median_value,</span>
+<span id="cb2-195"><a href="#cb2-195" tabindex="-1" aria-label="code-block-2-195"></a>    <span class="at">weight =</span> n_obs <span class="sc">/</span> <span class="fu">sum</span>(n_obs)</span>
+<span id="cb2-196"><a href="#cb2-196" tabindex="-1" aria-label="code-block-2-196"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb2-197"><a href="#cb2-197" tabindex="-1" aria-label="code-block-2-197"></a>  <span class="co"># Final filtering</span></span>
+<span id="cb2-198"><a href="#cb2-198" tabindex="-1" aria-label="code-block-2-198"></a>  <span class="fu">filter</span>(n_obs <span class="sc">&gt;=</span> min_sample_size)</span>
+<span id="cb2-199"><a href="#cb2-199" tabindex="-1" aria-label="code-block-2-199"></a><span class="in">```</span></span>
+<span id="cb2-200"><a href="#cb2-200" tabindex="-1" aria-label="code-block-2-200"></a></span>
+<span id="cb2-201"><a href="#cb2-201" tabindex="-1" aria-label="code-block-2-201"></a><span class="fu">## Additional Guidelines</span></span>
+<span id="cb2-202"><a href="#cb2-202" tabindex="-1" aria-label="code-block-2-202"></a></span>
+<span id="cb2-203"><a href="#cb2-203" tabindex="-1" aria-label="code-block-2-203"></a><span class="ss">- </span>Prefer <span class="in">`tibble`</span> over <span class="in">`data.frame`</span></span>
+<span id="cb2-204"><a href="#cb2-204" tabindex="-1" aria-label="code-block-2-204"></a><span class="ss">- </span>Use <span class="in">`readr::read_*()`</span> over base R <span class="in">`read.*()`</span> functions</span>
+<span id="cb2-205"><a href="#cb2-205" tabindex="-1" aria-label="code-block-2-205"></a><span class="ss">- </span>Always specify <span class="in">`.groups`</span> argument when using <span class="in">`summarize()`</span> with <span class="in">`group_by()`</span></span>
+<span id="cb2-206"><a href="#cb2-206" tabindex="-1" aria-label="code-block-2-206"></a><span class="ss">- </span>Use <span class="in">`across()`</span> for operations on multiple columns</span>
+<span id="cb2-207"><a href="#cb2-207" tabindex="-1" aria-label="code-block-2-207"></a><span class="ss">- </span>Leverage <span class="in">`case_when()`</span> for complex conditional logic</span></code></pre>
 </div>
 <div id="challenge-1-create-your-own-agents.md" class="callout challenge">
 <div class="callout-square">
@@ -795,7 +795,7 @@ Consider:</p>
   Example Solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>Your <code>AGENTS.md</code> should include:</p>
 <ul><li>Clear statement of purpose</li>
@@ -852,14 +852,14 @@ Please generate all code using:
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">MARKDOWN<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode markdown" tabindex="0"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="fu">## Coding Standards</span></span>
-<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a>This project follows tidyverse conventions. All contributions must:</span>
-<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a></span>
-<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a><span class="ss">- </span>Use tidyverse packages</span>
-<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a><span class="ss">- </span>Implement piping for data transformations</span>
-<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a><span class="ss">- </span>Avoid variable overwriting</span>
-<span id="cb5-8"><a href="#cb5-8" tabindex="-1"></a><span class="ss">- </span>Include inline documentation</span></code></pre>
+<pre class="sourceCode markdown" tabindex="0"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" tabindex="-1" aria-label="code-block-5-1"></a><span class="fu">## Coding Standards</span></span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1" aria-label="code-block-5-2"></a></span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1" aria-label="code-block-5-3"></a>This project follows tidyverse conventions. All contributions must:</span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1" aria-label="code-block-5-4"></a></span>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1" aria-label="code-block-5-5"></a><span class="ss">- </span>Use tidyverse packages</span>
+<span id="cb5-6"><a href="#cb5-6" tabindex="-1" aria-label="code-block-5-6"></a><span class="ss">- </span>Implement piping for data transformations</span>
+<span id="cb5-7"><a href="#cb5-7" tabindex="-1" aria-label="code-block-5-7"></a><span class="ss">- </span>Avoid variable overwriting</span>
+<span id="cb5-8"><a href="#cb5-8" tabindex="-1" aria-label="code-block-5-8"></a><span class="ss">- </span>Include inline documentation</span></code></pre>
 </div>
 </div>
 <div class="section level3">
@@ -868,13 +868,13 @@ Please generate all code using:
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="co"># In RStudio: Tools &gt; Global Options &gt; Code &gt; Snippets</span></span>
-<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a>snippet tidypipe</span>
-<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a>	<span class="sc">$</span>{<span class="dv">1</span><span class="sc">:</span>data} <span class="sc">%&gt;%</span></span>
-<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a>		<span class="co"># ${2:description}</span></span>
-<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a>		<span class="er">$</span>{<span class="dv">3</span><span class="sc">:</span>operation}() <span class="sc">%&gt;%</span></span>
-<span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a>		<span class="co"># ${4:description}</span></span>
-<span id="cb6-7"><a href="#cb6-7" tabindex="-1"></a>		<span class="er">$</span>{<span class="dv">5</span><span class="sc">:</span>operation}()</span></code></pre>
+<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1" aria-label="code-block-6-1"></a><span class="co"># In RStudio: Tools &gt; Global Options &gt; Code &gt; Snippets</span></span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1" aria-label="code-block-6-2"></a>snippet tidypipe</span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1" aria-label="code-block-6-3"></a>	<span class="sc">$</span>{<span class="dv">1</span><span class="sc">:</span>data} <span class="sc">%&gt;%</span></span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1" aria-label="code-block-6-4"></a>		<span class="co"># ${2:description}</span></span>
+<span id="cb6-5"><a href="#cb6-5" tabindex="-1" aria-label="code-block-6-5"></a>		<span class="er">$</span>{<span class="dv">3</span><span class="sc">:</span>operation}() <span class="sc">%&gt;%</span></span>
+<span id="cb6-6"><a href="#cb6-6" tabindex="-1" aria-label="code-block-6-6"></a>		<span class="co"># ${4:description}</span></span>
+<span id="cb6-7"><a href="#cb6-7" tabindex="-1" aria-label="code-block-6-7"></a>		<span class="er">$</span>{<span class="dv">5</span><span class="sc">:</span>operation}()</span></code></pre>
 </div>
 </div>
 <div class="section level3">
@@ -902,13 +902,13 @@ hooks</a></p>
 <div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">YAML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="co"># .pre-commit-config.yaml</span></span>
-<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a><span class="fu">repos</span><span class="kw">:</span></span>
-<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">repo</span><span class="kw">:</span><span class="at"> https://github.com/lorenzwalthert/precommit</span></span>
-<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a><span class="at">    </span><span class="fu">rev</span><span class="kw">:</span><span class="at"> v0.3.2</span></span>
-<span id="cb8-5"><a href="#cb8-5" tabindex="-1"></a><span class="at">    </span><span class="fu">hooks</span><span class="kw">:</span></span>
-<span id="cb8-6"><a href="#cb8-6" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> style-files</span></span>
-<span id="cb8-7"><a href="#cb8-7" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> lintr</span></span></code></pre>
+<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb8-1"><a href="#cb8-1" tabindex="-1" aria-label="code-block-8-1"></a><span class="co"># .pre-commit-config.yaml</span></span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1" aria-label="code-block-8-2"></a><span class="fu">repos</span><span class="kw">:</span></span>
+<span id="cb8-3"><a href="#cb8-3" tabindex="-1" aria-label="code-block-8-3"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">repo</span><span class="kw">:</span><span class="at"> https://github.com/lorenzwalthert/precommit</span></span>
+<span id="cb8-4"><a href="#cb8-4" tabindex="-1" aria-label="code-block-8-4"></a><span class="at">    </span><span class="fu">rev</span><span class="kw">:</span><span class="at"> v0.3.2</span></span>
+<span id="cb8-5"><a href="#cb8-5" tabindex="-1" aria-label="code-block-8-5"></a><span class="at">    </span><span class="fu">hooks</span><span class="kw">:</span></span>
+<span id="cb8-6"><a href="#cb8-6" tabindex="-1" aria-label="code-block-8-6"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> style-files</span></span>
+<span id="cb8-7"><a href="#cb8-7" tabindex="-1" aria-label="code-block-8-7"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> lintr</span></span></code></pre>
 </div>
 </div>
 <div class="section level3">
@@ -1008,7 +1008,7 @@ includes:</p>
   Example Strategy
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <ol style="list-style-type: decimal"><li>
 <strong>AGENTS.md</strong>: Core style principles, mandatory
@@ -1107,7 +1107,7 @@ any links that you are not going to use.
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
 
         <p>Template licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">CC-BY 4.0</a> by <a href="https://carpentries.org/" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.20.0" class="external-link">sandpaper (0.20.0)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.9" class="external-link">pegboard (0.7.9)</a>, and <a href="https://github.com/Dr-Eberle-Zentrum/varnish/tree/e83e91d2c5ad53b329070b9741d678731ea434ae" class="external-link">varnish (1.0.9)</a></p>
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/" class="external-link">sandpaper (0.20.1)</a>, <a href="https://github.com/carpentries/pegboard/tree/" class="external-link">pegboard (0.7.9)</a>, and <a href="https://github.com/Dr-Eberle-Zentrum/varnish/tree/e83e91d2c5ad53b329070b9741d678731ea434ae" class="external-link">varnish (1.0.9)</a></p>
 		</div>
 		</footer></div> <!-- / div.container -->
 	<div id="to-top">
@@ -1130,7 +1130,7 @@ any links that you are not going to use.
   "identifier": "https://Dr-Eberle-Zentrum.github.io/AI-supported-coding-in-RStudio/context-and-agents.html",
   "dateCreated": "2024-11-10",
   "dateModified": "2026-01-02",
-  "datePublished": "2026-04-14"
+  "datePublished": "2026-04-21"
 }
 
   </script><script>
