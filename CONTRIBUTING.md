@@ -60,8 +60,8 @@ final say over what gets merged into the lesson.
 
 
 
-[repo]: https://github.com/Dr-Eberle-Zentrum/AI-supported-coding-in-RStudio
-[repo-issues]: https://github.com/Dr-Eberle-Zentrum/AI-supported-coding-in-RStudio/issues
+[repo]: https://github.com/Dr-Eberle-Zentrum/AI-supported-coding-with-GitHub-Copilot
+[repo-issues]: https://github.com/Dr-Eberle-Zentrum/AI-supported-coding-with-GitHub-Copilot/issues
 [contact]: mailto:team@carpentries.org
 [cp-site]: https://carpentries.org/
 [dc-issues]: https://github.com/issues?q=user%3Adatacarpentry

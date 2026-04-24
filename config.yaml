@@ -33,7 +33,7 @@ life_cycle: 'alpha'
 license: 'CC-BY 4.0'
 
 # Link to the source repository for this lesson
-source: 'https://github.com/Dr-Eberle-Zentrum/AI-supported-coding-with-GitHub'
+source: 'https://github.com/Dr-Eberle-Zentrum/AI-supported-coding-with-GitHub-Copilot'
 
 # Default branch of your lesson
 branch: 'main'

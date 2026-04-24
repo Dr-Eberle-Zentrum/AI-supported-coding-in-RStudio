@@ -133,7 +133,7 @@ ggplot(data = df3,
     - clear objectives
     - integration with version control
       - **visualize and track changes**
-    - parallize workload by "recruiting AI assistants"
+    - parallelize workload by "recruiting AI assistants"
       - focus on high-level design, code revision and integration
   - disadvantages
     - learning curve for git and GitHub
@@ -143,7 +143,7 @@ ggplot(data = df3,
 
 - TASK: 
   - ! create a GitHub repository for a small project (or use an existing one)!
-  - ! use the example solution of ["Challenge 1" from the material](https://dr-eberle-zentrum.github.io/AI-supported-coding-in-RStudio/github-issue-driven-coding.html)
+  - ! use the example solution of ["Challenge 1" from the material](https://dr-eberle-zentrum.github.io/AI-supported-coding-with-GitHub-Copilot/episodes/github-issue-driven-coding.html)
       as an initial issue to create the first R code file for your project
     - assign the issue to GitHub Copilot
     - review the generated code carefully!
