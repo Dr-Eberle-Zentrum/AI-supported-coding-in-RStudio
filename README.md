@@ -17,6 +17,6 @@ use of GitHub Copilot.
 
 ------------------------------------------------------------------------
 
-[Visit our Online Carpentry Lesson "AI-supported Coding with GitHub Copilot in RStudio"](https://dr-eberle-zentrum.github.io/AI-supported-coding-in-RStudio/)
+[Visit our Online Carpentry Lesson "AI-supported Coding with GitHub Copilot"](https://dr-eberle-zentrum.github.io/AI-supported-coding-with-GitHub-Copilot/)
 
 ------------------------------------------------------------------------
